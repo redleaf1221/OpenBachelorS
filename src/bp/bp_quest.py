@@ -46,7 +46,6 @@ def quest_battleStart(player_data):
     request_json = request.get_json()
 
     stage_id = request_json["stageId"]
-
     player_data.extra_save.save_obj["cur_stage_id"] = stage_id
 
     response = {
@@ -134,7 +133,6 @@ def quest_saveBattleReplay(player_data):
         return response
 
     stage_id = player_data.extra_save.save_obj["cur_stage_id"]
-    del player_data.extra_save.save_obj["cur_stage_id"]
 
     battle_replay = request_json["battleReplay"]
 

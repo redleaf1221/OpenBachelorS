@@ -13,6 +13,10 @@ bp_campaignV2 = Blueprint("bp_campaignV2", __name__)
 @player_data_decorator
 def campaignV2_battleStart(player_data):
     request_json = request.get_json()
+
+    stage_id = request_json["stageId"]
+    player_data.extra_save.save_obj["cur_stage_id"] = stage_id
+
     response = {
         "result": 0,
         "battleId": "00000000-0000-0000-0000-000000000000",
