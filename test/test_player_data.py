@@ -6,6 +6,8 @@ from ..src.util.player_data import (
     player_data_template,
     DeltaJson,
     JsonWithDelta,
+    PlayerData,
+    player_data_decorator,
 )
 
 
@@ -68,3 +70,17 @@ def test_json_with_delta():
     }
 
     assert json_with_delta.copy() == {"x": {}, "a": 456, "b": 345}
+
+
+def test_player_data():
+    @player_data_decorator
+    def f(player_data):
+        player_data["status"]["ap"] = 789
+        response = {}
+        return response
+
+    response = f()
+
+    assert response == {
+        "playerDataDelta": {"modified": {"status": {"ap": 789}}, "deleted": {}}
+    }

@@ -1,6 +1,7 @@
 from copy import deepcopy
 from functools import wraps
 import os
+import json
 
 import flask
 from flask import request
@@ -787,7 +788,11 @@ def player_data_decorator(func):
         json_response["playerDataDelta"] = delta_response
 
         if const_json_loader[CONFIG_JSON]["debug"]:
-            print(delta_response)
+            delta_response_str = json.dumps(delta_response, ensure_ascii=False)
+            if flask.has_app_context():
+                flask.current_app.logger.debug(delta_response_str)
+            else:
+                print(delta_response_str)
 
         return json_response
 
