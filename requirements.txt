@@ -3,3 +3,4 @@ flask==3.1.0
 waitress==3.0.2
 pytest==8.3.4
 pathvalidate==3.2.1
+requests==2.32.3
