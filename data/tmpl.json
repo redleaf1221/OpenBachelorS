@@ -261,7 +261,26 @@
         "skinTs": {}
     },
     "shop": {},
-    "mission": {},
+    "mission": {
+        "missions": {
+            "OPENSERVER": {},
+            "DAILY": {},
+            "WEEKLY": {},
+            "GUIDE": {},
+            "MAIN": {},
+            "ACTIVITY": {},
+            "SUB": {}
+        },
+        "missionRewards": {
+            "dailyPoint": 0,
+            "weeklyPoint": 0,
+            "rewards": {
+                "DAILY": {},
+                "WEEKLY": {}
+            }
+        },
+        "missionGroups": {}
+    },
     "social": {
         "assistCharList": [
             null,
