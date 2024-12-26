@@ -6,6 +6,9 @@ import io
 import zipfile
 import subprocess
 from uuid import uuid4
+import re
+
+from pathvalidate import is_valid_filename
 
 from ..const.filepath import TMP_DIRPATH
 
@@ -124,3 +127,11 @@ def download_file(url: str, filename: str, dirpath: str):
     os.makedirs(dirpath, exist_ok=True)
 
     os.replace(os.path.join(TMP_DIRPATH, tmp_filename), os.path.join(dirpath, filename))
+
+
+def is_valid_res_version(res_version: str) -> bool:
+    return re.fullmatch("[0-9A-Fa-f-]*", res_version) is not None
+
+
+def is_valid_asset_filename(asset_filename: str) -> bool:
+    return is_valid_filename(asset_filename)
