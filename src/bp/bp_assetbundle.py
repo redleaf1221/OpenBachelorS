@@ -22,18 +22,18 @@ def assetbundle_official_Android_assets(res_version, asset_filename):
     ):
         return "", 400
 
-    url = f"https://ak.hycdn.cn/assetbundle/official/Android/assets/{res_version}/{asset_filename}"
-
-    req = requests.head(url)
-
-    if req.status_code != 200:
-        return "", 404
-
     asset_dirpath = os.path.join(ASSET_DIRPATH, res_version)
     asset_filepath = os.path.join(asset_dirpath, asset_filename)
     asset_abs_filepath = os.path.abspath(asset_filepath)
 
     if not os.path.isfile(asset_filepath):
+        url = f"https://ak.hycdn.cn/assetbundle/official/Android/assets/{res_version}/{asset_filename}"
+
+        req = requests.head(url)
+
+        if req.status_code != 200:
+            return "", 404
+
         download_file(url, asset_filename, asset_dirpath)
 
     return send_file(asset_abs_filepath)
