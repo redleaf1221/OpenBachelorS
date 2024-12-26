@@ -27,6 +27,8 @@ class BattleReplayManager:
     def get_battle_replay_lst(self) -> list[str]:
         raw_battle_replay_lst = os.listdir(self.dirpath)
 
-        battle_replay_lst = [decode_stage_id(i) for i in raw_battle_replay_lst]
+        battle_replay_lst = [
+            decode_stage_id(os.path.splitext(i)[0]) for i in raw_battle_replay_lst
+        ]
 
         return battle_replay_lst
