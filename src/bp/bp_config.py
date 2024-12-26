@@ -60,3 +60,18 @@ def config_prod_official_remote_config():
 def config_prod_official_Android_version():
     version = const_json_loader[VERSION_JSON]["version"].copy()
     return version
+
+
+@bp_config.route("/config/prod/announce_meta/Android/preannouncement.meta.json")
+def config_prod_announce_meta_Android_preannouncement_meta_json():
+    host = const_json_loader[CONFIG_JSON]["host"]
+    port = const_json_loader[CONFIG_JSON]["port"]
+    url = f"http://{host}:{port}"
+
+    response = {
+        "preAnnounceId": "478",
+        "actived": true,
+        "preAnnounceType": 2,
+        "preAnnounceUrl": f"{url}/announce/Android/preannouncement/478_1730418060.html",
+    }
+    return response
