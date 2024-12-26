@@ -19,6 +19,8 @@ MULTI_EXTRA_SAVE_DIRPATH = "multi_sav/"
 
 TMP_DIRPATH = "tmp/"
 
+ASSET_DIRPATH = "asset/"
+
 SKIN_TABLE = "res/excel/skin_table.json"
 CHARWORD_TABLE = "res/excel/charword_table.json"
 UNIEQUIP_TABLE = "res/excel/uniequip_table.json"

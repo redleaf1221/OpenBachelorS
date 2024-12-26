@@ -4,6 +4,10 @@ from base64 import urlsafe_b64encode, urlsafe_b64decode
 from base64 import b64encode, b64decode
 import io
 import zipfile
+import subprocess
+from uuid import uuid4
+
+from ..const.filepath import TMP_DIRPATH
 
 
 def is_char_id(char_id: str) -> bool:
@@ -98,3 +102,25 @@ def save_delta_json_obj(path: str, modified: dict, deleted: dict):
     json_obj = {"modified": modified, "deleted": deleted}
     with open(path, "w", encoding="utf-8") as f:
         return json.dump(json_obj, f, indent=4, ensure_ascii=False)
+
+
+def download_file(url: str, filename: str, dirpath: str):
+    os.makedirs(TMP_DIRPATH, exist_ok=True)
+
+    tmp_filename = str(uuid4())
+    proc = subprocess.run(
+        [
+            "aria2c",
+            "-q",
+            "-d",
+            TMP_DIRPATH,
+            "-o",
+            tmp_filename,
+            "--auto-file-renaming=false",
+            url,
+        ]
+    )
+
+    os.makedirs(dirpath, exist_ok=True)
+
+    os.replace(os.path.join(TMP_DIRPATH, tmp_filename), os.path.join(dirpath, filename))
