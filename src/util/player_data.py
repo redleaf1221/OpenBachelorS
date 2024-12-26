@@ -396,12 +396,13 @@ def build_player_data_template():
 player_data_template = build_player_data_template()
 
 
+# always a dict-like object (unless no_dict is true)
 class DeltaJson:
     def __init__(
         self,
-        is_root=True,
         modified_dict=None,
         deleted_dict=None,
+        is_root=True,
         parent=None,
         prev_key=None,
         no_dict=False,
@@ -409,8 +410,14 @@ class DeltaJson:
     ):
         self.is_root = is_root
         if is_root:
-            self.modified_dict = {}
-            self.deleted_dict = {}
+            if modified_dict is None:
+                self.modified_dict = {}
+            else:
+                self.modified_dict = modified_dict
+            if deleted_dict is None:
+                self.deleted_dict = {}
+            else:
+                self.deleted_dict = deleted_dict
         else:
             self.modified_dict = modified_dict
             self.deleted_dict = deleted_dict
@@ -480,9 +487,9 @@ class DeltaJson:
             child_deleted_dict = None
 
         return DeltaJson(
-            is_root=False,
             modified_dict=child_modified_dict,
             deleted_dict=child_deleted_dict,
+            is_root=False,
             parent=self,
             prev_key=key,
             no_dict=child_no_dict,
@@ -525,13 +532,7 @@ def delta_json_is_dict(delta_json):
 def base_json_is_dict(base_json):
     return (
         isinstance(base_json, ConstJson) and isinstance(base_json.json_obj, dict)
-    ) or (
-        isinstance(base_json, JsonWithDelta)
-        and (
-            base_json_is_dict(base_json.base_json)
-            or delta_json_is_dict(base_json.delta_json)
-        )
-    )
+    ) or isinstance(base_json, JsonWithDelta)
 
 
 def apply_delta_json_on_base_obj(base_obj, delta_json):
@@ -606,6 +607,7 @@ def convert_deleted_dict_to_hg_format(deleted_dict):
     return hg_deleted_dict
 
 
+# always a dict-like object
 class JsonWithDeltaIter:
     def __init__(self, json_with_delta):
         self.json_with_delta = json_with_delta
@@ -643,7 +645,9 @@ class JsonWithDelta:
         base_json,
         delta_json,
     ):
+        # ConstJson or JsonWithDelta or other non-dict object
         self.base_json = base_json
+        # DeltaJson object
         self.delta_json = delta_json
 
     def __contains__(self, key):
@@ -703,12 +707,12 @@ class JsonWithDelta:
 
 class FileBasedDeltaJson(DeltaJson):
     def __init__(self, path: str):
-        super().__init__()
         self.path = path
         json_obj = load_delta_json_obj(path)
 
-        self.modified_dict = json_obj["modified"]
-        self.deleted_dict = json_obj["deleted"]
+        super().__init__(
+            modified_dict=json_obj["modified"], deleted_dict=json_obj["deleted"]
+        )
 
     def save(self):
         save_delta_json_obj(self.path, self.modified_dict, self.deleted_dict)

@@ -24,6 +24,7 @@ class ConstJsonIter:
         return key, self.const_json[key]
 
 
+# always a dict-like/list-like object
 class ConstJson:
     def __init__(self, json_obj):
         self.json_obj = json_obj
