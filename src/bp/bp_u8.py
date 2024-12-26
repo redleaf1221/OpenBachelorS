@@ -1,0 +1,61 @@
+import json
+
+from flask import Blueprint
+from flask import request
+
+from ..const.json_const import true, false, null
+from ..const.filepath import CONFIG_JSON, VERSION_JSON
+from ..util.const_json_loader import const_json_loader
+
+
+bp_u8 = Blueprint("bp_u8", __name__)
+
+
+@bp_u8.route("/u8/user/v1/getToken", methods=["POST"])
+def u8_user_v1_getToken():
+    request_json = request.get_json()
+    code = json.loads(request_json["extension"])["code"]
+
+    response = {
+        "result": 0,
+        "captcha": {},
+        "error": "",
+        "uid": "123456789",
+        "channelUid": "123456789",
+        "token": code,
+        "isGuest": 0,
+        "extension": '{"isAuthenticate":true,"isMinor":false}',
+    }
+    return response
+
+
+@bp_u8.route("/u8/pay/getAllProductList", methods=["POST"])
+def u8_pay_getAllProductList():
+    response = {"productList": []}
+    return response
+
+
+@bp_u8.route("/u8/user/auth/v1/agreement_version", methods=["POST"])
+def u8_user_auth_v1_agreement_version():
+    request_json = request.get_json()
+
+    host = const_json_loader[CONFIG_JSON]["host"]
+    port = const_json_loader[CONFIG_JSON]["port"]
+    url = f"http://{host}:{port}"
+
+    response = {
+        "data": {
+            "agreementUrl": {
+                "childrenPrivacy": f"{url}/protocol/plain/ak/children_privacy",
+                "privacy": f"{url}/protocol/plain/ak/privacy",
+                "service": f"{url}/protocol/plain/ak/service",
+                "updateOverview": f"{url}/protocol/plain/ak/overview_of_changes",
+            },
+            "authorized": true,
+            "isLatestUserAgreement": true,
+        },
+        "msg": "OK",
+        "status": 0,
+        "type": "",
+    }
+    return response

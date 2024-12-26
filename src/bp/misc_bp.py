@@ -1,0 +1,113 @@
+from flask import Blueprint
+from flask import request
+
+from ..const.json_const import true, false, null
+from ..const.filepath import CONFIG_JSON, VERSION_JSON
+from ..util.const_json_loader import const_json_loader
+from ..util.player_data import player_data_decorator
+
+misc_bp = Blueprint("misc_bp", __name__)
+
+
+@misc_bp.route("/deepSea/branch", methods=["POST"])
+@player_data_decorator
+def deepSea_branch(player_data):
+    request_json = request.get_json()
+
+    for branch in request_json["branches"]:
+        tech_tree_id = branch["techTreeId"]
+        branch_id = branch["branchId"]
+
+        player_data["deepSea"]["techTrees"][tech_tree_id]["branch"] = branch_id
+
+    response = {}
+    return response
+
+
+@misc_bp.route("/act25side/battleStart", methods=["POST"])
+@player_data_decorator
+def act25side_battleStart(player_data):
+    request_json = request.get_json()
+
+    response = {
+        "result": 0,
+        "battleId": "00000000-0000-0000-0000-000000000000",
+        "apFailReturn": 0,
+        "isApProtect": 0,
+        "inApProtectPeriod": false,
+        "notifyPowerScoreNotEnoughIfFailed": false,
+    }
+    return response
+
+
+@misc_bp.route("/act25side/battleFinish", methods=["POST"])
+@player_data_decorator
+def act25side_battleFinish(player_data):
+    request_json = request.get_json()
+
+    response = {
+        "result": 0,
+        "apFailReturn": 0,
+        "expScale": 1.2,
+        "goldScale": 1.2,
+        "rewards": [],
+        "firstRewards": [],
+        "unlockStages": [],
+        "unusualRewards": [],
+        "additionalRewards": [],
+        "furnitureRewards": [],
+        "overrideRewards": [],
+        "alert": [],
+        "suggestFriend": false,
+        "pryResult": [],
+        "itemReturn": [],
+    }
+    return response
+
+
+@misc_bp.route("/charm/setSquad", methods=["POST"])
+@player_data_decorator
+def charm_setSquad(player_data):
+    request_json = request.get_json()
+
+    player_data["charm"]["squad"] = request_json["squad"]
+
+    response = {}
+    return response
+
+
+@misc_bp.route("/car/confirmBattleCar", methods=["POST"])
+@player_data_decorator
+def car_confirmBattleCar(player_data):
+    request_json = request.get_json()
+
+    player_data["car"]["battleCar"] = request_json["car"]
+
+    response = {}
+    return response
+
+
+@misc_bp.route("/retro/typeAct20side/competitionStart", methods=["POST"])
+@player_data_decorator
+def retro_typeAct20side_competitionStart(player_data):
+    request_json = request.get_json()
+    response = {
+        "result": 0,
+        "battleId": "00000000-0000-0000-0000-000000000000",
+    }
+    return response
+
+
+@misc_bp.route("/retro/typeAct20side/competitionFinish", methods=["POST"])
+@player_data_decorator
+def retro_typeAct20side_competitionFinish(player_data):
+    request_json = request.get_json()
+    response = {
+        "performance": 0,
+        "expression": 0,
+        "operation": 0,
+        "total": 0,
+        "level": "SS",
+        "isNew": false,
+    }
+    return response
