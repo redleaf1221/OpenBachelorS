@@ -111,3 +111,25 @@ def retro_typeAct20side_competitionFinish(player_data):
         "isNew": false,
     }
     return response
+
+
+@misc_bp.route("/trainingGround/battleStart", methods=["POST"])
+@player_data_decorator
+def trainingGround_battleStart(player_data):
+    request_json = request.get_json()
+    response = {
+        "result": 0,
+        "battleId": "00000000-0000-0000-0000-000000000000",
+    }
+    return response
+
+
+@misc_bp.route("/trainingGround/battleFinish", methods=["POST"])
+@player_data_decorator
+def trainingGround_battleFinish(player_data):
+    request_json = request.get_json()
+    response = {
+        "result": 0,
+        "firstRewards": [],
+    }
+    return response
