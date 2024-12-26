@@ -6,7 +6,7 @@ from flask import Blueprint
 from flask import request
 
 from ..const.json_const import true, false, null
-from ..const.filepath import CONFIG_JSON, VERSION_JSON
+from ..const.filepath import CONFIG_JSON, VERSION_JSON, TMP_DIRPATH
 from ..util.const_json_loader import const_json_loader
 from ..util.player_data import PlayerData, player_data_decorator
 
@@ -47,8 +47,10 @@ def account_syncData():
     player_data_json_obj = player_data.copy()
 
     if const_json_loader[CONFIG_JSON]["debug"]:
-        os.makedirs("cache", exist_ok=True)
-        with open("cache/player_data.json", "w", encoding="utf-8") as f:
+        os.makedirs(TMP_DIRPATH, exist_ok=True)
+        with open(
+            os.path.join(TMP_DIRPATH, "player_data.json"), "w", encoding="utf-8"
+        ) as f:
             json.dump(player_data_json_obj, f, ensure_ascii=False, indent=4)
 
     response = {

@@ -2,6 +2,7 @@ import os
 import json
 
 from ..src.util.const_json_loader import ConstJson
+from ..src.const.filepath import TMP_DIRPATH
 from ..src.util.player_data import (
     player_data_template,
     DeltaJson,
@@ -12,8 +13,10 @@ from ..src.util.player_data import (
 
 
 def test_player_data_template():
-    os.makedirs("cache", exist_ok=True)
-    with open("cache/player_data_template.json", "w", encoding="utf-8") as f:
+    os.makedirs(TMP_DIRPATH, exist_ok=True)
+    with open(
+        os.path.join(TMP_DIRPATH, "player_data_template.json"), "w", encoding="utf-8"
+    ) as f:
         json.dump(player_data_template.copy(), f, ensure_ascii=False, indent=4)
 
 
