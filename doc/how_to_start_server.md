@@ -20,8 +20,12 @@ python -m src.app
 flask --app src/app --debug run -h 127.0.0.1 -p 8443
 ```
 
+`python -m flask` can be used instead of `flask`.
+
 ## 4th Way
 
 ```
 waitress-serve --host=127.0.0.1 --port=8443 src.app:app
 ```
+
+`python -m waitress` can be used instead of `waitress-serve`.
