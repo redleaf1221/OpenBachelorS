@@ -52,3 +52,11 @@ app.register_blueprint(bp_templateShop)
 app.register_blueprint(bp_u8)
 app.register_blueprint(bp_user)
 app.register_blueprint(misc_bp)
+
+
+if __name__ == "__main__":
+    app.run(
+        host="127.0.0.1",
+        port=8443,
+        debug=True,
+    )
