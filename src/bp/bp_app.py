@@ -4,6 +4,7 @@ from flask import request
 from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON
 from ..util.const_json_loader import const_json_loader
+from ..util.server_url import get_server_url
 
 
 bp_app = Blueprint("bp_app", __name__)
@@ -11,9 +12,7 @@ bp_app = Blueprint("bp_app", __name__)
 
 @bp_app.route("/app/v1/config")
 def app_v1_config():
-    host = const_json_loader[CONFIG_JSON]["host"]
-    port = const_json_loader[CONFIG_JSON]["port"]
-    url = f"http://{host}:{port}"
+    url = get_server_url()
 
     response = {
         "data": {

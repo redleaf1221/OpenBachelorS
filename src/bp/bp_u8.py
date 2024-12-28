@@ -6,6 +6,7 @@ from flask import request
 from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON
 from ..util.const_json_loader import const_json_loader
+from ..util.server_url import get_server_url
 
 
 bp_u8 = Blueprint("bp_u8", __name__)
@@ -39,9 +40,7 @@ def u8_pay_getAllProductList():
 def u8_user_auth_v1_agreement_version():
     request_json = request.get_json()
 
-    host = const_json_loader[CONFIG_JSON]["host"]
-    port = const_json_loader[CONFIG_JSON]["port"]
-    url = f"http://{host}:{port}"
+    url = get_server_url()
 
     response = {
         "data": {

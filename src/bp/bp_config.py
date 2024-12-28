@@ -6,6 +6,7 @@ from flask import request
 from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON
 from ..util.const_json_loader import const_json_loader
+from ..util.server_url import get_server_url
 
 
 bp_config = Blueprint("bp_config", __name__)
@@ -13,9 +14,7 @@ bp_config = Blueprint("bp_config", __name__)
 
 @bp_config.route("/config/prod/official/network_config")
 def config_prod_official_network_config():
-    host = const_json_loader[CONFIG_JSON]["host"]
-    port = const_json_loader[CONFIG_JSON]["port"]
-    url = f"http://{host}:{port}"
+    url = get_server_url()
 
     funcVer = const_json_loader[VERSION_JSON]["funcVer"]
 
@@ -64,9 +63,7 @@ def config_prod_official_Android_version():
 
 @bp_config.route("/config/prod/announce_meta/Android/preannouncement.meta.json")
 def config_prod_announce_meta_Android_preannouncement_meta_json():
-    host = const_json_loader[CONFIG_JSON]["host"]
-    port = const_json_loader[CONFIG_JSON]["port"]
-    url = f"http://{host}:{port}"
+    url = get_server_url()
 
     response = {
         "preAnnounceId": "478",
