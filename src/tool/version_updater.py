@@ -37,7 +37,7 @@ def get_func_ver():
 
 
 if __name__ == "__main__":
-    with open(VERSION_JSON) as f:
+    with open(VERSION_JSON, encoding="utf-8") as f:
         version_json_obj = json.load(f)
 
     server_version = get_version()
@@ -50,5 +50,5 @@ if __name__ == "__main__":
     if func_ver is not None:
         version_json_obj["funcVer"] = func_ver
 
-    with open(VERSION_JSON, "w") as f:
+    with open(VERSION_JSON, "w", encoding="utf-8") as f:
         json.dump(version_json_obj, f, ensure_ascii=False, indent=4)
