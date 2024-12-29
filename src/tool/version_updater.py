@@ -34,6 +34,7 @@ def get_func_ver():
             for cur_func_ver in server_network_config["configs"]:
                 func_ver = max(func_ver, cur_func_ver)
             return func_ver
+        return None
     except Exception:
         return None
 
