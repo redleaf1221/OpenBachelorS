@@ -5,9 +5,6 @@ from ..const.filepath import VERSION_JSON
 
 REQUESTS_TIMEOUT = 60
 
-with open(VERSION_JSON) as f:
-    version_json_obj = json.load(f)
-
 
 def get_version():
     try:
@@ -39,17 +36,19 @@ def get_func_ver():
         return None
 
 
-server_version = get_version()
+if __name__ == "__main__":
+    with open(VERSION_JSON) as f:
+        version_json_obj = json.load(f)
 
-if server_version is not None:
-    version_json_obj["version"] = server_version
+    server_version = get_version()
 
+    if server_version is not None:
+        version_json_obj["version"] = server_version
 
-func_ver = get_func_ver()
+    func_ver = get_func_ver()
 
-if func_ver is not None:
-    version_json_obj["funcVer"] = func_ver
+    if func_ver is not None:
+        version_json_obj["funcVer"] = func_ver
 
-
-with open(VERSION_JSON, "w") as f:
-    json.dump(version_json_obj, f, ensure_ascii=False, indent=4)
+    with open(VERSION_JSON, "w") as f:
+        json.dump(version_json_obj, f, ensure_ascii=False, indent=4)
