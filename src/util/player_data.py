@@ -671,7 +671,7 @@ class JsonWithDelta:
         child_delta_json = self.delta_json[key]
 
         if child_delta_json.no_dict:
-            return child_delta_json.no_dict_val
+            return deepcopy(child_delta_json.no_dict_val)
 
         if not base_json_is_dict(child_base_json) and not delta_json_is_dict(
             child_delta_json
