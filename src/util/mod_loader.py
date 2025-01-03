@@ -5,7 +5,7 @@ from hashlib import md5
 from collections import namedtuple
 
 from ..const.json_const import true, false, null
-from ..const.filepath import MOD_DIRPATH
+from ..const.filepath import CONFIG_JSON, MOD_DIRPATH
 from ..util.const_json_loader import const_json_loader
 
 
@@ -22,6 +22,9 @@ class ModLoader:
 
         self.mod_dict = {}
         self.ab_dict = {}
+
+        if not const_json_loader[CONFIG_JSON]["mod"]:
+            return
 
         for mod_filename in os.listdir(MOD_DIRPATH):
             mod_filepath = os.path.join(MOD_DIRPATH, mod_filename)
