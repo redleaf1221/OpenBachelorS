@@ -1636,6 +1636,843 @@
     },
     "tower": {},
     "siracusaMap": {
+        "select": null,
+        "card": {
+            "char_card_Texas": {
+                "item": {
+                    "item_poster": 1,
+                    "item_redwine": 1,
+                    "item_surprise": 1
+                },
+                "taskRing": {
+                    "taskRing_Texas_1": {
+                        "task": {
+                            "task_Texas_1_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Texas_1_2": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Texas_2": {
+                        "task": {
+                            "task_Texas_2_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Texas_2_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Texas_3": {
+                        "task": {
+                            "task_Texas_3_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Texas_3_2": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Texas_3_3": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Texas_4": {
+                        "task": {
+                            "task_Texas_4_1": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            },
+                            "task_Texas_4_2": {
+                                "state": 2,
+                                "option": [
+                                    "option_Texas_4_2_1_1"
+                                ]
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Texas_5": {
+                        "task": {
+                            "task_Texas_5_1": {
+                                "state": 2,
+                                "option": [
+                                    "option_Texas_5_1_1_1"
+                                ]
+                            },
+                            "task_Texas_5_2": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Texas_5_3": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Texas_6": {
+                        "task": {
+                            "task_Texas_6_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Texas_6_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Texas_7": {
+                        "task": {
+                            "task_Texas_7_1": {
+                                "state": 2,
+                                "option": [
+                                    "option_Texas_7_1_1_1"
+                                ]
+                            },
+                            "task_Texas_7_2": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            }
+                        },
+                        "state": 3
+                    }
+                },
+                "state": 3
+            },
+            "char_card_Lavinia": {
+                "item": {
+                    "item_thankflower": 1,
+                    "item_borrow": 1,
+                    "item_resume": 1
+                },
+                "taskRing": {
+                    "taskRing_Lavinia_1": {
+                        "task": {
+                            "task_Lavinia_1_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Lavinia_1_2": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Lavinia_2": {
+                        "task": {
+                            "task_Lavinia_2_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Lavinia_2_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Lavinia_3": {
+                        "task": {
+                            "task_Lavinia_3_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Lavinia_3_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Lavinia_4": {
+                        "task": {
+                            "task_Lavinia_4_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Lavinia_4_2": {
+                                "state": 2,
+                                "option": [
+                                    "option_Lavinia_4_2_1_1"
+                                ]
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Lavinia_5": {
+                        "task": {
+                            "task_Lavinia_5_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Lavinia_5_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    }
+                },
+                "state": 3
+            },
+            "char_card_Leontuzzo": {
+                "item": {},
+                "taskRing": {
+                    "taskRing_Leontuzzo_1": {
+                        "task": {
+                            "task_Leontuzzo_1_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Leontuzzo_1_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Leontuzzo_2": {
+                        "task": {
+                            "task_Leontuzzo_2_1": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Leontuzzo_3": {
+                        "task": {
+                            "task_Leontuzzo_3_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Leontuzzo_3_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Leontuzzo_4": {
+                        "task": {
+                            "task_Leontuzzo_4_1": {
+                                "state": 2,
+                                "option": [
+                                    "option_Leontuzzo_4_1_1_1"
+                                ]
+                            },
+                            "task_Leontuzzo_4_2": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Leontuzzo_4_3": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Leontuzzo_5": {
+                        "task": {
+                            "task_Leontuzzo_5_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Leontuzzo_5_2": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Leontuzzo_5_3": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Leontuzzo_6": {
+                        "task": {
+                            "task_Leontuzzo_6_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Leontuzzo_6_2": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Leontuzzo_6_3": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Leontuzzo_7": {
+                        "task": {
+                            "task_Leontuzzo_7_1": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    }
+                },
+                "state": 3
+            },
+            "char_card_Lappland": {
+                "item": {},
+                "taskRing": {
+                    "taskRing_Lappland_1": {
+                        "task": {
+                            "task_Lappland_1_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Lappland_1_2": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Lappland_2": {
+                        "task": {
+                            "task_Lappland_2_1": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            },
+                            "task_Lappland_2_2": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Lappland_3": {
+                        "task": {
+                            "task_Lappland_3_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Lappland_3_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Lappland_4": {
+                        "task": {
+                            "task_Lappland_4_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Lappland_4_2": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            },
+                            "task_Lappland_4_3": {
+                                "state": 2,
+                                "option": [
+                                    "option_Lappland_4_3_1_1"
+                                ]
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Lappland_5": {
+                        "task": {
+                            "task_Lappland_5_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Lappland_5_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    }
+                },
+                "state": 3
+            },
+            "char_card_Danbrown": {
+                "item": {},
+                "taskRing": {
+                    "taskRing_Danbrown_1": {
+                        "task": {
+                            "task_Danbrown_1_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Danbrown_1_2": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Danbrown_2": {
+                        "task": {
+                            "task_Danbrown_2_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Danbrown_2_2": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Danbrown_2_3": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Danbrown_3": {
+                        "task": {
+                            "task_Danbrown_3_1": {
+                                "state": 2,
+                                "option": [
+                                    "option_Danbrown_3_1_1_1"
+                                ]
+                            },
+                            "task_Danbrown_3_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Danbrown_4": {
+                        "task": {
+                            "task_Danbrown_4_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Danbrown_4_2": {
+                                "state": 2,
+                                "option": [
+                                    "option_Danbrown_4_2_1_1"
+                                ]
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Danbrown_5": {
+                        "task": {
+                            "task_Danbrown_5_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Danbrown_5_2": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Danbrown_6": {
+                        "task": {
+                            "task_Danbrown_6_1": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    }
+                },
+                "state": 3
+            },
+            "char_card_Demetri": {
+                "item": {},
+                "taskRing": {
+                    "taskRing_Demetri_1": {
+                        "task": {
+                            "task_Demetri_1_1": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Demetri_2": {
+                        "task": {
+                            "task_Demetri_2_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Demetri_2_2": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Demetri_2_3": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Demetri_2_4": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Demetri_3": {
+                        "task": {
+                            "task_Demetri_3_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Demetri_3_2": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Demetri_4": {
+                        "task": {
+                            "task_Demetri_4_1": {
+                                "state": 2,
+                                "option": [
+                                    "option_Demetri_4_1_1_1"
+                                ]
+                            }
+                        },
+                        "state": 3
+                    }
+                },
+                "state": 3
+            },
+            "char_card_Sora": {
+                "item": {
+                    "item_chain": 1,
+                    "item_flower": 1,
+                    "item_drink": 1
+                },
+                "taskRing": {
+                    "taskRing_Sora_1": {
+                        "task": {
+                            "task_Sora_1_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Sora_1_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Sora_2": {
+                        "task": {
+                            "task_Sora_2_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Sora_2_2": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Sora_2_3": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Sora_3": {
+                        "task": {
+                            "task_Sora_3_1": {
+                                "state": 2,
+                                "option": [
+                                    "option_Sora_3_1_1_1"
+                                ]
+                            },
+                            "task_Sora_3_2": {
+                                "state": 2,
+                                "option": [
+                                    "option_Sora_3_2_1_1"
+                                ]
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Sora_4": {
+                        "task": {
+                            "task_Sora_4_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Sora_4_2": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Sora_4_3": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    }
+                },
+                "state": 3
+            },
+            "char_card_Giovanna": {
+                "item": {
+                    "item_bribery": 1,
+                    "item_officetoken": 1,
+                    "item_inspiration": 1
+                },
+                "taskRing": {
+                    "taskRing_Giovanna_1": {
+                        "task": {
+                            "task_Giovanna_1_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Giovanna_1_2": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Giovanna_1_3": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Giovanna_2": {
+                        "task": {
+                            "task_Giovanna_2_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Giovanna_2_2": {
+                                "state": 2,
+                                "progress": {
+                                    "value": 1,
+                                    "target": 1
+                                }
+                            },
+                            "task_Giovanna_2_3": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Giovanna_2_4": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Giovanna_3": {
+                        "task": {
+                            "task_Giovanna_3_1": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Giovanna_4": {
+                        "task": {
+                            "task_Giovanna_4_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Giovanna_4_2": {
+                                "state": 2,
+                                "option": [
+                                    "option_Giovanna_4_2_1_1"
+                                ]
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Giovanna_5": {
+                        "task": {
+                            "task_Giovanna_5_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Giovanna_5_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    }
+                },
+                "state": 3
+            },
+            "char_card_Agenir": {
+                "item": {},
+                "taskRing": {
+                    "taskRing_Agenir_1": {
+                        "task": {
+                            "task_Agenir_1_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Agenir_1_2": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Agenir_1_3": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Agenir_2": {
+                        "task": {
+                            "task_Agenir_2_1": {
+                                "state": 2,
+                                "option": [
+                                    "option_Agenir_2_1_1_1"
+                                ]
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Agenir_3": {
+                        "task": {
+                            "task_Agenir_3_1": {
+                                "state": 2,
+                                "option": [
+                                    "option_Agenir_3_1_1_1"
+                                ]
+                            },
+                            "task_Agenir_3_2": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    }
+                },
+                "state": 3
+            },
+            "char_card_Ben": {
+                "item": {},
+                "taskRing": {
+                    "taskRing_Ben_1": {
+                        "task": {
+                            "task_Ben_1_1": {
+                                "state": 2,
+                                "option": [
+                                    "option_Ben_1_1_1_1"
+                                ]
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Ben_2": {
+                        "task": {
+                            "task_Ben_2_1": {
+                                "state": 2,
+                                "option": []
+                            }
+                        },
+                        "state": 3
+                    },
+                    "taskRing_Ben_3": {
+                        "task": {
+                            "task_Ben_3_1": {
+                                "state": 2,
+                                "option": []
+                            },
+                            "task_Ben_3_2": {
+                                "state": 2,
+                                "option": [
+                                    "option_Ben_3_2_1_1"
+                                ]
+                            }
+                        },
+                        "state": 3
+                    }
+                },
+                "state": 3
+            }
+        },
+        "opera": {
+            "total": 10,
+            "show": null,
+            "release": {
+                "opera_5": 1,
+                "opera_4": 1,
+                "opera_3": 1,
+                "opera_2": 1,
+                "opera_1": 1
+            },
+            "like": {
+                "char_card_Texas": "opera_1",
+                "char_card_Demetri": "opera_1",
+                "char_card_Agenir": "opera_1",
+                "char_card_Ben": "opera_1",
+                "char_card_Leontuzzo": "opera_1",
+                "char_card_Giovanna": "opera_1",
+                "char_card_Lappland": "opera_1",
+                "char_card_Lavinia": "opera_1",
+                "char_card_Danbrown": "opera_1",
+                "char_card_Sora": "opera_1"
+            }
+        },
         "area": {
             "area_centro": 1,
             "area_rione": 1,
