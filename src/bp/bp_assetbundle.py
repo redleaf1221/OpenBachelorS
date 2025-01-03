@@ -1,4 +1,5 @@
 import os
+import json
 
 from flask import Blueprint
 from flask import request
@@ -14,6 +15,9 @@ from ..util.helper import is_valid_res_version, is_valid_asset_filename, downloa
 bp_assetbundle = Blueprint("bp_assetbundle", __name__)
 
 
+HOT_UPDATE_LIST_JSON = "hot_update_list.json"
+
+
 @bp_assetbundle.route(
     "/assetbundle/official/Android/assets/<string:res_version>/<string:asset_filename>"
 )
@@ -22,6 +26,21 @@ def assetbundle_official_Android_assets(res_version, asset_filename):
         asset_filename
     ):
         return "", 400
+
+    src_res_version = const_json_loader[VERSION_JSON]["version"]["resVersion"]
+    if const_json_loader[CONFIG_JSON]["mod"] and res_version != src_res_version:
+        if mod_loader.hot_update_list is None:
+            assetbundle_official_Android_assets(src_res_version, HOT_UPDATE_LIST_JSON)
+            with open(
+                os.path.join(ASSET_DIRPATH, src_res_version, HOT_UPDATE_LIST_JSON),
+                encoding="utf-8",
+            ) as f:
+                src_hot_update_list = json.load(f)
+            mod_loader.build_hot_update_list(src_hot_update_list)
+        if asset_filename == HOT_UPDATE_LIST_JSON:
+            return mod_loader.hot_update_list.copy()
+
+        res_version = src_res_version
 
     asset_dirpath = os.path.join(ASSET_DIRPATH, res_version)
     asset_filepath = os.path.join(asset_dirpath, asset_filename)
