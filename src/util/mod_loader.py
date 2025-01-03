@@ -6,7 +6,7 @@ from collections import namedtuple
 
 from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, MOD_DIRPATH
-from ..util.const_json_loader import const_json_loader
+from ..util.const_json_loader import const_json_loader, ConstJson
 
 
 ModInfo = namedtuple("ModInfo", ["mod_filename", "mod_filesize"])
@@ -22,6 +22,8 @@ class ModLoader:
 
         self.mod_dict = {}
         self.ab_dict = {}
+
+        self.hot_update_list = None
 
         if not const_json_loader[CONFIG_JSON]["mod"]:
             return
@@ -69,6 +71,35 @@ class ModLoader:
             if mod_used:
                 mod_info = ModInfo(mod_filename=mod_filename, mod_filesize=mod_filesize)
                 self.mod_dict[mod_filename] = mod_info
+
+    MOD_CID = 1000000
+
+    def build_hot_update_list(self, src_hot_update_list):
+        dst_ab_info_obj_lst = []
+
+        for ab_info_obj in src_hot_update_list["abInfos"]:
+            ab_filepath = ab_info_obj["name"]
+            if ab_filepath not in self.ab_dict:
+                dst_ab_info_obj_lst.append(ab_info_obj)
+
+        cid = self.MOD_CID
+
+        for ab_filepath in self.ab_dict:
+            ab_info = self.ab_dict[ab_filepath]
+            ab_info_obj = {
+                "name": ab_filepath,
+                "hash": ab_info.ab_md5,
+                "md5": ab_info.ab_md5,
+                "totalSize": ab_info.mod_filesize,
+                "abSize": ab_info.ab_filesize,
+                "cid": cid,
+            }
+            dst_ab_info_obj_lst.append(ab_info_obj)
+            cid += 1
+
+        src_hot_update_list["abInfos"] = dst_ab_info_obj_lst
+
+        self.hot_update_list = ConstJson(src_hot_update_list)
 
 
 mod_loader = ModLoader()
