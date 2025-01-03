@@ -7,6 +7,7 @@ from collections import namedtuple
 from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, MOD_DIRPATH
 from ..util.const_json_loader import const_json_loader, ConstJson
+from ..util.helper import get_asset_filename
 
 
 ModInfo = namedtuple("ModInfo", ["mod_filename", "mod_filesize"])
@@ -22,6 +23,8 @@ class ModLoader:
 
         self.mod_dict = {}
         self.ab_dict = {}
+
+        self.ab_asset_filename_dict = {}
 
         self.hot_update_list = None
 
@@ -68,6 +71,9 @@ class ModLoader:
                         )
                     self.ab_dict[ab_filepath] = ab_info
 
+                    ab_asset_filename = get_asset_filename(ab_filepath)
+                    self.ab_asset_filename_dict[ab_asset_filename] = ab_filepath
+
             if mod_used:
                 mod_info = ModInfo(mod_filename=mod_filename, mod_filesize=mod_filesize)
                 self.mod_dict[mod_filename] = mod_info
@@ -100,6 +106,12 @@ class ModLoader:
         src_hot_update_list["abInfos"] = dst_ab_info_obj_lst
 
         self.hot_update_list = ConstJson(src_hot_update_list)
+
+    def get_mod_filename_by_asset_filename(self, asset_filename):
+        if asset_filename in self.ab_asset_filename_dict:
+            ab_filepath = self.ab_asset_filename_dict[asset_filename]
+            return self.ab_dict[ab_filepath].mod_filename
+        return None
 
 
 mod_loader = ModLoader()

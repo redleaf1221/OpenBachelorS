@@ -135,3 +135,11 @@ def is_valid_res_version(res_version: str) -> bool:
 
 def is_valid_asset_filename(asset_filename: str) -> bool:
     return is_valid_filename(asset_filename)
+
+
+def get_asset_filename(ab_filepath: str) -> str:
+    asset_filename = (
+        os.path.splitext(ab_filepath)[0].replace("/", "_").replace("#", "__") + ".dat"
+    )
+
+    return asset_filename
