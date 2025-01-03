@@ -7,7 +7,13 @@ from flask import send_file
 import requests
 
 from ..const.json_const import true, false, null
-from ..const.filepath import CONFIG_JSON, VERSION_JSON, ASSET_DIRPATH, MOD_DIRPATH
+from ..const.filepath import (
+    CONFIG_JSON,
+    VERSION_JSON,
+    ASSET_DIRPATH,
+    MOD_DIRPATH,
+    TMP_DIRPATH,
+)
 from ..util.const_json_loader import const_json_loader
 from ..util.mod_loader import mod_loader
 from ..util.helper import is_valid_res_version, is_valid_asset_filename, download_file
@@ -40,6 +46,14 @@ def assetbundle_official_Android_assets(res_version, asset_filename):
         if asset_filename == HOT_UPDATE_LIST_JSON:
             hot_update_list = mod_loader.hot_update_list.copy()
             hot_update_list["versionId"] = res_version
+            if const_json_loader[CONFIG_JSON]["debug"]:
+                os.makedirs(TMP_DIRPATH, exist_ok=True)
+                with open(
+                    os.path.join(TMP_DIRPATH, HOT_UPDATE_LIST_JSON),
+                    "w",
+                    encoding="utf-8",
+                ) as f:
+                    json.dump(hot_update_list, f, ensure_ascii=False, indent=4)
             return hot_update_list
 
         mod_filename = mod_loader.get_mod_filename_by_asset_filename(asset_filename)
