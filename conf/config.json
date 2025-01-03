@@ -3,5 +3,6 @@
     "port": 8443,
     "adaptive": true,
     "multi_user": true,
-    "debug": true
+    "debug": true,
+    "mod": true
 }

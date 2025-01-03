@@ -8,6 +8,7 @@ import requests
 from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON, ASSET_DIRPATH
 from ..util.const_json_loader import const_json_loader
+from ..util.mod_loader import mod_loader
 from ..util.helper import is_valid_res_version, is_valid_asset_filename, download_file
 
 bp_assetbundle = Blueprint("bp_assetbundle", __name__)

@@ -2,6 +2,7 @@
 /sav/
 /multi_sav/
 /asset/
+/mod/*.dat
 
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python

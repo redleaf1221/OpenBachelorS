@@ -21,6 +21,8 @@ TMP_DIRPATH = "tmp/"
 
 ASSET_DIRPATH = "asset/"
 
+MOD_DIRPATH = "mod/"
+
 GAME_LINK_FILEPATH = "link/game.txt"
 MUMU_LINK_FILEPATH = "link/mumu12.txt"
 
