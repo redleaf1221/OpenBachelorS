@@ -1,4 +1,5 @@
 import json
+from uuid import uuid4
 
 from flask import Blueprint
 from flask import request
@@ -58,6 +59,10 @@ def config_prod_official_remote_config():
 @bp_config.route("/config/prod/official/Android/version")
 def config_prod_official_Android_version():
     version = const_json_loader[VERSION_JSON]["version"].copy()
+    if const_json_loader[CONFIG_JSON]["mod"]:
+        src_res_version = version["resVersion"]
+        dst_res_version = f"{src_res_version.rpartition('-')[0]}-{uuid4().hex[:6]}"
+        version["resVersion"] = dst_res_version
     return version
 
 
