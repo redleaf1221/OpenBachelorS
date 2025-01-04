@@ -26,7 +26,7 @@ def get_char_id_from_skin_id(skin_id: str) -> str:
 
 
 def get_username_by_token(token: str) -> str:
-    return urlsafe_b64encode(token.encode()).decode()
+    return urlsafe_b64encode(token.encode()).decode()[:64]
 
 
 def encode_stage_id(stage_id: str) -> str:
