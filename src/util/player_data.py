@@ -25,6 +25,7 @@ from ..const.filepath import (
     ENEMY_HANDBOOK_TABLE,
     ACTIVITY_TABLE,
     CHAR_PATCH_TABLE,
+    CLIMB_TOWER_TABLE,
     SAV_DELTA_JSON,
     SAV_PENDING_DELTA_JSON,
     MULTI_USER_SAV_DIRPATH,
@@ -387,6 +388,23 @@ def build_player_data_template():
         for activity_id, activity_obj in activity_table["activity"][activity_type_id]:
             if activity_id not in tmpl_json_obj["activity"][activity_type_id]:
                 tmpl_json_obj["activity"][activity_type_id][activity_id] = {}
+
+    # ----------
+
+    climb_tower_table = const_json_loader[CLIMB_TOWER_TABLE]
+
+    for tower_id, tower_obj in const_json_loader[CLIMB_TOWER_TABLE]["towers"]:
+        if tower_obj["towerType"] == "TRAINING":
+            continue
+
+        tmpl_json_obj["tower"]["outer"]["towers"][tower_id] = {
+            "best": 6,
+            "reward": [1, 2, 3, 4, 5, 6],
+            "unlockHard": true,
+            "hardBest": 6,
+            "canSweep": true,
+            "canSweepHard": true,
+        }
 
     # ----------
 
