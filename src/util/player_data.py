@@ -442,6 +442,8 @@ def build_player_data_template():
     # ----------
 
     for i, char_id in char_id_lst:
+        if character_table[char_id]["isNotObtainable"]:
+            continue
         char_num_id = get_char_num_id(char_id)
         tmpl_json_obj["building"]["chars"][str(char_num_id)] = {
             "charId": char_id,
