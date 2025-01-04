@@ -441,6 +441,19 @@ def build_player_data_template():
 
     # ----------
 
+    for i, char_id in char_id_lst:
+        char_num_id = get_char_num_id(char_id)
+        tmpl_json_obj["building"]["chars"][str(char_num_id)] = {
+            "charId": char_id,
+            "lastApAddTime": 1700000000,
+            "ap": 8640000,
+            "roomSlotId": "",
+            "index": -1,
+            "changeScale": 0,
+            "bubble": {"normal": {"add": -1, "ts": 0}, "assist": {"add": -1, "ts": 0}},
+            "workTime": 0,
+        }
+
     player_data_template = ConstJson(tmpl_json_obj)
     return player_data_template, char_id_lst
 
