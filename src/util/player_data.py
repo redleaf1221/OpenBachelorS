@@ -9,6 +9,7 @@ from flask import request
 from ..const.json_const import true, false, null
 from ..const.filepath import (
     CONFIG_JSON,
+    VERSION_JSON,
     TMPL_JSON,
     SKIN_TABLE,
     CHARWORD_TABLE,
@@ -420,6 +421,10 @@ def build_player_data_template():
         tmpl_json_obj["tower"]["season"]["passWithGodCard"][card_id] = (
             tower_id_lst.copy()
         )
+
+    tmpl_json_obj["tower"]["season"]["id"] = const_json_loader[VERSION_JSON][
+        "tower_season"
+    ]
 
     # ----------
 
