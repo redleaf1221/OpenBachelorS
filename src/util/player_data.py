@@ -83,6 +83,8 @@ def build_player_data_template():
             ):
                 char_id_skin_id_dict[char_id] = skin_id
 
+    char_id_lst = []
+
     max_char_num_id = 0
 
     for char_id, char_obj in character_table:
@@ -91,6 +93,8 @@ def build_player_data_template():
 
         if char_id == "char_512_aprot":
             continue
+
+        char_id_lst.append(char_id)
 
         char_num_id = get_char_num_id(char_id)
 
@@ -237,6 +241,8 @@ def build_player_data_template():
         tmpl_json_obj["troop"]["chars"][str(char_num_id)] = player_data_char_obj
 
     tmpl_json_obj["troop"]["curCharInstId"] = max_char_num_id + 1
+
+    char_id_lst = ConstJson(char_id_lst)
 
     # ----------
 
@@ -436,10 +442,10 @@ def build_player_data_template():
     # ----------
 
     player_data_template = ConstJson(tmpl_json_obj)
-    return player_data_template
+    return player_data_template, char_id_lst
 
 
-player_data_template = build_player_data_template()
+player_data_template, char_id_lst = build_player_data_template()
 
 
 # always a dict-like object (unless no_dict is true)
