@@ -426,6 +426,13 @@ def build_player_data_template():
         "tower_season"
     ]
 
+    for mission_id, mission_obj in climb_tower_table["missionData"]:
+        tmpl_json_obj["tower"]["season"]["missions"][mission_id] = {
+            "value": 1,
+            "target": 1,
+            "hasRecv": true,
+        }
+
     # ----------
 
     player_data_template = ConstJson(tmpl_json_obj)
