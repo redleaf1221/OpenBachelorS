@@ -393,7 +393,7 @@ def build_player_data_template():
 
     climb_tower_table = const_json_loader[CLIMB_TOWER_TABLE]
 
-    for tower_id, tower_obj in const_json_loader[CLIMB_TOWER_TABLE]["towers"]:
+    for tower_id, tower_obj in climb_tower_table["towers"]:
         if tower_obj["towerType"] == "TRAINING":
             continue
 
@@ -405,6 +405,11 @@ def build_player_data_template():
             "canSweep": true,
             "canSweepHard": true,
         }
+
+    for card_id, card_obj in climb_tower_table["mainCards"]:
+        tmpl_json_obj["tower"]["outer"]["pickedGodCard"][card_id] = card_obj[
+            "subCardIds"
+        ].copy()
 
     # ----------
 
