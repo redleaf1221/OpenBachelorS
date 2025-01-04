@@ -27,6 +27,7 @@ from ..const.filepath import (
     ACTIVITY_TABLE,
     CHAR_PATCH_TABLE,
     CLIMB_TOWER_TABLE,
+    BUILDING_DATA,
     SAV_DELTA_JSON,
     SAV_PENDING_DELTA_JSON,
     MULTI_USER_SAV_DIRPATH,
@@ -460,6 +461,14 @@ def build_player_data_template():
     tmpl_json_obj["building"]["roomSlots"]["slot_36"]["charInstIds"] = [2]
     tmpl_json_obj["building"]["chars"]["2"]["roomSlotId"] = "slot_36"
     tmpl_json_obj["building"]["chars"]["2"]["index"] = 0
+
+    building_data = const_json_loader[BUILDING_DATA]
+
+    for furniture_id, furniture_obj in building_data["customData"]["furnitures"]:
+        tmpl_json_obj["building"]["furniture"][furniture_id] = {
+            "count": 9999,
+            "inUse": 0,
+        }
 
     # ----------
 
