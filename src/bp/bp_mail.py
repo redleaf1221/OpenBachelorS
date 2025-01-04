@@ -15,7 +15,7 @@ bp_mail = Blueprint("bp_mail", __name__)
 def mail_getMetaInfoList(player_data):
     request_json = request.get_json()
 
-    mail_json_obj, has_pending_mail = get_player_mailbox(player_data)
+    mail_json_obj, pending_mail_set = get_player_mailbox(player_data)
 
     result_lst = []
 
@@ -39,17 +39,38 @@ def mail_getMetaInfoList(player_data):
 def mail_listMailBox(player_data):
     request_json = request.get_json()
 
-    mail_json_obj, has_pending_mail = get_player_mailbox(player_data)
+    mail_json_obj, pending_mail_set = get_player_mailbox(player_data)
 
     response = mail_json_obj
     return response
+
+
+def get_item_lst(mail_json_obj, mail_id_set):
+    item_lst = []
+
+    for mail in mail_json_obj["mailList"]:
+        if mail["mailId"] in mail_id_set:
+            item_lst += mail["items"]
+
+    return item_lst
 
 
 @bp_mail.route("/mail/receiveMail", methods=["POST"])
 @player_data_decorator
 def mail_receiveMail(player_data):
     request_json = request.get_json()
-    response = {}
+
+    mail_json_obj, pending_mail_set = get_player_mailbox(player_data)
+
+    mail_id = request_json["mailId"]
+    player_data.extra_save.save_obj["received_mail_lst"].append(mail_id)
+
+    item_lst = get_item_lst(mail_json_obj, {mail_id})
+
+    response = {
+        "result": 0,
+        "items": item_lst,
+    }
     return response
 
 
@@ -57,7 +78,17 @@ def mail_receiveMail(player_data):
 @player_data_decorator
 def mail_receiveAllMail(player_data):
     request_json = request.get_json()
-    response = {}
+
+    mail_json_obj, pending_mail_set = get_player_mailbox(player_data)
+
+    for mail_id in pending_mail_set:
+        player_data.extra_save.save_obj["received_mail_lst"].append(mail_id)
+
+    item_lst = get_item_lst(mail_json_obj, pending_mail_set)
+
+    response = {
+        "items": item_lst,
+    }
     return response
 
 
@@ -65,5 +96,11 @@ def mail_receiveAllMail(player_data):
 @player_data_decorator
 def mail_removeAllReceivedMail(player_data):
     request_json = request.get_json()
+
+    player_data.extra_save.save_obj["removed_mail_lst"] += (
+        player_data.extra_save.save_obj["received_mail_lst"]
+    )
+    player_data.extra_save.save_obj["received_mail_lst"] = []
+
     response = {}
     return response

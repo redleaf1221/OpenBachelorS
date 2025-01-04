@@ -8,7 +8,7 @@ def get_player_mailbox(player_data):
 
     mail_json_obj = const_json_loader[MAIL_JSON].copy()
 
-    has_pending_mail = False
+    pending_mail_set = set()
     dst_mail_lst = []
 
     for mail in mail_json_obj["mailList"]:
@@ -20,10 +20,10 @@ def get_player_mailbox(player_data):
         if mail_id in received_mail_set:
             mail["state"] = 1
         else:
-            has_pending_mail = True
+            pending_mail_set.add(mail_id)
 
         dst_mail_lst.append(mail)
 
     mail_json_obj["mailList"] = dst_mail_lst
 
-    return mail_json_obj, has_pending_mail
+    return mail_json_obj, pending_mail_set
