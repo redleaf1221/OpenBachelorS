@@ -1634,7 +1634,97 @@
             ]
         }
     },
-    "tower": {},
+    "tower": {
+        "current": {
+            "status": {
+                "state": "NONE",
+                "tower": "",
+                "coord": 0,
+                "tactical": {
+                    "PIONEER": "",
+                    "WARRIOR": "",
+                    "TANK": "",
+                    "SNIPER": "",
+                    "CASTER": "",
+                    "SUPPORT": "",
+                    "MEDIC": "",
+                    "SPECIAL": ""
+                },
+                "strategy": "OPTIMIZE",
+                "start": 0,
+                "isHard": false
+            },
+            "layer": [],
+            "cards": {},
+            "godCard": {
+                "id": "",
+                "subGodCardId": ""
+            },
+            "halftime": {
+                "count": 0,
+                "candidate": [],
+                "canGiveUp": false
+            },
+            "trap": []
+        },
+        "outer": {
+            "training": {
+                "tower_tr_01": 1,
+                "tower_tr_02": 1,
+                "tower_tr_03": 1
+            },
+            "towers": {
+                "tower_tr_01": {
+                    "best": 1,
+                    "reward": [],
+                    "unlockHard": false,
+                    "hardBest": 0
+                },
+                "tower_tr_02": {
+                    "best": 1,
+                    "reward": [],
+                    "unlockHard": false,
+                    "hardBest": 0
+                },
+                "tower_tr_03": {
+                    "best": 1,
+                    "reward": [],
+                    "unlockHard": false,
+                    "hardBest": 0
+                }
+            },
+            "hasTowerPass": 1,
+            "pickedGodCard": {},
+            "tactical": {
+                "PIONEER": "tatical_pioneer_01",
+                "WARRIOR": "tatical_warrior_01",
+                "TANK": "tatical_tank_01",
+                "SNIPER": "tatical_sniper_01",
+                "CASTER": "tatical_caster_01",
+                "SUPPORT": "tatical_support_01",
+                "MEDIC": "tatical_medic_01",
+                "SPECIAL": "tatical_special_01"
+            },
+            "strategy": "OPTIMIZE",
+            "squad": []
+        },
+        "season": {
+            "id": "tower_season_7",
+            "finishTs": 1700000000,
+            "missions": {},
+            "passWithGodCard": {},
+            "slots": {},
+            "period": {
+                "termTs": 1700000000,
+                "items": {
+                    "mod_update_token_1": 60,
+                    "mod_update_token_2": 24
+                },
+                "cur": 0,
+                "len": 4
+            }
+        }
+    },
     "siracusaMap": {
         "select": null,
         "card": {
