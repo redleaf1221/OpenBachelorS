@@ -60,6 +60,7 @@ def assetbundle_official_Android_assets(res_version, asset_filename):
         if mod_filename is not None:
             mod_filepath = os.path.join(MOD_DIRPATH, mod_filename)
             mod_abs_filepath = os.path.abspath(mod_filepath)
+            print("!!!", mod_abs_filepath)
             return send_file(mod_abs_filepath)
 
         # not found in mod, fall back to src res version
