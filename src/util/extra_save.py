@@ -5,6 +5,14 @@ from ..const.json_const import true, false, null
 
 
 class ExtraSave:
+    @classmethod
+    def get_default_save_obj(cls):
+        return {
+            "cur_stage_id": null,
+            "received_mail_lst": [],
+            "removed_mail_lst": [],
+        }
+
     def __init__(self, filepath: str):
         self.filepath = filepath
 
@@ -12,14 +20,7 @@ class ExtraSave:
             with open(self.filepath, encoding="utf-8") as f:
                 self.save_obj = json.load(f)
         else:
-            self.save_obj = self.get_default_save_obj()
-
-    def get_default_save_obj():
-        return {
-            "cur_stage_id": null,
-            "received_mail_lst": [],
-            "removed_mail_lst": [],
-        }
+            self.save_obj = ExtraSave.get_default_save_obj()
 
     def save(self):
         dirpath = os.path.dirname(self.filepath)
@@ -29,4 +30,4 @@ class ExtraSave:
             json.dump(self.save_obj, f, ensure_ascii=False, indent=4)
 
     def reset(self):
-        self.save_obj = self.get_default_save_obj()
+        self.save_obj = ExtraSave.get_default_save_obj()
