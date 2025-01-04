@@ -68,9 +68,10 @@ def mail_receiveMail(player_data):
 
     mail_id = request_json["mailId"]
     player_data.extra_save.save_obj["received_mail_lst"].append(mail_id)
-    pending_mail_set.remove(mail_id)
 
     item_lst = get_item_lst(mail_json_obj, {mail_id})
+
+    pending_mail_set.remove(mail_id)
 
     player_data["pushFlags"]["hasGifts"] = int(bool(pending_mail_set))
 
@@ -90,9 +91,10 @@ def mail_receiveAllMail(player_data):
 
     for mail_id in pending_mail_set:
         player_data.extra_save.save_obj["received_mail_lst"].append(mail_id)
-    pending_mail_set = set()
 
     item_lst = get_item_lst(mail_json_obj, pending_mail_set)
+
+    pending_mail_set = set()
 
     player_data["pushFlags"]["hasGifts"] = int(bool(pending_mail_set))
 
