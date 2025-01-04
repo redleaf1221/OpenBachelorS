@@ -302,7 +302,942 @@
             "templateMedalList": null
         }
     },
-    "building": {},
+    "building": {
+        "status": {
+            "labor": {
+                "buffSpeed": 0,
+                "processPoint": 0,
+                "value": 200,
+                "lastUpdateTime": 1700000000,
+                "maxValue": 200
+            },
+            "workshop": {
+                "bonusActive": 0,
+                "bonus": {}
+            }
+        },
+        "chars": {},
+        "roomSlots": {
+            "slot_34": {
+                "level": 5,
+                "state": 2,
+                "roomId": "CONTROL",
+                "charInstIds": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_37": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_38": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_33": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_27": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_26": {
+                "level": 3,
+                "state": 2,
+                "roomId": "POWER",
+                "charInstIds": [
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_25": {
+                "level": 3,
+                "state": 2,
+                "roomId": "MANUFACTURE",
+                "charInstIds": [
+                    -1,
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_24": {
+                "level": 3,
+                "state": 2,
+                "roomId": "TRADING",
+                "charInstIds": [
+                    -1,
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_28": {
+                "level": 5,
+                "state": 2,
+                "roomId": "DORMITORY",
+                "charInstIds": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_29": {
+                "level": 1,
+                "state": 2,
+                "roomId": "CORRIDOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_30": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_31": {
+                "level": 1,
+                "state": 2,
+                "roomId": "CORRIDOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_32": {
+                "level": 3,
+                "state": 2,
+                "roomId": "WORKSHOP",
+                "charInstIds": [
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_35": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_36": {
+                "level": 3,
+                "state": 2,
+                "roomId": "MEETING",
+                "charInstIds": [
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_18": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_21": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_17": {
+                "level": 1,
+                "state": 2,
+                "roomId": "CORRIDOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_16": {
+                "level": 3,
+                "state": 2,
+                "roomId": "POWER",
+                "charInstIds": [
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_15": {
+                "level": 3,
+                "state": 2,
+                "roomId": "MANUFACTURE",
+                "charInstIds": [
+                    -1,
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_19": {
+                "level": 1,
+                "state": 2,
+                "roomId": "CORRIDOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_20": {
+                "level": 5,
+                "state": 2,
+                "roomId": "DORMITORY",
+                "charInstIds": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_14": {
+                "level": 3,
+                "state": 2,
+                "roomId": "TRADING",
+                "charInstIds": [
+                    -1,
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_22": {
+                "level": 1,
+                "state": 2,
+                "roomId": "CORRIDOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_23": {
+                "level": 3,
+                "state": 2,
+                "roomId": "HIRE",
+                "charInstIds": [
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_11": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_8": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_9": {
+                "level": 5,
+                "state": 2,
+                "roomId": "DORMITORY",
+                "charInstIds": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_10": {
+                "level": 1,
+                "state": 2,
+                "roomId": "CORRIDOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_12": {
+                "level": 1,
+                "state": 2,
+                "roomId": "CORRIDOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_13": {
+                "level": 3,
+                "state": 2,
+                "roomId": "TRAINING",
+                "charInstIds": [
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_7": {
+                "level": 3,
+                "state": 2,
+                "roomId": "POWER",
+                "charInstIds": [
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_6": {
+                "level": 3,
+                "state": 2,
+                "roomId": "MANUFACTURE",
+                "charInstIds": [
+                    -1,
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_5": {
+                "level": 3,
+                "state": 2,
+                "roomId": "MANUFACTURE",
+                "charInstIds": [
+                    -1,
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_4": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_3": {
+                "level": 5,
+                "state": 2,
+                "roomId": "DORMITORY",
+                "charInstIds": [
+                    -1,
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                ],
+                "completeConstructTime": -1
+            },
+            "slot_2": {
+                "level": 1,
+                "state": 2,
+                "roomId": "CORRIDOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_1": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            }
+        },
+        "rooms": {
+            "CONTROL": {
+                "slot_34": {
+                    "buff": {
+                        "global": {
+                            "apCost": 0,
+                            "roomCnt": {}
+                        },
+                        "manufacture": {
+                            "speed": 0,
+                            "sSpeed": 0,
+                            "roomSpeed": {},
+                            "apCost": 0
+                        },
+                        "trading": {
+                            "speed": 0,
+                            "sSpeed": 0,
+                            "roomSpeed": {},
+                            "charSpeed": {},
+                            "charLimit": {},
+                            "apCost": 0,
+                            "roomLimit": {}
+                        },
+                        "meeting": {
+                            "clue": 0,
+                            "speedUp": 0,
+                            "sSpeed": 0,
+                            "weight": {},
+                            "apCost": 0,
+                            "notOwned": 0
+                        },
+                        "hire": {
+                            "spUp": {
+                                "base": 0,
+                                "up": 0
+                            },
+                            "apCost": 0
+                        },
+                        "power": {
+                            "apCost": 0
+                        },
+                        "dormitory": {
+                            "recover": 0
+                        },
+                        "apCost": {},
+                        "point": {},
+                        "training": {
+                            "speed": 0
+                        }
+                    },
+                    "apCost": -100,
+                    "lastUpdateTime": 1700000000,
+                    "presetQueue": []
+                }
+            },
+            "ELEVATOR": {
+                "slot_37": {},
+                "slot_38": {},
+                "slot_33": {},
+                "slot_27": {},
+                "slot_30": {},
+                "slot_35": {},
+                "slot_18": {},
+                "slot_21": {},
+                "slot_11": {},
+                "slot_8": {},
+                "slot_4": {},
+                "slot_1": {}
+            },
+            "POWER": {
+                "slot_26": {
+                    "buff": {
+                        "global": {
+                            "roomCnt": {}
+                        },
+                        "manufacture": {
+                            "charSpeed": {}
+                        },
+                        "laborSpeed": 0,
+                        "apCost": {
+                            "self": {}
+                        }
+                    },
+                    "presetQueue": []
+                },
+                "slot_16": {
+                    "buff": {
+                        "global": {
+                            "roomCnt": {}
+                        },
+                        "manufacture": {
+                            "charSpeed": {}
+                        },
+                        "laborSpeed": 0,
+                        "apCost": {
+                            "self": {}
+                        }
+                    },
+                    "presetQueue": []
+                },
+                "slot_7": {
+                    "buff": {
+                        "global": {
+                            "roomCnt": {}
+                        },
+                        "manufacture": {
+                            "charSpeed": {}
+                        },
+                        "laborSpeed": 0,
+                        "apCost": {
+                            "self": {}
+                        }
+                    },
+                    "presetQueue": []
+                }
+            },
+            "MANUFACTURE": {
+                "slot_25": {
+                    "buff": {
+                        "apCost": {
+                            "self": {},
+                            "all": 0
+                        },
+                        "speed": 0,
+                        "capacity": 0,
+                        "sSpeed": 0,
+                        "tSpeed": {},
+                        "cSpeed": 0,
+                        "capFrom": {},
+                        "maxSpeed": -1,
+                        "point": {},
+                        "flag": {},
+                        "skillExtend": {}
+                    },
+                    "state": 0,
+                    "formulaId": "4",
+                    "remainSolutionCnt": 99,
+                    "outputSolutionCnt": 0,
+                    "lastUpdateTime": 1700000000,
+                    "saveTime": 0,
+                    "tailTime": 0,
+                    "apCost": -100,
+                    "completeWorkTime": -1,
+                    "capacity": 54,
+                    "processPoint": 0,
+                    "display": {
+                        "base": -100,
+                        "buff": 0
+                    },
+                    "presetQueue": []
+                },
+                "slot_15": {
+                    "buff": {
+                        "apCost": {
+                            "self": {},
+                            "all": 0
+                        },
+                        "speed": 0,
+                        "capacity": 0,
+                        "sSpeed": 0,
+                        "tSpeed": {},
+                        "cSpeed": 0,
+                        "capFrom": {},
+                        "maxSpeed": -1,
+                        "point": {},
+                        "flag": {},
+                        "skillExtend": {}
+                    },
+                    "state": 0,
+                    "formulaId": "4",
+                    "remainSolutionCnt": 99,
+                    "outputSolutionCnt": 0,
+                    "lastUpdateTime": 1700000000,
+                    "saveTime": 0,
+                    "tailTime": 0,
+                    "apCost": -100,
+                    "completeWorkTime": -1,
+                    "capacity": 54,
+                    "processPoint": 0,
+                    "display": {
+                        "base": -100,
+                        "buff": 0
+                    },
+                    "presetQueue": []
+                },
+                "slot_5": {
+                    "buff": {
+                        "apCost": {
+                            "self": {},
+                            "all": 0
+                        },
+                        "speed": 0,
+                        "capacity": 0,
+                        "sSpeed": 0,
+                        "tSpeed": {},
+                        "cSpeed": 0,
+                        "capFrom": {},
+                        "maxSpeed": -1,
+                        "point": {},
+                        "flag": {},
+                        "skillExtend": {}
+                    },
+                    "state": 0,
+                    "formulaId": "3",
+                    "remainSolutionCnt": 99,
+                    "outputSolutionCnt": 0,
+                    "lastUpdateTime": 1700000000,
+                    "saveTime": 0,
+                    "tailTime": 0,
+                    "apCost": -100,
+                    "completeWorkTime": -1,
+                    "capacity": 54,
+                    "processPoint": 0,
+                    "display": {
+                        "base": -100,
+                        "buff": 0
+                    },
+                    "presetQueue": []
+                },
+                "slot_6": {
+                    "buff": {
+                        "apCost": {
+                            "self": {},
+                            "all": 0
+                        },
+                        "speed": 0,
+                        "capacity": 0,
+                        "sSpeed": 0,
+                        "tSpeed": {},
+                        "cSpeed": 0,
+                        "capFrom": {},
+                        "maxSpeed": -1,
+                        "point": {},
+                        "flag": {},
+                        "skillExtend": {}
+                    },
+                    "state": 0,
+                    "formulaId": "3",
+                    "remainSolutionCnt": 99,
+                    "outputSolutionCnt": 0,
+                    "lastUpdateTime": 1700000000,
+                    "saveTime": 0,
+                    "tailTime": 0,
+                    "apCost": -100,
+                    "completeWorkTime": -1,
+                    "capacity": 54,
+                    "processPoint": 0,
+                    "display": {
+                        "base": -100,
+                        "buff": 0
+                    },
+                    "presetQueue": []
+                }
+            },
+            "TRADING": {
+                "slot_24": {
+                    "buff": {
+                        "speed": 0,
+                        "limit": 0,
+                        "apCost": {
+                            "all": 0,
+                            "single": {},
+                            "self": {}
+                        },
+                        "rate": {},
+                        "tgw": [],
+                        "point": {},
+                        "manuLines": {},
+                        "orderWtBuff": [],
+                        "orderBuff": [],
+                        "violatedInfo": {
+                            "orderChecker": [],
+                            "cntBuff": []
+                        },
+                        "speGoldOrder": {
+                            "activated": false
+                        }
+                    },
+                    "state": 0,
+                    "lastUpdateTime": 1700000000,
+                    "strategy": "O_GOLD",
+                    "stockLimit": 10,
+                    "apCost": 0,
+                    "stock": [],
+                    "next": {
+                        "order": 0,
+                        "processPoint": 0,
+                        "maxPoint": 0,
+                        "speed": 1
+                    },
+                    "completeWorkTime": -1,
+                    "display": {
+                        "base": -100,
+                        "buff": 0
+                    },
+                    "presetQueue": []
+                },
+                "slot_14": {
+                    "buff": {
+                        "speed": 0,
+                        "limit": 0,
+                        "apCost": {
+                            "all": 0,
+                            "single": {},
+                            "self": {}
+                        },
+                        "rate": {},
+                        "tgw": [],
+                        "point": {},
+                        "manuLines": {},
+                        "orderWtBuff": [],
+                        "orderBuff": [],
+                        "violatedInfo": {
+                            "orderChecker": [],
+                            "cntBuff": []
+                        },
+                        "speGoldOrder": {
+                            "activated": false
+                        }
+                    },
+                    "state": 0,
+                    "lastUpdateTime": 1700000000,
+                    "strategy": "O_GOLD",
+                    "stockLimit": 10,
+                    "apCost": 0,
+                    "stock": [],
+                    "next": {
+                        "order": 0,
+                        "processPoint": 0,
+                        "maxPoint": 0,
+                        "speed": 1
+                    },
+                    "completeWorkTime": -1,
+                    "display": {
+                        "base": -100,
+                        "buff": 0
+                    },
+                    "presetQueue": []
+                }
+            },
+            "CORRIDOR": {
+                "slot_29": {},
+                "slot_31": {},
+                "slot_17": {},
+                "slot_19": {},
+                "slot_22": {},
+                "slot_10": {},
+                "slot_12": {},
+                "slot_2": {}
+            },
+            "DORMITORY": {
+                "slot_28": {
+                    "buff": {
+                        "apCost": {
+                            "all": 0,
+                            "single": {
+                                "target": null,
+                                "value": 0
+                            },
+                            "self": {},
+                            "exclude": {}
+                        },
+                        "point": {}
+                    },
+                    "comfort": 5000,
+                    "diySolution": {}
+                },
+                "slot_20": {
+                    "buff": {
+                        "apCost": {
+                            "all": 0,
+                            "single": {
+                                "target": null,
+                                "value": 0
+                            },
+                            "self": {},
+                            "exclude": {}
+                        },
+                        "point": {}
+                    },
+                    "comfort": 5000,
+                    "diySolution": {}
+                },
+                "slot_9": {
+                    "buff": {
+                        "apCost": {
+                            "all": 0,
+                            "single": {
+                                "target": null,
+                                "value": 0
+                            },
+                            "self": {},
+                            "exclude": {}
+                        },
+                        "point": {}
+                    },
+                    "comfort": 5000,
+                    "diySolution": {}
+                },
+                "slot_3": {
+                    "buff": {
+                        "apCost": {
+                            "all": 0,
+                            "single": {
+                                "target": null,
+                                "value": 0
+                            },
+                            "self": {},
+                            "exclude": {}
+                        },
+                        "point": {}
+                    },
+                    "comfort": 5000,
+                    "diySolution": {}
+                }
+            },
+            "WORKSHOP": {
+                "slot_32": {
+                    "buff": {
+                        "rate": {
+                            "all": 1,
+                            "W_EVOLVE": 1,
+                            "W_BUILDING": 1,
+                            "W_ASC": 1,
+                            "W_SKILL": 1
+                        },
+                        "cost": {
+                            "type": "",
+                            "limit": 0,
+                            "reduction": 0
+                        },
+                        "costRe": {
+                            "type": "",
+                            "from": 0,
+                            "change": 0
+                        },
+                        "frate": [],
+                        "recovery": {
+                            "type": "",
+                            "pace": 0,
+                            "recover": 0
+                        },
+                        "goldFree": {},
+                        "costForce": {
+                            "type": "",
+                            "cost": 0
+                        },
+                        "fFix": {
+                            "asRarity": {}
+                        },
+                        "activeBonus": {},
+                        "apRate": {},
+                        "costDevide": {
+                            "type": "",
+                            "limit": 0,
+                            "denominator": 1
+                        },
+                        "costFormula": null
+                    },
+                    "statistic": {
+                        "noAddition": 0
+                    }
+                }
+            },
+            "MEETING": {
+                "slot_36": {
+                    "buff": {
+                        "speed": 0,
+                        "weight": {
+                            "RHINE": 0,
+                            "PENGUIN": 0,
+                            "BLACKSTEEL": 0,
+                            "URSUS": 0,
+                            "GLASGOW": 0,
+                            "KJERAG": 0,
+                            "RHODES": 0
+                        },
+                        "flag": {},
+                        "apCost": {
+                            "self": {}
+                        },
+                        "notOwned": 0,
+                        "owned": 0
+                    },
+                    "startApCounter": {},
+                    "mustgetClue": [],
+                    "state": 0,
+                    "speed": 0,
+                    "processPoint": 0,
+                    "ownStock": [],
+                    "receiveStock": [],
+                    "board": {},
+                    "socialReward": {
+                        "daily": 0,
+                        "search": 0
+                    },
+                    "dailyReward": null,
+                    "expiredReward": 0,
+                    "received": 0,
+                    "infoShare": {},
+                    "lastUpdateTime": 1700000000,
+                    "completeWorkTime": 1700000000,
+                    "mfc": {},
+                    "presetQueue": []
+                }
+            },
+            "HIRE": {
+                "slot_23": {
+                    "buff": {
+                        "speed": 0,
+                        "point": {},
+                        "apCost": {
+                            "self": {}
+                        },
+                        "meeting": {
+                            "speedUp": 0
+                        },
+                        "stack": {
+                            "clueWeight": {},
+                            "char": [
+                                {
+                                    "refresh": 0
+                                }
+                            ]
+                        }
+                    },
+                    "state": 0,
+                    "refreshCount": 0,
+                    "lastUpdateTime": 1700000000,
+                    "processPoint": 0,
+                    "speed": 100,
+                    "completeWorkTime": -1,
+                    "presetQueue": []
+                }
+            },
+            "TRAINING": {
+                "slot_13": {
+                    "buff": {
+                        "speed": 0,
+                        "lvEx": {},
+                        "lvCost": {},
+                        "reduce": {
+                            "target": null,
+                            "progress": 0,
+                            "cut": 1
+                        },
+                        "reduceTimeBd": {
+                            "fulltime": false,
+                            "activated": false,
+                            "cnt": 0,
+                            "reset": false
+                        },
+                        "apCost": 0
+                    },
+                    "state": 0,
+                    "lastUpdateTime": 1700000000,
+                    "trainee": {
+                        "charInstId": -1,
+                        "state": 0,
+                        "targetSkill": -1,
+                        "processPoint": -1,
+                        "speed": 1
+                    },
+                    "trainer": {
+                        "charInstId": -1,
+                        "state": 0
+                    }
+                }
+            }
+        },
+        "furniture": {},
+        "assist": [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+        ],
+        "diyPresetSolutions": {},
+        "solution": {
+            "furnitureTs": {}
+        }
+    },
     "dexNav": {
         "character": {},
         "formula": {},
