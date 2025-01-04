@@ -9,6 +9,7 @@ from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON, TMP_DIRPATH
 from ..util.const_json_loader import const_json_loader
 from ..util.player_data import PlayerData, player_data_decorator
+from ..util.mail_helper import get_player_mailbox
 
 
 bp_account = Blueprint("bp_account", __name__)
@@ -40,6 +41,9 @@ def account_syncData():
     battle_replay_lst = player_data.battle_replay_manager.get_battle_replay_lst()
     for stage_id in battle_replay_lst:
         player_data["dungeon"]["stages"][stage_id]["hasBattleReplay"] = 1
+
+    mail_json_obj, pending_mail_set = get_player_mailbox(player_data)
+    player_data["pushFlags"]["hasGifts"] = int(bool(pending_mail_set))
 
     delta_response = player_data.build_delta_response()
     player_data.save()
