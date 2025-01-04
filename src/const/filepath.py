@@ -3,6 +3,7 @@ VERSION_JSON = "conf/version.json"
 ASSIST_JSON = "conf/assist.json"
 
 TMPL_JSON = "data/tmpl.json"
+MAIL_JSON = "data/mail.json"
 
 SAV_DELTA_JSON = "sav/delta.json"
 SAV_PENDING_DELTA_JSON = "sav/pending_delta.json"

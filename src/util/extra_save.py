@@ -1,6 +1,8 @@
 import os
 import json
 
+from ..const.json_const import true, false, null
+
 
 class ExtraSave:
     def __init__(self, filepath: str):
@@ -10,7 +12,11 @@ class ExtraSave:
             with open(self.filepath, encoding="utf-8") as f:
                 self.save_obj = json.load(f)
         else:
-            self.save_obj = {}
+            self.save_obj = {
+                "cur_stage_id": null,
+                "received_mail_lst": [],
+                "removed_mail_lst": [],
+            }
 
     def save(self):
         dirpath = os.path.dirname(self.filepath)

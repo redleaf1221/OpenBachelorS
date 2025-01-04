@@ -15,3 +15,35 @@ def mail_getMetaInfoList(player_data):
     request_json = request.get_json()
     response = {"result": []}
     return response
+
+
+@bp_mail.route("/mail/listMailBox", methods=["POST"])
+@player_data_decorator
+def mail_listMailBox(player_data):
+    request_json = request.get_json()
+    response = {}
+    return response
+
+
+@bp_mail.route("/mail/receiveMail", methods=["POST"])
+@player_data_decorator
+def mail_receiveMail(player_data):
+    request_json = request.get_json()
+    response = {}
+    return response
+
+
+@bp_mail.route("/mail/receiveAllMail", methods=["POST"])
+@player_data_decorator
+def mail_receiveAllMail(player_data):
+    request_json = request.get_json()
+    response = {}
+    return response
+
+
+@bp_mail.route("/mail/removeAllReceivedMail", methods=["POST"])
+@player_data_decorator
+def mail_removeAllReceivedMail(player_data):
+    request_json = request.get_json()
+    response = {}
+    return response
