@@ -11,6 +11,7 @@ from ..const.filepath import (
     CONFIG_JSON,
     VERSION_JSON,
     TMPL_JSON,
+    RLV2_TMPL_JSON,
     SKIN_TABLE,
     CHARWORD_TABLE,
     UNIEQUIP_TABLE,
@@ -469,6 +470,12 @@ def build_player_data_template():
             "count": 9999,
             "inUse": 0,
         }
+
+    # ----------
+
+    rlv2_tmpl_json_obj = const_json_loader[RLV2_TMPL_JSON].copy()
+
+    tmpl_json_obj["rlv2"] = rlv2_tmpl_json_obj
 
     # ----------
 
