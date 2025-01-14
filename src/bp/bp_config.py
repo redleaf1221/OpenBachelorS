@@ -22,27 +22,32 @@ def config_prod_official_network_config():
     content_obj = {
         "configVer": "5",
         "funcVer": funcVer,
-        "configs": {
-            funcVer: {
-                "override": true,
-                "network": {
-                    "gs": f"{url}",
-                    "as": f"{url}",
-                    "u8": f"{url}/u8",
-                    "hu": f"{url}/assetbundle/official",
-                    "hv": f"{url}/config/prod/official/{{0}}/version",
-                    "rc": f"{url}/config/prod/official/remote_config",
-                    "an": f"{url}/config/prod/announce_meta/{{0}}/announcement.meta.json",
-                    "prean": f"{url}/config/prod/announce_meta/{{0}}/preannouncement.meta.json",
-                    "sl": f"{url}/protocol/service",
-                    "of": f"{url}/index.html",
-                    "pkgAd": f"{url}/download",
-                    "pkgIOS": f"{url}/cn/app/id1454663939",
-                    "secure": false,
-                },
-            },
-        },
+        "configs": {},
     }
+
+    funcVer_num = int(funcVer[1:])
+
+    for i in range(10):
+        cur_funcVer = f"V{funcVer_num-i:03}"
+        content_obj["configs"][cur_funcVer] = {
+            "override": true,
+            "network": {
+                "gs": f"{url}",
+                "as": f"{url}",
+                "u8": f"{url}/u8",
+                "hu": f"{url}/assetbundle/official",
+                "hv": f"{url}/config/prod/official/{{0}}/version",
+                "rc": f"{url}/config/prod/official/remote_config",
+                "an": f"{url}/config/prod/announce_meta/{{0}}/announcement.meta.json",
+                "prean": f"{url}/config/prod/announce_meta/{{0}}/preannouncement.meta.json",
+                "sl": f"{url}/protocol/service",
+                "of": f"{url}/index.html",
+                "pkgAd": f"{url}/download",
+                "pkgIOS": f"{url}/cn/app/id1454663939",
+                "secure": false,
+            },
+        }
+
     content = json.dumps(content_obj)
     response = {
         "sign": "fake",
