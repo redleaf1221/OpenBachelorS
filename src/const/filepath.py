@@ -4,6 +4,7 @@ ASSIST_JSON = "conf/assist.json"
 
 TMPL_JSON = "data/tmpl.json"
 RLV2_TMPL_JSON = "data/rlv2_tmpl.json"
+SANDBOX_TMPL_JSON = "data/sandbox_tmpl.json"
 MAIL_JSON = "data/mail.json"
 
 SAV_DELTA_JSON = "sav/delta.json"
