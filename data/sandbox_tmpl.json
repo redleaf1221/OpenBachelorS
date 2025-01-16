@@ -3349,7 +3349,7 @@
                         "node": {
                             "n918E": [
                                 {
-                                    "instId": 2881,
+                                    "instId": 1,
                                     "id": "npc_rift_mscskt",
                                     "type": 1,
                                     "enable": true,
@@ -3364,7 +3364,7 @@
                                     }
                                 },
                                 {
-                                    "instId": 2882,
+                                    "instId": 2,
                                     "id": "npc_rift_mailbox",
                                     "type": 1,
                                     "enable": true,
@@ -3379,7 +3379,7 @@
                                     }
                                 },
                                 {
-                                    "instId": 2883,
+                                    "instId": 3,
                                     "id": "npc_market_zumama",
                                     "type": 1,
                                     "enable": true,
@@ -3394,7 +3394,7 @@
                                     }
                                 },
                                 {
-                                    "instId": 2885,
+                                    "instId": 4,
                                     "id": "npc_market_tfalco",
                                     "type": 1,
                                     "enable": true,
@@ -3409,7 +3409,7 @@
                                     }
                                 },
                                 {
-                                    "instId": 2886,
+                                    "instId": 5,
                                     "id": "npc_market_trademan3",
                                     "type": 1,
                                     "enable": true,
@@ -3424,7 +3424,7 @@
                                     }
                                 },
                                 {
-                                    "instId": 2887,
+                                    "instId": 6,
                                     "id": "npc_rift_xbamai",
                                     "type": 1,
                                     "enable": true,
