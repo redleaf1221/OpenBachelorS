@@ -36,3 +36,16 @@ def social_setAssistCharList(player_data):
 
     response = {}
     return response
+
+
+@bp_social.route("/social/setCardShowMedal", methods=["POST"])
+@player_data_decorator
+def social_setCardShowMedal(player_data):
+    request_json = request.get_json()
+
+    player_data["social"]["medalBoard"]["type"] = request_json["type"]
+    player_data["social"]["medalBoard"]["custom"] = request_json["customIndex"]
+    player_data["social"]["medalBoard"]["template"] = request_json["templateGroup"]
+
+    response = {}
+    return response
