@@ -53,3 +53,17 @@ def building_getAssistReport(player_data):
     request_json = request.get_json()
     response = {"reports": []}
     return response
+
+
+@bp_building.route("/building/changeDiySolution", methods=["POST"])
+@player_data_decorator
+def building_changeDiySolution(player_data):
+    request_json = request.get_json()
+
+    room_id = request_json["roomSlotId"]
+    diy_solution = request_json["solution"]
+
+    player_data["building"]["rooms"]["DORMITORY"][room_id]["diySolution"] = diy_solution
+
+    response = {}
+    return response
