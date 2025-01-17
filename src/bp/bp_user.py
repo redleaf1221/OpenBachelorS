@@ -5,6 +5,7 @@ from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON
 from ..util.const_json_loader import const_json_loader
 from ..util.helper import get_username_by_token
+from ..util.player_data import player_data_decorator
 
 
 bp_user = Blueprint("bp_user", __name__)
@@ -61,4 +62,30 @@ def user_online_v1_loginout():
     request_json = request.get_json()
 
     response = {"msg": "OK", "status": 0, "type": "A"}
+    return response
+
+
+@bp_user.route("/user/changeAvatar", methods=["POST"])
+@player_data_decorator
+def user_changeAvatar(player_data):
+    request_json = request.get_json()
+
+    avatar = request_json
+
+    player_data["status"]["avatar"] = avatar
+
+    response = {}
+    return response
+
+
+@bp_user.route("/user/changeResume", methods=["POST"])
+@player_data_decorator
+def user_changeResume(player_data):
+    request_json = request.get_json()
+
+    resume = request_json["resume"]
+
+    player_data["status"]["resume"] = resume
+
+    response = {}
     return response
