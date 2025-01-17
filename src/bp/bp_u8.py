@@ -21,7 +21,7 @@ def u8_user_v1_getToken():
         "result": 0,
         "captcha": {},
         "error": "",
-        "uid": "123456789",
+        "uid": "1",
         "channelUid": "123456789",
         "token": code,
         "isGuest": 0,
