@@ -136,3 +136,16 @@ def trainingGround_battleFinish(player_data):
         "firstRewards": [],
     }
     return response
+
+
+@misc_bp.route("/medal/setCustomData", methods=["POST"])
+@player_data_decorator
+def medal_setCustomData(player_data):
+    request_json = request.get_json()
+
+    custom_data = request_json["data"]
+
+    player_data["medal"]["custom"]["customs"]["1"] = custom_data
+
+    response = {}
+    return response
