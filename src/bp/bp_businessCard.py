@@ -56,3 +56,30 @@ def businessCard_getOtherPlayerNameCard(player_data):
         }
     }
     return response
+
+
+@bp_businessCard.route("/businessCard/editNameCard", methods=["POST"])
+@player_data_decorator
+def businessCard_editNameCard(player_data):
+    request_json = request.get_json()
+
+    request_content = request_json["content"]
+
+    skin_id = request_content["skinId"]
+    component_order = request_content["component"]
+    misc = request_content["misc"]
+
+    if skin_id is not None:
+        player_data["nameCardStyle"]["skin"]["selected"] = skin_id
+
+    if component_order is not None:
+        player_data["nameCardStyle"]["componentOrder"] = component_order
+
+    if misc is not None:
+        player_data["nameCardStyle"]["misc"]["showDetail"] = bool(misc["showDetail"])
+        player_data["nameCardStyle"]["misc"]["showBirthday"] = bool(
+            misc["showBirthday"]
+        )
+
+    response = {}
+    return response
