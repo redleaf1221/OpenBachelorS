@@ -1154,7 +1154,10 @@
                     "dailyReward": null,
                     "expiredReward": 0,
                     "received": 0,
-                    "infoShare": {},
+                    "infoShare": {
+                        "ts": 1700000000,
+                        "reward": 0
+                    },
                     "lastUpdateTime": 1700000000,
                     "completeWorkTime": 1700000000,
                     "mfc": {},
