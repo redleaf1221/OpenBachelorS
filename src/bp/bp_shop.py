@@ -15,3 +15,11 @@ def shop_getSkinGoodList(player_data):
     request_json = request.get_json()
     response = {"goodList": []}
     return response
+
+
+@bp_shop.route("/shop/getFurniGoodList", methods=["POST"])
+@player_data_decorator
+def shop_getFurniGoodList(player_data):
+    request_json = request.get_json()
+    response = {"goods": [], "groups": []}
+    return response
