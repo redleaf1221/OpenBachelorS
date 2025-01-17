@@ -2,9 +2,10 @@ from flask import Blueprint
 from flask import request
 
 from ..const.json_const import true, false, null
-from ..const.filepath import CONFIG_JSON, VERSION_JSON
+from ..const.filepath import CONFIG_JSON, VERSION_JSON, CHARWORD_TABLE
 from ..util.const_json_loader import const_json_loader
-from ..util.player_data import player_data_decorator
+from ..util.player_data import player_data_decorator, char_id_lst, player_data_template
+from ..util.helper import get_char_num_id
 
 bp_charBuild = Blueprint("bp_charBuild", __name__)
 
@@ -98,6 +99,26 @@ def charBuild_changeCharSkin(player_data):
 @player_data_decorator
 def charBuild_batchSetCharVoiceLan(player_data):
     request_json = request.get_json()
+    target_voice_lan = request_json["voiceLan"]
+
+    charword_table = const_json_loader[CHARWORD_TABLE]
+
+    char_id_set = set(char_id_lst.copy())
+
+    for char_id, voice_lan_obj in charword_table["voiceLangDict"]:
+        if char_id not in char_id_set:
+            continue
+
+        char_num_id = get_char_num_id(char_id)
+
+        if target_voice_lan in voice_lan_obj["dict"]:
+            voice_lan = target_voice_lan
+        else:
+            voice_lan = player_data_template["troop"]["chars"][str(char_num_id)][
+                "voiceLan"
+            ]
+
+        player_data["troop"]["chars"][str(char_num_id)]["voiceLan"] = voice_lan
 
     response = {}
     return response
