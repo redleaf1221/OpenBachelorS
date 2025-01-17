@@ -23,3 +23,16 @@ def social_getFriendList(player_data):
     request_json = request.get_json()
     response = {"friends": [], "friendAlias": [], "resultIdList": []}
     return response
+
+
+@bp_social.route("/social/setAssistCharList", methods=["POST"])
+@player_data_decorator
+def social_setAssistCharList(player_data):
+    request_json = request.get_json()
+
+    assist_char_list = request_json["assistCharList"]
+
+    player_data["social"]["assistCharList"] = assist_char_list
+
+    response = {}
+    return response
