@@ -45,3 +45,11 @@ def building_getClueBox(player_data):
     request_json = request.get_json()
     response = {"box": []}
     return response
+
+
+@bp_building.route("/building/getAssistReport", methods=["POST"])
+@player_data_decorator
+def building_getAssistReport(player_data):
+    request_json = request.get_json()
+    response = {"reports": []}
+    return response
