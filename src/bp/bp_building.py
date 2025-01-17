@@ -29,3 +29,19 @@ def building_getInfoShareVisitorsNum():
     request_json = request.get_json()
     response = {"num": 0}
     return response
+
+
+@bp_building.route("/building/getClueFriendList", methods=["POST"])
+@player_data_decorator
+def building_getClueFriendList(player_data):
+    request_json = request.get_json()
+    response = {"result": []}
+    return response
+
+
+@bp_building.route("/building/getClueBox", methods=["POST"])
+@player_data_decorator
+def building_getClueBox(player_data):
+    request_json = request.get_json()
+    response = {"box": []}
+    return response
