@@ -460,7 +460,7 @@ def build_player_data_template():
         }
 
     # place amiya in MEETING by default to avoid error msg
-    tmpl_json_obj["building"]["roomSlots"]["slot_36"]["charInstIds"] = [2]
+    tmpl_json_obj["building"]["roomSlots"]["slot_36"]["charInstIds"] = [2, -1]
     tmpl_json_obj["building"]["chars"]["2"]["roomSlotId"] = "slot_36"
     tmpl_json_obj["building"]["chars"]["2"]["index"] = 0
 
