@@ -67,3 +67,22 @@ def building_changeDiySolution(player_data):
 
     response = {}
     return response
+
+
+@bp_building.route("/building/setBuildingAssist", methods=["POST"])
+@player_data_decorator
+def building_setBuildingAssist(player_data):
+    request_json = request.get_json()
+
+    char_num_id = request_json["charInstId"]
+    assist_idx = request_json["type"]
+
+    assist_lst = player_data["building"]["assist"].copy()
+    for i in range(len(assist_lst)):
+        if assist_lst[i] == char_num_id:
+            assist_lst[i] = -1
+    assist_lst[assist_idx] = char_num_id
+    player_data["building"]["assist"] = assist_lst
+
+    response = {}
+    return response
