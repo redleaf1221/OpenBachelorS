@@ -78,9 +78,10 @@ def building_setBuildingAssist(player_data):
     assist_idx = request_json["type"]
 
     assist_lst = player_data["building"]["assist"].copy()
-    for i in range(len(assist_lst)):
-        if assist_lst[i] == char_num_id:
-            assist_lst[i] = -1
+    if char_num_id != -1:
+        for i in range(len(assist_lst)):
+            if assist_lst[i] == char_num_id:
+                assist_lst[i] = -1
     assist_lst[assist_idx] = char_num_id
     player_data["building"]["assist"] = assist_lst
 
