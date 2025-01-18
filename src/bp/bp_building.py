@@ -86,3 +86,44 @@ def building_setBuildingAssist(player_data):
 
     response = {}
     return response
+
+
+@bp_building.route("/building/assignChar", methods=["POST"])
+@player_data_decorator
+def building_assignChar(player_data):
+    request_json = request.get_json()
+
+    room_id = request_json["roomSlotId"]
+    char_num_id_lst = request_json["charInstIdList"]
+
+    old_char_num_id_lst = player_data["building"]["roomSlots"][room_id][
+        "charInstIds"
+    ].copy()
+
+    for char_num_id in old_char_num_id_lst:
+        if char_num_id == -1:
+            continue
+        player_data["building"]["chars"][str(char_num_id)]["roomSlotId"] = ""
+        player_data["building"]["chars"][str(char_num_id)]["index"] = -1
+
+    for char_idx, char_num_id in enumerate(char_num_id_lst):
+        if char_num_id == -1:
+            continue
+        src_room_id = player_data["building"]["chars"][str(char_num_id)]["roomSlotId"]
+        if src_room_id:
+            src_char_idx = player_data["building"]["chars"][str(char_num_id)]["index"]
+
+            src_char_num_id_lst = player_data["building"]["roomSlots"][src_room_id][
+                "charInstIds"
+            ].copy()
+            src_char_num_id_lst[src_char_idx] = -1
+            player_data["building"]["roomSlots"][src_room_id]["charInstIds"] = (
+                src_char_num_id_lst
+            )
+        player_data["building"]["chars"][str(char_num_id)]["roomSlotId"] = room_id
+        player_data["building"]["chars"][str(char_num_id)]["index"] = char_idx
+
+    player_data["building"]["roomSlots"][room_id]["charInstIds"] = char_num_id_lst
+
+    response = {}
+    return response
