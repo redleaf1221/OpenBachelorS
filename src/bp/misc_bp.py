@@ -5,6 +5,7 @@ from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON
 from ..util.const_json_loader import const_json_loader
 from ..util.player_data import player_data_decorator
+from ..util.battle_log_logger import log_battle_log_if_necessary
 
 misc_bp = Blueprint("misc_bp", __name__)
 
@@ -47,6 +48,8 @@ def act25side_battleStart(player_data):
 @player_data_decorator
 def act25side_battleFinish(player_data):
     request_json = request.get_json()
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
 
     response = {
         "result": 0,
@@ -105,6 +108,9 @@ def retro_typeAct20side_competitionStart(player_data):
 @player_data_decorator
 def retro_typeAct20side_competitionFinish(player_data):
     request_json = request.get_json()
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
+
     response = {
         "performance": 0,
         "expression": 0,
@@ -131,6 +137,9 @@ def trainingGround_battleStart(player_data):
 @player_data_decorator
 def trainingGround_battleFinish(player_data):
     request_json = request.get_json()
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
+
     response = {
         "result": 0,
         "firstRewards": [],

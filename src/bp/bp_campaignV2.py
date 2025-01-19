@@ -5,6 +5,7 @@ from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON
 from ..util.const_json_loader import const_json_loader
 from ..util.player_data import player_data_decorator
+from ..util.battle_log_logger import log_battle_log_if_necessary
 
 bp_campaignV2 = Blueprint("bp_campaignV2", __name__)
 
@@ -28,6 +29,9 @@ def campaignV2_battleStart(player_data):
 @player_data_decorator
 def campaignV2_battleFinish(player_data):
     request_json = request.get_json()
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
+
     response = {
         "result": 0,
         "apFailReturn": 0,

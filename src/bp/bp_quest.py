@@ -11,6 +11,7 @@ from ..util.helper import (
     get_assist_lst_idx_from_friend_uid,
     convert_char_obj_to_assist_char_obj,
 )
+from ..util.battle_log_logger import log_battle_log_if_necessary
 
 
 bp_quest = Blueprint("bp_quest", __name__)
@@ -63,6 +64,8 @@ def quest_battleStart(player_data):
 @player_data_decorator
 def quest_battleFinish(player_data):
     request_json = request.get_json()
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
 
     response = {
         "result": 0,

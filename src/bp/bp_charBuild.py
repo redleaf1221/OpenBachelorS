@@ -6,6 +6,7 @@ from ..const.filepath import CONFIG_JSON, VERSION_JSON, CHARWORD_TABLE
 from ..util.const_json_loader import const_json_loader
 from ..util.player_data import player_data_decorator, char_id_lst, player_data_template
 from ..util.helper import get_char_num_id
+from ..util.battle_log_logger import log_battle_log_if_necessary
 
 bp_charBuild = Blueprint("bp_charBuild", __name__)
 
@@ -154,6 +155,8 @@ def charBuild_addonStage_battleStart(player_data):
 @player_data_decorator
 def charBuild_addonStage_battleFinish(player_data):
     request_json = request.get_json()
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
 
     response = {
         "result": 0,
