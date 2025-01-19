@@ -7,8 +7,11 @@ import zipfile
 import subprocess
 from uuid import uuid4
 import re
+from hashlib import md5
 
 from pathvalidate import is_valid_filename
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import unpad
 
 from ..const.filepath import TMP_DIRPATH
 
@@ -143,3 +146,23 @@ def get_asset_filename(ab_filepath: str) -> str:
     )
 
     return asset_filename
+
+
+AK_BATTLE_LOG_KEY = "pM6Umv*^hVQuB6t&"
+
+
+def decode_battle_log(player_data, raw_data):
+    t = player_data["pushFlags"]["status"]
+    key = md5(f"{AK_BATTLE_LOG_KEY}{t}".encode()).digest()
+
+    battle_log = bytes.fromhex(raw_data)
+    ciphertext = battle_log[:-16]
+    iv = battle_log[-16:]
+
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+
+    plaintext = unpad(cipher.decrypt(ciphertext), AES.block_size)
+
+    decoded_battle_log = json.loads(plaintext)
+
+    return decoded_battle_log
