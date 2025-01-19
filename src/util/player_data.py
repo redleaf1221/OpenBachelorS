@@ -597,8 +597,14 @@ class DeltaJson:
         value = deepcopy(value)
         self.initialize_modified_dict_if_necessary()
         if isinstance(value, dict):
-            for i in value:
-                self[key][i] = value[i]
+            if value:
+                for i in value:
+                    self[key][i] = value[i]
+            else:
+                if key not in self.modified_dict or not isinstance(
+                    self.modified_dict[key], dict
+                ):
+                    self.modified_dict[key] = value
         else:
             self.modified_dict[key] = value
         if self.deleted_dict is not None:
