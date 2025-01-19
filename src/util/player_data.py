@@ -596,7 +596,11 @@ class DeltaJson:
     def __setitem__(self, key, value):
         value = deepcopy(value)
         self.initialize_modified_dict_if_necessary()
-        self.modified_dict[key] = value
+        if isinstance(value, dict):
+            for i in value:
+                self[key][i] = value[i]
+        else:
+            self.modified_dict[key] = value
         if self.deleted_dict is not None:
             self.deleted_dict.pop(key, None)
             self.deinitialize_deleted_dict_if_necessary()
