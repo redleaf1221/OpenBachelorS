@@ -159,6 +159,18 @@ def test_json_with_delta():
 
     assert json_with_delta.copy() == {"x": {}, "a": 456, "b": 345}
 
+    json_with_delta["x"]["z"] = 996
+
+    assert json_with_delta.copy() == {"x": {"z": 996}, "a": 456, "b": 345}
+
+    json_with_delta["x"] = {}
+
+    assert json_with_delta.copy() == {"x": {"z": 996}, "a": 456, "b": 345}
+
+    json_with_delta["x"] = {"t": 222}
+
+    assert json_with_delta.copy() == {"x": {"z": 996, "t": 222}, "a": 456, "b": 345}
+
 
 def test_player_data():
     @player_data_decorator
