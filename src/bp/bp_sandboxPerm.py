@@ -55,6 +55,22 @@ class SandboxBasicManager:
             }
         )
 
+    def sandboxPerm_sandboxV2_eatFood(self):
+        char_num_id = self.request_json["charInstId"]
+
+        food_id = self.request_json["foodInstId"]
+        food_obj = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
+            self.topic_id
+        ]["cook"]["food"][food_id].copy()
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "troop"
+        ]["food"][str(char_num_id)] = {
+            "id": food_obj["id"],
+            "sub": food_obj["sub"],
+            "day": -1,
+        }
+
 
 def get_sandbox_manager(player_data, topic_id, request_json, response):
     return SandboxBasicManager(player_data, topic_id, request_json, response)
@@ -103,5 +119,20 @@ def sandboxPerm_sandboxV2_battleFinish(player_data):
     sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
 
     sandbox_manager.sandboxPerm_sandboxV2_battleFinish()
+
+    return response
+
+
+@bp_sandboxPerm.route("/sandboxPerm/sandboxV2/eatFood", methods=["POST"])
+@player_data_decorator
+def sandboxPerm_sandboxV2_eatFood(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    topic_id = request_json["topicId"]
+
+    sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
+
+    sandbox_manager.sandboxPerm_sandboxV2_eatFood()
 
     return response
