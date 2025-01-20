@@ -99,6 +99,13 @@ def tower_settleGame(player_data):
 
     player_data["tower"]["current"] = tower_obj
 
+    tower_char_idx_str_lst = []
+    for tower_char_idx_str, tower_char_obj in player_data["tower"]["current"]["cards"]:
+        tower_char_idx_str_lst.append(tower_char_idx_str)
+
+    for tower_char_idx_str in tower_char_idx_str_lst:
+        del player_data["tower"]["current"]["cards"][tower_char_idx_str]
+
     response = {"ts": 1700000000}
     return response
 
