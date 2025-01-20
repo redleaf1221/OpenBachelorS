@@ -194,9 +194,14 @@ def tower_battleFinish(player_data):
     log_battle_log_if_necessary(player_data, request_json["data"])
 
     coord = player_data["tower"]["current"]["status"]["coord"]
-
-    # player_data["tower"]["current"]["status"]["state"] = "RECRUIT"
-    player_data["tower"]["current"]["status"]["coord"] = coord + 1
+    if coord == 2:
+        player_data["tower"]["current"]["status"]["state"] = "SUB_GOD_CARD_RECRUIT"
+        player_data["tower"]["current"]["status"]["coord"] = coord + 1
+    elif coord == 5:
+        player_data["tower"]["current"]["status"]["state"] = "END"
+    else:
+        # player_data["tower"]["current"]["status"]["state"] = "RECRUIT"
+        player_data["tower"]["current"]["status"]["coord"] = coord + 1
 
     stage_lst = player_data["tower"]["current"]["layer"].copy()
     stage_lst[coord]["pass"] = true
@@ -208,4 +213,18 @@ def tower_battleFinish(player_data):
         "show": "1",
         "trap": [],
     }
+    return response
+
+
+@bp_tower.route("/tower/chooseSubGodCard", methods=["POST"])
+@player_data_decorator
+def tower_chooseSubGodCard(player_data):
+    request_json = request.get_json()
+
+    sub_god_card_id = request_json["subGodCardId"]
+
+    player_data["tower"]["current"]["status"]["state"] = "STANDBY"
+    player_data["tower"]["current"]["godCard"]["subGodCardId"] = sub_god_card_id
+
+    response = {}
     return response
