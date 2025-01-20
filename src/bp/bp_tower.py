@@ -9,6 +9,7 @@ from ..util.helper import (
     get_char_num_id,
     convert_char_obj_to_tower_char_obj,
 )
+from ..util.battle_log_logger import log_battle_log_if_necessary
 
 bp_tower = Blueprint("bp_tower", __name__)
 
@@ -165,4 +166,46 @@ def tower_initCard(player_data):
     player_data["tower"]["current"]["cards"] = cards_obj
 
     response = {}
+    return response
+
+
+@bp_tower.route("/tower/battleStart", methods=["POST"])
+@player_data_decorator
+def tower_battleStart(player_data):
+    request_json = request.get_json()
+
+    coord = player_data["tower"]["current"]["status"]["coord"]
+
+    stage_lst = player_data["tower"]["current"]["layer"].copy()
+    stage_lst[coord]["try"] += 1
+    player_data["tower"]["current"]["layer"] = stage_lst
+
+    response = {
+        "battleId": "00000000-0000-0000-0000-000000000000",
+    }
+    return response
+
+
+@bp_tower.route("/tower/battleFinish", methods=["POST"])
+@player_data_decorator
+def tower_battleFinish(player_data):
+    request_json = request.get_json()
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
+
+    coord = player_data["tower"]["current"]["status"]["coord"]
+
+    # player_data["tower"]["current"]["status"]["state"] = "RECRUIT"
+    player_data["tower"]["current"]["status"]["coord"] = coord + 1
+
+    stage_lst = player_data["tower"]["current"]["layer"].copy()
+    stage_lst[coord]["pass"] = true
+    player_data["tower"]["current"]["layer"] = stage_lst
+
+    response = {
+        "isNewRecord": false,
+        "reward": {"high": {"from": 24, "to": 24}, "low": {"from": 60, "to": 60}},
+        "show": "1",
+        "trap": [],
+    }
     return response
