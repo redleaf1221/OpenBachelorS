@@ -5,6 +5,10 @@ from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON, CLIMB_TOWER_TABLE
 from ..util.const_json_loader import const_json_loader
 from ..util.player_data import player_data_decorator
+from ..util.helper import (
+    get_char_num_id,
+    convert_char_obj_to_tower_char_obj,
+)
 
 bp_tower = Blueprint("bp_tower", __name__)
 
@@ -124,6 +128,34 @@ def tower_initGame(player_data):
     player_data["tower"]["current"]["status"]["state"] = "INIT_CARD"
     player_data["tower"]["current"]["status"]["tactical"] = tactical
     player_data["tower"]["current"]["status"]["strategy"] = strategy
+
+    response = {}
+    return response
+
+
+@bp_tower.route("/tower/initCard", methods=["POST"])
+@player_data_decorator
+def tower_initCard(player_data):
+    request_json = request.get_json()
+
+    char_num_id_lst = []
+
+    for slot_obj in request_json["slots"]:
+        char_num_id_lst.append(slot_obj["charInstId"])
+
+    for assist_obj in request_json["assist"]:
+        char_num_id_lst.append(get_char_num_id(assist_obj["charId"]))
+
+    cards_obj = {}
+
+    for i, char_num_id in enumerate(char_num_id_lst):
+        tower_char_idx = i + 1
+        tower_char_obj = player_data["troop"]["chars"][str(char_num_id)].copy()
+        convert_char_obj_to_tower_char_obj(tower_char_obj, tower_char_idx)
+        cards_obj[str(tower_char_idx)] = tower_char_obj
+
+    player_data["tower"]["current"]["status"]["state"] = "STANDBY"
+    player_data["tower"]["current"]["cards"] = cards_obj
 
     response = {}
     return response

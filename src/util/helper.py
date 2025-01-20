@@ -166,3 +166,10 @@ def decode_battle_log(player_data, raw_data):
     decoded_battle_log = json.loads(plaintext)
 
     return decoded_battle_log
+
+
+def convert_char_obj_to_tower_char_obj(char_obj: dict, tower_char_idx: int):
+    char_obj["relation"] = str(char_obj["instId"])
+    char_obj["instId"] = str(tower_char_idx)
+
+    char_obj["type"] = "CHAR"
