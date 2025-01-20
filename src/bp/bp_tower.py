@@ -17,6 +17,9 @@ def tower_createGame(player_data):
     tower_id = request_json["tower"]
     is_hard = bool(request_json["isHard"])
 
+    if tower_id.startswith("tower_tr_"):
+        return "", 404
+
     tower_obj = {
         "status": {
             "state": "INIT_GOD_CARD",
