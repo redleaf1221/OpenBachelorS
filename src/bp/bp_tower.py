@@ -97,3 +97,33 @@ def tower_settleGame(player_data):
 
     response = {"ts": 1700000000}
     return response
+
+
+@bp_tower.route("/tower/initGodCard", methods=["POST"])
+@player_data_decorator
+def tower_initGodCard(player_data):
+    request_json = request.get_json()
+
+    god_card_id = request_json["godCardId"]
+
+    player_data["tower"]["current"]["status"]["state"] = "INIT_BUFF"
+    player_data["tower"]["current"]["godCard"]["id"] = god_card_id
+
+    response = {}
+    return response
+
+
+@bp_tower.route("/tower/initGame", methods=["POST"])
+@player_data_decorator
+def tower_initGame(player_data):
+    request_json = request.get_json()
+
+    tactical = request_json["tactical"]
+    strategy = request_json["strategy"]
+
+    player_data["tower"]["current"]["status"]["state"] = "INIT_CARD"
+    player_data["tower"]["current"]["status"]["tactical"] = tactical
+    player_data["tower"]["current"]["status"]["strategy"] = strategy
+
+    response = {}
+    return response
