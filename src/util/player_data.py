@@ -611,6 +611,7 @@ class DeltaJson:
                 and self.deleted_dict[key] is None
             ):
                 del self.deleted_dict[key]
+                self.deinitialize_deleted_dict_if_necessary()
         else:
             self.modified_dict[key] = value
             if self.deleted_dict is not None:
