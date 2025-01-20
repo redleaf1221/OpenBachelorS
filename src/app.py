@@ -21,6 +21,7 @@ from .bp.bp_shop import bp_shop
 from .bp.bp_social import bp_social
 from .bp.bp_storyreview import bp_storyreview
 from .bp.bp_templateShop import bp_templateShop
+from .bp.bp_tower import bp_tower
 from .bp.bp_u8 import bp_u8
 from .bp.bp_user import bp_user
 from .bp.misc_bp import misc_bp
@@ -49,6 +50,7 @@ app.register_blueprint(bp_shop)
 app.register_blueprint(bp_social)
 app.register_blueprint(bp_storyreview)
 app.register_blueprint(bp_templateShop)
+app.register_blueprint(bp_tower)
 app.register_blueprint(bp_u8)
 app.register_blueprint(bp_user)
 app.register_blueprint(misc_bp)
