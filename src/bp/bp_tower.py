@@ -1,3 +1,5 @@
+import time
+
 from flask import Blueprint
 from flask import request
 
@@ -56,4 +58,43 @@ def tower_createGame(player_data):
     player_data["tower"]["current"] = tower_obj
 
     response = {}
+    return response
+
+
+@bp_tower.route("/tower/settleGame", methods=["POST"])
+@player_data_decorator
+def tower_settleGame(player_data):
+    request_json = request.get_json()
+
+    tower_obj = {
+        "status": {
+            "state": "NONE",
+            "tower": "",
+            "coord": 0,
+            "tactical": {
+                "PIONEER": "",
+                "WARRIOR": "",
+                "TANK": "",
+                "SNIPER": "",
+                "CASTER": "",
+                "SUPPORT": "",
+                "MEDIC": "",
+                "SPECIAL": "",
+            },
+            "strategy": "OPTIMIZE",
+            "start": 0,
+            "isHard": false,
+        },
+        "layer": [],
+        "cards": {},
+        "godCard": {"id": "", "subGodCardId": ""},
+        "halftime": {"count": 0, "candidate": [], "canGiveUp": false},
+        "trap": [],
+    }
+
+    player_data["tower"]["current"] = tower_obj
+
+    t = int(time.time())
+
+    response = {"ts": t}
     return response
