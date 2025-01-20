@@ -888,6 +888,9 @@ def player_data_decorator(func):
         player_data = PlayerData()
         json_response = func(player_data, *args, **kwargs)
 
+        if not isinstance(json_response, dict):
+            return json_response
+
         delta_response = player_data.build_delta_response()
         player_data.save()
 
