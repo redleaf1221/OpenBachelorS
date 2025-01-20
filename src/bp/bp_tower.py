@@ -193,7 +193,7 @@ def get_candidate_obj(player_data):
 
     for tower_char_idx_str, tower_char_obj in player_data["tower"]["current"]["cards"]:
         tower_char_id = tower_char_obj["charId"]
-        src_char_id_set.remove(tower_char_id)
+        src_char_id_set.discard(tower_char_id)
 
     src_char_id_lst = list(src_char_id_set)
 
@@ -255,6 +255,49 @@ def tower_chooseSubGodCard(player_data):
 
     player_data["tower"]["current"]["status"]["state"] = "STANDBY"
     player_data["tower"]["current"]["godCard"]["subGodCardId"] = sub_god_card_id
+
+    response = {}
+    return response
+
+
+@bp_tower.route("/tower/recruit", methods=["POST"])
+@player_data_decorator
+def tower_recruit(player_data):
+    request_json = request.get_json()
+
+    if not request_json["giveUp"]:
+        char_id = request_json["charId"]
+        char_num_id = get_char_num_id(char_id)
+
+        max_tower_char_idx = 1
+        for tower_char_idx_str, tower_char_obj in player_data["tower"]["current"][
+            "cards"
+        ]:
+            tower_char_idx = int(tower_char_idx_str)
+            max_tower_char_idx = max(tower_char_idx, max_tower_char_idx)
+        max_tower_char_idx += 1
+
+        tower_char_obj = player_data["troop"]["chars"][str(char_num_id)].copy()
+        convert_char_obj_to_tower_char_obj(tower_char_obj, max_tower_char_idx)
+
+        player_data["tower"]["current"]["cards"][str(max_tower_char_idx)] = (
+            tower_char_obj
+        )
+
+    if player_data["tower"]["current"]["halftime"]["count"]:
+        candidate_obj = get_candidate_obj(player_data)
+        player_data["tower"]["current"]["halftime"] = {
+            "count": 0,
+            "candidate": candidate_obj,
+            "canGiveUp": true,
+        }
+    else:
+        player_data["tower"]["current"]["status"]["state"] = "STANDBY"
+        player_data["tower"]["current"]["halftime"] = {
+            "count": 0,
+            "candidate": [],
+            "canGiveUp": false,
+        }
 
     response = {}
     return response
