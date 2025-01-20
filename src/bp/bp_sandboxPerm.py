@@ -5,6 +5,7 @@ from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON
 from ..util.const_json_loader import const_json_loader
 from ..util.player_data import player_data_decorator
+from ..util.battle_log_logger import log_battle_log_if_necessary
 
 bp_sandboxPerm = Blueprint("bp_sandboxPerm", __name__)
 
@@ -30,6 +31,30 @@ class SandboxBasicManager:
             "troop"
         ]["squad"] = squad_lst
 
+    def sandboxPerm_sandboxV2_battleStart(self):
+        self.response.update(
+            {
+                "battleId": "00000000-0000-0000-0000-000000000000",
+                "isEnemyRush": false,
+                "shinyAnimals": {},
+                "shinyUniEnemy": [],
+                "lureInsect": [],
+                "extraRunes": [],
+            }
+        )
+
+    def sandboxPerm_sandboxV2_battleFinish(self):
+        self.response.update(
+            {
+                "success": true,
+                "rewards": [],
+                "randomRewards": [],
+                "costItems": [],
+                "isEnemyRush": false,
+                "enemyRushCount": [],
+            }
+        )
+
 
 def get_sandbox_manager(player_data, topic_id, request_json, response):
     return SandboxBasicManager(player_data, topic_id, request_json, response)
@@ -46,5 +71,37 @@ def sandboxPerm_sandboxV2_setSquad(player_data):
     sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
 
     sandbox_manager.sandboxPerm_sandboxV2_setSquad()
+
+    return response
+
+
+@bp_sandboxPerm.route("/sandboxPerm/sandboxV2/battleStart", methods=["POST"])
+@player_data_decorator
+def sandboxPerm_sandboxV2_battleStart(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    topic_id = request_json["topicId"]
+
+    sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
+
+    sandbox_manager.sandboxPerm_sandboxV2_battleStart()
+
+    return response
+
+
+@bp_sandboxPerm.route("/sandboxPerm/sandboxV2/battleFinish", methods=["POST"])
+@player_data_decorator
+def sandboxPerm_sandboxV2_battleFinish(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
+
+    topic_id = request_json["topicId"]
+
+    sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
+
+    sandbox_manager.sandboxPerm_sandboxV2_battleFinish()
 
     return response
