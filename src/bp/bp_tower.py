@@ -1,5 +1,3 @@
-import time
-
 from flask import Blueprint
 from flask import request
 
@@ -94,7 +92,5 @@ def tower_settleGame(player_data):
 
     player_data["tower"]["current"] = tower_obj
 
-    t = int(time.time())
-
-    response = {"ts": t}
+    response = {"ts": 1700000000}
     return response
