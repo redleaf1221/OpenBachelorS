@@ -119,6 +119,21 @@ def test_delta_json():
         "x": {},
     } and delta_json.deleted_dict == {"a": {"u": {"v": None}}}
 
+    delta_json["a"]["u"]["v"] = {}
+
+    assert (
+        delta_json.modified_dict
+        == {
+            "a": {
+                "u": {"v": {}},
+                "j": {"k": {"r": 765}, "l": {}, "m": {"q": {"w": 996, "e": {}}}},
+                "p": "q",
+            },
+            "x": {},
+        }
+        and delta_json.deleted_dict == {}
+    )
+
 
 def test_json_with_delta():
     const_json = ConstJson({"x": {"y": {"z": 123}}, "a": 456})
