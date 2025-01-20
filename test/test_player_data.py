@@ -40,26 +40,30 @@ def test_delta_json():
 
     del delta_json["x"]["y"]
 
-    assert delta_json.modified_dict == {"a": 456} and delta_json.deleted_dict == {
-        "x": {"y": None}
-    }
+    assert delta_json.modified_dict == {
+        "a": 456,
+        "x": {},
+    } and delta_json.deleted_dict == {"x": {"y": None}}
 
     delta_json["a"]["u"]["v"]["w"] = 666
 
     assert delta_json.modified_dict == {
-        "a": {"u": {"v": {"w": 666}}}
+        "a": {"u": {"v": {"w": 666}}},
+        "x": {},
     } and delta_json.deleted_dict == {"x": {"y": None}}
 
     delta_json["a"]["u"] = {}
 
     assert delta_json.modified_dict == {
-        "a": {"u": {"v": {"w": 666}}}
+        "a": {"u": {"v": {"w": 666}}},
+        "x": {},
     } and delta_json.deleted_dict == {"x": {"y": None}}
 
     delta_json["a"]["j"] = {"k": 789, "l": 111, "m": {}}
 
     assert delta_json.modified_dict == {
-        "a": {"u": {"v": {"w": 666}}, "j": {"k": 789, "l": 111, "m": {}}}
+        "a": {"u": {"v": {"w": 666}}, "j": {"k": 789, "l": 111, "m": {}}},
+        "x": {},
     } and delta_json.deleted_dict == {"x": {"y": None}}
 
     delta_json["a"] = {"j": {"k": {"r": 765}, "l": {}, "m": {"q": {"w": 996, "e": {}}}}}
@@ -68,8 +72,30 @@ def test_delta_json():
         "a": {
             "u": {"v": {"w": 666}},
             "j": {"k": {"r": 765}, "l": {}, "m": {"q": {"w": 996, "e": {}}}},
-        }
+        },
+        "x": {},
     } and delta_json.deleted_dict == {"x": {"y": None}}
+
+    del delta_json["a"]["u"]["v"]
+
+    assert delta_json.modified_dict == {
+        "a": {
+            "u": {},
+            "j": {"k": {"r": 765}, "l": {}, "m": {"q": {"w": 996, "e": {}}}},
+        },
+        "x": {},
+    } and delta_json.deleted_dict == {"x": {"y": None}, "a": {"u": {"v": None}}}
+
+    delta_json["a"] = {"p": "q"}
+
+    assert delta_json.modified_dict == {
+        "a": {
+            "u": {},
+            "j": {"k": {"r": 765}, "l": {}, "m": {"q": {"w": 996, "e": {}}}},
+            "p": "q",
+        },
+        "x": {},
+    } and delta_json.deleted_dict == {"x": {"y": None}, "a": {"u": {"v": None}}}
 
 
 def test_json_with_delta():
@@ -89,9 +115,10 @@ def test_json_with_delta():
 
     del json_with_delta["x"]["y"]
 
-    assert delta_json.modified_dict == {"b": 345} and delta_json.deleted_dict == {
-        "x": {"y": None}
-    }
+    assert delta_json.modified_dict == {
+        "x": {},
+        "b": 345,
+    } and delta_json.deleted_dict == {"x": {"y": None}}
 
     assert json_with_delta.copy() == {"x": {}, "a": 456, "b": 345}
 

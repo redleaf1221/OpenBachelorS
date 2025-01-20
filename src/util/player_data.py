@@ -551,11 +551,11 @@ class DeltaJson:
                 self.deleted_dict = {}
                 self.parent.deleted_dict[self.prev_key] = self.deleted_dict
 
-    def deinitialize_modified_dict_if_necessary(self):
-        if not self.is_root and self.modified_dict == {}:
-            self.modified_dict = None
-            del self.parent.modified_dict[self.prev_key]
-            self.parent.deinitialize_modified_dict_if_necessary()
+    # def deinitialize_modified_dict_if_necessary(self):
+    #     if not self.is_root and self.modified_dict == {}:
+    #         self.modified_dict = None
+    #         del self.parent.modified_dict[self.prev_key]
+    #         self.parent.deinitialize_modified_dict_if_necessary()
 
     def deinitialize_deleted_dict_if_necessary(self):
         if not self.is_root and self.deleted_dict == {}:
@@ -605,18 +605,24 @@ class DeltaJson:
                     self.modified_dict[key], dict
                 ):
                     self.modified_dict[key] = value
+            if (
+                self.deleted_dict is not None
+                and key in self.deleted_dict
+                and self.deleted_dict[key] is None
+            ):
+                del self.deleted_dict[key]
         else:
             self.modified_dict[key] = value
-        if self.deleted_dict is not None:
-            self.deleted_dict.pop(key, None)
-            self.deinitialize_deleted_dict_if_necessary()
+            if self.deleted_dict is not None:
+                self.deleted_dict.pop(key, None)
+                self.deinitialize_deleted_dict_if_necessary()
 
     def __delitem__(self, key):
         self.initialize_deleted_dict_if_necessary()
         self.deleted_dict[key] = None
         if self.modified_dict is not None:
             self.modified_dict.pop(key, None)
-            self.deinitialize_modified_dict_if_necessary()
+            # self.deinitialize_modified_dict_if_necessary()
 
     def copy(self):
         if self.modified_dict is not None:
