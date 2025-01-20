@@ -15,7 +15,7 @@ def tower_createGame(player_data):
     request_json = request.get_json()
 
     tower_id = request_json["tower"]
-    is_hard = request_json["isHard"]
+    is_hard = bool(request_json["isHard"])
 
     tower_obj = {
         "status": {
