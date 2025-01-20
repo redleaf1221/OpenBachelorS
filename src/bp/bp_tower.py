@@ -1,10 +1,12 @@
+import random
+
 from flask import Blueprint
 from flask import request
 
 from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON, CLIMB_TOWER_TABLE
 from ..util.const_json_loader import const_json_loader
-from ..util.player_data import player_data_decorator
+from ..util.player_data import player_data_decorator, char_id_lst
 from ..util.helper import (
     get_char_num_id,
     convert_char_obj_to_tower_char_obj,
@@ -186,6 +188,28 @@ def tower_battleStart(player_data):
     return response
 
 
+def get_candidate_obj(player_data):
+    src_char_id_set = set(char_id_lst.copy())
+
+    for tower_char_idx_str, tower_char_obj in player_data["tower"]["current"]["cards"]:
+        tower_char_id = tower_char_obj["charId"]
+        src_char_id_set.remove(tower_char_id)
+
+    src_char_id_lst = list(src_char_id_set)
+
+    candidate_char_id_lst = random.sample(src_char_id_lst, 5)
+
+    candidate_obj = []
+    for char_id in candidate_char_id_lst:
+        char_num_id = get_char_num_id(char_id)
+        tower_char_obj = player_data["troop"]["chars"][str(char_num_id)].copy()
+        convert_char_obj_to_tower_char_obj(tower_char_obj, 0)
+        candidate_obj.append(
+            {"groupId": char_id, "type": "CHAR", "cards": [tower_char_obj]}
+        )
+    return candidate_obj
+
+
 @bp_tower.route("/tower/battleFinish", methods=["POST"])
 @player_data_decorator
 def tower_battleFinish(player_data):
@@ -200,8 +224,14 @@ def tower_battleFinish(player_data):
     elif coord == 5:
         player_data["tower"]["current"]["status"]["state"] = "END"
     else:
-        # player_data["tower"]["current"]["status"]["state"] = "RECRUIT"
+        player_data["tower"]["current"]["status"]["state"] = "RECRUIT"
         player_data["tower"]["current"]["status"]["coord"] = coord + 1
+        candidate_obj = get_candidate_obj(player_data)
+        player_data["tower"]["current"]["halftime"] = {
+            "count": 1,
+            "candidate": candidate_obj,
+            "canGiveUp": true,
+        }
 
     stage_lst = player_data["tower"]["current"]["layer"].copy()
     stage_lst[coord]["pass"] = true
