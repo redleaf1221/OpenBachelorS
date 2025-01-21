@@ -142,6 +142,7 @@ class SandboxBasicManager:
         for i, building_obj in enumerate(node_building_lst):
             if building_obj["pos"] == building_pos:
                 building_idx = i
+                break
 
         if building_op is cls.BuildingOp.CONSTRUCT:
             building_obj = {
@@ -156,7 +157,11 @@ class SandboxBasicManager:
                 node_building_lst[building_idx] = building_obj
         elif building_op is cls.BuildingOp.DESTROY:
             if building_idx != -1:
+                building_id = node_building_lst[building_idx]["key"]
                 node_building_lst.pop(building_idx)
+                return building_id
+
+        return None
 
     def sandboxPerm_sandboxV2_homeBuildSave(self):
         node_id = self.request_json["nodeId"]
