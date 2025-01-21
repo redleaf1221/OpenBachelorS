@@ -327,6 +327,20 @@ class SandboxBasicManager:
             }
         )
 
+    # code only for sandbox_1
+    NODE_ID_NUM_RIVAL_DICT = ConstJson(
+        {
+            "nEB55": 4,
+            "nACB1": 4,
+            "n06C5": 4,
+            "n36A1": 5,
+            "n4BD8": 9,
+            "n8594": 9,
+            "n7EF6": 9,
+            "nEF76": 9,
+        }
+    )
+
     def sandboxPerm_sandboxV2_racing_battleStart(self):
         node_id = self.request_json["nodeId"]
 
@@ -340,7 +354,7 @@ class SandboxBasicManager:
         ]["racingData"]["racerBasicInfo"]:
             racer_id_lst.append(racer_id)
 
-        num_rival = 9
+        num_rival = self.NODE_ID_NUM_RIVAL_DICT[node_id]
         rival_lst = random.choices(racer_id_lst, k=num_rival)
         self.player_data.extra_save.save_obj["cur_rival_lst"] = rival_lst
 
