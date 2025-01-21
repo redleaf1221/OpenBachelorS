@@ -132,7 +132,7 @@ def quest_saveBattleReplay(player_data):
 
     response = {}
 
-    if "cur_stage_id" not in player_data.extra_save.save_obj:
+    if player_data.extra_save.save_obj.get("cur_stage_id", None) is None:
         return response
 
     stage_id = player_data.extra_save.save_obj["cur_stage_id"]

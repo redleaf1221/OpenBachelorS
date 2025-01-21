@@ -78,7 +78,7 @@ class SandboxBasicManager:
             }
         )
 
-        if "cur_node_id" not in self.player_data.extra_save.save_obj:
+        if self.player_data.extra_save.save_obj.get("cur_node_id", None) is None:
             return
 
         node_id = self.player_data.extra_save.save_obj["cur_node_id"]
