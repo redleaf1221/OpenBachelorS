@@ -2,8 +2,8 @@ from flask import Blueprint
 from flask import request
 
 from ..const.json_const import true, false, null
-from ..const.filepath import CONFIG_JSON, VERSION_JSON
-from ..util.const_json_loader import const_json_loader
+from ..const.filepath import CONFIG_JSON, VERSION_JSON, SANDBOX_PERM_TABLE
+from ..util.const_json_loader import const_json_loader, ConstJson
 from ..util.player_data import player_data_decorator
 from ..util.battle_log_logger import log_battle_log_if_necessary
 
@@ -55,21 +55,55 @@ class SandboxBasicManager:
             }
         )
 
+    # code only for sandbox_1
+    FOOD_SUB_RUNE_DICT = ConstJson({"sandbox_1_puree": "battle_sub_atk_15"})
+
     def sandboxPerm_sandboxV2_eatFood(self):
         char_num_id = self.request_json["charInstId"]
 
-        food_id = self.request_json["foodInstId"]
+        food_inst_id = self.request_json["foodInstId"]
         food_obj = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
             self.topic_id
-        ]["cook"]["food"][food_id].copy()
+        ]["cook"]["food"][food_inst_id].copy()
+
+        food_id = food_obj["id"]
+        food_sub_lst = food_obj["sub"]
 
         self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
             "troop"
         ]["food"][str(char_num_id)] = {
-            "id": food_obj["id"],
-            "sub": food_obj["sub"],
+            "id": food_id,
+            "sub": food_sub_lst,
             "day": -1,
         }
+
+        sandbox_perm_table = const_json_loader[SANDBOX_PERM_TABLE]
+
+        food_rune_lst = []
+
+        # code only for sandbox_1
+        if food_sub_lst == ["sandbox_1_condiment", "sandbox_1_condiment"]:
+            food_rune = f"{food_id}_x"
+            if (
+                food_rune
+                not in sandbox_perm_table["detail"]["SANDBOX_V2"][self.topic_id][
+                    "runeDatas"
+                ]
+            ):
+                food_rune = food_id
+        else:
+            food_rune = food_id
+
+        food_rune_lst.append(food_rune)
+
+        for food_sub in food_sub_lst:
+            if food_sub in self.FOOD_SUB_RUNE_DICT:
+                food_sub_rune = self.FOOD_SUB_RUNE_DICT[food_sub]
+                food_rune_lst.append(food_sub_rune)
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "buff"
+        ]["rune"]["char"][str(char_num_id)] = food_rune_lst
 
 
 def get_sandbox_manager(player_data, topic_id, request_json, response):
