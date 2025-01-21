@@ -43,6 +43,21 @@ class SandboxBasicManager:
             }
         )
 
+        sandbox_perm_table = const_json_loader[SANDBOX_PERM_TABLE]
+
+        squad_idx = self.request_json["squadIdx"]
+        squad_tool_lst = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
+            self.topic_id
+        ]["troop"]["squad"][squad_idx]["tools"].copy()
+
+        for squad_tool in squad_tool_lst:
+            squad_tool_buff = sandbox_perm_table["detail"]["SANDBOX_V2"][self.topic_id][
+                "itemTrapData"
+            ][squad_tool]["buffId"]
+
+            if squad_tool_buff:
+                self.response["extraRunes"].append(squad_tool_buff)
+
     def sandboxPerm_sandboxV2_battleFinish(self):
         self.response.update(
             {
