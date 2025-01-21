@@ -241,6 +241,26 @@ class SandboxBasicManager:
             "main"
         ]["stage"]["node"][node_id]["animal"] = animal_lst
 
+    def sandboxPerm_sandboxV2_switchMode(self):
+        mode = self.request_json["mode"]
+        prev_mode = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
+            self.topic_id
+        ]["status"]["mode"]
+
+        # code only for sandbox_1
+        normal_mode_buff_lst = ["normal_mode_buff1", "normal_mode_buff3"]
+
+        if mode == 0:
+            for normal_mode_buff in normal_mode_buff_lst:
+                self.execute_buff_op(self.BuffOp.REMOVE, normal_mode_buff)
+        elif prev_mode == 0:
+            for normal_mode_buff in normal_mode_buff_lst:
+                self.execute_buff_op(self.BuffOp.ADD, normal_mode_buff)
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "status"
+        ]["mode"] = mode
+
 
 def get_sandbox_manager(player_data, topic_id, request_json, response):
     return SandboxBasicManager(player_data, topic_id, request_json, response)
@@ -319,5 +339,20 @@ def sandboxPerm_sandboxV2_homeBuildSave(player_data):
     sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
 
     sandbox_manager.sandboxPerm_sandboxV2_homeBuildSave()
+
+    return response
+
+
+@bp_sandboxPerm.route("/sandboxPerm/sandboxV2/switchMode", methods=["POST"])
+@player_data_decorator
+def sandboxPerm_sandboxV2_switchMode(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    topic_id = request_json["topicId"]
+
+    sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
+
+    sandbox_manager.sandboxPerm_sandboxV2_switchMode()
 
     return response
