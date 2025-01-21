@@ -33,18 +33,7 @@ class SandboxBasicManager:
             "troop"
         ]["squad"] = squad_lst
 
-    def sandboxPerm_sandboxV2_battleStart(self):
-        self.response.update(
-            {
-                "battleId": "00000000-0000-0000-0000-000000000000",
-                "isEnemyRush": false,
-                "shinyAnimals": {},
-                "shinyUniEnemy": [],
-                "lureInsect": [],
-                "extraRunes": [],
-            }
-        )
-
+    def calc_extra_rune(self):
         sandbox_perm_table = const_json_loader[SANDBOX_PERM_TABLE]
 
         squad_idx = self.request_json["squadIdx"]
@@ -59,6 +48,20 @@ class SandboxBasicManager:
 
             if squad_tool_buff:
                 self.response["extraRunes"].append(squad_tool_buff)
+
+    def sandboxPerm_sandboxV2_battleStart(self):
+        self.response.update(
+            {
+                "battleId": "00000000-0000-0000-0000-000000000000",
+                "isEnemyRush": false,
+                "shinyAnimals": {},
+                "shinyUniEnemy": [],
+                "lureInsect": [],
+                "extraRunes": [],
+            }
+        )
+
+        self.calc_extra_rune()
 
     def sandboxPerm_sandboxV2_battleFinish(self):
         self.response.update(
@@ -261,6 +264,25 @@ class SandboxBasicManager:
             "status"
         ]["mode"] = mode
 
+    def sandboxPerm_sandboxV2_monthBattleStart(self):
+        self.response.update(
+            {
+                "battleId": "00000000-0000-0000-0000-000000000000",
+                "extraRunes": [],
+            }
+        )
+
+        self.calc_extra_rune()
+
+    def sandboxPerm_sandboxV2_monthBattleFinish(self):
+        self.response.update(
+            {
+                "success": true,
+                "firstPass": false,
+                "enemyRushCount": [0, 1],
+            }
+        )
+
 
 def get_sandbox_manager(player_data, topic_id, request_json, response):
     return SandboxBasicManager(player_data, topic_id, request_json, response)
@@ -354,5 +376,37 @@ def sandboxPerm_sandboxV2_switchMode(player_data):
     sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
 
     sandbox_manager.sandboxPerm_sandboxV2_switchMode()
+
+    return response
+
+
+@bp_sandboxPerm.route("/sandboxPerm/sandboxV2/monthBattleStart", methods=["POST"])
+@player_data_decorator
+def sandboxPerm_sandboxV2_monthBattleStart(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    topic_id = request_json["topicId"]
+
+    sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
+
+    sandbox_manager.sandboxPerm_sandboxV2_monthBattleStart()
+
+    return response
+
+
+@bp_sandboxPerm.route("/sandboxPerm/sandboxV2/monthBattleFinish", methods=["POST"])
+@player_data_decorator
+def sandboxPerm_sandboxV2_monthBattleFinish(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
+
+    topic_id = request_json["topicId"]
+
+    sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
+
+    sandbox_manager.sandboxPerm_sandboxV2_monthBattleFinish()
 
     return response
