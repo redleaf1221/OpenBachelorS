@@ -98,13 +98,15 @@ class SandboxBasicManager:
             col = placed_item["key"]["position"]["col"]
             building_dir = placed_item["value"]["direction"]
 
-            self.execute_building_op(
+            building_op_ret = self.execute_building_op(
                 building_op, node_building_lst, row, col, building_dir, building_id
             )
 
             # presume that buff building can't be built this way
             if building_op is self.BuildingOp.DESTROY:
-                self.check_building_buff(building_id, building_op)
+                building_id = building_op_ret
+                if building_id is not None:
+                    self.check_building_buff(building_id, building_op)
 
         self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
             "main"
