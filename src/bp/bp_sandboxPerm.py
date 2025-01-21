@@ -188,6 +188,7 @@ class SandboxBasicManager:
             if building_idx == -1:
                 node_building_lst.append(building_obj)
             else:
+                # warn: can only overwrite building of the same kind (building buff issue)
                 node_building_lst[building_idx] = building_obj
         elif building_op is cls.BuildingOp.DESTROY:
             if building_idx != -1:
