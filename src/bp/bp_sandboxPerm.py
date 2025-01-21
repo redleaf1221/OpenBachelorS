@@ -185,6 +185,22 @@ class SandboxBasicManager:
             "main"
         ]["stage"]["node"][node_id]["building"] = node_building_lst
 
+        animal_lst = []
+
+        for room_id in self.request_json["catchedAnimals"]:
+            room_obj = self.request_json["catchedAnimals"][room_id]
+
+            enemy_lst = []
+
+            for enemy_id in room_obj:
+                enemy_lst.append({"id": enemy_id, "count": room_obj[enemy_id]})
+
+            animal_lst.append({"room": int(room_id), "enemy": enemy_lst})
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "main"
+        ]["stage"]["node"][node_id]["animal"] = animal_lst
+
 
 def get_sandbox_manager(player_data, topic_id, request_json, response):
     return SandboxBasicManager(player_data, topic_id, request_json, response)
