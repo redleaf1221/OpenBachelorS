@@ -1,4 +1,6 @@
 from enum import Enum
+import random
+from functools import cmp_to_key
 
 from flask import Blueprint
 from flask import request
@@ -325,6 +327,115 @@ class SandboxBasicManager:
             }
         )
 
+    def sandboxPerm_sandboxV2_racing_battleStart(self):
+        node_id = self.request_json["nodeId"]
+
+        racer_inst_id = self.request_json["instId"]
+        self.player_data.extra_save.save_obj["cur_racer_inst_id"] = racer_inst_id
+
+        sandbox_perm_table = const_json_loader[SANDBOX_PERM_TABLE]
+        racer_id_lst = []
+        for racer_id, racer_obj in sandbox_perm_table["detail"]["SANDBOX_V2"][
+            self.topic_id
+        ]["racingData"]["racerBasicInfo"]:
+            racer_id_lst.append(racer_id)
+
+        num_rival = 9
+        rival_lst = random.choices(racer_id_lst, k=num_rival)
+        self.player_data.extra_save.save_obj["cur_rival_lst"] = rival_lst
+
+        racer_lst = []
+        for i, racer_id in enumerate(rival_lst):
+            rival_inst_id = f"rr_{i}"
+            racer_lst.append(
+                {
+                    "inst": rival_inst_id,
+                    "id": racer_id,
+                    "attrib": sandbox_perm_table["detail"]["SANDBOX_V2"][self.topic_id][
+                        "racingData"
+                    ]["racerBasicInfo"][racer_id]["attributeMaxValue"].copy(),
+                    "skill": {"born": null, "learned": null},
+                }
+            )
+
+        racer_obj = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
+            self.topic_id
+        ]["racing"]["bag"]["racer"][racer_inst_id].copy()
+        racer_lst.append(
+            {
+                "inst": racer_inst_id,
+                "id": racer_obj["id"],
+                "attrib": racer_obj["attrib"],
+                "skill": {"born": null, "learned": null},
+            }
+        )
+
+        random.shuffle(racer_lst)
+
+        self.response.update(
+            {
+                "battleId": "00000000-0000-0000-0000-000000000000",
+                "myRacer": racer_inst_id,
+                "racers": racer_lst,
+            }
+        )
+
+    @staticmethod
+    def rank_lst_cmp(lhs, rhs):
+        if lhs["time"] != -1 and rhs["time"] != -1:
+            return lhs["time"] - rhs["time"]
+        if lhs["time"] != -1:
+            return -1
+        if rhs["time"] != -1:
+            return 1
+        return 0
+
+    def sandboxPerm_sandboxV2_racing_battleFinish(self):
+        racer_inst_id = self.player_data.extra_save.save_obj.get("cur_racer_inst_id")
+        rival_lst = self.player_data.extra_save.save_obj["cur_rival_lst"]
+
+        rank_lst = []
+        for i, racer_id in enumerate(rival_lst):
+            rival_inst_id = f"rr_{i}"
+            rank_lst.append(
+                {
+                    "inst": rival_inst_id,
+                    "name": {"prefix": "prefix_1", "suffix": "suffix_1"},
+                    "id": racer_id,
+                    "time": self.request_json["racingData"]["record"][rival_inst_id][
+                        "time"
+                    ],
+                }
+            )
+
+        racer_obj = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
+            self.topic_id
+        ]["racing"]["bag"]["racer"][racer_inst_id].copy()
+        rank_lst.append(
+            {
+                "inst": racer_inst_id,
+                "name": racer_obj["name"],
+                "id": racer_obj["id"],
+                "time": self.request_json["racingData"]["record"][racer_inst_id][
+                    "time"
+                ],
+            }
+        )
+
+        rank_lst.sort(key=cmp_to_key(self.rank_lst_cmp))
+
+        self.response.update(
+            {
+                "giveUp": false,
+                "myRacer": racer_inst_id,
+                "ranklist": rank_lst,
+                "bestTime": rank_lst[0]["time"],
+                "myMedalId": null,
+                "isNewBest": false,
+                "rewards": [],
+            }
+        )
+
 
 def get_sandbox_manager(player_data, topic_id, request_json, response):
     return SandboxBasicManager(player_data, topic_id, request_json, response)
@@ -450,5 +561,37 @@ def sandboxPerm_sandboxV2_monthBattleFinish(player_data):
     sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
 
     sandbox_manager.sandboxPerm_sandboxV2_monthBattleFinish()
+
+    return response
+
+
+@bp_sandboxPerm.route("/sandboxPerm/sandboxV2/racing/battleStart", methods=["POST"])
+@player_data_decorator
+def sandboxPerm_sandboxV2_racing_battleStart(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    topic_id = request_json["topicId"]
+
+    sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
+
+    sandbox_manager.sandboxPerm_sandboxV2_racing_battleStart()
+
+    return response
+
+
+@bp_sandboxPerm.route("/sandboxPerm/sandboxV2/racing/battleFinish", methods=["POST"])
+@player_data_decorator
+def sandboxPerm_sandboxV2_racing_battleFinish(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
+
+    topic_id = request_json["topicId"]
+
+    sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
+
+    sandbox_manager.sandboxPerm_sandboxV2_racing_battleFinish()
 
     return response
