@@ -166,6 +166,8 @@ class SandboxBasicManager:
     def sandboxPerm_sandboxV2_homeBuildSave(self):
         node_id = self.request_json["nodeId"]
 
+        sandbox_perm_table = const_json_loader[SANDBOX_PERM_TABLE]
+
         node_building_lst = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
             self.topic_id
         ]["main"]["stage"]["node"][node_id]["building"].copy()
@@ -182,9 +184,18 @@ class SandboxBasicManager:
             col = operation_obj["pos"]["col"]
             building_dir = operation_obj.get("dir", None)
             building_id = operation_obj.get("buildingId", None)
-            self.execute_building_op(
+            building_op_ret = self.execute_building_op(
                 building_op, node_building_lst, row, col, building_dir, building_id
             )
+            if building_op is self.BuildingOp.DESTROY:
+                building_id = building_op_ret
+            if building_id is not None:
+                building_buff = sandbox_perm_table["detail"]["SANDBOX_V2"][
+                    self.topic_id
+                ]["itemTrapData"][building_id]["buffId"]
+
+                if building_buff:
+                    pass
 
         self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
             "main"
