@@ -102,7 +102,9 @@ class SandboxBasicManager:
                 building_op, node_building_lst, row, col, building_dir, building_id
             )
 
-            self.check_building_buff(building_id, building_op)
+            # presume that buff building can't be built this way
+            if building_op is self.BuildingOp.DESTROY:
+                self.check_building_buff(building_id, building_op)
 
         self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
             "main"
