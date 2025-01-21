@@ -1,3 +1,5 @@
+from enum import Enum
+
 from flask import Blueprint
 from flask import request
 
@@ -120,6 +122,69 @@ class SandboxBasicManager:
             "buff"
         ]["rune"]["char"][str(char_num_id)] = food_rune_lst
 
+    class BuildingOp(Enum):
+        CONSTRUCT = 1
+        DESTROY = 3
+
+    @classmethod
+    def execute_building_op(
+        cls,
+        building_op,
+        node_building_lst,
+        row,
+        col,
+        building_dir=None,
+        building_id=None,
+    ):
+        building_pos = [row, col]
+
+        building_idx = -1
+        for i, building_obj in enumerate(node_building_lst):
+            if building_obj["pos"] == building_pos:
+                building_idx = i
+
+        if building_op is cls.BuildingOp.CONSTRUCT:
+            building_obj = {
+                "key": building_id,
+                "pos": building_pos,
+                "hpRatio": 10000,
+                "dir": building_dir,
+            }
+            if building_idx == -1:
+                node_building_lst.append(building_obj)
+            else:
+                node_building_lst[building_idx] = building_obj
+        elif building_op is cls.BuildingOp.DESTROY:
+            if building_idx != -1:
+                node_building_lst.pop(building_idx)
+
+    def sandboxPerm_sandboxV2_homeBuildSave(self):
+        node_id = self.request_json["nodeId"]
+
+        node_building_lst = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
+            self.topic_id
+        ]["main"]["stage"]["node"][node_id]["building"].copy()
+
+        operation_lst = self.request_json["operation"]
+        for operation_obj in operation_lst:
+            if operation_obj["type"] == 1:
+                building_op = self.BuildingOp.CONSTRUCT
+            elif operation_obj["type"] == 3:
+                building_op = self.BuildingOp.DESTROY
+            else:
+                continue
+            row = operation_obj["pos"]["row"]
+            col = operation_obj["pos"]["col"]
+            building_dir = operation_obj.get("dir", None)
+            building_id = operation_obj.get("buildingId", None)
+            self.execute_building_op(
+                building_op, node_building_lst, row, col, building_dir, building_id
+            )
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "main"
+        ]["stage"]["node"][node_id]["building"] = node_building_lst
+
 
 def get_sandbox_manager(player_data, topic_id, request_json, response):
     return SandboxBasicManager(player_data, topic_id, request_json, response)
@@ -183,5 +248,20 @@ def sandboxPerm_sandboxV2_eatFood(player_data):
     sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
 
     sandbox_manager.sandboxPerm_sandboxV2_eatFood()
+
+    return response
+
+
+@bp_sandboxPerm.route("/sandboxPerm/sandboxV2/homeBuildSave", methods=["POST"])
+@player_data_decorator
+def sandboxPerm_sandboxV2_homeBuildSave(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    topic_id = request_json["topicId"]
+
+    sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
+
+    sandbox_manager.sandboxPerm_sandboxV2_homeBuildSave()
 
     return response
