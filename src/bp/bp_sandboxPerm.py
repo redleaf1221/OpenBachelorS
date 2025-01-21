@@ -163,6 +163,27 @@ class SandboxBasicManager:
 
         return None
 
+    class BuffOp(Enum):
+        ADD = 0
+        REMOVE = 1
+
+    def execute_buff_op(self, buff_op, buff):
+        buff_lst = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
+            self.topic_id
+        ]["buff"]["rune"]["global"].copy()
+
+        if buff_op is self.BuffOp.ADD:
+            buff_lst.append(buff)
+        else:
+            for i in range(len(buff_lst)):
+                if buff_lst[i] == buff:
+                    buff_lst.pop(i)
+                    break
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "buff"
+        ]["rune"]["global"] = buff_lst
+
     def sandboxPerm_sandboxV2_homeBuildSave(self):
         node_id = self.request_json["nodeId"]
 
@@ -195,8 +216,11 @@ class SandboxBasicManager:
                 ]["itemTrapData"][building_id]["buffId"]
 
                 if building_buff:
-                    pass
-
+                    if building_op is self.BuildingOp.CONSTRUCT:
+                        buff_op = self.BuffOp.ADD
+                    else:
+                        buff_op = self.BuffOp.REMOVE
+                    self.execute_buff_op(buff_op, building_buff)
         self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
             "main"
         ]["stage"]["node"][node_id]["building"] = node_building_lst
