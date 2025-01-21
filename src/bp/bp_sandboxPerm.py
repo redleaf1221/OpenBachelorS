@@ -63,6 +63,9 @@ class SandboxBasicManager:
 
         self.calc_extra_rune()
 
+        node_id = self.request_json["nodeId"]
+        self.player_data.extra_save.save_obj["cur_node_id"] = node_id
+
     def sandboxPerm_sandboxV2_battleFinish(self):
         self.response.update(
             {
@@ -74,6 +77,34 @@ class SandboxBasicManager:
                 "enemyRushCount": [],
             }
         )
+
+        if "cur_node_id" not in self.player_data.extra_save.save_obj:
+            return
+
+        node_id = self.player_data.extra_save.save_obj["cur_node_id"]
+
+        node_building_lst = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
+            self.topic_id
+        ]["main"]["stage"]["node"][node_id]["building"].copy()
+
+        for placed_item in self.request_json["sandboxV2Data"]["placedItems"]:
+            if placed_item["value"]["hpRatio"]:
+                building_op = self.BuildingOp.CONSTRUCT
+            else:
+                building_op = self.BuildingOp.DESTROY
+
+            building_id = placed_item["key"]["itemId"]
+            row = placed_item["key"]["position"]["row"]
+            col = placed_item["key"]["position"]["col"]
+            building_dir = placed_item["value"]["direction"]
+
+            self.execute_building_op(
+                building_op, node_building_lst, row, col, building_dir, building_id
+            )
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "main"
+        ]["stage"]["node"][node_id]["building"] = node_building_lst
 
     # code only for sandbox_1
     FOOD_SUB_RUNE_DICT = ConstJson({"sandbox_1_puree": "battle_sub_atk_15"})
