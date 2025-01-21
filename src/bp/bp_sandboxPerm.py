@@ -102,6 +102,8 @@ class SandboxBasicManager:
                 building_op, node_building_lst, row, col, building_dir, building_id
             )
 
+            self.check_building_buff(building_id, building_op)
+
         self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
             "main"
         ]["stage"]["node"][node_id]["building"] = node_building_lst
@@ -219,10 +221,22 @@ class SandboxBasicManager:
             "buff"
         ]["rune"]["global"] = buff_lst
 
+    def check_building_buff(self, building_id, building_op):
+        sandbox_perm_table = const_json_loader[SANDBOX_PERM_TABLE]
+
+        building_buff = sandbox_perm_table["detail"]["SANDBOX_V2"][self.topic_id][
+            "itemTrapData"
+        ][building_id]["buffId"]
+
+        if building_buff:
+            if building_op is self.BuildingOp.CONSTRUCT:
+                buff_op = self.BuffOp.ADD
+            else:
+                buff_op = self.BuffOp.REMOVE
+            self.execute_buff_op(buff_op, building_buff)
+
     def sandboxPerm_sandboxV2_homeBuildSave(self):
         node_id = self.request_json["nodeId"]
-
-        sandbox_perm_table = const_json_loader[SANDBOX_PERM_TABLE]
 
         node_building_lst = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
             self.topic_id
@@ -246,16 +260,8 @@ class SandboxBasicManager:
             if building_op is self.BuildingOp.DESTROY:
                 building_id = building_op_ret
             if building_id is not None:
-                building_buff = sandbox_perm_table["detail"]["SANDBOX_V2"][
-                    self.topic_id
-                ]["itemTrapData"][building_id]["buffId"]
+                self.check_building_buff(building_id, building_op)
 
-                if building_buff:
-                    if building_op is self.BuildingOp.CONSTRUCT:
-                        buff_op = self.BuffOp.ADD
-                    else:
-                        buff_op = self.BuffOp.REMOVE
-                    self.execute_buff_op(buff_op, building_buff)
         self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
             "main"
         ]["stage"]["node"][node_id]["building"] = node_building_lst
