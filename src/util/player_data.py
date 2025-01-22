@@ -455,8 +455,13 @@ def build_player_data_template():
             "roomSlotId": "",
             "index": -1,
             "changeScale": 0,
-            "bubble": {"normal": {"add": -1, "ts": 0}, "assist": {"add": -1, "ts": 0}},
+            "bubble": {
+                "normal": {"add": -1, "ts": 0},
+                "assist": {"add": -1, "ts": 0},
+                "private": {"add": -1, "ts": 0},
+            },
             "workTime": 0,
+            "privateRooms": [],
         }
 
     # place amiya in MEETING by default to avoid error msg
