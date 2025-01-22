@@ -477,6 +477,12 @@ def build_player_data_template():
             "inUse": 0,
         }
 
+    for music_id, music_obj in building_data["musicData"]["musicDatas"]:
+        tmpl_json_obj["building"]["music"]["state"][music_id] = {
+            "progress": null,
+            "unlock": true,
+        }
+
     # ----------
 
     rlv2_tmpl_json_obj = const_json_loader[RLV2_TMPL_JSON].copy()

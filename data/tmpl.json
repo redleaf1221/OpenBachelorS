@@ -1239,6 +1239,16 @@
         "diyPresetSolutions": {},
         "solution": {
             "furnitureTs": {}
+        },
+        "music": {
+            "inUse": true,
+            "selected": "bgm_building_default",
+            "state": {
+                "bgm_building_default": {
+                    "progress": null,
+                    "unlock": true
+                }
+            }
         }
     },
     "dexNav": {
