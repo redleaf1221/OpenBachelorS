@@ -160,3 +160,17 @@ def building_changeBGM(player_data):
 
     response = {}
     return response
+
+
+@bp_building.route("/building/setPrivateDormOwner", methods=["POST"])
+@player_data_decorator
+def building_setPrivateDormOwner(player_data):
+    request_json = request.get_json()
+
+    room_id = request_json["slotId"]
+    char_num_id = request_json["charInsId"]
+
+    player_data["building"]["rooms"]["PRIVATE"][room_id]["owners"] = [char_num_id]
+
+    response = {}
+    return response
