@@ -116,3 +116,15 @@ def mail_removeAllReceivedMail(player_data):
 
     response = {}
     return response
+
+
+@bp_mail.route("/mailCollection/getList", methods=["POST"])
+@player_data_decorator
+def mailCollection_getList(player_data):
+    request_json = request.get_json()
+
+    response = {
+        "collections": [],
+        "extra": [],
+    }
+    return response
