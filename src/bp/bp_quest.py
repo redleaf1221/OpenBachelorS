@@ -87,6 +87,21 @@ def quest_battleFinish(player_data):
     return response
 
 
+@bp_quest.route("/quest/battleContinue", methods=["POST"])
+@player_data_decorator
+def quest_battleContinue(player_data):
+    request_json = request.get_json()
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
+
+    response = {
+        "result": 1,
+        "battleId": "00000000-0000-0000-0000-000000000000",
+        "apFailReturn": 0,
+    }
+    return response
+
+
 @bp_quest.route("/quest/getAssistList", methods=["POST"])
 @player_data_decorator
 def quest_getAssistList(player_data):
