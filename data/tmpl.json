@@ -1161,7 +1161,20 @@
                     "lastUpdateTime": 1700000000,
                     "completeWorkTime": 1700000000,
                     "mfc": {},
-                    "presetQueue": []
+                    "presetQueue": [],
+                    "messageLeave": {
+                        "inUse": true,
+                        "lastVisitTs": 1700000000,
+                        "lastShowTs": 1700000000,
+                        "lastUpdateSpTs": 1700000000,
+                        "sp": {
+                            "lastWeek": 0,
+                            "lastWeekSum": 0,
+                            "thisWeek": 0,
+                            "thisWeekSum": 0
+                        }
+                    },
+                    "diySolution": {}
                 }
             },
             "HIRE": {
