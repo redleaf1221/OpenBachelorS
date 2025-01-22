@@ -147,3 +147,16 @@ def building_getMessageBoardContent(player_data):
         "lastShowTs": 1700000000,
     }
     return response
+
+
+@bp_building.route("/building/changeBGM", methods=["POST"])
+@player_data_decorator
+def building_changeBGM(player_data):
+    request_json = request.get_json()
+
+    music_id = request_json["musicId"]
+
+    player_data["building"]["music"]["selected"] = music_id
+
+    response = {}
+    return response
