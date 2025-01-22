@@ -128,3 +128,20 @@ def building_assignChar(player_data):
 
     response = {}
     return response
+
+
+@bp_building.route("/building/getMessageBoardContent", methods=["POST"])
+@player_data_decorator
+def building_getMessageBoardContent(player_data):
+    request_json = request.get_json()
+
+    response = {
+        "thisWeekVisitors": [],
+        "lastWeekVisitors": [],
+        "todayVisit": 0,
+        "weeklyVisit": 0,
+        "lastWeekVisit": 0,
+        "lastWeekSpReward": 0,
+        "lastShowTs": 1700000000,
+    }
+    return response
