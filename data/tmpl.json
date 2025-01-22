@@ -307,9 +307,9 @@
             "labor": {
                 "buffSpeed": 0,
                 "processPoint": 0,
-                "value": 200,
+                "value": 225,
                 "lastUpdateTime": 1700000000,
-                "maxValue": 200
+                "maxValue": 225
             },
             "workshop": {
                 "bonusActive": 0,
@@ -653,6 +653,76 @@
                 "roomId": "ELEVATOR",
                 "charInstIds": [],
                 "completeConstructTime": -1
+            },
+            "slot_48": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_45": {
+                "level": 1,
+                "state": 2,
+                "roomId": "CORRIDOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_42": {
+                "level": 1,
+                "state": 2,
+                "roomId": "CORRIDOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_39": {
+                "level": 1,
+                "state": 2,
+                "roomId": "CORRIDOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_46": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_43": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_40": {
+                "level": 1,
+                "state": 2,
+                "roomId": "ELEVATOR",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_47": {
+                "level": 3,
+                "state": 2,
+                "roomId": "PRIVATE",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_44": {
+                "level": 3,
+                "state": 2,
+                "roomId": "PRIVATE",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_41": {
+                "level": 3,
+                "state": 2,
+                "roomId": "PRIVATE",
+                "charInstIds": [],
+                "completeConstructTime": -1
             }
         },
         "rooms": {
@@ -722,7 +792,11 @@
                 "slot_11": {},
                 "slot_8": {},
                 "slot_4": {},
-                "slot_1": {}
+                "slot_1": {},
+                "slot_48": {},
+                "slot_46": {},
+                "slot_43": {},
+                "slot_40": {}
             },
             "POWER": {
                 "slot_26": {
@@ -1003,7 +1077,10 @@
                 "slot_22": {},
                 "slot_10": {},
                 "slot_12": {},
-                "slot_2": {}
+                "slot_2": {},
+                "slot_45": {},
+                "slot_42": {},
+                "slot_39": {}
             },
             "DORMITORY": {
                 "slot_28": {
@@ -1266,6 +1343,29 @@
                         "charInstId": -1,
                         "state": 0
                     }
+                }
+            },
+            "PRIVATE": {
+                "slot_47": {
+                    "owners": [
+                        -1
+                    ],
+                    "comfort": 5000,
+                    "diySolution": {}
+                },
+                "slot_44": {
+                    "owners": [
+                        -1
+                    ],
+                    "comfort": 5000,
+                    "diySolution": {}
+                },
+                "slot_41": {
+                    "owners": [
+                        -1
+                    ],
+                    "comfort": 5000,
+                    "diySolution": {}
                 }
             }
         },
