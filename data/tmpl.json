@@ -1020,7 +1020,14 @@
                         "point": {}
                     },
                     "comfort": 5000,
-                    "diySolution": {}
+                    "diySolution": {},
+                    "lockQueue": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
                 },
                 "slot_20": {
                     "buff": {
@@ -1036,7 +1043,14 @@
                         "point": {}
                     },
                     "comfort": 5000,
-                    "diySolution": {}
+                    "diySolution": {},
+                    "lockQueue": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
                 },
                 "slot_9": {
                     "buff": {
@@ -1052,7 +1066,14 @@
                         "point": {}
                     },
                     "comfort": 5000,
-                    "diySolution": {}
+                    "diySolution": {},
+                    "lockQueue": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
                 },
                 "slot_3": {
                     "buff": {
@@ -1068,7 +1089,14 @@
                         "point": {}
                     },
                     "comfort": 5000,
-                    "diySolution": {}
+                    "diySolution": {},
+                    "lockQueue": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
                 }
             },
             "WORKSHOP": {
