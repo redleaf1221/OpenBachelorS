@@ -63,7 +63,9 @@ def building_changeDiySolution(player_data):
     room_id = request_json["roomSlotId"]
     diy_solution = request_json["solution"]
 
-    player_data["building"]["rooms"]["DORMITORY"][room_id]["diySolution"] = diy_solution
+    room_type = player_data["building"]["roomSlots"][room_id]["roomId"]
+
+    player_data["building"]["rooms"][room_type][room_id]["diySolution"] = diy_solution
 
     response = {}
     return response
