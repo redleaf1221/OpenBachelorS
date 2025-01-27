@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask import request
 
 from ..const.json_const import true, false, null
-from ..const.filepath import CONFIG_JSON, VERSION_JSON
+from ..const.filepath import CONFIG_JSON, VERSION_JSON, ROGUELIKE_TOPIC_TABLE
 from ..util.const_json_loader import const_json_loader
 from ..util.player_data import player_data_decorator
 
@@ -17,6 +17,8 @@ class Rlv2BasicManager:
         self.response = response
 
     def rlv2_createGame(self):
+        roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
+
         self.player_data["rlv2"]["current"] = {
             "player": {
                 "state": "INIT",
