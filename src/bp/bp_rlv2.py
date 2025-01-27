@@ -19,6 +19,9 @@ class Rlv2BasicManager:
     def rlv2_createGame(self):
         pass
 
+    def rlv2_giveUpGame(self):
+        pass
+
 
 def get_rlv2_manager(player_data, request_json, response):
     theme_id = player_data["rlv2"]["current"]["game"]["theme"]
@@ -37,5 +40,18 @@ def rlv2_createGame(player_data):
     rlv2_manager = get_rlv2_manager(player_data, request_json, response)
 
     rlv2_manager.rlv2_createGame()
+
+    return response
+
+
+@bp_rlv2.route("/rlv2/giveUpGame", methods=["POST"])
+@player_data_decorator
+def rlv2_giveUpGame(player_data):
+    request_json = request.get_json()
+    response = {"result": "ok"}
+
+    rlv2_manager = get_rlv2_manager(player_data, request_json, response)
+
+    rlv2_manager.rlv2_giveUpGame()
 
     return response
