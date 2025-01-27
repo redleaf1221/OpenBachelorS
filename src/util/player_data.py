@@ -670,7 +670,7 @@ def apply_delta_json_on_base_obj(base_obj, delta_json):
         for key in cur_modified:
             value = cur_modified[key]
             if isinstance(value, dict):
-                if key not in cur_obj:
+                if key not in cur_obj or not isinstance(cur_obj[key], dict):
                     cur_obj[key] = {}
                 stk.append((cur_obj[key], value))
             else:
