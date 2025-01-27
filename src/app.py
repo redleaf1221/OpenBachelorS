@@ -16,6 +16,7 @@ from .bp.bp_general import bp_general
 from .bp.bp_mail import bp_mail
 from .bp.bp_pay import bp_pay
 from .bp.bp_quest import bp_quest
+from .bp.bp_rlv2 import bp_rlv2
 from .bp.bp_sandboxPerm import bp_sandboxPerm
 from .bp.bp_settings import bp_settings
 from .bp.bp_shop import bp_shop
@@ -46,6 +47,7 @@ app.register_blueprint(bp_general)
 app.register_blueprint(bp_mail)
 app.register_blueprint(bp_pay)
 app.register_blueprint(bp_quest)
+app.register_blueprint(bp_rlv2)
 app.register_blueprint(bp_sandboxPerm)
 app.register_blueprint(bp_settings)
 app.register_blueprint(bp_shop)
