@@ -434,12 +434,54 @@ class Rlv2BasicManager:
                 "y": 0,
             }
 
+    def get_next_relic_id(self):
+        relic_idx = 0
+        while True:
+            relic_id = f"r_{relic_idx}"
+            if (
+                relic_id
+                not in self.player_data["rlv2"]["current"]["inventory"]["relic"]
+            ):
+                break
+            relic_idx += 1
+        return relic_id
+
     def rlv2_shopAction(self):
         if self.request_json["leave"]:
             self.player_data["rlv2"]["current"]["player"]["state"] = "WAIT_MOVE"
             self.player_data["rlv2"]["current"]["player"]["pending"] = []
 
             self.leave_node()
+            return
+
+        roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
+
+        for good_idx in self.request_json["buy"]:
+            good_idx = int(good_idx)
+
+            good_id = self.player_data["rlv2"]["current"]["player"]["pending"][0][
+                "content"
+            ]["shop"]["goods"][good_idx]["itemId"]
+
+            good_type = roguelike_topic_table["details"][self.theme_id]["items"][
+                good_id
+            ]["type"]
+            if good_type == "RELIC":
+                relic_id = self.get_next_relic_id()
+                self.player_data["rlv2"]["current"]["inventory"]["relic"][relic_id] = {
+                    "index": relic_id,
+                    "id": good_id,
+                    "count": 1,
+                    "ts": 1700000000,
+                }
+
+            elif good_type == "ACTIVE_TOOL":
+                self.player_data["rlv2"]["current"]["inventory"]["trap"] = {
+                    "index": good_id,
+                    "id": good_id,
+                    "count": 1,
+                    "ts": 1700000000,
+                }
 
 
 def get_rlv2_manager(player_data, request_json, response):
