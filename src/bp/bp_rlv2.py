@@ -285,8 +285,7 @@ class Rlv2BasicManager:
         zone_idx = self.get_zone_idx(zone_num_idx)
         zone_obj = self.create_simple_zone_obj(zone_num_idx)
 
-        node_pos_x = 1
-        node_pos_y = 1
+        node_pos_x, node_pos_y = 1, 1
 
         roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
 
@@ -304,8 +303,7 @@ class Rlv2BasicManager:
                 zone_idx = self.get_zone_idx(zone_num_idx)
                 zone_obj = self.create_simple_zone_obj(zone_num_idx)
 
-                node_pos_x = 1
-                node_pos_y = 1
+                node_pos_x, node_pos_y = 1, 1
 
             node_type = self.NodeType.BATTLE
             if stage_obj["isElite"]:
@@ -407,8 +405,41 @@ class Rlv2BasicManager:
             }
         ]
 
+    def leave_node(self):
+        zone_idx = self.player_data["rlv2"]["current"]["player"]["cursor"]["zone"]
+        cursor_pos = self.player_data["rlv2"]["current"]["player"]["cursor"][
+            "position"
+        ].copy()
+
+        node_pos_x, node_pos_y = cursor_pos["x"], cursor_pos["y"]
+        node_idx = self.get_node_idx(node_pos_x, node_pos_y)
+
+        if (
+            "zone_end"
+            in self.player_data["rlv2"]["current"]["map"]["zones"][str(zone_idx)][
+                "nodes"
+            ][node_idx]
+        ):
+            zone_idx += 1
+            if str(zone_idx) not in self.player_data["rlv2"]["current"]["map"]["zones"]:
+                zone_idx = self.get_zone_idx(0)
+            self.player_data["rlv2"]["current"]["player"]["cursor"]["zone"] = zone_idx
+
+            cursor_pos = self.player_data["rlv2"]["current"]["player"]["cursor"][
+                "position"
+            ] = null
+        else:
+            self.player_data["rlv2"]["current"]["player"]["cursor"]["position"] = {
+                "x": 0,
+                "y": 0,
+            }
+
     def rlv2_shopAction(self):
-        pass
+        if self.request_json["leave"]:
+            self.player_data["rlv2"]["current"]["player"]["state"] = "WAIT_MOVE"
+            self.player_data["rlv2"]["current"]["player"]["pending"] = []
+
+            self.leave_node()
 
 
 def get_rlv2_manager(player_data, request_json, response):
