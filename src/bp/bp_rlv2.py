@@ -332,6 +332,10 @@ class Rlv2BasicManager:
 
             node_pos_y += 1
 
+        # last node needs to be adjacent
+        last_node_pos_x = node_pos_x + 1
+        zone_obj["nodes"][last_node_idx]["pos"]["x"] = last_node_pos_x
+
         zone_obj["nodes"][first_node_idx]["next"].append(
             {"x": last_node_pos_x, "y": last_node_pos_y}
         )
