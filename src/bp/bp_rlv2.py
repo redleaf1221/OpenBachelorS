@@ -140,6 +140,23 @@ class Rlv2BasicManager:
             "record": null,
         }
 
+    def rlv2_chooseInitialRelic(self):
+        init_band_relic_idx = self.request_json["select"]
+
+        pending_lst = self.player_data["rlv2"]["current"]["player"]["pending"].copy()
+        init_band_relic = pending_lst[0]["content"]["initRelic"]["items"][
+            init_band_relic_idx
+        ]["id"]
+        self.player_data["rlv2"]["current"]["inventory"]["relic"]["r_0"] = {
+            "index": "r_0",
+            "id": init_band_relic,
+            "count": 1,
+            "ts": 1700000000,
+        }
+
+        pending_lst.pop(0)
+        self.player_data["rlv2"]["current"]["player"]["pending"] = pending_lst
+
 
 def get_rlv2_manager(player_data, request_json, response):
     theme_id = player_data["rlv2"]["current"]["game"]["theme"]
@@ -175,5 +192,18 @@ def rlv2_giveUpGame(player_data):
     rlv2_manager = get_rlv2_manager(player_data, request_json, response)
 
     rlv2_manager.rlv2_giveUpGame()
+
+    return response
+
+
+@bp_rlv2.route("/rlv2/chooseInitialRelic", methods=["POST"])
+@player_data_decorator
+def rlv2_chooseInitialRelic(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    rlv2_manager = get_rlv2_manager(player_data, request_json, response)
+
+    rlv2_manager.rlv2_chooseInitialRelic()
 
     return response
