@@ -219,12 +219,6 @@ class Rlv2BasicManager:
             return f"{node_pos_y}"
         return f"{node_pos_x}0{node_pos_y}"
 
-    def get_first_node_pos(self):
-        return 0, 0
-
-    def get_last_node_pos(self):
-        return self.MAX_NODE_POS_X - 1, 0
-
     def create_simple_zone_obj(self, zone_num_idx):
         zone_obj = {
             "id": f"zone_{zone_num_idx+1}",
@@ -235,7 +229,7 @@ class Rlv2BasicManager:
 
         node_type_int = self.get_node_type_int(self.theme_id, self.NodeType.SHOP)
 
-        first_node_pos_x, first_node_pos_y = self.get_first_node_pos()
+        first_node_pos_x, first_node_pos_y = 0, 0
         first_node_idx = self.get_node_idx(first_node_pos_x, first_node_pos_y)
         first_node_obj = {
             "index": first_node_idx,
@@ -245,7 +239,7 @@ class Rlv2BasicManager:
         }
         zone_obj["nodes"][first_node_idx] = first_node_obj
 
-        node_pos_x, node_pos_y = first_node_pos_x + 1, 0
+        node_pos_x, node_pos_y = 1, 0
         node_idx = self.get_node_idx(node_pos_x, node_pos_y)
         node_obj = {
             "index": node_idx,
@@ -259,7 +253,12 @@ class Rlv2BasicManager:
             {"x": node_pos_x, "y": node_pos_y}
         )
 
-        last_node_pos_x, last_node_pos_y = self.get_last_node_pos()
+        return zone_obj
+
+    def add_zone_obj_last_node(self, zone_obj, last_node_pos_x):
+        node_type_int = self.get_node_type_int(self.theme_id, self.NodeType.SHOP)
+
+        last_node_pos_y = 0
         last_node_idx = self.get_node_idx(last_node_pos_x, last_node_pos_y)
         last_node_obj = {
             "index": last_node_idx,
@@ -270,21 +269,23 @@ class Rlv2BasicManager:
         }
         zone_obj["nodes"][last_node_idx] = last_node_obj
 
-        return zone_obj
+        first_node_pos_x, first_node_pos_y = 0, 0
+        first_node_idx = self.get_node_idx(first_node_pos_x, first_node_pos_y)
+        zone_obj["nodes"][first_node_idx]["next"].append(
+            {"x": last_node_pos_x, "y": last_node_pos_y}
+        )
 
     def create_simple_map(self):
         zone_dict = {}
 
-        first_node_pos_x, first_node_pos_y = self.get_first_node_pos()
+        first_node_pos_x, first_node_pos_y = 0, 0
         first_node_idx = self.get_node_idx(first_node_pos_x, first_node_pos_y)
-        last_node_pos_x, last_node_pos_y = self.get_last_node_pos()
-        last_node_idx = self.get_node_idx(last_node_pos_x, last_node_pos_y)
 
         zone_num_idx = 0
         zone_idx = self.get_zone_idx(zone_num_idx)
         zone_obj = self.create_simple_zone_obj(zone_num_idx)
 
-        node_pos_x = first_node_pos_x + 1
+        node_pos_x = 1
         node_pos_y = 1
 
         roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
@@ -295,17 +296,15 @@ class Rlv2BasicManager:
             if node_pos_y >= self.MAX_NODE_POS_Y:
                 node_pos_y = 0
                 node_pos_x += 1
-            if node_pos_x >= last_node_pos_x:
-                zone_obj["nodes"][first_node_idx]["next"].append(
-                    {"x": last_node_pos_x, "y": last_node_pos_y}
-                )
+            if node_pos_x >= self.MAX_NODE_POS_X - 1:
+                self.add_zone_obj_last_node(zone_obj, node_pos_x)
                 zone_dict[str(zone_idx)] = zone_obj
 
                 zone_num_idx += 1
                 zone_idx = self.get_zone_idx(zone_num_idx)
                 zone_obj = self.create_simple_zone_obj(zone_num_idx)
 
-                node_pos_x = first_node_pos_x + 1
+                node_pos_x = 1
                 node_pos_y = 1
 
             node_type = self.NodeType.BATTLE
@@ -332,13 +331,7 @@ class Rlv2BasicManager:
 
             node_pos_y += 1
 
-        # last node needs to be adjacent
-        last_node_pos_x = node_pos_x + 1
-        zone_obj["nodes"][last_node_idx]["pos"]["x"] = last_node_pos_x
-
-        zone_obj["nodes"][first_node_idx]["next"].append(
-            {"x": last_node_pos_x, "y": last_node_pos_y}
-        )
+        self.add_zone_obj_last_node(zone_obj, node_pos_x + 1)
         zone_dict[str(zone_idx)] = zone_obj
 
         return zone_dict
