@@ -345,11 +345,41 @@ class Rlv2BasicManager:
 
     def rlv2_finishEvent(self):
         self.player_data["rlv2"]["current"]["player"]["state"] = "WAIT_MOVE"
+        self.player_data["rlv2"]["current"]["player"]["pending"] = []
 
         self.player_data["rlv2"]["current"]["map"]["zones"] = self.create_simple_map()
         self.player_data["rlv2"]["current"]["player"]["cursor"]["zone"] = (
             self.get_zone_idx(0)
         )
+
+    def rlv2_moveTo(self):
+        cursor_pos = self.request_json["to"]
+
+        self.player_data["rlv2"]["current"]["player"]["state"] = "PENDING"
+        self.player_data["rlv2"]["current"]["player"]["cursor"]["position"] = cursor_pos
+        self.player_data["rlv2"]["current"]["player"]["pending"] = [
+            {
+                "index": "e_3",
+                "type": "SHOP",
+                "content": {
+                    "shop": {
+                        "bank": {
+                            "open": true,
+                            "canPut": true,
+                            "canWithdraw": true,
+                            "withdraw": 0,
+                            "cost": 1,
+                        },
+                        "id": "zone_1_shop",
+                        "goods": [],
+                        "_done": false,
+                    }
+                },
+            }
+        ]
+
+    def rlv2_shopAction(self):
+        pass
 
 
 def get_rlv2_manager(player_data, request_json, response):
@@ -425,5 +455,31 @@ def rlv2_finishEvent(player_data):
     rlv2_manager = get_rlv2_manager(player_data, request_json, response)
 
     rlv2_manager.rlv2_finishEvent()
+
+    return response
+
+
+@bp_rlv2.route("/rlv2/moveTo", methods=["POST"])
+@player_data_decorator
+def rlv2_moveTo(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    rlv2_manager = get_rlv2_manager(player_data, request_json, response)
+
+    rlv2_manager.rlv2_moveTo()
+
+    return response
+
+
+@bp_rlv2.route("/rlv2/shopAction", methods=["POST"])
+@player_data_decorator
+def rlv2_shopAction(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    rlv2_manager = get_rlv2_manager(player_data, request_json, response)
+
+    rlv2_manager.rlv2_shopAction()
 
     return response
