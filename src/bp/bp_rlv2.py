@@ -270,7 +270,7 @@ class Rlv2BasicManager:
         zone_idx = self.get_zone_idx(zone_num_idx)
         zone_obj = self.create_simple_zone_obj(zone_num_idx)
 
-        node_pos_x = 1
+        node_pos_x = first_node_pos_x + 1
         node_pos_y = 0
 
         roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
