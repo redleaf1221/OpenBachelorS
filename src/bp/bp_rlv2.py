@@ -152,6 +152,10 @@ def rlv2_createGame(player_data):
     request_json = request.get_json()
     response = {}
 
+    mode = request_json["mode"]
+    if mode == "MONTH_TEAM" or mode == "CHALLENGE":
+        return "", 404
+
     theme_id = request_json["theme"]
     player_data["rlv2"]["current"]["game"] = {"theme": theme_id}
 
