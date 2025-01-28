@@ -17,6 +17,9 @@ class Rlv2BasicManager:
         self.response = response
 
     def rlv2_createGame(self):
+        mode = self.request_json["mode"]
+        mode_grade = self.request_json["modeGrade"]
+
         roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
 
         self.player_data["rlv2"]["current"] = {
@@ -106,12 +109,12 @@ class Rlv2BasicManager:
                 "exploreTool": {},
             },
             "game": {
-                "mode": "NORMAL",
+                "mode": mode,
                 "predefined": null,
                 "outer": {"support": false},
                 "start": 1700000000,
-                "modeGrade": 0,
-                "equivalentGrade": 0,
+                "modeGrade": mode_grade,
+                "equivalentGrade": mode_grade,
             },
             "buff": {"tmpHP": 0, "capsule": null, "squadBuff": []},
             "record": {"brief": null},
