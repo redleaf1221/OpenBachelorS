@@ -352,8 +352,44 @@ class Rlv2BasicManager:
             self.get_zone_idx(0)
         )
 
+    def get_good_lst(self):
+        good_lst = []
+        good_idx = 0
+
+        roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
+
+        gold_id = roguelike_topic_table["details"][self.theme_id]["gameConst"][
+            "goldItemId"
+        ]
+
+        for item_id, item_obj in roguelike_topic_table["details"][self.theme_id][
+            "items"
+        ]:
+            item_type = item_obj["type"]
+            if item_type != "RELIC" and item_type != "ACTIVE_TOOL":
+                continue
+
+            good_lst.append(
+                {
+                    "index": str(good_idx),
+                    "itemId": item_id,
+                    "count": 1,
+                    "priceId": gold_id,
+                    "priceCount": 0,
+                    "origCost": 0,
+                    "displayPriceChg": false,
+                    "_retainDiscount": 1,
+                }
+            )
+
+            good_idx += 1
+
+        return good_lst
+
     def rlv2_moveTo(self):
         cursor_pos = self.request_json["to"]
+
+        good_lst = self.get_good_lst()
 
         self.player_data["rlv2"]["current"]["player"]["state"] = "PENDING"
         self.player_data["rlv2"]["current"]["player"]["cursor"]["position"] = cursor_pos
@@ -371,7 +407,7 @@ class Rlv2BasicManager:
                             "cost": 1,
                         },
                         "id": "zone_1_shop",
-                        "goods": [],
+                        "goods": good_lst,
                         "_done": false,
                     }
                 },
