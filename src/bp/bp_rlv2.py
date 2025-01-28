@@ -1,9 +1,11 @@
+from enum import Enum
+
 from flask import Blueprint
 from flask import request
 
 from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON, ROGUELIKE_TOPIC_TABLE
-from ..util.const_json_loader import const_json_loader
+from ..util.const_json_loader import const_json_loader, ConstJson
 from ..util.player_data import player_data_decorator
 
 bp_rlv2 = Blueprint("bp_rlv2", __name__)
@@ -165,6 +167,29 @@ class Rlv2BasicManager:
         pending_lst.pop(0)
         self.player_data["rlv2"]["current"]["player"]["pending"] = pending_lst
 
+    class NodeType(Enum):
+        BATTLE = 1
+        ELITE_BATTLE = 2
+        BOSS_BATTLE = 4
+        SHOP = 8
+
+    theme_id_node_type_dict = ConstJson(
+        {
+            "rogue_1": {
+                NodeType.BATTLE: 1,
+                NodeType.ELITE_BATTLE: 2,
+                NodeType.BOSS_BATTLE: 4,
+                NodeType.SHOP: 8,
+            }
+        }
+    )
+
+    def get_node_type_int(self, theme_id, node_type):
+        if theme_id not in self.theme_id_node_type_dict:
+            theme_id = "rogue_2"
+
+        return self.theme_id_node_type_dict[theme_id][node_type]
+
     MAX_NODE_POS_X = 10
     MAX_NODE_POS_Y = 4
 
@@ -190,13 +215,15 @@ class Rlv2BasicManager:
             "variation": [],
         }
 
+        node_type_int = self.get_node_type_int(self.theme_id, self.NodeType.SHOP)
+
         first_node_pos_x, first_node_pos_y = self.get_first_node_pos()
         first_node_idx = self.get_node_idx(first_node_pos_x, first_node_pos_y)
         first_node_obj = {
             "index": first_node_idx,
             "pos": {"x": first_node_pos_x, "y": first_node_pos_y},
             "next": [],
-            "type": 1,
+            "type": node_type_int,
         }
         zone_obj["nodes"][first_node_idx] = first_node_obj
 
@@ -206,7 +233,7 @@ class Rlv2BasicManager:
             "index": last_node_idx,
             "pos": {"x": last_node_pos_x, "y": last_node_pos_y},
             "next": [],
-            "type": 1,
+            "type": node_type_int,
             "zone_end": true,
         }
         zone_obj["nodes"][last_node_idx] = last_node_obj
@@ -249,12 +276,20 @@ class Rlv2BasicManager:
                 node_pos_x = first_node_pos_x + 1
                 node_pos_y = 0
 
+            node_type = self.NodeType.BATTLE
+            if stage_obj["isElite"]:
+                node_type = self.NodeType.ELITE_BATTLE
+            if stage_obj["isBoss"]:
+                node_type = self.NodeType.BOSS_BATTLE
+
+            node_type_int = self.get_node_type_int(self.theme_id, node_type)
+
             node_idx = self.get_node_idx(node_pos_x, node_pos_y)
             node_obj = {
                 "index": node_idx,
                 "pos": {"x": node_pos_x, "y": node_pos_y},
                 "next": [],
-                "type": 1,
+                "type": node_type_int,
                 "stage": stage_id,
             }
             zone_obj["nodes"][node_idx] = node_obj
