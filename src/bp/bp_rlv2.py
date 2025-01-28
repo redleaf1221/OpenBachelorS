@@ -22,7 +22,28 @@ class Rlv2BasicManager:
 
         roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
 
-        self.player_data["rlv2"]["current"] = {
+        init_idx = 0
+        for i, init_obj in roguelike_topic_table["details"][self.theme_id]["init"]:
+            if init_obj["modeId"] == mode and init_obj["modeGrade"] == mode_grade:
+                init_idx = i
+                break
+
+        init_obj = roguelike_topic_table["details"][self.theme_id]["init"][init_idx]
+
+        init_band_relic_lst = init_obj["initialBandRelic"].copy()
+        init_band_relic_dict = {}
+
+        for i, init_band_relic in enumerate(init_band_relic_lst):
+            init_band_relic_dict[str(i)] = {"id": init_band_relic, "count": 1}
+
+        init_recruit_group_lst = init_obj["initialRecruitGroup"].copy()
+
+        for ending_id, ending_obj in roguelike_topic_table["details"][self.theme_id][
+            "endings"
+        ]:
+            break
+
+        rlv2_obj = {
             "player": {
                 "state": "INIT",
                 "property": {
@@ -46,18 +67,7 @@ class Rlv2BasicManager:
                         "content": {
                             "initRelic": {
                                 "step": [1, 3],
-                                "items": {
-                                    "0": {"id": "rogue_1_band_1", "count": 1},
-                                    "1": {"id": "rogue_1_band_2", "count": 1},
-                                    "2": {"id": "rogue_1_band_3", "count": 1},
-                                    "3": {"id": "rogue_1_band_4", "count": 1},
-                                    "4": {"id": "rogue_1_band_5", "count": 1},
-                                    "5": {"id": "rogue_1_band_6", "count": 1},
-                                    "6": {"id": "rogue_1_band_7", "count": 1},
-                                    "7": {"id": "rogue_1_band_8", "count": 1},
-                                    "8": {"id": "rogue_1_band_9", "count": 1},
-                                    "9": {"id": "rogue_1_band_10", "count": 1},
-                                },
+                                "items": init_band_relic_dict,
                             }
                         },
                     },
@@ -67,12 +77,7 @@ class Rlv2BasicManager:
                         "content": {
                             "initRecruitSet": {
                                 "step": [2, 3],
-                                "option": [
-                                    "recruit_group_1",
-                                    "recruit_group_2",
-                                    "recruit_group_3",
-                                    "recruit_group_random",
-                                ],
+                                "option": init_recruit_group_lst,
                             }
                         },
                     },
@@ -90,7 +95,7 @@ class Rlv2BasicManager:
                     },
                 ],
                 "status": {"bankPut": 0},
-                "toEnding": "ro_ending_1",
+                "toEnding": ending_id,
                 "chgEnding": false,
             },
             "map": {"zones": {}},
@@ -120,6 +125,8 @@ class Rlv2BasicManager:
             "record": {"brief": null},
             "module": {},
         }
+
+        self.player_data["rlv2"]["current"] = rlv2_obj
 
     def rlv2_giveUpGame(self):
         self.player_data["rlv2"]["current"] = {
