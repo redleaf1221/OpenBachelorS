@@ -157,6 +157,17 @@ class Rlv2BasicManager:
         pending_lst.pop(0)
         self.player_data["rlv2"]["current"]["player"]["pending"] = pending_lst
 
+    def rlv2_chooseInitialRecruitSet(self):
+        init_recruit_group = self.request_json["select"]
+
+        pending_lst = self.player_data["rlv2"]["current"]["player"]["pending"].copy()
+
+        pending_lst.pop(0)
+        self.player_data["rlv2"]["current"]["player"]["pending"] = pending_lst
+
+    def rlv2_finishEvent(self):
+        self.player_data["rlv2"]["current"]["player"]["state"] = "WAIT_MOVE"
+
 
 def get_rlv2_manager(player_data, request_json, response):
     theme_id = player_data["rlv2"]["current"]["game"]["theme"]
@@ -205,5 +216,31 @@ def rlv2_chooseInitialRelic(player_data):
     rlv2_manager = get_rlv2_manager(player_data, request_json, response)
 
     rlv2_manager.rlv2_chooseInitialRelic()
+
+    return response
+
+
+@bp_rlv2.route("/rlv2/chooseInitialRecruitSet", methods=["POST"])
+@player_data_decorator
+def rlv2_chooseInitialRecruitSet(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    rlv2_manager = get_rlv2_manager(player_data, request_json, response)
+
+    rlv2_manager.rlv2_chooseInitialRecruitSet()
+
+    return response
+
+
+@bp_rlv2.route("/rlv2/finishEvent", methods=["POST"])
+@player_data_decorator
+def rlv2_finishEvent(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    rlv2_manager = get_rlv2_manager(player_data, request_json, response)
+
+    rlv2_manager.rlv2_finishEvent()
 
     return response
