@@ -26,7 +26,7 @@ class Rlv2BasicManager:
                     "exp": 0,
                     "level": 1,
                     "maxLevel": 10,
-                    "hp": {"current": 6, "max": 0},
+                    "hp": {"current": 6, "max": 6},
                     "gold": 18,
                     "shield": 0,
                     "capacity": 7,
@@ -113,7 +113,7 @@ class Rlv2BasicManager:
                 "modeGrade": 0,
                 "equivalentGrade": 0,
             },
-            "buff": {"tmpHP": 1, "capsule": null, "squadBuff": []},
+            "buff": {"tmpHP": 0, "capsule": null, "squadBuff": []},
             "record": {"brief": null},
             "module": {},
         }
