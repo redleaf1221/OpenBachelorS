@@ -180,13 +180,31 @@ class Rlv2BasicManager:
                 NodeType.ELITE_BATTLE: 2,
                 NodeType.BOSS_BATTLE: 4,
                 NodeType.SHOP: 8,
-            }
+            },
+            "rogue_2": {
+                NodeType.BATTLE: 1,
+                NodeType.ELITE_BATTLE: 2,
+                NodeType.BOSS_BATTLE: 4,
+                NodeType.SHOP: 4096,
+            },
+            "rogue_3": {
+                NodeType.BATTLE: 1,
+                NodeType.ELITE_BATTLE: 2,
+                NodeType.BOSS_BATTLE: 4,
+                NodeType.SHOP: 4096,
+            },
+            "rogue_4": {
+                NodeType.BATTLE: 1,
+                NodeType.ELITE_BATTLE: 2,
+                NodeType.BOSS_BATTLE: 4,
+                NodeType.SHOP: 4096,
+            },
         }
     )
 
     def get_node_type_int(self, theme_id, node_type):
         if theme_id not in self.theme_id_node_type_dict:
-            theme_id = "rogue_2"
+            theme_id = "rogue_4"
 
         return self.theme_id_node_type_dict[theme_id][node_type]
 
