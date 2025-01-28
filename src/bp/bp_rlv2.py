@@ -245,6 +245,20 @@ class Rlv2BasicManager:
         }
         zone_obj["nodes"][first_node_idx] = first_node_obj
 
+        node_pos_x, node_pos_y = first_node_pos_x + 1, 0
+        node_idx = self.get_node_idx(node_pos_x, node_pos_y)
+        node_obj = {
+            "index": node_idx,
+            "pos": {"x": node_pos_x, "y": node_pos_y},
+            "next": [],
+            "type": node_type_int,
+        }
+        zone_obj["nodes"][node_idx] = node_obj
+
+        zone_obj["nodes"][first_node_idx]["next"].append(
+            {"x": node_pos_x, "y": node_pos_y}
+        )
+
         last_node_pos_x, last_node_pos_y = self.get_last_node_pos()
         last_node_idx = self.get_node_idx(last_node_pos_x, last_node_pos_y)
         last_node_obj = {
@@ -271,7 +285,7 @@ class Rlv2BasicManager:
         zone_obj = self.create_simple_zone_obj(zone_num_idx)
 
         node_pos_x = first_node_pos_x + 1
-        node_pos_y = 0
+        node_pos_y = 1
 
         roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
 
@@ -292,7 +306,7 @@ class Rlv2BasicManager:
                 zone_obj = self.create_simple_zone_obj(zone_num_idx)
 
                 node_pos_x = first_node_pos_x + 1
-                node_pos_y = 0
+                node_pos_y = 1
 
             node_type = self.NodeType.BATTLE
             if stage_obj["isElite"]:
