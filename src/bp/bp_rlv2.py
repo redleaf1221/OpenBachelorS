@@ -424,10 +424,7 @@ class Rlv2BasicManager:
             if str(zone_idx) not in self.player_data["rlv2"]["current"]["map"]["zones"]:
                 zone_idx = self.get_zone_idx(0)
             self.player_data["rlv2"]["current"]["player"]["cursor"]["zone"] = zone_idx
-
-            cursor_pos = self.player_data["rlv2"]["current"]["player"]["cursor"][
-                "position"
-            ] = null
+            self.player_data["rlv2"]["current"]["player"]["cursor"]["position"] = null
         else:
             self.player_data["rlv2"]["current"]["player"]["cursor"]["position"] = {
                 "x": 0,
