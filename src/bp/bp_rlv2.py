@@ -798,6 +798,10 @@ class Rlv2BasicManager:
             "list"
         ] = []
 
+        pending_lst = self.player_data["rlv2"]["current"]["player"]["pending"].copy()
+        pending_lst.pop(0)
+        self.player_data["rlv2"]["current"]["player"]["pending"] = pending_lst
+
 
 def get_rlv2_manager(player_data, request_json, response):
     theme_id = player_data["rlv2"]["current"]["game"]["theme"]
