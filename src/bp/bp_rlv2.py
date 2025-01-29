@@ -971,3 +971,16 @@ def rlv2_closeRecruitTicket(player_data):
     rlv2_manager.rlv2_closeRecruitTicket()
 
     return response
+
+
+@bp_rlv2.route("/rlv2/setPinned", methods=["POST"])
+@player_data_decorator
+def rlv2_setPinned(player_data):
+    request_json = request.get_json()
+
+    theme_id = request_json["id"]
+
+    player_data["rlv2"]["pinned"] = theme_id
+
+    response = {}
+    return response
