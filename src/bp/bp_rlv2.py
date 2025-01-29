@@ -4,12 +4,36 @@ from flask import Blueprint
 from flask import request
 
 from ..const.json_const import true, false, null
-from ..const.filepath import CONFIG_JSON, VERSION_JSON, ROGUELIKE_TOPIC_TABLE
+from ..const.filepath import (
+    CONFIG_JSON,
+    VERSION_JSON,
+    ROGUELIKE_TOPIC_TABLE,
+    CHARACTER_TABLE,
+)
 from ..util.const_json_loader import const_json_loader, ConstJson
-from ..util.player_data import player_data_decorator
+from ..util.player_data import player_data_decorator, char_id_lst
 from ..util.battle_log_logger import log_battle_log_if_necessary
 
 bp_rlv2 = Blueprint("bp_rlv2", __name__)
+
+
+def build_profession_char_id_lst_dict():
+    profession_char_id_lst_dict = {}
+
+    character_table = const_json_loader[CHARACTER_TABLE]
+
+    for i, char_id in char_id_lst:
+        profession = character_table[char_id]["profession"]
+
+        if profession not in profession_char_id_lst_dict:
+            profession_char_id_lst_dict[profession] = []
+
+        profession_char_id_lst_dict[profession].append(char_id)
+
+    return ConstJson(profession_char_id_lst_dict)
+
+
+profession_char_id_lst_dict = build_profession_char_id_lst_dict()
 
 
 class Rlv2BasicManager:
