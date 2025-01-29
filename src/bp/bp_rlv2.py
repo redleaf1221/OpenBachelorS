@@ -505,6 +505,18 @@ class Rlv2BasicManager:
             relic_idx += 1
         return relic_id
 
+    def get_next_ticket_id(self):
+        ticket_idx = 1
+        while True:
+            ticket_id = f"t_{ticket_idx}"
+            if (
+                ticket_id
+                not in self.player_data["rlv2"]["current"]["inventory"]["recruit"]
+            ):
+                break
+            ticket_idx += 1
+        return ticket_id
+
     def rlv2_shopAction(self):
         if self.request_json["leave"]:
             self.player_data["rlv2"]["current"]["player"]["state"] = "WAIT_MOVE"
@@ -525,7 +537,38 @@ class Rlv2BasicManager:
             good_type = roguelike_topic_table["details"][self.theme_id]["items"][
                 good_id
             ]["type"]
-            if good_type == "RELIC":
+            if good_type == "RECRUIT_TICKET":
+                ticket_id = self.get_next_ticket_id()
+
+                self.player_data["rlv2"]["current"]["inventory"]["recruit"][
+                    ticket_id
+                ] = {
+                    "index": ticket_id,
+                    "id": good_id,
+                    "state": 1,
+                    "list": [],
+                    "result": null,
+                    "ts": 1700000000,
+                    "from": "shop",
+                    "mustExtra": 0,
+                    "needAssist": false,
+                }
+
+                pending_lst = self.player_data["rlv2"]["current"]["player"][
+                    "pending"
+                ].copy()
+
+                pending_lst.insert(
+                    0,
+                    {
+                        "index": "e_6",
+                        "type": "RECRUIT",
+                        "content": {"recruit": {"ticket": ticket_id}},
+                    },
+                )
+
+                self.player_data["rlv2"]["current"]["player"]["pending"] = pending_lst
+            elif good_type == "RELIC":
                 relic_id = self.get_next_relic_id()
                 self.player_data["rlv2"]["current"]["inventory"]["relic"][relic_id] = {
                     "index": relic_id,
