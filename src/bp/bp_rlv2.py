@@ -551,7 +551,7 @@ class Rlv2BasicManager:
 
         char_id = char_obj["charId"]
         degraded_char_max_level = self.get_degraded_char_max_level(char_id)
-        char_obj["level"] = max(char_obj["level"], degraded_char_max_level)
+        char_obj["level"] = min(char_obj["level"], degraded_char_max_level)
 
         if "tmpl" in char_obj:
             for tmpl_id in char_obj["tmpl"]:
