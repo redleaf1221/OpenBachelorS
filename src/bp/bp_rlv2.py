@@ -12,6 +12,9 @@ from ..const.filepath import (
 )
 from ..util.const_json_loader import const_json_loader, ConstJson
 from ..util.player_data import player_data_decorator, char_id_lst
+from ..util.helper import (
+    get_char_num_id,
+)
 from ..util.battle_log_logger import log_battle_log_if_necessary
 
 bp_rlv2 = Blueprint("bp_rlv2", __name__)
@@ -517,6 +520,86 @@ class Rlv2BasicManager:
             ticket_idx += 1
         return ticket_id
 
+    def get_ticket_info(self, ticket_item_id):
+        sp_suffix = "_sp"
+        if ticket_item_id.endswith(sp_suffix):
+            upgrade_limited = False
+            ticket_item_id = ticket_item_id[: -len(sp_suffix)]
+        else:
+            upgrade_limited = True
+        profession = ticket_item_id.rpartition("_")[-1].upper()
+        return profession, upgrade_limited
+
+    def get_degraded_char_max_level(self, char_id):
+        character_table = const_json_loader[CHARACTER_TABLE]
+
+        char_rarity = character_table[char_id]["rarity"]
+
+        if char_rarity == "TIER_6":
+            return 80
+
+        if char_rarity == "TIER_5":
+            return 70
+
+        return 60
+
+    def degrade_char_obj_if_necessary(self, char_obj):
+        if char_obj["evolvePhase"] < 2:
+            return
+
+        char_obj["evolvePhase"] = 1
+
+        char_id = char_obj["charId"]
+        degraded_char_max_level = self.get_degraded_char_max_level(char_id)
+        char_obj["level"] = max(char_obj["level"], degraded_char_max_level)
+
+        if "tmpl" in char_obj:
+            for tmpl_id in char_obj["tmpl"]:
+                tmpl_obj = char_obj["tmpl"][tmpl_id]
+                if tmpl_obj["defaultSkillIndex"] == 2:
+                    tmpl_obj["defaultSkillIndex"] = 1
+                if len(tmpl_obj["skills"]) == 3:
+                    tmpl_obj["skills"][2]["unlock"] = 0
+                for skill_obj in tmpl_obj["skills"]:
+                    skill_obj["specializeLevel"] = 0
+        else:
+            if char_obj["defaultSkillIndex"] == 2:
+                char_obj["defaultSkillIndex"] = 1
+            if len(char_obj["skills"]) == 3:
+                char_obj["skills"][2]["unlock"] = 0
+            for skill_obj in char_obj["skills"]:
+                skill_obj["specializeLevel"] = 0
+
+    def get_ticket_char_obj_lst(self, ticket_item_id):
+        profession, upgrade_limited = self.get_ticket_info(ticket_item_id)
+        ticket_char_obj_lst = []
+
+        for i, char_id in profession_char_id_lst_dict[profession]:
+            char_num_id = get_char_num_id(char_id)
+            char_obj = self.player_data["troop"]["chars"][str(char_num_id)].copy()
+
+            if upgrade_limited:
+                self.degrade_char_obj_if_necessary(char_obj)
+
+            char_obj.update(
+                {
+                    "type": "NORMAL",
+                    "upgradeLimited": upgrade_limited,
+                    "upgradePhase": int(not upgrade_limited),
+                    "isUpgrade": false,
+                    "isCure": false,
+                    "population": 0,
+                    "charBuff": [],
+                    "troopInstId": "0",
+                }
+            )
+
+            char_obj["instId"] = str(i)
+
+            ticket_char_obj_lst.append(char_obj)
+
+        return ticket_char_obj_lst
+
     def rlv2_shopAction(self):
         if self.request_json["leave"]:
             self.player_data["rlv2"]["current"]["player"]["state"] = "WAIT_MOVE"
@@ -540,13 +623,15 @@ class Rlv2BasicManager:
             if good_type == "RECRUIT_TICKET":
                 ticket_id = self.get_next_ticket_id()
 
+                ticket_char_obj_lst = self.get_ticket_char_obj_lst(good_id)
+
                 self.player_data["rlv2"]["current"]["inventory"]["recruit"][
                     ticket_id
                 ] = {
                     "index": ticket_id,
                     "id": good_id,
                     "state": 1,
-                    "list": [],
+                    "list": ticket_char_obj_lst,
                     "result": null,
                     "ts": 1700000000,
                     "from": "shop",
