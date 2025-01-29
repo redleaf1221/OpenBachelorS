@@ -745,6 +745,49 @@ class Rlv2BasicManager:
 
         self.leave_node()
 
+    def get_next_char_inst_id(self):
+        char_inst_id = 1
+
+        while True:
+            if (
+                str(char_inst_id)
+                not in self.player_data["rlv2"]["current"]["troop"]["chars"]
+            ):
+                break
+            char_inst_id += 1
+
+        return str(char_inst_id)
+
+    def rlv2_recruitChar(self):
+        ticket_id = self.request_json["ticketIndex"]
+        char_idx = int(self.request_json["optionId"])
+
+        char_obj = self.player_data["rlv2"]["current"]["inventory"]["recruit"][
+            ticket_id
+        ]["list"][char_idx].copy()
+
+        self.player_data["rlv2"]["current"]["inventory"]["recruit"][ticket_id][
+            "state"
+        ] = 2
+        self.player_data["rlv2"]["current"]["inventory"]["recruit"][ticket_id][
+            "list"
+        ] = []
+        self.player_data["rlv2"]["current"]["inventory"]["recruit"][ticket_id][
+            "result"
+        ] = char_obj
+
+        char_inst_id = self.get_next_char_inst_id()
+        self.player_data["rlv2"]["current"]["troop"]["chars"][char_inst_id] = char_obj
+        self.player_data["rlv2"]["current"]["troop"]["chars"][char_inst_id][
+            "instId"
+        ] = char_inst_id
+
+        pending_lst = self.player_data["rlv2"]["current"]["player"]["pending"].copy()
+        pending_lst.pop(0)
+        self.player_data["rlv2"]["current"]["player"]["pending"] = pending_lst
+
+        self.response.update({"chars": [char_obj]})
+
 
 def get_rlv2_manager(player_data, request_json, response):
     theme_id = player_data["rlv2"]["current"]["game"]["theme"]
@@ -886,5 +929,18 @@ def rlv2_finishBattleReward(player_data):
     rlv2_manager = get_rlv2_manager(player_data, request_json, response)
 
     rlv2_manager.rlv2_finishBattleReward()
+
+    return response
+
+
+@bp_rlv2.route("/rlv2/recruitChar", methods=["POST"])
+@player_data_decorator
+def rlv2_recruitChar(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    rlv2_manager = get_rlv2_manager(player_data, request_json, response)
+
+    rlv2_manager.rlv2_recruitChar()
 
     return response
