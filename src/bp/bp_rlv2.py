@@ -7,6 +7,7 @@ from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON, ROGUELIKE_TOPIC_TABLE
 from ..util.const_json_loader import const_json_loader, ConstJson
 from ..util.player_data import player_data_decorator
+from ..util.battle_log_logger import log_battle_log_if_necessary
 
 bp_rlv2 = Blueprint("bp_rlv2", __name__)
 
@@ -480,6 +481,69 @@ class Rlv2BasicManager:
                     "ts": 1700000000,
                 }
 
+    def rlv2_moveAndBattleStart(self):
+        self.response.update(
+            {
+                "battleId": "00000000-0000-0000-0000-000000000000",
+            }
+        )
+
+        cursor_pos = self.request_json["to"]
+
+        self.player_data["rlv2"]["current"]["player"]["state"] = "PENDING"
+        self.player_data["rlv2"]["current"]["player"]["cursor"]["position"] = cursor_pos
+        self.player_data["rlv2"]["current"]["player"]["pending"] = [
+            {
+                "index": "e_4",
+                "type": "BATTLE",
+                "content": {
+                    "battle": {
+                        "state": 1,
+                        "chestCnt": 0,
+                        "goldTrapCnt": 0,
+                        "diceRoll": [],
+                        "boxInfo": {},
+                        "tmpChar": [],
+                        "sanity": 0,
+                        "unKeepBuff": [],
+                        "seed": 0,
+                        "enemyHpInfo": {},
+                    }
+                },
+            }
+        ]
+
+    def rlv2_battleFinish(self):
+        self.player_data["rlv2"]["current"]["player"]["pending"] = [
+            {
+                "index": "e_5",
+                "type": "BATTLE_REWARD",
+                "content": {
+                    "battleReward": {
+                        "earn": {
+                            "damage": 0,
+                            "hp": 0,
+                            "shield": 0,
+                            "exp": 0,
+                            "populationMax": 0,
+                            "squadCapacity": 0,
+                            "maxHpUp": 0,
+                        },
+                        "rewards": [],
+                        "show": "1",
+                        "state": 0,
+                        "isPerfect": 1,
+                    }
+                },
+            }
+        ]
+
+    def rlv2_finishBattleReward(self):
+        self.player_data["rlv2"]["current"]["player"]["state"] = "WAIT_MOVE"
+        self.player_data["rlv2"]["current"]["player"]["pending"] = []
+
+        self.leave_node()
+
 
 def get_rlv2_manager(player_data, request_json, response):
     theme_id = player_data["rlv2"]["current"]["game"]["theme"]
@@ -580,5 +644,46 @@ def rlv2_shopAction(player_data):
     rlv2_manager = get_rlv2_manager(player_data, request_json, response)
 
     rlv2_manager.rlv2_shopAction()
+
+    return response
+
+
+@bp_rlv2.route("/rlv2/moveAndBattleStart", methods=["POST"])
+@player_data_decorator
+def rlv2_moveAndBattleStart(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    rlv2_manager = get_rlv2_manager(player_data, request_json, response)
+
+    rlv2_manager.rlv2_moveAndBattleStart()
+
+    return response
+
+
+@bp_rlv2.route("/rlv2/battleFinish", methods=["POST"])
+@player_data_decorator
+def rlv2_battleFinish(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
+
+    rlv2_manager = get_rlv2_manager(player_data, request_json, response)
+
+    rlv2_manager.rlv2_battleFinish()
+
+    return response
+
+
+@bp_rlv2.route("/rlv2/finishBattleReward", methods=["POST"])
+@player_data_decorator
+def rlv2_finishBattleReward(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    rlv2_manager = get_rlv2_manager(player_data, request_json, response)
+
+    rlv2_manager.rlv2_finishBattleReward()
 
     return response
