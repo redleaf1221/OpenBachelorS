@@ -788,6 +788,16 @@ class Rlv2BasicManager:
 
         self.response.update({"chars": [char_obj]})
 
+    def rlv2_closeRecruitTicket(self):
+        ticket_id = self.request_json["id"]
+
+        self.player_data["rlv2"]["current"]["inventory"]["recruit"][ticket_id][
+            "state"
+        ] = 2
+        self.player_data["rlv2"]["current"]["inventory"]["recruit"][ticket_id][
+            "list"
+        ] = []
+
 
 def get_rlv2_manager(player_data, request_json, response):
     theme_id = player_data["rlv2"]["current"]["game"]["theme"]
@@ -942,5 +952,18 @@ def rlv2_recruitChar(player_data):
     rlv2_manager = get_rlv2_manager(player_data, request_json, response)
 
     rlv2_manager.rlv2_recruitChar()
+
+    return response
+
+
+@bp_rlv2.route("/rlv2/closeRecruitTicket", methods=["POST"])
+@player_data_decorator
+def rlv2_closeRecruitTicket(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    rlv2_manager = get_rlv2_manager(player_data, request_json, response)
+
+    rlv2_manager.rlv2_closeRecruitTicket()
 
     return response
