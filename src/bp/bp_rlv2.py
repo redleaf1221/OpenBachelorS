@@ -16,17 +16,30 @@ from ..util.battle_log_logger import log_battle_log_if_necessary
 
 bp_rlv2 = Blueprint("bp_rlv2", __name__)
 
+profession_lst = ConstJson(
+    [
+        "PIONEER",
+        "WARRIOR",
+        "TANK",
+        "SNIPER",
+        "CASTER",
+        "MEDIC",
+        "SUPPORT",
+        "SPECIAL",
+    ]
+)
+
 
 def build_profession_char_id_lst_dict():
     profession_char_id_lst_dict = {}
+
+    for i, profession in profession_lst:
+        profession_char_id_lst_dict[profession] = []
 
     character_table = const_json_loader[CHARACTER_TABLE]
 
     for i, char_id in char_id_lst:
         profession = character_table[char_id]["profession"]
-
-        if profession not in profession_char_id_lst_dict:
-            profession_char_id_lst_dict[profession] = []
 
         profession_char_id_lst_dict[profession].append(char_id)
 
