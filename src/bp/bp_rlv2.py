@@ -391,6 +391,30 @@ class Rlv2BasicManager:
             "goldItemId"
         ]
 
+        for i, profession in profession_lst:
+            profession = profession.lower()
+
+            item_id_lst = [
+                f"{self.theme_id}_recruit_ticket_{profession}",
+                f"{self.theme_id}_recruit_ticket_{profession}_sp",
+            ]
+
+            for item_id in item_id_lst:
+                good_lst.append(
+                    {
+                        "index": str(good_idx),
+                        "itemId": item_id,
+                        "count": 1,
+                        "priceId": gold_id,
+                        "priceCount": 0,
+                        "origCost": 0,
+                        "displayPriceChg": false,
+                        "_retainDiscount": 1,
+                    }
+                )
+
+                good_idx += 1
+
         for item_id, item_obj in roguelike_topic_table["details"][self.theme_id][
             "items"
         ]:
