@@ -1,4 +1,5 @@
 from enum import Enum
+from copy import deepcopy
 
 from flask import Blueprint
 from flask import request
@@ -574,6 +575,8 @@ class Rlv2BasicManager:
         profession, upgrade_limited = self.get_ticket_info(ticket_item_id)
         ticket_char_obj_lst = []
 
+        char_idx = 0
+
         for i, char_id in profession_char_id_lst_dict[profession]:
             char_num_id = get_char_num_id(char_id)
             char_obj = self.player_data["troop"]["chars"][str(char_num_id)].copy()
@@ -594,9 +597,18 @@ class Rlv2BasicManager:
                 }
             )
 
-            char_obj["instId"] = str(i)
+            if "tmpl" in char_obj:
+                for tmpl_id in char_obj["tmpl"]:
+                    dup_char_obj = deepcopy(char_obj)
+                    dup_char_obj["currentTmpl"] = tmpl_id
 
-            ticket_char_obj_lst.append(char_obj)
+                    dup_char_obj["instId"] = str(char_idx)
+                    ticket_char_obj_lst.append(dup_char_obj)
+                    char_idx += 1
+            else:
+                char_obj["instId"] = str(char_idx)
+                ticket_char_obj_lst.append(char_obj)
+                char_idx += 1
 
         return ticket_char_obj_lst
 
