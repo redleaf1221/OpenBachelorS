@@ -1564,6 +1564,48 @@
                             ]
                         }
                     }
+                },
+                "chatV2": {
+                    "month_chat_rogue_1_1": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_1_2": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_1_3": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_1_4": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_1_5": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_1_6": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_1_7": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_1_8": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ]
                 }
             },
             "mission": {
@@ -3739,6 +3781,48 @@
                             ]
                         }
                     }
+                },
+                "chatV2": {
+                    "month_chat_rogue_2_1": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_2_2": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_2_3": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_2_4": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_2_5": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_2_6": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_2_7": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_2_8": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ]
                 }
             },
             "mission": {
@@ -6286,6 +6370,48 @@
                             "progress": null
                         }
                     }
+                },
+                "chatV2": {
+                    "month_chat_rogue_3_1": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_3_2": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_3_3": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_3_4": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_3_5": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_3_6": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_3_7": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_3_8": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ]
                 }
             },
             "mission": {
@@ -9383,6 +9509,48 @@
                             "node_update_15"
                         ]
                     }
+                },
+                "chatV2": {
+                    "month_chat_rogue_4_1": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_4_2": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_4_3": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_4_4": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_4_5": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_4_6": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_4_7": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_4_8": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ]
                 }
             },
             "mission": {
