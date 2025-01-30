@@ -691,6 +691,15 @@ class Rlv2BasicManager:
 
         cursor_pos = self.request_json["to"]
 
+        roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
+
+        box_info = {}
+        bad_box_id = roguelike_topic_table["details"][self.theme_id]["gameConst"][
+            "badBoxTrapId"
+        ]
+        if bad_box_id is not None:
+            box_info[bad_box_id] = 999
+
         self.player_data["rlv2"]["current"]["player"]["state"] = "PENDING"
         self.player_data["rlv2"]["current"]["player"]["cursor"]["position"] = cursor_pos
         self.player_data["rlv2"]["current"]["player"]["pending"] = [
@@ -700,10 +709,10 @@ class Rlv2BasicManager:
                 "content": {
                     "battle": {
                         "state": 1,
-                        "chestCnt": 0,
-                        "goldTrapCnt": 0,
+                        "chestCnt": 999,
+                        "goldTrapCnt": 999,
                         "diceRoll": [],
-                        "boxInfo": {},
+                        "boxInfo": box_info,
                         "tmpChar": [],
                         "sanity": 0,
                         "unKeepBuff": [],
