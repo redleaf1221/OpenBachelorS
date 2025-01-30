@@ -127,8 +127,6 @@ def build_player_data_template():
         else:
             voice_lan = "NONE"
 
-        evolve_phase = len(character_table[char_id]["phases"]) - 1
-
         player_data_char_obj = {
             "instId": char_num_id,
             "charId": char_id,
@@ -138,7 +136,7 @@ def build_player_data_template():
             "skin": skin_id,
             "level": character_table[char_id]["phases"][-1]["maxLevel"],
             "exp": 0,
-            "evolvePhase": evolve_phase,
+            "evolvePhase": len(character_table[char_id]["phases"]) - 1,
             "defaultSkillIndex": len(character_table[char_id]["skills"]) - 1,
             "gainTime": 1700000000,
             "skills": [],
@@ -148,18 +146,13 @@ def build_player_data_template():
             "starMark": 0,
         }
 
-        if evolve_phase < 2:
-            specialize_level = 0
-        else:
-            specialize_level = 3
-
         for i, skill_obj in character_table[char_id]["skills"]:
             player_data_char_obj["skills"].append(
                 {
                     "skillId": skill_obj["skillId"],
                     "unlock": 1,
                     "state": 0,
-                    "specializeLevel": specialize_level,
+                    "specializeLevel": len(skill_obj["levelUpCostCond"]),
                     "completeUpgradeTime": -1,
                 },
             )
@@ -225,7 +218,7 @@ def build_player_data_template():
                             "skillId": skill_obj["skillId"],
                             "unlock": 1,
                             "state": 0,
-                            "specializeLevel": specialize_level,
+                            "specializeLevel": len(skill_obj["levelUpCostCond"]),
                             "completeUpgradeTime": -1,
                         },
                     )
