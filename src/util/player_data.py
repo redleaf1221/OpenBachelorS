@@ -134,10 +134,10 @@ def build_player_data_template():
             "potentialRank": 5,
             "mainSkillLvl": 7,
             "skin": skin_id,
-            "level": character_table[char_id]["phases"][-1]["maxLevel"],
+            "level": char_obj["phases"][-1]["maxLevel"],
             "exp": 0,
-            "evolvePhase": len(character_table[char_id]["phases"]) - 1,
-            "defaultSkillIndex": len(character_table[char_id]["skills"]) - 1,
+            "evolvePhase": len(char_obj["phases"]) - 1,
+            "defaultSkillIndex": len(char_obj["skills"]) - 1,
             "gainTime": 1700000000,
             "skills": [],
             "voiceLan": voice_lan,
@@ -146,7 +146,7 @@ def build_player_data_template():
             "starMark": 0,
         }
 
-        for i, skill_obj in character_table[char_id]["skills"]:
+        for i, skill_obj in char_obj["skills"]:
             player_data_char_obj["skills"].append(
                 {
                     "skillId": skill_obj["skillId"],
