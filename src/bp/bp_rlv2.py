@@ -682,6 +682,22 @@ class Rlv2BasicManager:
                     "ts": 1700000000,
                 }
 
+    def get_unkeep_buff(self):
+        unkeep_buff = []
+
+        roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
+
+        if self.player_data["rlv2"]["current"]["inventory"]["trap"] is not None:
+            active_tool_id = self.player_data["rlv2"]["current"]["inventory"]["trap"][
+                "id"
+            ]
+            active_tool_buff_lst = roguelike_topic_table["details"][self.theme_id][
+                "relics"
+            ][active_tool_id]["buffs"].copy()
+            unkeep_buff += active_tool_buff_lst
+
+        return unkeep_buff
+
     def rlv2_moveAndBattleStart(self):
         self.response.update(
             {
@@ -700,6 +716,8 @@ class Rlv2BasicManager:
         if bad_box_id is not None:
             box_info[bad_box_id] = 999
 
+        unkeep_buff = self.get_unkeep_buff()
+
         self.player_data["rlv2"]["current"]["player"]["state"] = "PENDING"
         self.player_data["rlv2"]["current"]["player"]["cursor"]["position"] = cursor_pos
         self.player_data["rlv2"]["current"]["player"]["pending"] = [
@@ -715,7 +733,7 @@ class Rlv2BasicManager:
                         "boxInfo": box_info,
                         "tmpChar": [],
                         "sanity": 0,
-                        "unKeepBuff": [],
+                        "unKeepBuff": unkeep_buff,
                         "seed": 0,
                         "enemyHpInfo": {},
                     }
