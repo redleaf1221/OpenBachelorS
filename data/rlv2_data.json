@@ -2367,6 +2367,101 @@
                 }
             ]
         },
-        "rogue_4": {}
+        "rogue_4": {
+            "3": [
+                {
+                    "key": "bp_reward_increase",
+                    "blackboard": [
+                        {
+                            "key": "value",
+                            "value": 2
+                        }
+                    ]
+                },
+                {
+                    "key": "immediate_reward",
+                    "blackboard": [
+                        {
+                            "key": "id",
+                            "valueStr": "rogue_4_gold"
+                        },
+                        {
+                            "key": "count",
+                            "value": 2
+                        }
+                    ]
+                }
+            ],
+            "6": [
+                {
+                    "key": "bp_reward_increase",
+                    "blackboard": [
+                        {
+                            "key": "value",
+                            "value": 2
+                        }
+                    ]
+                },
+                {
+                    "key": "inc_outerbuff_shop_slot_unlock",
+                    "blackboard": [
+                        {
+                            "key": "count",
+                            "value": 2
+                        }
+                    ]
+                }
+            ],
+            "9": [
+                {
+                    "key": "bp_reward_increase",
+                    "blackboard": [
+                        {
+                            "key": "value",
+                            "value": 2
+                        }
+                    ]
+                },
+                {
+                    "key": "char_weight_rarity",
+                    "blackboard": [
+                        {
+                            "key": "rarity",
+                            "value": 3
+                        },
+                        {
+                            "key": "value",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "key": "char_weight_rarity",
+                    "blackboard": [
+                        {
+                            "key": "rarity",
+                            "value": 4
+                        },
+                        {
+                            "key": "value",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "key": "char_weight_rarity",
+                    "blackboard": [
+                        {
+                            "key": "rarity",
+                            "value": 5
+                        },
+                        {
+                            "key": "value",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        }
     }
 }
