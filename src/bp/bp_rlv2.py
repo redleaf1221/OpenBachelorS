@@ -686,6 +686,8 @@ class Rlv2BasicManager:
     def get_unkeep_buff(self):
         unkeep_buff = []
 
+        mode_grade = self.player_data["rlv2"]["current"]["game"]["modeGrade"]
+
         roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
 
         rlv2_data = const_json_loader[RLV2_DATA]
@@ -693,6 +695,14 @@ class Rlv2BasicManager:
         if self.theme_id in rlv2_data["init_buff_lst"]:
             init_buff_lst = rlv2_data["init_buff_lst"][self.theme_id].copy()
             unkeep_buff += init_buff_lst
+
+        if self.theme_id in rlv2_data["conditional_init_buff_lst"]:
+            for src_mode_grade, src_obj in rlv2_data["conditional_init_buff_lst"][
+                self.theme_id
+            ]:
+                if mode_grade >= int(src_mode_grade):
+                    conditional_init_buff_lst = src_obj.copy()
+                    unkeep_buff += conditional_init_buff_lst
 
         if self.player_data["rlv2"]["current"]["inventory"]["trap"] is not None:
             active_tool_id = self.player_data["rlv2"]["current"]["inventory"]["trap"][
