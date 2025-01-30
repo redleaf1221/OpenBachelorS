@@ -6,6 +6,7 @@ TMPL_JSON = "data/tmpl.json"
 RLV2_TMPL_JSON = "data/rlv2_tmpl.json"
 SANDBOX_TMPL_JSON = "data/sandbox_tmpl.json"
 MAIL_JSON = "data/mail.json"
+RLV2_DATA = "data/rlv2_data.json"
 
 SAV_DELTA_JSON = "sav/delta.json"
 SAV_PENDING_DELTA_JSON = "sav/pending_delta.json"

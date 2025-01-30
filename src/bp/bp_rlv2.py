@@ -10,6 +10,7 @@ from ..const.filepath import (
     VERSION_JSON,
     ROGUELIKE_TOPIC_TABLE,
     CHARACTER_TABLE,
+    RLV2_DATA,
 )
 from ..util.const_json_loader import const_json_loader, ConstJson
 from ..util.player_data import player_data_decorator, char_id_lst
@@ -686,6 +687,12 @@ class Rlv2BasicManager:
         unkeep_buff = []
 
         roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
+
+        rlv2_data = const_json_loader[RLV2_DATA]
+
+        if self.theme_id in rlv2_data["init_buff_lst"]:
+            init_buff_lst = rlv2_data["init_buff_lst"][self.theme_id].copy()
+            unkeep_buff += init_buff_lst
 
         if self.player_data["rlv2"]["current"]["inventory"]["trap"] is not None:
             active_tool_id = self.player_data["rlv2"]["current"]["inventory"]["trap"][
