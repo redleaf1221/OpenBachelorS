@@ -2158,19 +2158,6 @@
                 ]
             },
             {
-                "key": "overweight_move_cost",
-                "blackboard": [
-                    {
-                        "key": "id",
-                        "valueStr": "rogue_4_hp"
-                    },
-                    {
-                        "key": "count",
-                        "value": 1
-                    }
-                ]
-            },
-            {
                 "key": "unlock_node",
                 "blackboard": [
                     {
