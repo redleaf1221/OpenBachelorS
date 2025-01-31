@@ -683,9 +683,64 @@ class Rlv2BasicManager:
                     "ts": 1700000000,
                 }
 
+    def get_floor_difficulty(self, mode, mode_grade):
+        roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
+
+        floor_difficulty = 0
+
+        for i, difficulty_obj in roguelike_topic_table["details"][self.theme_id][
+            "difficulties"
+        ]:
+            if (
+                difficulty_obj["modeDifficulty"] == mode
+                and difficulty_obj["grade"] == mode_grade
+            ):
+                floor_difficulty = difficulty_obj["bossValue"]
+                break
+
+        return floor_difficulty
+
+    def get_stage_floor(self, stage_id):
+        rlv2_data = const_json_loader[RLV2_DATA]
+
+        if stage_id in rlv2_data["stage_floor"]:
+            stage_floor = rlv2_data["stage_floor"][stage_id]
+            return stage_floor
+
+        return 6
+
+    def get_stage_buff_lst(self, floor_difficulty):
+        stage_id = self.request_json["stageId"]
+
+        stage_floor = self.get_stage_floor(stage_id)
+
+        stage_buff_lst = []
+
+        floor_difficulty_rate = 1 + 0.01 * floor_difficulty
+
+        for i in range(stage_floor):
+            stage_buff_lst += [
+                {
+                    "key": "global_buff_normal",
+                    "blackboard": [
+                        {"key": "key", "valueStr": "enemy_atk_down"},
+                        {"key": "atk", "value": floor_difficulty_rate},
+                    ],
+                },
+                {
+                    "key": "global_buff_normal",
+                    "blackboard": [
+                        {"key": "key", "valueStr": "enemy_max_hp_down"},
+                        {"key": "max_hp", "value": floor_difficulty_rate},
+                    ],
+                },
+            ]
+        return stage_buff_lst
+
     def get_unkeep_buff(self):
         unkeep_buff = []
 
+        mode = self.player_data["rlv2"]["current"]["game"]["mode"]
         mode_grade = self.player_data["rlv2"]["current"]["game"]["modeGrade"]
 
         roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
@@ -712,6 +767,11 @@ class Rlv2BasicManager:
                 "relics"
             ][active_tool_id]["buffs"].copy()
             unkeep_buff += active_tool_buff_lst
+
+        floor_difficulty = self.get_floor_difficulty(mode, mode_grade)
+        if floor_difficulty:
+            stage_buff_lst = self.get_stage_buff_lst(floor_difficulty)
+            unkeep_buff += stage_buff_lst
 
         return unkeep_buff
 
