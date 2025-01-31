@@ -2234,6 +2234,280 @@
                         "valueStr": "battle"
                     }
                 ]
+            },
+            {
+                "key": "overweight_move_cost",
+                "blackboard": [
+                    {
+                        "key": "id",
+                        "valueStr": "rogue_4_hp"
+                    },
+                    {
+                        "key": "count",
+                        "value": 1
+                    }
+                ]
+            },
+            {
+                "key": "enemy_talent_blackboard_assign",
+                "blackboard": [
+                    {
+                        "key": "selector.enemy",
+                        "valueStr": "enemy_2080_skzlwy"
+                    },
+                    {
+                        "key": "talent_key",
+                        "valueStr": "M2Reborn"
+                    },
+                    {
+                        "key": "key",
+                        "valueStr": "max_respawn_cnt"
+                    },
+                    {
+                        "key": "value",
+                        "value": 1
+                    },
+                    {
+                        "key": "condition_key",
+                        "valueStr": "OVERWEIGHT"
+                    },
+                    {
+                        "key": "condition_value",
+                        "valueStr": "true"
+                    }
+                ]
+            },
+            {
+                "key": "enemy_talent_blackboard_assign",
+                "blackboard": [
+                    {
+                        "key": "selector.enemy",
+                        "valueStr": "enemy_2082_skzdd"
+                    },
+                    {
+                        "key": "talent_key",
+                        "valueStr": "RebornS2"
+                    },
+                    {
+                        "key": "key",
+                        "valueStr": "max_respawn_cnt"
+                    },
+                    {
+                        "key": "value",
+                        "value": 1
+                    },
+                    {
+                        "key": "condition_key",
+                        "valueStr": "OVERWEIGHT"
+                    },
+                    {
+                        "key": "condition_value",
+                        "valueStr": "true"
+                    }
+                ]
+            },
+            {
+                "key": "enemy_talent_blackboard_assign",
+                "blackboard": [
+                    {
+                        "key": "selector.enemy",
+                        "valueStr": "enemy_2081_skztxs"
+                    },
+                    {
+                        "key": "talent_key",
+                        "valueStr": "Line"
+                    },
+                    {
+                        "key": "key",
+                        "valueStr": "branch_id"
+                    },
+                    {
+                        "key": "value_str",
+                        "valueStr": "branch_skztxy_final_hard"
+                    },
+                    {
+                        "key": "condition_key",
+                        "valueStr": "OVERWEIGHT"
+                    },
+                    {
+                        "key": "condition_value",
+                        "valueStr": "true"
+                    }
+                ]
+            },
+            {
+                "key": "enemy_talent_blackboard_assign",
+                "blackboard": [
+                    {
+                        "key": "selector.enemy",
+                        "valueStr": "enemy_2089_skzjkl"
+                    },
+                    {
+                        "key": "talent_key",
+                        "valueStr": "M1_T2"
+                    },
+                    {
+                        "key": "key",
+                        "valueStr": "branch_id"
+                    },
+                    {
+                        "key": "value_str",
+                        "valueStr": "skzjkl_m1_summon_enemy_hard"
+                    },
+                    {
+                        "key": "condition_key",
+                        "valueStr": "OVERWEIGHT"
+                    },
+                    {
+                        "key": "condition_value",
+                        "valueStr": "true"
+                    }
+                ]
+            },
+            {
+                "key": "enemy_talent_blackboard_assign",
+                "blackboard": [
+                    {
+                        "key": "selector.enemy",
+                        "valueStr": "enemy_2089_skzjkl"
+                    },
+                    {
+                        "key": "talent_key",
+                        "valueStr": "M3_T2"
+                    },
+                    {
+                        "key": "key",
+                        "valueStr": "branch_id"
+                    },
+                    {
+                        "key": "value_str",
+                        "valueStr": "skzjkl_m3_summon_enemy_hard"
+                    },
+                    {
+                        "key": "condition_key",
+                        "valueStr": "OVERWEIGHT"
+                    },
+                    {
+                        "key": "condition_value",
+                        "valueStr": "true"
+                    }
+                ]
+            },
+            {
+                "key": "enemy_skill_attributedata_assign",
+                "blackboard": [
+                    {
+                        "key": "selector.enemy",
+                        "valueStr": "enemy_2092_skzamy"
+                    },
+                    {
+                        "key": "skill_name",
+                        "valueStr": "DeepBreathS1"
+                    },
+                    {
+                        "key": "key",
+                        "valueStr": "sp"
+                    },
+                    {
+                        "key": "value",
+                        "value": 100
+                    },
+                    {
+                        "key": "condition_key",
+                        "valueStr": "OVERWEIGHT"
+                    },
+                    {
+                        "key": "condition_value",
+                        "valueStr": "true"
+                    }
+                ]
+            },
+            {
+                "key": "enemy_skill_attributedata_assign",
+                "blackboard": [
+                    {
+                        "key": "selector.enemy",
+                        "valueStr": "enemy_2092_skzamy"
+                    },
+                    {
+                        "key": "skill_name",
+                        "valueStr": "DeepBreathS2"
+                    },
+                    {
+                        "key": "key",
+                        "valueStr": "sp"
+                    },
+                    {
+                        "key": "value",
+                        "value": 100
+                    },
+                    {
+                        "key": "condition_key",
+                        "valueStr": "OVERWEIGHT"
+                    },
+                    {
+                        "key": "condition_value",
+                        "valueStr": "true"
+                    }
+                ]
+            },
+            {
+                "key": "enemy_skill_attributedata_assign",
+                "blackboard": [
+                    {
+                        "key": "selector.enemy",
+                        "valueStr": "enemy_2092_skzamy"
+                    },
+                    {
+                        "key": "skill_name",
+                        "valueStr": "DeepBreathS3"
+                    },
+                    {
+                        "key": "key",
+                        "valueStr": "sp"
+                    },
+                    {
+                        "key": "value",
+                        "value": 100
+                    },
+                    {
+                        "key": "condition_key",
+                        "valueStr": "OVERWEIGHT"
+                    },
+                    {
+                        "key": "condition_value",
+                        "valueStr": "true"
+                    }
+                ]
+            },
+            {
+                "key": "enemy_skill_attributedata_assign",
+                "blackboard": [
+                    {
+                        "key": "selector.enemy",
+                        "valueStr": "enemy_2092_skzamy"
+                    },
+                    {
+                        "key": "skill_name",
+                        "valueStr": "DeepBreathS4"
+                    },
+                    {
+                        "key": "key",
+                        "valueStr": "sp"
+                    },
+                    {
+                        "key": "value",
+                        "value": 200
+                    },
+                    {
+                        "key": "condition_key",
+                        "valueStr": "OVERWEIGHT"
+                    },
+                    {
+                        "key": "condition_value",
+                        "valueStr": "true"
+                    }
+                ]
             }
         ]
     },
@@ -4043,6 +4317,98 @@
                     12,
                     13
                 ]
+            }
+        },
+        "rogue_4": {
+            "0": {
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_max_hp_down"
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 0.8
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": []
+            },
+            "1": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "2": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "3": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "4": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "5": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "6": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "7": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "8": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "9": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "10": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "11": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "12": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "13": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "14": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "15": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "16": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "17": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "18": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
             }
         }
     }
