@@ -4339,11 +4339,48 @@
                 "child_mode_grade_lst": []
             },
             "1": {
-                "buff_lst": [],
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_max_hp_down"
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 0.85
+                            }
+                        ]
+                    }
+                ],
                 "child_mode_grade_lst": []
             },
             "2": {
-                "buff_lst": [],
+                "buff_lst": [
+                    {
+                        "key": "disaster_rate_up",
+                        "blackboard": [
+                            {
+                                "key": "rate",
+                                "valueStr": "0,0,0.1,0.15,0.2,0.2,0.2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_max_hp_down"
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 0.9
+                            }
+                        ]
+                    }
+                ],
                 "child_mode_grade_lst": []
             },
             "3": {
