@@ -718,6 +718,25 @@ class Rlv2BasicManager:
 
         floor_difficulty_rate = 1 + 0.01 * floor_difficulty
 
+        stage_buff_lst += [
+            {
+                "key": "zone_into_buff",
+                "blackboard": [
+                    {"key": "buff", "valueStr": "global_buff_normal"},
+                    {"key": "key", "valueStr": "enemy_atk_down"},
+                    {"key": "atk", "value": floor_difficulty_rate},
+                ],
+            },
+            {
+                "key": "zone_into_buff",
+                "blackboard": [
+                    {"key": "buff", "valueStr": "global_buff_normal"},
+                    {"key": "key", "valueStr": "enemy_max_hp_down"},
+                    {"key": "max_hp", "value": floor_difficulty_rate},
+                ],
+            },
+        ]
+
         for i in range(stage_floor):
             stage_buff_lst += [
                 {
