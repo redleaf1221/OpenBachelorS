@@ -4384,68 +4384,578 @@
                 "child_mode_grade_lst": []
             },
             "3": {
-                "buff_lst": [],
+                "buff_lst": [
+                    {
+                        "key": "disaster_rate_up",
+                        "blackboard": [
+                            {
+                                "key": "rate",
+                                "valueStr": "0,0,0.1,0.15,0.2,0.2,0.2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_attribute_mul",
+                        "blackboard": [
+                            {
+                                "key": "selector.enemy",
+                                "valueStr": "enemy_2073_skzrck"
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 0.2
+                            }
+                        ]
+                    },
+                    {
+                        "key": "char_attribute_mul",
+                        "blackboard": [
+                            {
+                                "key": "selector.profession",
+                                "valueStr": "trap"
+                            },
+                            {
+                                "key": "selector.char",
+                                "valueStr": "trap_760_skztzs"
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 0.2
+                            }
+                        ]
+                    }
+                ],
                 "child_mode_grade_lst": []
             },
             "4": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_max_hp_down"
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 1.2
+                            },
+                            {
+                                "key": "selector.enemy_level_type",
+                                "valueStr": "ELITE"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_max_hp_down"
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 1.2
+                            },
+                            {
+                                "key": "selector.enemy_level_type",
+                                "valueStr": "BOSS"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3
+                ]
             },
             "5": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "char_attribute_add",
+                        "blackboard": [
+                            {
+                                "key": "cost",
+                                "value": 2
+                            },
+                            {
+                                "key": "condition_key",
+                                "valueStr": "OVERWEIGHT"
+                            },
+                            {
+                                "key": "condition_value",
+                                "valueStr": "true"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4
+                ]
             },
             "6": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "disaster_level_up",
+                        "blackboard": [
+                            {
+                                "key": "level_up",
+                                "value": 1
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    5
+                ]
             },
             "7": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_atk_down"
+                            },
+                            {
+                                "key": "atk",
+                                "value": 1.1
+                            },
+                            {
+                                "key": "selector.enemy_level_type",
+                                "valueStr": "ELITE"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_atk_down"
+                            },
+                            {
+                                "key": "atk",
+                                "value": 1.1
+                            },
+                            {
+                                "key": "selector.enemy_level_type",
+                                "valueStr": "BOSS"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    5,
+                    6
+                ]
             },
             "8": {
                 "buff_lst": [],
-                "child_mode_grade_lst": []
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ]
             },
             "9": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "ally_damage_scale[ep_dark]"
+                            },
+                            {
+                                "key": "ep_damage_scale",
+                                "value": 1.3
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ]
             },
             "10": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "level_char_limit_add",
+                        "blackboard": [
+                            {
+                                "key": "value",
+                                "value": -1
+                            }
+                        ]
+                    },
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_damage_resistance[inf]"
+                            },
+                            {
+                                "key": "damage_resistance",
+                                "value": 0.1
+                            },
+                            {
+                                "key": "selector.enemy_level_type",
+                                "valueStr": "ELITE"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_damage_resistance[inf]"
+                            },
+                            {
+                                "key": "damage_resistance",
+                                "value": 0.1
+                            },
+                            {
+                                "key": "selector.enemy_level_type",
+                                "valueStr": "BOSS"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    9
+                ]
             },
             "11": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "char_attribute_add",
+                        "blackboard": [
+                            {
+                                "key": "cost",
+                                "value": 3
+                            },
+                            {
+                                "key": "condition_key",
+                                "valueStr": "OVERWEIGHT"
+                            },
+                            {
+                                "key": "condition_value",
+                                "valueStr": "true"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    6,
+                    7,
+                    9,
+                    10
+                ]
             },
             "12": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "disaster_level_up",
+                        "blackboard": [
+                            {
+                                "key": "level_up",
+                                "value": 2
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    7,
+                    9,
+                    10,
+                    11
+                ]
             },
             "13": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "recruit_cost",
+                        "blackboard": [
+                            {
+                                "key": "rarity",
+                                "valueStr": "TIER_5"
+                            },
+                            {
+                                "key": "profession",
+                                "valueStr": "PIONEER,WARRIOR,TANK,SNIPER,CASTER,SUPPORT,MEDIC,SPECIAL"
+                            },
+                            {
+                                "key": "delta",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "key": "enemy_skill_blackboard_assign",
+                        "blackboard": [
+                            {
+                                "key": "selector.enemy",
+                                "valueStr": "enemy_2082_skzdd"
+                            },
+                            {
+                                "key": "skill_name",
+                                "valueStr": "SpawnToken_S2"
+                            },
+                            {
+                                "key": "key",
+                                "valueStr": "branch_id"
+                            },
+                            {
+                                "key": "value_str",
+                                "valueStr": "spawn_skzddd_hard"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    7,
+                    9,
+                    10,
+                    11,
+                    12
+                ]
             },
             "14": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "rogue_4_difficulty_buff_11"
+                            },
+                            {
+                                "key": "damage_resistance",
+                                "value": 0.5
+                            }
+                        ]
+                    },
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_max_hp_down"
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 1.5
+                            },
+                            {
+                                "key": "selector.enemy",
+                                "valueStr": "enemy_2081_skztxs"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    7,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13
+                ]
             },
             "15": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "recruit_cost",
+                        "blackboard": [
+                            {
+                                "key": "rarity",
+                                "valueStr": "TIER_6"
+                            },
+                            {
+                                "key": "profession",
+                                "valueStr": "PIONEER,WARRIOR,TANK,SNIPER,CASTER,SUPPORT,MEDIC,SPECIAL"
+                            },
+                            {
+                                "key": "delta",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_max_hp_down"
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 2
+                            },
+                            {
+                                "key": "selector.enemy",
+                                "valueStr": "enemy_2083_skzhg"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    7,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14
+                ]
             },
             "16": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "vertical_path_cost_delta",
+                        "blackboard": [
+                            {
+                                "key": "cost",
+                                "value": 1
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    7,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15
+                ]
             },
             "17": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "zone_into_reward",
+                        "blackboard": [
+                            {
+                                "key": "id",
+                                "valueStr": "pool_curse_gift"
+                            },
+                            {
+                                "key": "count",
+                                "value": 1
+                            },
+                            {
+                                "key": "zone",
+                                "valueStr": "zone_3"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    7,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                ]
             },
             "18": {
-                "buff_lst": [],
-                "child_mode_grade_lst": []
+                "buff_lst": [
+                    {
+                        "key": "char_attribute_mul",
+                        "blackboard": [
+                            {
+                                "key": "atk",
+                                "value": -0.2
+                            },
+                            {
+                                "key": "condition_key",
+                                "valueStr": "OVERWEIGHT"
+                            },
+                            {
+                                "key": "condition_value",
+                                "valueStr": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "rogue_4_modify_sp_recover[final_scale]"
+                            },
+                            {
+                                "key": "sp_recovery_per_sec",
+                                "value": -0.2
+                            },
+                            {
+                                "key": "selector.profession",
+                                "valueStr": "warrior|sniper|tank|medic|support|caster|special|pioneer"
+                            },
+                            {
+                                "key": "condition_key",
+                                "valueStr": "OVERWEIGHT"
+                            },
+                            {
+                                "key": "condition_value",
+                                "valueStr": "true"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    3,
+                    4,
+                    7,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17
+                ]
             }
         }
     }
