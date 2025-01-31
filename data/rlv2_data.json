@@ -2464,5 +2464,440 @@
             ]
         }
     },
-    "stage_floor": {}
+    "stage_floor": {},
+    "difficulty_buff_lst": {
+        "rogue_2": {
+            "0": {
+                "buff_lst": [],
+                "child_mode_grade_lst": []
+            },
+            "1": {
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "rogue_2_ep_damage_scale"
+                            },
+                            {
+                                "key": "ep_damage_scale",
+                                "value": 1.15
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": []
+            },
+            "2": {
+                "buff_lst": [
+                    {
+                        "key": "zone_into_reward",
+                        "blackboard": [
+                            {
+                                "key": "id",
+                                "valueStr": "pure_curse_gift"
+                            },
+                            {
+                                "key": "count",
+                                "value": 1
+                            },
+                            {
+                                "key": "zone",
+                                "valueStr": "zone_3"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    1
+                ]
+            },
+            "3": {
+                "buff_lst": [
+                    {
+                        "key": "enemy_attribute_add",
+                        "blackboard": [
+                            {
+                                "key": "magic_resistance",
+                                "value": 10
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    1,
+                    2
+                ]
+            },
+            "4": {
+                "buff_lst": [
+                    {
+                        "key": "recruit_cost",
+                        "blackboard": [
+                            {
+                                "key": "rarity",
+                                "valueStr": "TIER_3,TIER_4,TIER_5,TIER_6"
+                            },
+                            {
+                                "key": "profession",
+                                "valueStr": "PIONEER,WARRIOR,TANK,SNIPER,CASTER,SUPPORT,MEDIC,SPECIAL"
+                            },
+                            {
+                                "key": "delta",
+                                "value": 1
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    1,
+                    2,
+                    3
+                ]
+            },
+            "5": {
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_atk_down"
+                            },
+                            {
+                                "key": "atk",
+                                "value": 1.15
+                            },
+                            {
+                                "key": "selector.enemy_level_type",
+                                "valueStr": "BOSS"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_def_down"
+                            },
+                            {
+                                "key": "def",
+                                "value": 1.15
+                            },
+                            {
+                                "key": "selector.enemy_level_type",
+                                "valueStr": "BOSS"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    1,
+                    2,
+                    3,
+                    4
+                ]
+            },
+            "6": {
+                "buff_lst": [
+                    {
+                        "key": "immediate_cost",
+                        "blackboard": [
+                            {
+                                "key": "id",
+                                "valueStr": "rogue_2_san"
+                            },
+                            {
+                                "key": "count",
+                                "value": 15
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ]
+            },
+            "7": {
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_move_speed_down"
+                            },
+                            {
+                                "key": "move_speed",
+                                "value": 1.15
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                ]
+            },
+            "8": {
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "rogue_2_ep_damage_scale"
+                            },
+                            {
+                                "key": "ep_damage_scale",
+                                "value": 1.3
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ]
+            },
+            "9": {
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_attack_speed_down"
+                            },
+                            {
+                                "key": "attack_speed",
+                                "value": 15
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                ]
+            },
+            "10": {
+                "buff_lst": [
+                    {
+                        "key": "immediate_cost",
+                        "blackboard": [
+                            {
+                                "key": "id",
+                                "valueStr": "rogue_2_san"
+                            },
+                            {
+                                "key": "count",
+                                "value": 30
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    2,
+                    3,
+                    4,
+                    5,
+                    7,
+                    8,
+                    9
+                ]
+            },
+            "11": {
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_max_hp_down"
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 1.2
+                            },
+                            {
+                                "key": "selector.enemy_level_type",
+                                "valueStr": "ELITE|BOSS"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    2,
+                    3,
+                    4,
+                    5,
+                    7,
+                    8,
+                    9,
+                    10
+                ]
+            },
+            "12": {
+                "buff_lst": [
+                    {
+                        "key": "enemy_attribute_add",
+                        "blackboard": [
+                            {
+                                "key": "magic_resistance",
+                                "value": 20
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    2,
+                    4,
+                    5,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11
+                ]
+            },
+            "13": {
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "rogue_2_ep_damage_scale"
+                            },
+                            {
+                                "key": "ep_damage_scale",
+                                "value": 1.45
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    2,
+                    4,
+                    5,
+                    7,
+                    9,
+                    10,
+                    11,
+                    12
+                ]
+            },
+            "14": {
+                "buff_lst": [
+                    {
+                        "key": "level_char_limit_add",
+                        "blackboard": [
+                            {
+                                "key": "value",
+                                "value": -1
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    2,
+                    4,
+                    5,
+                    7,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13
+                ]
+            },
+            "15": {
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_atk_down"
+                            },
+                            {
+                                "key": "atk",
+                                "value": 1.2
+                            },
+                            {
+                                "key": "selector.enemy_level_type",
+                                "valueStr": "ELITE|BOSS"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_def_down"
+                            },
+                            {
+                                "key": "def",
+                                "value": 1.2
+                            },
+                            {
+                                "key": "selector.enemy_level_type",
+                                "valueStr": "ELITE|BOSS"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "enemy_max_hp_down"
+                            },
+                            {
+                                "key": "max_hp",
+                                "value": 1.2
+                            },
+                            {
+                                "key": "selector.enemy_level_type",
+                                "valueStr": "ELITE|BOSS"
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    2,
+                    4,
+                    5,
+                    7,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14
+                ]
+            }
+        }
+    }
 }

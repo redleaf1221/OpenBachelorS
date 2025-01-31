@@ -737,6 +737,28 @@ class Rlv2BasicManager:
             ]
         return stage_buff_lst
 
+    def get_difficulty_buff_lst(self, mode_grade):
+        difficulty_buff_lst = []
+
+        rlv2_data = const_json_loader[RLV2_DATA]
+
+        if self.theme_id in rlv2_data["difficulty_buff_lst"]:
+            while (
+                str(mode_grade) not in rlv2_data["difficulty_buff_lst"][self.theme_id]
+            ):
+                mode_grade -= 1
+            for i, child_mode_grade in rlv2_data["difficulty_buff_lst"][self.theme_id][
+                str(mode_grade)
+            ]["child_mode_grade_lst"]:
+                difficulty_buff_lst += rlv2_data["difficulty_buff_lst"][self.theme_id][
+                    str(child_mode_grade)
+                ]["buff_lst"].copy()
+            difficulty_buff_lst += rlv2_data["difficulty_buff_lst"][self.theme_id][
+                str(mode_grade)
+            ]["buff_lst"].copy()
+
+        return difficulty_buff_lst
+
     def get_unkeep_buff(self):
         unkeep_buff = []
 
@@ -767,6 +789,9 @@ class Rlv2BasicManager:
                 "relics"
             ][active_tool_id]["buffs"].copy()
             unkeep_buff += active_tool_buff_lst
+
+        difficulty_buff_lst = self.get_difficulty_buff_lst(mode_grade)
+        unkeep_buff += difficulty_buff_lst
 
         floor_difficulty = self.get_floor_difficulty(mode, mode_grade)
         if floor_difficulty:
