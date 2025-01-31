@@ -99,7 +99,7 @@ class Rlv2BasicManager:
                     "gold": 99999,
                     "shield": 99999,
                     "capacity": 13,
-                    "population": {"cost": 0, "max": 6},
+                    "population": {"cost": 0, "max": 99999},
                     "conPerfectBattle": 0,
                     "hpShowState": "NORMAL",
                 },
