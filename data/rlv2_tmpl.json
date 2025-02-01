@@ -6849,7 +6849,7 @@
                 "totalPut": 999
             },
             "bp": {
-                "point": 49000,
+                "point": 55000,
                 "reward": {
                     "bp_level_1": 1,
                     "bp_level_2": 1,
@@ -6990,7 +6990,22 @@
                     "bp_level_137": 1,
                     "bp_level_138": 1,
                     "bp_level_139": 1,
-                    "bp_level_140": 1
+                    "bp_level_140": 1,
+                    "bp_level_141": 1,
+                    "bp_level_142": 1,
+                    "bp_level_143": 1,
+                    "bp_level_144": 1,
+                    "bp_level_145": 1,
+                    "bp_level_146": 1,
+                    "bp_level_147": 1,
+                    "bp_level_148": 1,
+                    "bp_level_149": 1,
+                    "bp_level_150": 1,
+                    "bp_level_151": 1,
+                    "bp_level_152": 1,
+                    "bp_level_153": 1,
+                    "bp_level_154": 1,
+                    "bp_level_155": 1
                 }
             },
             "buff": {
