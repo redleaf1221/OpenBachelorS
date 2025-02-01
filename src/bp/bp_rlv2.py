@@ -707,7 +707,7 @@ class Rlv2BasicManager:
             stage_floor = rlv2_data["stage_floor"][stage_id]
             return stage_floor
 
-        return 6
+        return 5
 
     def get_stage_buff_lst(self, floor_difficulty):
         stage_id = self.request_json["stageId"]
