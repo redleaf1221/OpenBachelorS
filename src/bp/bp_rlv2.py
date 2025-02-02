@@ -951,8 +951,69 @@ class Rlv2BasicManager:
         self.player_data["rlv2"]["current"]["player"]["pending"] = pending_lst
 
 
+class Rlv2Theme4BasicManager(Rlv2BasicManager):
+    def get_stage_buff_lst(self, floor_difficulty):
+        stage_id = self.request_json["stageId"]
+
+        stage_floor = self.get_stage_floor(stage_id)
+
+        stage_buff_lst = []
+
+        floor_difficulty_rate = 1 + 0.01 * floor_difficulty
+
+        stage_buff_lst += [
+            {
+                "key": "zone_into_buff",
+                "blackboard": [
+                    {"key": "buff", "valueStr": "global_buff_normal"},
+                    {"key": "key", "valueStr": "enemy_atk_down"},
+                    {"key": "atk", "value": floor_difficulty_rate},
+                ],
+            },
+            {
+                "key": "zone_into_buff",
+                "blackboard": [
+                    {"key": "buff", "valueStr": "global_buff_normal"},
+                    {"key": "key", "valueStr": "enemy_max_hp_down"},
+                    {"key": "max_hp", "value": floor_difficulty_rate},
+                    {
+                        "key": "selector.enemy_exclude",
+                        "valueStr": "enemy_1196_msfyin_2|enemy_1200_msfjin_2|enemy_1202_msfzhi_2|enemy_1208_msfji_2|enemy_1210_msfden_2|enemy_1198_msfshu_2",
+                    },
+                    {"key": "selector.profession", "valueStr": "none"},
+                ],
+            },
+        ]
+
+        for i in range(stage_floor):
+            stage_buff_lst += [
+                {
+                    "key": "global_buff_normal",
+                    "blackboard": [
+                        {"key": "key", "valueStr": "enemy_atk_down"},
+                        {"key": "atk", "value": floor_difficulty_rate},
+                    ],
+                },
+                {
+                    "key": "global_buff_normal",
+                    "blackboard": [
+                        {"key": "key", "valueStr": "enemy_max_hp_down"},
+                        {"key": "max_hp", "value": floor_difficulty_rate},
+                        {
+                            "key": "selector.enemy_exclude",
+                            "valueStr": "enemy_1196_msfyin_2|enemy_1200_msfjin_2|enemy_1202_msfzhi_2|enemy_1208_msfji_2|enemy_1210_msfden_2|enemy_1198_msfshu_2",
+                        },
+                        {"key": "selector.profession", "valueStr": "none"},
+                    ],
+                },
+            ]
+        return stage_buff_lst
+
+
 def get_rlv2_manager(player_data, request_json, response):
     theme_id = player_data["rlv2"]["current"]["game"]["theme"]
+    if theme_id == "rogue_4":
+        return Rlv2Theme4BasicManager(player_data, theme_id, request_json, response)
     return Rlv2BasicManager(player_data, theme_id, request_json, response)
 
 
