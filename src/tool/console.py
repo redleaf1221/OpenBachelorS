@@ -6,7 +6,7 @@ from ..util.helper import get_char_num_id
 
 @click.group()
 @click.pass_context
-def cli(ctx, player_id):
+def cli(ctx):
     ctx.ensure_object(dict)
 
 
