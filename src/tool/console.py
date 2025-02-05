@@ -1,3 +1,5 @@
+import traceback
+
 import click
 from prompt_toolkit import PromptSession
 
@@ -21,6 +23,12 @@ def cli(ctx, interactive):
                 continue
             except EOFError:
                 break
+
+            try:
+                argv = text.split()
+                cli(argv, standalone_mode=False)
+            except Exception:
+                traceback.print_exc()
 
         exit()
 
