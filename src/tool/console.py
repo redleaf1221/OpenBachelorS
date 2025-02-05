@@ -1,4 +1,5 @@
 import click
+from prompt_toolkit import PromptSession
 
 from ..util.player_data import PlayerData
 from ..util.helper import get_char_num_id
@@ -9,6 +10,19 @@ from ..util.helper import get_char_num_id
 @click.pass_context
 def cli(ctx, interactive):
     ctx.ensure_object(dict)
+
+    if interactive:
+        session = PromptSession()
+
+        while True:
+            try:
+                text = session.prompt("> ")
+            except KeyboardInterrupt:
+                continue
+            except EOFError:
+                break
+
+        exit()
 
 
 @cli.command()
