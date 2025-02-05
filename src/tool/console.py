@@ -5,14 +5,13 @@ from ..util.helper import get_char_num_id
 
 
 @click.group()
-@click.option("-p", "--player-id", required=True)
 @click.pass_context
 def cli(ctx, player_id):
     ctx.ensure_object(dict)
-    ctx.obj["player_id"] = player_id
 
 
 @cli.command()
+@click.option("-p", "--player-id", required=True)
 @click.option("-c", "--char-id", required=True)
 @click.option("--potential-rank", type=int)
 @click.option("--favor-point", type=int)
@@ -27,6 +26,7 @@ def cli(ctx, player_id):
 @click.pass_context
 def char(
     ctx,
+    player_id,
     char_id,
     potential_rank,
     favor_point,
@@ -39,7 +39,6 @@ def char(
     equip_level,
     tmpl_id,
 ):
-    player_id = ctx.obj["player_id"]
     player_data = PlayerData(player_id)
 
     char_num_id = get_char_num_id(char_id)
