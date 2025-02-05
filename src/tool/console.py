@@ -4,9 +4,10 @@ from ..util.player_data import PlayerData
 from ..util.helper import get_char_num_id
 
 
-@click.group()
+@click.group(invoke_without_command=True)
+@click.option("--interactive", "-i", is_flag=True)
 @click.pass_context
-def cli(ctx):
+def cli(ctx, interactive):
     ctx.ensure_object(dict)
 
 
