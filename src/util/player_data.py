@@ -850,11 +850,14 @@ class FileBasedDeltaJson(DeltaJson):
 
 
 class PlayerData(JsonWithDelta):
-    def __init__(self):
+    def __init__(self, player_id=None):
         if flask.has_request_context():
             token = request.headers.get("secret", "")
         else:
-            token = ""
+            if player_id is not None:
+                token = player_id
+            else:
+                token = ""
         self.username = get_username_by_token(token)
 
         config = const_json_loader[CONFIG_JSON]
