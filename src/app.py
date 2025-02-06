@@ -11,6 +11,7 @@ from .bp.bp_char import bp_char
 from .bp.bp_charBuild import bp_charBuild
 from .bp.bp_charRotation import bp_charRotation
 from .bp.bp_config import bp_config
+from .bp.bp_crisisV2 import bp_crisisV2
 from .bp.bp_gacha import bp_gacha
 from .bp.bp_general import bp_general
 from .bp.bp_mail import bp_mail
@@ -42,6 +43,7 @@ app.register_blueprint(bp_char)
 app.register_blueprint(bp_charBuild)
 app.register_blueprint(bp_charRotation)
 app.register_blueprint(bp_config)
+app.register_blueprint(bp_crisisV2)
 app.register_blueprint(bp_gacha)
 app.register_blueprint(bp_general)
 app.register_blueprint(bp_mail)

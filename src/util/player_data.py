@@ -13,6 +13,7 @@ from ..const.filepath import (
     TMPL_JSON,
     RLV2_TMPL_JSON,
     SANDBOX_TMPL_JSON,
+    CRISIS_V2_TMPL_JSON,
     SKIN_TABLE,
     CHARWORD_TABLE,
     UNIEQUIP_TABLE,
@@ -494,6 +495,12 @@ def build_player_data_template():
     sandbox_tmpl_json_obj = const_json_loader[SANDBOX_TMPL_JSON].copy()
 
     tmpl_json_obj["sandboxPerm"] = sandbox_tmpl_json_obj
+
+    # ----------
+
+    crisis_v2_tmpl_json_obj = const_json_loader[CRISIS_V2_TMPL_JSON].copy()
+
+    tmpl_json_obj["crisisV2"] = crisis_v2_tmpl_json_obj
 
     # ----------
 
