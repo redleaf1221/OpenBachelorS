@@ -143,5 +143,21 @@ def char(
     player_data.save()
 
 
+@cli.group()
+@click.pass_context
+def sandbox(
+    ctx,
+):
+    pass
+
+
+@sandbox.command()
+@click.pass_context
+def enemy_rush(
+    ctx,
+):
+    pass
+
+
 if __name__ == "__main__":
     cli()
