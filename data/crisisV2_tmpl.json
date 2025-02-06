@@ -126,7 +126,76 @@
                     }
                 }
             },
-            "temporary": {},
+            "temporary": {
+                "crisis_v2_01-02": {
+                    "state": 1,
+                    "scoreTotal": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "rune": {},
+                    "challenge": {
+                        "keypoint_1": 2,
+                        "keypoint_2": 2,
+                        "keypoint_3": 2
+                    }
+                },
+                "crisis_v2_01-03": {
+                    "state": 1,
+                    "scoreTotal": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "rune": {},
+                    "challenge": {
+                        "keypoint_1": 2,
+                        "keypoint_2": 2,
+                        "keypoint_3": 2
+                    }
+                },
+                "crisis_v2_01-05": {
+                    "state": 1,
+                    "scoreTotal": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "rune": {},
+                    "challenge": {
+                        "keypoint_1": 2,
+                        "keypoint_2": 2,
+                        "keypoint_3": 2
+                    }
+                },
+                "crisis_v2_01-07": {
+                    "state": 1,
+                    "scoreTotal": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "rune": {},
+                    "challenge": {
+                        "keypoint_1": 2,
+                        "keypoint_2": 2,
+                        "keypoint_3": 2
+                    }
+                }
+            },
             "social": {
                 "assistCnt": 0,
                 "maxPnt": -1,
@@ -261,7 +330,76 @@
                     }
                 }
             },
-            "temporary": {},
+            "temporary": {
+                "crisis_v2_02-02": {
+                    "state": 1,
+                    "scoreTotal": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "rune": {},
+                    "challenge": {
+                        "keypoint_1": 2,
+                        "keypoint_2": 2,
+                        "keypoint_3": 2
+                    }
+                },
+                "crisis_v2_02-03": {
+                    "state": 1,
+                    "scoreTotal": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "rune": {},
+                    "challenge": {
+                        "keypoint_1": 2,
+                        "keypoint_2": 2,
+                        "keypoint_3": 2
+                    }
+                },
+                "crisis_v2_01-02_b": {
+                    "state": 1,
+                    "scoreTotal": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "rune": {},
+                    "challenge": {
+                        "keypoint_1": 2,
+                        "keypoint_2": 2,
+                        "keypoint_3": 2
+                    }
+                },
+                "crisis_v2_01-04_b": {
+                    "state": 1,
+                    "scoreTotal": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "rune": {},
+                    "challenge": {
+                        "keypoint_1": 2,
+                        "keypoint_2": 2,
+                        "keypoint_3": 2
+                    }
+                }
+            },
             "social": {
                 "assistCnt": 0,
                 "maxPnt": -1,
