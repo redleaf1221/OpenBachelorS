@@ -1,6 +1,140 @@
 {
     "current": "crisis_v2_season_3_1",
     "seasons": {
+        "crisis_v2_season_1_1": {
+            "permanent": {
+                "state": 1,
+                "scoreTotal": [
+                    150,
+                    270,
+                    140,
+                    150,
+                    120,
+                    110
+                ],
+                "scoreSingle": [
+                    150,
+                    270,
+                    140,
+                    150,
+                    120,
+                    110
+                ],
+                "comment": [],
+                "rune": {},
+                "exRunes": {
+                    "node_21": 3,
+                    "node_51": 3,
+                    "node_52": 3,
+                    "node_53": 3,
+                    "node_55": 3,
+                    "node_57": 3
+                },
+                "runePack": {
+                    "pack_1": 2,
+                    "pack_2": 2,
+                    "pack_3": 2,
+                    "pack_4": 2,
+                    "pack_5": 2,
+                    "pack_6": 2,
+                    "pack_7": 2,
+                    "pack_8": 2,
+                    "pack_34": 2
+                },
+                "challenge": {
+                    "keypoint_1": 2,
+                    "keypoint_2": 2,
+                    "keypoint_3": 2
+                },
+                "reward": {
+                    "reward_1": {
+                        "state": 2,
+                        "progress": 2
+                    },
+                    "reward_2": {
+                        "state": 2,
+                        "progress": 2
+                    },
+                    "reward_3": {
+                        "state": 2,
+                        "progress": 2
+                    }
+                }
+            },
+            "temporary": {},
+            "social": {
+                "assistCnt": 0,
+                "maxPnt": -1,
+                "chars": []
+            }
+        },
+        "crisis_v2_season_2_1": {
+            "permanent": {
+                "state": 1,
+                "scoreTotal": [
+                    170,
+                    250,
+                    130,
+                    130,
+                    140,
+                    70
+                ],
+                "scoreSingle": [
+                    170,
+                    250,
+                    130,
+                    130,
+                    140,
+                    70
+                ],
+                "comment": [],
+                "rune": {},
+                "exRunes": {
+                    "node_21": 3,
+                    "node_51": 3,
+                    "node_52": 3,
+                    "node_53": 3,
+                    "node_55": 3,
+                    "node_57": 3
+                },
+                "runePack": {
+                    "pack_1": 2,
+                    "pack_2": 2,
+                    "pack_3": 2,
+                    "pack_4": 2,
+                    "pack_5": 2,
+                    "pack_6": 2,
+                    "pack_7": 2,
+                    "pack_8": 2,
+                    "pack_34": 2
+                },
+                "challenge": {
+                    "keypoint_1": 2,
+                    "keypoint_2": 2,
+                    "keypoint_3": 2
+                },
+                "reward": {
+                    "reward_1": {
+                        "state": 2,
+                        "progress": 2
+                    },
+                    "reward_2": {
+                        "state": 2,
+                        "progress": 2
+                    },
+                    "reward_3": {
+                        "state": 2,
+                        "progress": 2
+                    }
+                }
+            },
+            "temporary": {},
+            "social": {
+                "assistCnt": 0,
+                "maxPnt": -1,
+                "chars": []
+            }
+        },
         "crisis_v2_season_3_1": {
             "permanent": {
                 "state": 1,
@@ -108,7 +242,8 @@
                     "pack_5": 2,
                     "pack_6": 2,
                     "pack_7": 2,
-                    "pack_8": 2
+                    "pack_8": 2,
+                    "pack_9": 2
                 },
                 "challenge": {
                     "keypoint_1": 2,
