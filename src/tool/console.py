@@ -3,7 +3,7 @@ import traceback
 import click
 from prompt_toolkit import PromptSession
 
-from ..util.player_data import PlayerData
+from ..util.player_data import PlayerData, player_data_template
 from ..util.helper import get_char_num_id
 
 
@@ -31,6 +31,28 @@ def cli(ctx, interactive):
                 traceback.print_exc()
 
         exit()
+
+
+def configure_current_equip(player_data, char_num_id, evolve_phase):
+    char_obj = player_data["troop"]["chars"][str(char_num_id)]
+    if "tmpl" in char_obj:
+        for tmpl_id, tmpl_obj in char_obj["tmpl"]:
+            if evolve_phase < 2:
+                current_equip = None
+            else:
+                current_equip = player_data_template["troop"]["chars"][
+                    str(char_num_id)
+                ]["tmpl"][tmpl_id]["currentEquip"]
+
+            tmpl_obj["currentEquip"] = current_equip
+    else:
+        if evolve_phase < 2:
+            current_equip = None
+        else:
+            current_equip = player_data_template["troop"]["chars"][str(char_num_id)][
+                "currentEquip"
+            ]
+        char_obj["currentEquip"] = current_equip
 
 
 @cli.command()
@@ -76,6 +98,7 @@ def char(
 
     if evolve_phase is not None:
         player_data["troop"]["chars"][str(char_num_id)]["evolvePhase"] = evolve_phase
+        configure_current_equip(player_data, char_num_id, evolve_phase)
 
     if level is not None:
         player_data["troop"]["chars"][str(char_num_id)]["level"] = level
