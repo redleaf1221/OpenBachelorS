@@ -152,9 +152,7 @@ def get_bonus_score_vec(map_id, node_lst):
                     )
                 self.mutual_exclusion_group_dict[mutual_exclusion_group_id].add(node_id)
 
-        def check_bonus_available(self, node_lst):
-            selected_node_set = set(node_lst)
-
+        def check_bonus_available(self, selected_node_set):
             for node_id in self.node_set:
                 if node_id not in selected_node_set:
                     return False
@@ -195,10 +193,12 @@ def get_bonus_score_vec(map_id, node_lst):
 
     bonus_score_vec = [0, 0, 0, 0, 0, 0]
 
+    selected_node_set = set(node_lst)
+
     for node_pack_id in node_pack_dict:
         node_pack = node_pack_dict[node_pack_id]
 
-        if node_pack.check_bonus_available(node_lst):
+        if node_pack.check_bonus_available(selected_node_set):
             bonus_score_vec[node_pack.dimension] += node_pack.score
 
     return bonus_score_vec
