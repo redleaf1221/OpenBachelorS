@@ -61,6 +61,7 @@ app.register_blueprint(bp_u8)
 app.register_blueprint(bp_user)
 app.register_blueprint(misc_bp)
 
+app.json.sort_keys = False
 
 if __name__ == "__main__":
     app.run(
