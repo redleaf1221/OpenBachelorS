@@ -79,6 +79,19 @@ def crisisV2_battleStart(player_data):
     return response
 
 
+def get_rune_lst(map_id, node_lst):
+    crisis_v2_data = get_crisis_v2_data()
+
+    rune_lst = []
+    for node_id in node_lst:
+        rune_id = crisis_v2_data["mapDetailDataMap"][map_id]["nodeDataMap"][node_id][
+            "runeId"
+        ]
+        rune_lst.append(rune_id)
+
+    return rune_lst
+
+
 @bp_crisisV2.route("/crisisV2/battleFinish", methods=["POST"])
 @player_data_decorator
 def crisisV2_battleFinish(player_data):
@@ -89,7 +102,7 @@ def crisisV2_battleFinish(player_data):
     map_id = player_data.extra_save.save_obj["crisis_v2_map_id"]
     node_lst = player_data.extra_save.save_obj["crisis_v2_node_lst"]
 
-    rune_lst = []
+    rune_lst = get_rune_lst(map_id, node_lst)
 
     score_vec = [0, 0, 0, 0, 0, 0]
 
