@@ -3,6 +3,9 @@ import traceback
 import click
 from prompt_toolkit import PromptSession
 
+from ..const.json_const import true, false, null
+from ..const.filepath import CONFIG_JSON, VERSION_JSON, SANDBOX_PERM_TABLE
+from ..util.const_json_loader import const_json_loader, ConstJson
 from ..util.player_data import PlayerData, player_data_template
 from ..util.helper import get_char_num_id
 
@@ -144,19 +147,102 @@ def char(
 
 
 @cli.group()
+@click.option("-p", "--player-id", required=True)
+@click.option("-t", "--topic-id", required=True)
 @click.pass_context
 def sandbox(
     ctx,
+    player_id,
+    topic_id,
 ):
-    pass
+    ctx.obj["player_id"] = player_id
+    ctx.obj["topic_id"] = topic_id
+
+
+def get_next_enemy_rush_id(player_data, topic_id):
+    enemy_rush_idx = 1
+    while True:
+        enemy_rush_id = f"er_{enemy_rush_idx}"
+        if (
+            enemy_rush_id
+            not in player_data["sandboxPerm"]["template"]["SANDBOX_V2"][topic_id][
+                "main"
+            ]["enemy"]["enemyRush"]
+        ):
+            break
+        enemy_rush_idx += 1
+
+    return enemy_rush_id
+
+
+enemy_rush_type_dict = ConstJson(
+    {
+        "NORMAL": 0,
+        "ELITE": 1,
+        "BOSS": 2,
+        "BANDIT": 3,
+        "RALLY": 4,
+        "THIEF": 5,
+    }
+)
 
 
 @sandbox.command()
+@click.option("--enemy-id", required=True)
+@click.option("--node-id", required=True)
 @click.pass_context
 def enemy_rush(
     ctx,
+    enemy_id,
+    node_id,
 ):
-    pass
+    player_id = ctx.obj["player_id"]
+    topic_id = ctx.obj["topic_id"]
+
+    player_data = PlayerData(player_id)
+
+    enemy_rush_id = get_next_enemy_rush_id(player_data, topic_id)
+
+    sandbox_perm_table = const_json_loader[SANDBOX_PERM_TABLE]
+
+    enemy_rush_type = 0
+    enemy_lst = []
+
+    found = False
+    for enemy_rush_type_str, enemy_rush_type_lst in sandbox_perm_table["detail"][
+        "SANDBOX_V2"
+    ][topic_id]["rushEnemyData"]["rushEnemyGroupConfigs"]:
+        for i, enemy_rush_type_obj in enemy_rush_type_lst:
+            if enemy_rush_type_obj["enemyGroupKey"] == enemy_id:
+                found = True
+                enemy_rush_type = enemy_rush_type_dict[enemy_rush_type_str]
+                for j, enemy_obj in enemy_rush_type_obj["enemy"]:
+                    enemy_cnt = enemy_obj["count"]
+                    enemy_lst.append([enemy_cnt, enemy_cnt])
+                break
+        if found:
+            break
+    if not found:
+        return
+
+    enemy_rush_obj = {
+        "enemyRushType": enemy_rush_type,
+        "groupKey": enemy_id,
+        "state": 0,
+        "day": 0,
+        "path": [
+            node_id,
+        ],
+        "enemy": enemy_lst,
+        "badge": 0,
+        "src": {"type": 0, "id": ""},
+    }
+
+    player_data["sandboxPerm"]["template"]["SANDBOX_V2"][topic_id]["main"]["enemy"][
+        "enemyRush"
+    ][enemy_rush_id] = enemy_rush_obj
+
+    player_data.save()
 
 
 if __name__ == "__main__":
