@@ -110,6 +110,112 @@ def get_basic_score_vec(map_id, rune_lst):
     return basic_score_vec
 
 
+def get_bonus_score_vec(map_id, node_lst):
+    crisis_v2_data = get_crisis_v2_data()
+
+    class MutualExclusionGroup:
+        def __init__(self):
+            self.max_score_node_set = set()
+            self.max_score = 0
+
+        def add(self, node_id):
+            rune_id = crisis_v2_data["mapDetailDataMap"][map_id]["nodeDataMap"][
+                node_id
+            ]["runeId"]
+            score = crisis_v2_data["mapDetailDataMap"][map_id]["runeDataMap"][rune_id][
+                "score"
+            ]
+            if score < self.max_score:
+                return
+
+            if score > self.max_score:
+                self.max_score_node_set = set()
+                self.max_score = score
+
+            self.max_score_node_set.add(node_id)
+
+    class NodePack:
+        def __init__(self, score, dimension):
+            self.node_set = set()
+            self.mutual_exclusion_group_dict = {}
+
+            self.score = score
+            self.dimension = dimension
+
+        def add(self, node_id, mutual_exclusion_group_id=None):
+            if mutual_exclusion_group_id is None:
+                self.node_set.add(node_id)
+            else:
+                if mutual_exclusion_group_id not in self.mutual_exclusion_group_dict:
+                    self.mutual_exclusion_group_dict[mutual_exclusion_group_id] = (
+                        MutualExclusionGroup()
+                    )
+                self.mutual_exclusion_group_dict[mutual_exclusion_group_id].add(node_id)
+
+        def check_bonus_available(self, node_lst):
+            selected_node_set = set(node_lst)
+
+            for node_id in self.node_set:
+                if node_id not in selected_node_set:
+                    return False
+
+            for mutual_exclusion_group_id in self.mutual_exclusion_group_dict:
+                mutual_exclusion_group = self.mutual_exclusion_group_dict[
+                    mutual_exclusion_group_id
+                ]
+                found = False
+                for node_id in mutual_exclusion_group.max_score_node_set:
+                    if node_id in selected_node_set:
+                        found = True
+                        break
+                if not found:
+                    return False
+
+            return True
+
+    node_pack_dict = {}
+
+    for node_pack_id, node_pack_obj in crisis_v2_data["mapDetailDataMap"][map_id][
+        "bagDataMap"
+    ]:
+        score = node_pack_obj["rewardScore"]
+        dimension = node_pack_obj["dimension"]
+        node_pack_dict[node_pack_id] = NodePack(score, dimension)
+
+    for node_id, node_obj in crisis_v2_data["mapDetailDataMap"][map_id]["nodeDataMap"]:
+        node_type = node_obj["nodeType"]
+        if node_type != "NORMAL":
+            continue
+
+        node_pack_id = node_obj["slotPackId"]
+
+        if node_pack_id:
+            mutual_exclusion_group_id = node_obj["mutualExclusionGroup"]
+            node_pack_dict[node_pack_id].add(node_id, mutual_exclusion_group_id)
+
+    bonus_score_vec = [0, 0, 0, 0, 0, 0]
+
+    for node_pack_id in node_pack_dict:
+        node_pack = node_pack_dict[node_pack_id]
+
+        if node_pack.check_bonus_available(node_lst):
+            bonus_score_vec[node_pack.dimension] += node_pack.score
+
+    return bonus_score_vec
+
+
+def get_score_vec(map_id, node_lst, rune_lst):
+    basic_score_vec = get_basic_score_vec(map_id, rune_lst)
+    bonus_score_vec = get_bonus_score_vec(map_id, node_lst)
+
+    score_vec = []
+
+    for i, j in zip(basic_score_vec, bonus_score_vec):
+        score_vec.append(i + j)
+
+    return score_vec
+
+
 @bp_crisisV2.route("/crisisV2/battleFinish", methods=["POST"])
 @player_data_decorator
 def crisisV2_battleFinish(player_data):
@@ -122,7 +228,7 @@ def crisisV2_battleFinish(player_data):
 
     rune_lst = get_rune_lst(map_id, node_lst)
 
-    score_vec = get_basic_score_vec(map_id, rune_lst)
+    score_vec = get_score_vec(map_id, node_lst, rune_lst)
 
     response = {
         "result": 0,
