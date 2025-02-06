@@ -10908,5 +10908,74 @@
         "focusKeyPointSlotId": "keypoint_1",
         "focusBagId": "pack_1"
     },
-    "achievementDataMap": {}
+    "achievementDataMap": {
+        "crisis_v2_season_1_1": {
+            "pMapName": {
+                "name": "灰烬泽地",
+                "code": "维多利亚"
+            },
+            "runes": [],
+            "comments": [],
+            "dimensions": [
+                {
+                    "desc": "战略",
+                    "maxScore": 120
+                },
+                {
+                    "desc": "技巧",
+                    "maxScore": 220
+                },
+                {
+                    "desc": "调遣",
+                    "maxScore": 110
+                },
+                {
+                    "desc": "应变",
+                    "maxScore": 120
+                },
+                {
+                    "desc": "洞察",
+                    "maxScore": 100
+                },
+                {
+                    "desc": "筹划",
+                    "maxScore": 90
+                }
+            ]
+        },
+        "crisis_v2_season_2_1": {
+            "pMapName": {
+                "name": "不朽厅堂",
+                "code": "伊比利亚"
+            },
+            "runes": [],
+            "comments": [],
+            "dimensions": [
+                {
+                    "desc": "战略",
+                    "maxScore": 136
+                },
+                {
+                    "desc": "技巧",
+                    "maxScore": 200
+                },
+                {
+                    "desc": "调遣",
+                    "maxScore": 104
+                },
+                {
+                    "desc": "应变",
+                    "maxScore": 104
+                },
+                {
+                    "desc": "洞察",
+                    "maxScore": 112
+                },
+                {
+                    "desc": "筹划",
+                    "maxScore": 56
+                }
+            ]
+        }
+    }
 }

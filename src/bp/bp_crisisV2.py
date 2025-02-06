@@ -36,3 +36,28 @@ def crisisV2_getInfo(player_data):
         "ts": 1700000000,
     }
     return response
+
+
+@bp_crisisV2.route("/crisisV2/getGoodList", methods=["POST"])
+@player_data_decorator
+def crisisV2_getGoodList(player_data):
+    request_json = request.get_json()
+
+    response = {
+        "permanent": [],
+        "season": [],
+        "progressGoodList": {},
+    }
+    return response
+
+
+@bp_crisisV2.route("/crisisV2/getSnapshot", methods=["POST"])
+@player_data_decorator
+def crisisV2_getSnapshot(player_data):
+    request_json = request.get_json()
+
+    response = {
+        "detail": {},
+        "simple": {},
+    }
+    return response
