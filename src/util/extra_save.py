@@ -8,8 +8,6 @@ class ExtraSave:
     @classmethod
     def get_default_save_obj(cls):
         return {
-            "cur_stage_id": null,
-            "cur_node_id": null,
             "received_mail_lst": [],
             "removed_mail_lst": [],
         }
