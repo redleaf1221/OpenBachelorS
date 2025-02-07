@@ -859,6 +859,13 @@ class FileBasedDeltaJson(DeltaJson):
         self.modified_dict = {}
         self.deleted_dict = {}
 
+    def reset_key(self, key):
+        if key in self.modified_dict:
+            del self.modified_dict[key]
+
+        if key in self.deleted_dict:
+            del self.deleted_dict[key]
+
 
 class PlayerData(JsonWithDelta):
     def __init__(self, player_id=None):
@@ -905,6 +912,10 @@ class PlayerData(JsonWithDelta):
         self.sav_delta_json.reset()
         self.sav_pending_delta_json.reset()
         self.extra_save.reset()
+
+    def reset_key(self, key):
+        self.sav_delta_json.reset_key(key)
+        self.sav_pending_delta_json.reset_key(key)
 
     def build_delta_response(self):
         modified_dict, deleted_dict = apply_delta_json_on_base_obj(

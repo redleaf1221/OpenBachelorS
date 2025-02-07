@@ -264,5 +264,23 @@ def season(
     player_data.save()
 
 
+@cli.command()
+@click.option("-p", "--player-id", required=True)
+@click.option("-k", "--key", required=True)
+@click.pass_context
+def reset_key(
+    ctx,
+    player_id,
+    key,
+):
+    player_data = PlayerData(player_id)
+
+    player_data.reset_key(key)
+
+    player_data.save()
+
+    click.echo("info: relogin is required for changes to take effect")
+
+
 if __name__ == "__main__":
     cli()
