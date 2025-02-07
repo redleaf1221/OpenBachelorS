@@ -245,5 +245,24 @@ def enemy_rush(
     player_data.save()
 
 
+@sandbox.command()
+@click.option("--season-idx", required=True)
+@click.pass_context
+def season(
+    ctx,
+    season_idx,
+):
+    player_id = ctx.obj["player_id"]
+    topic_id = ctx.obj["topic_id"]
+
+    player_data = PlayerData(player_id)
+
+    player_data["sandboxPerm"]["template"]["SANDBOX_V2"][topic_id]["main"]["map"][
+        "season"
+    ]["type"] = season_idx
+
+    player_data.save()
+
+
 if __name__ == "__main__":
     cli()
