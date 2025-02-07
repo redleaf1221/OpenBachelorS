@@ -837,6 +837,8 @@ class Rlv2BasicManager:
         if bad_box_id is not None:
             box_info[bad_box_id] = 999
 
+        dice_roll_lst = [12] * 99
+
         unkeep_buff = self.get_unkeep_buff()
 
         self.player_data["rlv2"]["current"]["player"]["state"] = "PENDING"
@@ -850,7 +852,7 @@ class Rlv2BasicManager:
                         "state": 1,
                         "chestCnt": 999,
                         "goldTrapCnt": 999,
-                        "diceRoll": [],
+                        "diceRoll": dice_roll_lst,
                         "boxInfo": box_info,
                         "tmpChar": [],
                         "sanity": 0,
@@ -951,6 +953,25 @@ class Rlv2BasicManager:
         self.player_data["rlv2"]["current"]["player"]["pending"] = pending_lst
 
 
+class Rlv2Theme2BasicManager(Rlv2BasicManager):
+    def get_unkeep_buff(self):
+        unkeep_buff = super().get_unkeep_buff()
+
+        unkeep_buff.append(
+            {
+                "key": "misc_insert_token_card",
+                "blackboard": [
+                    {"key": "token_key", "valueStr": "trap_089_dice3"},
+                    {"key": "level", "value": 1},
+                    {"key": "skill", "value": 0},
+                    {"key": "cnt", "value": 99},
+                ],
+            }
+        )
+
+        return unkeep_buff
+
+
 class Rlv2Theme4BasicManager(Rlv2BasicManager):
     def get_stage_buff_lst(self, floor_difficulty):
         stage_id = self.request_json["stageId"]
@@ -1012,6 +1033,8 @@ class Rlv2Theme4BasicManager(Rlv2BasicManager):
 
 def get_rlv2_manager(player_data, request_json, response):
     theme_id = player_data["rlv2"]["current"]["game"]["theme"]
+    if theme_id == "rogue_2":
+        return Rlv2Theme2BasicManager(player_data, theme_id, request_json, response)
     if theme_id == "rogue_4":
         return Rlv2Theme4BasicManager(player_data, theme_id, request_json, response)
     return Rlv2BasicManager(player_data, theme_id, request_json, response)
