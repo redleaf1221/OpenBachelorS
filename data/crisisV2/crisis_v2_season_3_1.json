@@ -11636,6 +11636,12 @@
                     "runeIcon": "g_creep_7",
                     "sortId": 77,
                     "runeScoreSum": 10
+                },
+                {
+                    "runeId": "enemy_atk_1",
+                    "runeIcon": "g_enemy_atk_1",
+                    "sortId": 84,
+                    "runeScoreSum": 20
                 }
             ],
             "comments": [
