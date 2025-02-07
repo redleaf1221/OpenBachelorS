@@ -223,6 +223,7 @@ def enemy_rush(
         if found:
             break
     if not found:
+        click.echo("err: enemy id not found")
         return
 
     enemy_rush_obj = {
