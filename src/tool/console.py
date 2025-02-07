@@ -247,7 +247,7 @@ def enemy_rush(
 
 
 @sandbox.command()
-@click.option("--season-idx", required=True)
+@click.option("--season-idx", required=True, type=int)
 @click.pass_context
 def season(
     ctx,
