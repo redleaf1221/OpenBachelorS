@@ -265,6 +265,38 @@ def season(
     player_data.save()
 
 
+@cli.group()
+@click.option("-p", "--player-id", required=True)
+@click.pass_context
+def rlv2(
+    ctx,
+    player_id,
+):
+    ctx.obj["player_id"] = player_id
+
+
+@rlv2.command()
+@click.option("--relic-id", required=True)
+@click.option("--layer", required=True, type=int)
+@click.pass_context
+def relic_layer(
+    ctx,
+    relic_id,
+    layer,
+):
+    player_id = ctx.obj["player_id"]
+
+    player_data = PlayerData(player_id)
+
+    for relic_inst_id, relic_obj in player_data["rlv2"]["current"]["inventory"][
+        "relic"
+    ]:
+        if relic_obj["id"] == relic_id:
+            relic_obj["layer"] = layer
+
+    player_data.save()
+
+
 @cli.command()
 @click.option("-p", "--player-id", required=True)
 @click.option("-k", "--key", required=True)
