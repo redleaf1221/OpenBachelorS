@@ -283,5 +283,21 @@ def reset_key(
     click.echo("info: relogin is required for changes to take effect")
 
 
+@cli.command()
+@click.option("-p", "--player-id", required=True)
+@click.pass_context
+def reset_all(
+    ctx,
+    player_id,
+):
+    player_data = PlayerData(player_id)
+
+    player_data.reset()
+
+    player_data.save()
+
+    click.echo("info: relogin is required for changes to take effect")
+
+
 if __name__ == "__main__":
     cli()
