@@ -10,6 +10,7 @@ from ..const.json_const import true, false, null
 from ..const.filepath import (
     CONFIG_JSON,
     VERSION_JSON,
+    SQUAD_JSON,
     TMPL_JSON,
     RLV2_TMPL_JSON,
     SANDBOX_TMPL_JSON,
@@ -505,6 +506,27 @@ def build_player_data_template():
     ]
 
     tmpl_json_obj["crisisV2"] = crisis_v2_tmpl_json_obj
+
+    # ----------
+
+    squad_json = const_json_loader[SQUAD_JSON]
+
+    default_squad = []
+
+    for i, squad_char_obj in squad_json["default"]:
+        default_squad.append(
+            {
+                "charInstId": get_char_num_id(squad_char_obj["char_id"]),
+                "skillIndex": squad_char_obj["skill_index"],
+                "currentEquip": squad_char_obj["current_equip"],
+            }
+        )
+
+    for i in range(len(default_squad), 12):
+        default_squad.append(null)
+
+    for i in range(4):
+        tmpl_json_obj["troop"]["squads"][str(i)]["slots"] = default_squad
 
     # ----------
 

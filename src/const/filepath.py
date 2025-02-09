@@ -1,6 +1,7 @@
 CONFIG_JSON = "conf/config.json"
 VERSION_JSON = "conf/version.json"
 ASSIST_JSON = "conf/assist.json"
+SQUAD_JSON = "conf/squad.json"
 
 TMPL_JSON = "data/tmpl.json"
 RLV2_TMPL_JSON = "data/rlv2_tmpl.json"
