@@ -1473,8 +1473,8 @@
                     },
                     "pack_6": {
                         "pos": {
-                            "x": 225,
-                            "y": -854.999939
+                            "x": 224.999985,
+                            "y": -855
                         },
                         "size": {
                             "x": 270,
@@ -5093,6 +5093,7 @@
                     ]
                 },
                 "node_43": {
+                    "runeId": "lrthef_3",
                     "slotPackId": "pack_9",
                     "nodeType": "NORMAL",
                     "mutualExclusionGroup": null,
@@ -5460,6 +5461,7 @@
                     ]
                 },
                 "node_52": {
+                    "runeId": "enemy_def_1",
                     "slotPackId": "pack_9",
                     "nodeType": "NORMAL",
                     "mutualExclusionGroup": null,
@@ -6512,6 +6514,36 @@
                                         "value": -0.4
                                     }
                                 ]
+                            },
+                            {
+                                "key": "char_skill_blackb_add",
+                                "selector": {
+                                    "professionMask": 256,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "char",
+                                        "valueStr": "trap_162_lrctrl"
+                                    },
+                                    {
+                                        "key": "sp_recover_ratio",
+                                        "value": -0.4
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -6968,6 +7000,10 @@
                                     {
                                         "key": "sleeping",
                                         "value": 1
+                                    },
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1426_lrthef"
                                     }
                                 ]
                             },
@@ -7004,6 +7040,53 @@
                         ]
                     },
                     "sortId": 45
+                },
+                "lrthef_3": {
+                    "runeId": "lrthef_3",
+                    "runeGroupId": "lrthef_3",
+                    "runeIcon": "g_lrthef_3",
+                    "runeName": "祭坛看护者：搬运之人",
+                    "score": 10,
+                    "dimension": 1,
+                    "packedRune": {
+                        "id": "lrthef_3",
+                        "points": 0,
+                        "mutexGroupKey": "lrthef",
+                        "description": "<萨卡兹祭坛看护者>的移动速度<@crisisv2.nag>+{move_speed:0%}</>（同类效果叠加）",
+                        "runes": [
+                            {
+                                "key": "enemy_attribute_additive_mul",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "move_speed",
+                                        "value": 1
+                                    },
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1426_lrthef"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 46
                 },
                 "lrwzrd_1": {
                     "runeId": "lrwzrd_1",
@@ -8350,6 +8433,49 @@
                         ]
                     },
                     "sortId": 31
+                },
+                "enemy_def_1": {
+                    "runeId": "enemy_def_1",
+                    "runeGroupId": "group_enemy_def",
+                    "runeIcon": "g_enemy_def_1",
+                    "runeName": "反装甲I",
+                    "score": 20,
+                    "dimension": 0,
+                    "packedRune": {
+                        "id": "enemy_def_1",
+                        "points": 0,
+                        "mutexGroupKey": null,
+                        "description": "所有敌人的防御力<@crisisv2.nag>+{def}</>",
+                        "runes": [
+                            {
+                                "key": "enemy_attribute_add",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "def",
+                                        "value": 300
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 3
                 },
                 "enemy_unblockable": {
                     "runeId": "enemy_unblockable",
@@ -10898,6 +11024,2918 @@
                         ]
                     },
                     "sortId": 11
+                }
+            }
+        },
+        "crisis_v2_01-07_b": {
+            "commentDataMap": {},
+            "challengeNodeDataMap": {
+                "keypoint_1": {
+                    "missionType": "PassWithRunes",
+                    "missionParamList": [
+                        "node_24;node_25",
+                        "2"
+                    ],
+                    "slotId": "keypoint_1",
+                    "previewTitle": "心平气和测试",
+                    "previewDesc": "完成一次作战，并同时携带【狂暴宿主投掷手：极度疯狂I】【狂暴宿主投掷手：异变躯体I】通关",
+                    "missionSortId": 15,
+                    "rewardList": [
+                        {
+                            "reward": {
+                                "id": "CRISIS_SHOP_COIN_V2",
+                                "count": 100,
+                                "type": "CRS_SHOP_COIN_V2"
+                            },
+                            "isTimeLimit": true
+                        },
+                        {
+                            "reward": {
+                                "id": "3302",
+                                "count": 5,
+                                "type": "MATERIAL"
+                            },
+                            "isTimeLimit": false
+                        }
+                    ],
+                    "requiredSlotCount": 2,
+                    "slotIdList": [
+                        "node_24",
+                        "node_25"
+                    ]
+                },
+                "keypoint_2": {
+                    "missionType": "PassWithRunes",
+                    "missionParamList": [
+                        "node_13;node_14;node_15",
+                        "3"
+                    ],
+                    "slotId": "keypoint_2",
+                    "previewTitle": "施工达人测试",
+                    "previewDesc": "完成一次作战，并同时携带【环境：地表施工】【环境：高台施工】【目标：最后防线】通关",
+                    "missionSortId": 14,
+                    "rewardList": [
+                        {
+                            "reward": {
+                                "id": "CRISIS_SHOP_COIN_V2",
+                                "count": 100,
+                                "type": "CRS_SHOP_COIN_V2"
+                            },
+                            "isTimeLimit": true
+                        },
+                        {
+                            "reward": {
+                                "id": "2002",
+                                "count": 10,
+                                "type": "CARD_EXP"
+                            },
+                            "isTimeLimit": false
+                        }
+                    ],
+                    "requiredSlotCount": 3,
+                    "slotIdList": [
+                        "node_13",
+                        "node_14",
+                        "node_15"
+                    ]
+                },
+                "keypoint_3": {
+                    "missionType": "PassWithDimScore",
+                    "missionParamList": [
+                        "0;1;2;3;4;5",
+                        "200"
+                    ],
+                    "slotId": "keypoint_3",
+                    "previewTitle": "标准能力测试",
+                    "previewDesc": "完成一次作战，同时评分大于等于200分",
+                    "missionSortId": 13,
+                    "rewardList": [
+                        {
+                            "reward": {
+                                "id": "CRISIS_SHOP_COIN_V2",
+                                "count": 100,
+                                "type": "CRS_SHOP_COIN_V2"
+                            },
+                            "isTimeLimit": true
+                        },
+                        {
+                            "reward": {
+                                "id": "4001",
+                                "count": 5000,
+                                "type": "GOLD"
+                            },
+                            "isTimeLimit": false
+                        }
+                    ],
+                    "requiredSlotCount": 0,
+                    "slotIdList": []
+                }
+            },
+            "groupDescDataMap": {},
+            "roadRelationDataMap": {
+                "road_0": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_0"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_1"
+                    }
+                },
+                "road_2": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_1"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_3"
+                    }
+                },
+                "road_3": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_3"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_4"
+                    }
+                },
+                "road_4": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_4"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_5"
+                    }
+                },
+                "road_5": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_5"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_6"
+                    }
+                },
+                "road_6": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_3"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_7"
+                    }
+                },
+                "road_7": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_7"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_8"
+                    }
+                },
+                "road_8": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_3"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_9"
+                    }
+                },
+                "road_9": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_9"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_10"
+                    }
+                },
+                "road_10": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_10"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_11"
+                    }
+                },
+                "road_11": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_12"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_13"
+                    }
+                },
+                "road_12": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_12"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_14"
+                    }
+                },
+                "road_13": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_13"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_15"
+                    }
+                },
+                "road_14": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_14"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_15"
+                    }
+                },
+                "road_15": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_15"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_16"
+                    }
+                },
+                "road_16": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_15"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_17"
+                    }
+                },
+                "road_21": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_21"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_28"
+                    }
+                },
+                "road_18": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_20"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_24"
+                    }
+                },
+                "road_19": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_2"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_19"
+                    }
+                },
+                "road_20": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_19"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_21"
+                    }
+                },
+                "road_17": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_18"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_2"
+                    }
+                },
+                "road_22": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_24"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_25"
+                    }
+                },
+                "road_23": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_24"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_26"
+                    }
+                },
+                "road_1": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "keypoint_1"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_25"
+                    }
+                },
+                "road_25": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "keypoint_2"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_15"
+                    }
+                },
+                "road_26": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_18"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_27"
+                    }
+                },
+                "road_24": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "keypoint_3"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_8"
+                    }
+                },
+                "road_27": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_8"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_5"
+                    }
+                },
+                "road_28": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_8"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_10"
+                    }
+                },
+                "road_29": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "keypoint_3"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_6"
+                    }
+                },
+                "road_30": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "keypoint_3"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_11"
+                    }
+                },
+                "road_31": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_27"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_22"
+                    }
+                },
+                "road_32": {
+                    "start": {
+                        "type": "NODE",
+                        "id": "node_22"
+                    },
+                    "end": {
+                        "type": "NODE",
+                        "id": "node_23"
+                    }
+                }
+            },
+            "bagRoadDataMap": {},
+            "nodeViewData": {
+                "width": 885,
+                "height": 1120,
+                "bagPosMap": null,
+                "roadPosMap": {
+                    "road_0": {
+                        "id": "road_0",
+                        "centerPos": {
+                            "x": 82.5,
+                            "y": -225
+                        },
+                        "size": {
+                            "x": 54,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -22.5,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 22.5,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_2": {
+                        "id": "road_2",
+                        "centerPos": {
+                            "x": 180,
+                            "y": -225
+                        },
+                        "size": {
+                            "x": 39,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -15,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 15,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_3": {
+                        "id": "road_3",
+                        "centerPos": {
+                            "x": 285,
+                            "y": -180
+                        },
+                        "size": {
+                            "x": 68.9999847,
+                            "y": 99
+                        },
+                        "startPos": {
+                            "x": -29.9999847,
+                            "y": -45
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": 45
+                        },
+                        "inflectionList": [
+                            {
+                                "cornerPos": {
+                                    "x": 0,
+                                    "y": -45
+                                },
+                                "radius": 10
+                            },
+                            {
+                                "cornerPos": {
+                                    "x": 0,
+                                    "y": 45
+                                },
+                                "radius": 10
+                            }
+                        ]
+                    },
+                    "road_4": {
+                        "id": "road_4",
+                        "centerPos": {
+                            "x": 397.5,
+                            "y": -135
+                        },
+                        "size": {
+                            "x": 54,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -22.5,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 22.5,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_5": {
+                        "id": "road_5",
+                        "centerPos": {
+                            "x": 517.5,
+                            "y": -135
+                        },
+                        "size": {
+                            "x": 84,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -37.5,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 37.5,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_6": {
+                        "id": "road_6",
+                        "centerPos": {
+                            "x": 285,
+                            "y": -225
+                        },
+                        "size": {
+                            "x": 68.9999847,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -29.9999847,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_7": {
+                        "id": "road_7",
+                        "centerPos": {
+                            "x": 397.5,
+                            "y": -225
+                        },
+                        "size": {
+                            "x": 54,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -22.5,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 22.5,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_8": {
+                        "id": "road_8",
+                        "centerPos": {
+                            "x": 285,
+                            "y": -270
+                        },
+                        "size": {
+                            "x": 68.9999847,
+                            "y": 99
+                        },
+                        "startPos": {
+                            "x": -29.9999847,
+                            "y": 45
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": -45
+                        },
+                        "inflectionList": [
+                            {
+                                "cornerPos": {
+                                    "x": 0,
+                                    "y": 45
+                                },
+                                "radius": 10
+                            },
+                            {
+                                "cornerPos": {
+                                    "x": 0,
+                                    "y": -45
+                                },
+                                "radius": 10
+                            }
+                        ]
+                    },
+                    "road_9": {
+                        "id": "road_9",
+                        "centerPos": {
+                            "x": 397.5,
+                            "y": -315
+                        },
+                        "size": {
+                            "x": 54,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -22.5,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 22.5,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_10": {
+                        "id": "road_10",
+                        "centerPos": {
+                            "x": 517.5,
+                            "y": -315
+                        },
+                        "size": {
+                            "x": 84,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -37.5,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 37.5,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_11": {
+                        "id": "road_11",
+                        "centerPos": {
+                            "x": 97.5,
+                            "y": -450
+                        },
+                        "size": {
+                            "x": 84,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -37.5,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 37.5,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_12": {
+                        "id": "road_12",
+                        "centerPos": {
+                            "x": 97.5,
+                            "y": -495
+                        },
+                        "size": {
+                            "x": 84,
+                            "y": 99
+                        },
+                        "startPos": {
+                            "x": -37.5,
+                            "y": 45
+                        },
+                        "endPos": {
+                            "x": 37.5,
+                            "y": -45
+                        },
+                        "inflectionList": [
+                            {
+                                "cornerPos": {
+                                    "x": 7.5,
+                                    "y": 45
+                                },
+                                "radius": 10
+                            },
+                            {
+                                "cornerPos": {
+                                    "x": 7.5,
+                                    "y": -45
+                                },
+                                "radius": 10
+                            }
+                        ]
+                    },
+                    "road_13": {
+                        "id": "road_13",
+                        "centerPos": {
+                            "x": 225,
+                            "y": -450
+                        },
+                        "size": {
+                            "x": 69,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -30,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_14": {
+                        "id": "road_14",
+                        "centerPos": {
+                            "x": 225,
+                            "y": -495
+                        },
+                        "size": {
+                            "x": 69,
+                            "y": 99
+                        },
+                        "startPos": {
+                            "x": -30,
+                            "y": -45
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": 45
+                        },
+                        "inflectionList": [
+                            {
+                                "cornerPos": {
+                                    "x": 0,
+                                    "y": -45
+                                },
+                                "radius": 10
+                            },
+                            {
+                                "cornerPos": {
+                                    "x": 0,
+                                    "y": 45
+                                },
+                                "radius": 10
+                            }
+                        ]
+                    },
+                    "road_15": {
+                        "id": "road_15",
+                        "centerPos": {
+                            "x": 337.5,
+                            "y": -450
+                        },
+                        "size": {
+                            "x": 54,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -22.5,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 22.5,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_16": {
+                        "id": "road_16",
+                        "centerPos": {
+                            "x": 337.5,
+                            "y": -450
+                        },
+                        "size": {
+                            "x": 54.00003,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -22.5,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 22.50003,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_21": {
+                        "id": "road_21",
+                        "centerPos": {
+                            "x": 465,
+                            "y": -630
+                        },
+                        "size": {
+                            "x": 69,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -30,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_18": {
+                        "id": "road_18",
+                        "centerPos": {
+                            "x": 97.5,
+                            "y": -795
+                        },
+                        "size": {
+                            "x": 84,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -37.5,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 37.5,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_19": {
+                        "id": "road_19",
+                        "centerPos": {
+                            "x": 225,
+                            "y": -630
+                        },
+                        "size": {
+                            "x": 69,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -30,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_20": {
+                        "id": "road_20",
+                        "centerPos": {
+                            "x": 345,
+                            "y": -630
+                        },
+                        "size": {
+                            "x": 69,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -30,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_17": {
+                        "id": "road_17",
+                        "centerPos": {
+                            "x": 105,
+                            "y": -630
+                        },
+                        "size": {
+                            "x": 69,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -30,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_22": {
+                        "id": "road_22",
+                        "centerPos": {
+                            "x": 225,
+                            "y": -795
+                        },
+                        "size": {
+                            "x": 69,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -30,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_23": {
+                        "id": "road_23",
+                        "centerPos": {
+                            "x": 225,
+                            "y": -832.5
+                        },
+                        "size": {
+                            "x": 69,
+                            "y": 84
+                        },
+                        "startPos": {
+                            "x": -30,
+                            "y": 37.5
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": -37.5
+                        },
+                        "inflectionList": [
+                            {
+                                "cornerPos": {
+                                    "x": 0,
+                                    "y": 37.5
+                                },
+                                "radius": 10
+                            },
+                            {
+                                "cornerPos": {
+                                    "x": 0,
+                                    "y": -37.5
+                                },
+                                "radius": 10
+                            }
+                        ]
+                    },
+                    "road_1": {
+                        "id": "road_1",
+                        "centerPos": {
+                            "x": 360,
+                            "y": -795
+                        },
+                        "size": {
+                            "x": 99,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": 45,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": -45,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_25": {
+                        "id": "road_25",
+                        "centerPos": {
+                            "x": 285,
+                            "y": -510
+                        },
+                        "size": {
+                            "x": 9,
+                            "y": 69
+                        },
+                        "startPos": {
+                            "x": 0,
+                            "y": -30
+                        },
+                        "endPos": {
+                            "x": 0,
+                            "y": 30
+                        },
+                        "inflectionList": []
+                    },
+                    "road_26": {
+                        "id": "road_26",
+                        "centerPos": {
+                            "x": 105,
+                            "y": -667.5
+                        },
+                        "size": {
+                            "x": 69,
+                            "y": 84
+                        },
+                        "startPos": {
+                            "x": -30,
+                            "y": 37.5
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": -37.5
+                        },
+                        "inflectionList": [
+                            {
+                                "cornerPos": {
+                                    "x": 0,
+                                    "y": 37.5
+                                },
+                                "radius": 10
+                            },
+                            {
+                                "cornerPos": {
+                                    "x": 0,
+                                    "y": -37.5
+                                },
+                                "radius": 10
+                            }
+                        ]
+                    },
+                    "road_24": {
+                        "id": "road_24",
+                        "centerPos": {
+                            "x": 532.5,
+                            "y": -225
+                        },
+                        "size": {
+                            "x": 114,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": 52.5,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": -52.5,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_27": {
+                        "id": "road_27",
+                        "centerPos": {
+                            "x": 450,
+                            "y": -180
+                        },
+                        "size": {
+                            "x": 9,
+                            "y": 39
+                        },
+                        "startPos": {
+                            "x": 0,
+                            "y": -15
+                        },
+                        "endPos": {
+                            "x": 0,
+                            "y": 15
+                        },
+                        "inflectionList": []
+                    },
+                    "road_28": {
+                        "id": "road_28",
+                        "centerPos": {
+                            "x": 450,
+                            "y": -270
+                        },
+                        "size": {
+                            "x": 9,
+                            "y": 39
+                        },
+                        "startPos": {
+                            "x": 0,
+                            "y": 15
+                        },
+                        "endPos": {
+                            "x": 0,
+                            "y": -15
+                        },
+                        "inflectionList": []
+                    },
+                    "road_29": {
+                        "id": "road_29",
+                        "centerPos": {
+                            "x": 585,
+                            "y": -195
+                        },
+                        "size": {
+                            "x": 9,
+                            "y": 69
+                        },
+                        "startPos": {
+                            "x": 0,
+                            "y": -30
+                        },
+                        "endPos": {
+                            "x": 0,
+                            "y": 30
+                        },
+                        "inflectionList": []
+                    },
+                    "road_30": {
+                        "id": "road_30",
+                        "centerPos": {
+                            "x": 585,
+                            "y": -255
+                        },
+                        "size": {
+                            "x": 9,
+                            "y": 69
+                        },
+                        "startPos": {
+                            "x": 0,
+                            "y": 30
+                        },
+                        "endPos": {
+                            "x": 0,
+                            "y": -30
+                        },
+                        "inflectionList": []
+                    },
+                    "road_31": {
+                        "id": "road_31",
+                        "centerPos": {
+                            "x": 225,
+                            "y": -705
+                        },
+                        "size": {
+                            "x": 69,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -30,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    },
+                    "road_32": {
+                        "id": "road_32",
+                        "centerPos": {
+                            "x": 345,
+                            "y": -705
+                        },
+                        "size": {
+                            "x": 69,
+                            "y": 9
+                        },
+                        "startPos": {
+                            "x": -30,
+                            "y": 0
+                        },
+                        "endPos": {
+                            "x": 30,
+                            "y": 0
+                        },
+                        "inflectionList": []
+                    }
+                },
+                "nodePosMap": {
+                    "node_0": {
+                        "position": {
+                            "x": 59.9999962,
+                            "y": -225
+                        }
+                    },
+                    "node_1": {
+                        "position": {
+                            "x": 135,
+                            "y": -225
+                        }
+                    },
+                    "keypoint_1": {
+                        "position": {
+                            "x": 405,
+                            "y": -795
+                        }
+                    },
+                    "node_3": {
+                        "position": {
+                            "x": 225,
+                            "y": -225
+                        }
+                    },
+                    "node_4": {
+                        "position": {
+                            "x": 345,
+                            "y": -135
+                        }
+                    },
+                    "node_5": {
+                        "position": {
+                            "x": 450,
+                            "y": -135
+                        }
+                    },
+                    "node_6": {
+                        "position": {
+                            "x": 585,
+                            "y": -135
+                        }
+                    },
+                    "node_7": {
+                        "position": {
+                            "x": 345,
+                            "y": -225
+                        }
+                    },
+                    "node_8": {
+                        "position": {
+                            "x": 450,
+                            "y": -225
+                        }
+                    },
+                    "node_9": {
+                        "position": {
+                            "x": 345,
+                            "y": -315
+                        }
+                    },
+                    "node_10": {
+                        "position": {
+                            "x": 450,
+                            "y": -315
+                        }
+                    },
+                    "node_11": {
+                        "position": {
+                            "x": 585,
+                            "y": -315
+                        }
+                    },
+                    "node_12": {
+                        "position": {
+                            "x": 60,
+                            "y": -450
+                        }
+                    },
+                    "node_13": {
+                        "position": {
+                            "x": 165,
+                            "y": -450
+                        }
+                    },
+                    "node_14": {
+                        "position": {
+                            "x": 165,
+                            "y": -540
+                        }
+                    },
+                    "node_15": {
+                        "position": {
+                            "x": 285,
+                            "y": -450
+                        }
+                    },
+                    "node_16": {
+                        "position": {
+                            "x": 405,
+                            "y": -450
+                        }
+                    },
+                    "node_17": {
+                        "position": {
+                            "x": 480.000031,
+                            "y": -450
+                        }
+                    },
+                    "node_18": {
+                        "position": {
+                            "x": 60,
+                            "y": -630
+                        }
+                    },
+                    "node_19": {
+                        "position": {
+                            "x": 285,
+                            "y": -630
+                        }
+                    },
+                    "node_20": {
+                        "position": {
+                            "x": 60,
+                            "y": -795
+                        }
+                    },
+                    "node_21": {
+                        "position": {
+                            "x": 405,
+                            "y": -630
+                        }
+                    },
+                    "node_22": {
+                        "position": {
+                            "x": 285,
+                            "y": -705
+                        }
+                    },
+                    "node_23": {
+                        "position": {
+                            "x": 405,
+                            "y": -705
+                        }
+                    },
+                    "node_24": {
+                        "position": {
+                            "x": 165,
+                            "y": -795
+                        }
+                    },
+                    "node_25": {
+                        "position": {
+                            "x": 285,
+                            "y": -795
+                        }
+                    },
+                    "node_26": {
+                        "position": {
+                            "x": 285,
+                            "y": -870
+                        }
+                    },
+                    "keypoint_2": {
+                        "position": {
+                            "x": 285,
+                            "y": -540
+                        }
+                    },
+                    "keypoint_3": {
+                        "position": {
+                            "x": 585,
+                            "y": -225
+                        }
+                    },
+                    "node_2": {
+                        "position": {
+                            "x": 165,
+                            "y": -630
+                        }
+                    },
+                    "node_27": {
+                        "position": {
+                            "x": 165,
+                            "y": -705
+                        }
+                    },
+                    "node_28": {
+                        "position": {
+                            "x": 525,
+                            "y": -630
+                        }
+                    }
+                },
+                "exclusionDataMap": {
+                    "exclusion_1": {
+                        "id": "exclusion_1",
+                        "pos": {
+                            "x": 442.5,
+                            "y": -442.5
+                        },
+                        "size": {
+                            "x": 165,
+                            "y": 105
+                        }
+                    }
+                }
+            },
+            "bagViewData": null,
+            "bagDataMap": {},
+            "exclusionDataMap": {
+                "exclusion_1": {
+                    "defaultSlotId": null
+                }
+            },
+            "dimensionItemList": [
+                {
+                    "desc": "战略",
+                    "maxScore": 1
+                },
+                {
+                    "desc": "技巧",
+                    "maxScore": 140
+                },
+                {
+                    "desc": "调遣",
+                    "maxScore": 100
+                },
+                {
+                    "desc": "应变",
+                    "maxScore": 1
+                },
+                {
+                    "desc": "洞察",
+                    "maxScore": 50
+                },
+                {
+                    "desc": "筹划",
+                    "maxScore": 20
+                }
+            ],
+            "rewardNodeDataMap": {},
+            "dailyRuneUnlcokDataMap": {},
+            "nodeDataMap": {
+                "node_0": {
+                    "runeId": null,
+                    "slotPackId": null,
+                    "nodeType": "START",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_1"
+                    ]
+                },
+                "node_1": {
+                    "runeId": "global_nocostrecovery_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_0",
+                        "node_3"
+                    ]
+                },
+                "keypoint_2": {
+                    "runeId": null,
+                    "slotPackId": null,
+                    "nodeType": "KEYPOINT",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_15"
+                    ]
+                },
+                "node_3": {
+                    "runeId": "cost_battlebegin_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_1",
+                        "node_4",
+                        "node_7",
+                        "node_9"
+                    ]
+                },
+                "node_4": {
+                    "runeId": "pioneer_cdtime_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_3",
+                        "node_5"
+                    ]
+                },
+                "node_5": {
+                    "runeId": "char_cost_pioneer_2",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_4",
+                        "node_6",
+                        "node_8"
+                    ]
+                },
+                "node_6": {
+                    "runeId": "cost_battlebegin_5",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_5",
+                        "keypoint_3"
+                    ]
+                },
+                "node_7": {
+                    "runeId": "trap_wpnsts_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_3",
+                        "node_8"
+                    ]
+                },
+                "node_8": {
+                    "runeId": "cost_battlebegin_2",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_7",
+                        "keypoint_3",
+                        "node_5",
+                        "node_10"
+                    ]
+                },
+                "node_9": {
+                    "runeId": "char_cost_special_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_3",
+                        "node_10"
+                    ]
+                },
+                "node_10": {
+                    "runeId": "char_cost_warrior_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_9",
+                        "node_11",
+                        "node_8"
+                    ]
+                },
+                "node_11": {
+                    "runeId": "cost_battlebegin_2",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_10",
+                        "keypoint_3"
+                    ]
+                },
+                "node_12": {
+                    "runeId": null,
+                    "slotPackId": null,
+                    "nodeType": "START",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_13",
+                        "node_14"
+                    ]
+                },
+                "node_13": {
+                    "runeId": "global_forbidloc_low_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_12",
+                        "node_15"
+                    ]
+                },
+                "node_14": {
+                    "runeId": "global_forbidloc_high_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_12",
+                        "node_15"
+                    ]
+                },
+                "node_15": {
+                    "runeId": "global_lifepoint_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_13",
+                        "node_14",
+                        "node_16",
+                        "node_17",
+                        "keypoint_2"
+                    ]
+                },
+                "node_16": {
+                    "runeId": "global_squadnum_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": "exclusion_1",
+                    "adjacentNodeList": [
+                        "node_15"
+                    ]
+                },
+                "node_17": {
+                    "runeId": "global_pcharnum_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": "exclusion_1",
+                    "adjacentNodeList": [
+                        "node_15"
+                    ]
+                },
+                "node_18": {
+                    "runeId": null,
+                    "slotPackId": null,
+                    "nodeType": "START",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_2",
+                        "node_27"
+                    ]
+                },
+                "node_19": {
+                    "runeId": "zom_hprec_t_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_2",
+                        "node_21"
+                    ]
+                },
+                "node_20": {
+                    "runeId": null,
+                    "slotPackId": null,
+                    "nodeType": "START",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_24"
+                    ]
+                },
+                "node_21": {
+                    "runeId": "zom_hprec_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_28",
+                        "node_19"
+                    ]
+                },
+                "node_22": {
+                    "runeId": "flasrt_invisible_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_27",
+                        "node_23"
+                    ]
+                },
+                "node_23": {
+                    "runeId": "flasrt_talent_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_22"
+                    ]
+                },
+                "node_24": {
+                    "runeId": "rageth_atkspeed_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_20",
+                        "node_25",
+                        "node_26"
+                    ]
+                },
+                "node_25": {
+                    "runeId": "rageth_hp_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_24",
+                        "keypoint_1"
+                    ]
+                },
+                "node_26": {
+                    "runeId": "rageth_atk_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_24"
+                    ]
+                },
+                "keypoint_3": {
+                    "runeId": null,
+                    "slotPackId": null,
+                    "nodeType": "KEYPOINT",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_8",
+                        "node_6",
+                        "node_11"
+                    ]
+                },
+                "keypoint_1": {
+                    "runeId": null,
+                    "slotPackId": null,
+                    "nodeType": "KEYPOINT",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_25"
+                    ]
+                },
+                "node_2": {
+                    "runeId": "zom_hp_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_19",
+                        "node_18"
+                    ]
+                },
+                "node_27": {
+                    "runeId": "flasrt_hp_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_18",
+                        "node_22"
+                    ]
+                },
+                "node_28": {
+                    "runeId": "zomshd_magic_1",
+                    "slotPackId": null,
+                    "nodeType": "NORMAL",
+                    "mutualExclusionGroup": null,
+                    "adjacentNodeList": [
+                        "node_21"
+                    ]
+                }
+            },
+            "runeDataMap": {
+                "global_nocostrecovery_1": {
+                    "runeId": "global_nocostrecovery_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_global_nocostrecovery_1",
+                    "runeName": "目标：全面渗透",
+                    "score": 50,
+                    "dimension": 2,
+                    "packedRune": {
+                        "id": "global_nocostrecovery_1",
+                        "points": 0,
+                        "mutexGroupKey": null,
+                        "description": "部署费用不再自然回复",
+                        "runes": [
+                            {
+                                "key": "global_cost_recovery_mul",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "scale",
+                                        "value": 9999
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 0
+                },
+                "cost_battlebegin_1": {
+                    "runeId": "cost_battlebegin_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_cost_battlebegin_1",
+                    "runeName": "目标：经费充足I",
+                    "score": 0,
+                    "dimension": -1,
+                    "packedRune": {
+                        "id": "cost_battlebegin_1",
+                        "points": 0,
+                        "mutexGroupKey": "cost_battlebegin",
+                        "description": "初始费用增加<@crisisv2.pos>{value}</>（同类效果叠加）",
+                        "runes": [
+                            {
+                                "key": "global_initial_cost_add",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "value",
+                                        "value": 50
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 52
+                },
+                "pioneer_cdtime_1": {
+                    "runeId": "pioneer_cdtime_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_pioneer_cdtime_1",
+                    "runeName": "源石环境：目的性侵蚀I",
+                    "score": 20,
+                    "dimension": 1,
+                    "packedRune": {
+                        "id": "pioneer_cdtime_1",
+                        "points": 0,
+                        "mutexGroupKey": null,
+                        "description": "所有我方先锋干员的技能技力消耗增加<@crisisv2.nag>100%</>，生命值降低<@crisisv2.nag>95%</>",
+                        "runes": [
+                            {
+                                "key": "char_skill_cd_mul",
+                                "selector": {
+                                    "professionMask": 512,
+                                    "buildableMask": 3,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "scale",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "char_attribute_mul",
+                                "selector": {
+                                    "professionMask": 512,
+                                    "buildableMask": 3,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "max_hp",
+                                        "value": 0.05
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 30
+                },
+                "char_cost_pioneer_2": {
+                    "runeId": "char_cost_pioneer_2",
+                    "runeGroupId": null,
+                    "runeIcon": "g_char_cost_pioneer_2",
+                    "runeName": "目标：突击合约",
+                    "score": 20,
+                    "dimension": 2,
+                    "packedRune": {
+                        "id": "char_cost_pioneer_2",
+                        "points": 0,
+                        "mutexGroupKey": null,
+                        "description": "先锋干员的部署费用提升至<@crisisv2.nag>5</>倍",
+                        "runes": [
+                            {
+                                "key": "char_cost_mul",
+                                "selector": {
+                                    "professionMask": 512,
+                                    "buildableMask": 3,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "scale",
+                                        "value": 5
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 31
+                },
+                "cost_battlebegin_5": {
+                    "runeId": "cost_battlebegin_5",
+                    "runeGroupId": null,
+                    "runeIcon": "g_cost_battlebegin_2",
+                    "runeName": "目标：经费充足II",
+                    "score": 0,
+                    "dimension": -1,
+                    "packedRune": {
+                        "id": "cost_battlebegin_5",
+                        "points": 0,
+                        "mutexGroupKey": "cost_battlebegin",
+                        "description": "初始费用增加<@crisisv2.pos>{value}</>（同类效果叠加）",
+                        "runes": [
+                            {
+                                "key": "global_initial_cost_add",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "value",
+                                        "value": 100
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 50
+                },
+                "trap_wpnsts_1": {
+                    "runeId": "trap_wpnsts_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_trap_wpnsts_1",
+                    "runeName": "环境：加量奶油I",
+                    "score": 20,
+                    "dimension": 5,
+                    "packedRune": {
+                        "id": "trap_wpnsts_1",
+                        "points": 0,
+                        "mutexGroupKey": null,
+                        "description": "“冰淇淋机”嘲讽等级增加至<@crisisv2.nag>1</>级",
+                        "runes": [
+                            {
+                                "key": "char_attribute_add",
+                                "selector": {
+                                    "professionMask": 256,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "taunt_level",
+                                        "value": 2
+                                    },
+                                    {
+                                        "key": "char",
+                                        "valueStr": "trap_057_wpnsts"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 32
+                },
+                "cost_battlebegin_2": {
+                    "runeId": "cost_battlebegin_2",
+                    "runeGroupId": null,
+                    "runeIcon": "g_cost_battlebegin_1",
+                    "runeName": "目标：经费充足I",
+                    "score": 0,
+                    "dimension": -1,
+                    "packedRune": {
+                        "id": "cost_battlebegin_2",
+                        "points": 0,
+                        "mutexGroupKey": "cost_battlebegin",
+                        "description": "初始费用增加<@crisisv2.pos>{value}</>（同类效果叠加）",
+                        "runes": [
+                            {
+                                "key": "global_initial_cost_add",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "value",
+                                        "value": 50
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 51
+                },
+                "char_cost_special_1": {
+                    "runeId": "char_cost_special_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_char_cost_special_1",
+                    "runeName": "目标：复杂流程I",
+                    "score": 10,
+                    "dimension": 2,
+                    "packedRune": {
+                        "id": "char_cost_special_1",
+                        "points": 0,
+                        "mutexGroupKey": "char_exclude",
+                        "description": "特种干员的部署费用提升至<@crisisv2.nag>2</>倍",
+                        "runes": [
+                            {
+                                "key": "char_cost_mul",
+                                "selector": {
+                                    "professionMask": 64,
+                                    "buildableMask": 3,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "scale",
+                                        "value": 2
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 40
+                },
+                "char_cost_warrior_1": {
+                    "runeId": "char_cost_warrior_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_char_cost_warrior_1",
+                    "runeName": "目标：复杂流程I",
+                    "score": 10,
+                    "dimension": 2,
+                    "packedRune": {
+                        "id": "char_cost_warrior_1",
+                        "points": 0,
+                        "mutexGroupKey": "char_exclude",
+                        "description": "近卫干员的部署费用提升至<@crisisv2.nag>2</>倍",
+                        "runes": [
+                            {
+                                "key": "char_cost_mul",
+                                "selector": {
+                                    "professionMask": 1,
+                                    "buildableMask": 3,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "scale",
+                                        "value": 2
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 41
+                },
+                "global_forbidloc_low_1": {
+                    "runeId": "global_forbidloc_low_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_global_forbidloc_low_1",
+                    "runeName": "环境：地表施工",
+                    "score": 20,
+                    "dimension": 4,
+                    "packedRune": {
+                        "id": "global_forbidloc_low_1",
+                        "points": 0,
+                        "mutexGroupKey": null,
+                        "description": "战场中地面<@crisisv2.nag>6</>个位置无法部署我方单位",
+                        "runes": [
+                            {
+                                "key": "global_forbid_location",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "location",
+                                        "valueStr": "(4,5)|(5,6)|(6,7)|(4,9)|(3,8)|(2,7)"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 33
+                },
+                "global_forbidloc_high_1": {
+                    "runeId": "global_forbidloc_high_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_global_forbidloc_high_1",
+                    "runeName": "环境：高台施工",
+                    "score": 20,
+                    "dimension": 4,
+                    "packedRune": {
+                        "id": "global_forbidloc_high_1",
+                        "points": 0,
+                        "mutexGroupKey": null,
+                        "description": "战场中高台<@crisisv2.nag>4</>个位置无法部署我方单位",
+                        "runes": [
+                            {
+                                "key": "global_forbid_location",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "location",
+                                        "valueStr": "(3,6)|(4,6)|(4,8)|(5,8)"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 34
+                },
+                "global_lifepoint_1": {
+                    "runeId": "global_lifepoint_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_global_lifepoint_1",
+                    "runeName": "目标：最后防线",
+                    "score": 10,
+                    "dimension": 4,
+                    "packedRune": {
+                        "id": "global_lifepoint_1",
+                        "points": 0,
+                        "mutexGroupKey": null,
+                        "description": "我方防御点可承受的敌方数量变为<@crisisv2.nag>1</>",
+                        "runes": [
+                            {
+                                "key": "global_lifepoint",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "value",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 48
+                },
+                "global_squadnum_1": {
+                    "runeId": "global_squadnum_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_global_squadnum_1",
+                    "runeName": "目标：隐秘行动I",
+                    "score": 10,
+                    "dimension": 2,
+                    "packedRune": {
+                        "id": "global_squadnum_1",
+                        "points": 0,
+                        "mutexGroupKey": "squad_limit",
+                        "description": "最多可编入<@crisisv2.nag>10</>名干员进入作战",
+                        "runes": [
+                            {
+                                "key": "global_squad_num_limit",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "value",
+                                        "value": 10
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 43
+                },
+                "global_pcharnum_1": {
+                    "runeId": "global_pcharnum_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_global_pcharnum_1",
+                    "runeName": "环境：交战区I",
+                    "score": 10,
+                    "dimension": 2,
+                    "packedRune": {
+                        "id": "global_pcharnum_1",
+                        "points": 0,
+                        "mutexGroupKey": "squad_limit",
+                        "description": "可同时部署的单位数量减少至<@crisisv2.nag>7</>",
+                        "runes": [
+                            {
+                                "key": "global_placable_char_num_add",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "value",
+                                        "value": -1
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 44
+                },
+                "zom_hprec_t_1": {
+                    "runeId": "zom_hprec_t_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_zom_hprec_t_1",
+                    "runeName": "目标：异常再生I",
+                    "score": 10,
+                    "dimension": 1,
+                    "packedRune": {
+                        "id": "zom_hprec_t_1",
+                        "points": 0,
+                        "mutexGroupKey": "enemy_zom",
+                        "description": "<宿主士兵><宿主拾荒者><宿主重装组长>的生命值回复速度<@crisisv2.nag>+75%</>",
+                        "runes": [
+                            {
+                                "key": "enemy_attribute_mul",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "hp_recovery_per_sec",
+                                        "value": 1.75
+                                    },
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1043_zomsbr|enemy_1044_zomstr|enemy_1061_zomshd_2|"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 64
+                },
+                "zom_hprec_1": {
+                    "runeId": "zom_hprec_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_zom_hprec_1",
+                    "runeName": "宿主重装组长：急速愈合I",
+                    "score": 10,
+                    "dimension": 1,
+                    "packedRune": {
+                        "id": "zom_hprec_1",
+                        "points": 0,
+                        "mutexGroupKey": "enemy_zom",
+                        "description": "<宿主重装组长>的生命值回复速度<@crisisv2.nag>+80%</>",
+                        "runes": [
+                            {
+                                "key": "enemy_attribute_mul",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "hp_recovery_per_sec",
+                                        "value": 1.8
+                                    },
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1061_zomshd_2|"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 65
+                },
+                "flasrt_invisible_1": {
+                    "runeId": "flasrt_invisible_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_flasrt_invisible_1",
+                    "runeName": "第三小队组长：战场幽灵I",
+                    "score": 20,
+                    "dimension": 1,
+                    "packedRune": {
+                        "id": "flasrt_invisible_1",
+                        "points": 0,
+                        "mutexGroupKey": "enemy_flasrt",
+                        "description": "<无胄盟第三小队组长>获得<@crisisv2.nag>隐匿</>，且生命值<@crisisv2.nag>+300%</>（同类效果叠加）",
+                        "runes": [
+                            {
+                                "key": "enemy_dynamic_ability_new",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1182_flasrt_2"
+                                    },
+                                    {
+                                        "key": "key",
+                                        "valueStr": "invisible"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "enemy_attribute_mul",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1182_flasrt_2"
+                                    },
+                                    {
+                                        "key": "max_hp",
+                                        "value": 4
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 68
+                },
+                "flasrt_talent_1": {
+                    "runeId": "flasrt_talent_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_flasrt_talent_1",
+                    "runeName": "第三小队组长：剧烈侵蚀I",
+                    "score": 10,
+                    "dimension": 1,
+                    "packedRune": {
+                        "id": "flasrt_talent_1",
+                        "points": 0,
+                        "mutexGroupKey": "enemy_flasrt",
+                        "description": "<无胄盟第三小队组长>攻击造成的侵蚀损伤<@crisisv2.nag>+200%</>",
+                        "runes": [
+                            {
+                                "key": "enemy_talent_blackb_mul",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1182_flasrt_2"
+                                    },
+                                    {
+                                        "key": "EpDamage.attack@ep_damage_ratio",
+                                        "value": 3
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 69
+                },
+                "rageth_atkspeed_1": {
+                    "runeId": "rageth_atkspeed_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_rageth_atkspeed_1",
+                    "runeName": "狂暴宿主投掷手：极度疯狂I",
+                    "score": 10,
+                    "dimension": 1,
+                    "packedRune": {
+                        "id": "rageth_atkspeed_1",
+                        "points": 0,
+                        "mutexGroupKey": "enemy_rageth",
+                        "description": "<狂暴宿主投掷手>的攻击速度<@crisisv2.nag>+{attack_speed}</>（同类效果叠加）",
+                        "runes": [
+                            {
+                                "key": "enemy_attribute_add",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "attack_speed",
+                                        "value": 200
+                                    },
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1063_rageth"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 45
+                },
+                "rageth_hp_1": {
+                    "runeId": "rageth_hp_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_rageth_hp_1",
+                    "runeName": "狂暴宿主投掷手：异变躯体I",
+                    "score": 10,
+                    "dimension": 1,
+                    "packedRune": {
+                        "id": "rageth_hp_1",
+                        "points": 0,
+                        "mutexGroupKey": "enemy_rageth",
+                        "description": "<狂暴宿主投掷手>的生命值<@crisisv2.nag>+{max_hp:0%}</>（同类效果叠加）",
+                        "runes": [
+                            {
+                                "key": "enemy_attribute_additive_mul",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "max_hp",
+                                        "value": 0.6
+                                    },
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1063_rageth"
+                                    },
+                                    {
+                                        "key": "group",
+                                        "valueStr": "rageth"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 47
+                },
+                "rageth_atk_1": {
+                    "runeId": "rageth_atk_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_rageth_atk_1",
+                    "runeName": "狂暴宿主投掷手：骇人怪力I",
+                    "score": 10,
+                    "dimension": 1,
+                    "packedRune": {
+                        "id": "rageth_atk_1",
+                        "points": 0,
+                        "mutexGroupKey": "enemy_rageth",
+                        "description": "<狂暴宿主投掷手>的攻击力<@crisisv2.nag>+{atk:0%}</>（同类效果叠加）",
+                        "runes": [
+                            {
+                                "key": "enemy_attribute_additive_mul",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "atk",
+                                        "value": 0.5
+                                    },
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1063_rageth"
+                                    },
+                                    {
+                                        "key": "group",
+                                        "valueStr": "rageth"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 46
+                },
+                "zom_hp_1": {
+                    "runeId": "zom_hp_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_zom_hp_1",
+                    "runeName": "目标：代谢亢进I",
+                    "score": 10,
+                    "dimension": 1,
+                    "packedRune": {
+                        "id": "zom_hp_1",
+                        "points": 0,
+                        "mutexGroupKey": "enemy_zom",
+                        "description": "<宿主士兵><宿主拾荒者><宿主重装组长>的生命值<@crisisv2.nag>+{max_hp:0%}</>（同类效果叠加）",
+                        "runes": [
+                            {
+                                "key": "enemy_attribute_additive_mul",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "max_hp",
+                                        "value": 0.5
+                                    },
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1043_zomsbr|enemy_1044_zomstr|enemy_1061_zomshd_2|"
+                                    },
+                                    {
+                                        "key": "group",
+                                        "valueStr": "zom"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 63
+                },
+                "flasrt_hp_1": {
+                    "runeId": "flasrt_hp_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_flasrt_hp_1",
+                    "runeName": "第三小队组长：健身习惯I",
+                    "score": 10,
+                    "dimension": 1,
+                    "packedRune": {
+                        "id": "flasrt_hp_1",
+                        "points": 0,
+                        "mutexGroupKey": "enemy_flasrt",
+                        "description": "<无胄盟第三小队组长>的生命值<@crisisv2.nag>+{max_hp:0%}</>（同类效果叠加）",
+                        "runes": [
+                            {
+                                "key": "enemy_attribute_additive_mul",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "max_hp",
+                                        "value": 0.6
+                                    },
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1182_flasrt_2"
+                                    },
+                                    {
+                                        "key": "group",
+                                        "valueStr": "flasrt"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 67
+                },
+                "zomshd_magic_1": {
+                    "runeId": "zomshd_magic_1",
+                    "runeGroupId": null,
+                    "runeIcon": "g_zomshd_magic_1",
+                    "runeName": "宿主重装组长：法术阻隔I",
+                    "score": 20,
+                    "dimension": 1,
+                    "packedRune": {
+                        "id": "zomshd_magic_1",
+                        "points": 0,
+                        "mutexGroupKey": "enemy_zom",
+                        "description": "<宿主重装组长>的法术抗性<@crisisv2.nag>+{magic_resistance}</>（同类效果叠加）",
+                        "runes": [
+                            {
+                                "key": "enemy_attribute_add",
+                                "selector": {
+                                    "professionMask": 0,
+                                    "buildableMask": 0,
+                                    "playerSideMask": 0,
+                                    "charIdFilter": null,
+                                    "enemyIdFilter": null,
+                                    "enemyIdExcludeFilter": null,
+                                    "enemyLevelTypeFilter": null,
+                                    "enemyActionHiddenGroupFilter": null,
+                                    "skillIdFilter": null,
+                                    "tileKeyFilter": null,
+                                    "groupTagFilter": null,
+                                    "filterTagFilter": null,
+                                    "filterTagExcludeFilter": null,
+                                    "subProfessionExcludeFilter": null,
+                                    "mapTagFilter": null
+                                },
+                                "blackboard": [
+                                    {
+                                        "key": "magic_resistance",
+                                        "value": 50
+                                    },
+                                    {
+                                        "key": "enemy",
+                                        "valueStr": "enemy_1061_zomshd_2"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sortId": 66
                 }
             }
         }
