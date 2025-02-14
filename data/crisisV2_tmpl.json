@@ -633,7 +633,7 @@
                 "state": 1,
                 "scoreTotal": [
                     150,
-                    270,
+                    290,
                     140,
                     130,
                     170,
@@ -641,7 +641,7 @@
                 ],
                 "scoreSingle": [
                     150,
-                    270,
+                    290,
                     140,
                     130,
                     170,
@@ -724,7 +724,9 @@
                     "node_67": 3
                 },
                 "exRunes": {
+                    "node_5": 3,
                     "node_13": 3,
+                    "node_18": 3,
                     "node_20": 3,
                     "node_17": 3,
                     "node_22": 3,
@@ -879,6 +881,47 @@
                         "node_27": 3,
                         "node_28": 3,
                         "node_29": 3
+                    },
+                    "challenge": {
+                        "keypoint_1": 2,
+                        "keypoint_2": 2,
+                        "keypoint_3": 2
+                    }
+                },
+                "crisis_v2_01-05_b": {
+                    "state": 1,
+                    "scoreTotal": [
+                        90,
+                        90,
+                        90,
+                        50,
+                        0,
+                        30
+                    ],
+                    "rune": {
+                        "node_1": 3,
+                        "node_2": 3,
+                        "node_3": 3,
+                        "node_4": 3,
+                        "node_5": 3,
+                        "node_6": 3,
+                        "node_7": 3,
+                        "node_8": 3,
+                        "node_9": 3,
+                        "node_10": 3,
+                        "node_11": 3,
+                        "node_13": 3,
+                        "node_14": 3,
+                        "node_15": 3,
+                        "node_16": 3,
+                        "node_17": 3,
+                        "node_19": 3,
+                        "node_20": 3,
+                        "node_21": 3,
+                        "node_23": 3,
+                        "node_24": 3,
+                        "node_25": 3,
+                        "node_26": 3
                     },
                     "challenge": {
                         "keypoint_1": 2,
