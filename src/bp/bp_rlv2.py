@@ -971,6 +971,64 @@ class Rlv2Theme2BasicManager(Rlv2BasicManager):
 
         return unkeep_buff
 
+    def get_stage_buff_lst(self, floor_difficulty):
+        stage_id = self.request_json["stageId"]
+
+        stage_floor = self.get_stage_floor(stage_id)
+
+        stage_buff_lst = []
+
+        if floor_difficulty == 16:
+            atk_floor_difficulty_rate = 1 + 0.01 * 20
+            hp_floor_difficulty_rate = 1 + 0.01 * 20
+        elif floor_difficulty == 17:
+            atk_floor_difficulty_rate = 1 + 0.01 * 20
+            hp_floor_difficulty_rate = 1 + 0.01 * 25
+        elif floor_difficulty == 18:
+            atk_floor_difficulty_rate = 1 + 0.01 * 20
+            hp_floor_difficulty_rate = 1 + 0.01 * 30
+        else:
+            atk_floor_difficulty_rate = 1 + 0.01 * floor_difficulty
+            hp_floor_difficulty_rate = 1 + 0.01 * floor_difficulty
+
+        stage_buff_lst += [
+            {
+                "key": "zone_into_buff",
+                "blackboard": [
+                    {"key": "buff", "valueStr": "global_buff_normal"},
+                    {"key": "key", "valueStr": "enemy_atk_down"},
+                    {"key": "atk", "value": atk_floor_difficulty_rate},
+                ],
+            },
+            {
+                "key": "zone_into_buff",
+                "blackboard": [
+                    {"key": "buff", "valueStr": "global_buff_normal"},
+                    {"key": "key", "valueStr": "enemy_max_hp_down"},
+                    {"key": "max_hp", "value": hp_floor_difficulty_rate},
+                ],
+            },
+        ]
+
+        for i in range(stage_floor):
+            stage_buff_lst += [
+                {
+                    "key": "global_buff_normal",
+                    "blackboard": [
+                        {"key": "key", "valueStr": "enemy_atk_down"},
+                        {"key": "atk", "value": atk_floor_difficulty_rate},
+                    ],
+                },
+                {
+                    "key": "global_buff_normal",
+                    "blackboard": [
+                        {"key": "key", "valueStr": "enemy_max_hp_down"},
+                        {"key": "max_hp", "value": hp_floor_difficulty_rate},
+                    ],
+                },
+            ]
+        return stage_buff_lst
+
 
 class Rlv2Theme4BasicManager(Rlv2BasicManager):
     def get_stage_buff_lst(self, floor_difficulty):
