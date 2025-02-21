@@ -173,3 +173,7 @@ def convert_char_obj_to_tower_char_obj(char_obj: dict, tower_char_idx: int):
     char_obj["instId"] = str(tower_char_idx)
 
     char_obj["type"] = "CHAR"
+
+
+def sort_json_obj_lst(target_lst: list) -> None:
+    target_lst.sort(key=lambda k: json.dumps(k))

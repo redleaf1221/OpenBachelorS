@@ -3495,6 +3495,223 @@
                     13,
                     14
                 ]
+            },
+            "16": {
+                "buff_lst": [
+                    {
+                        "key": "zone_into_reward",
+                        "blackboard": [
+                            {
+                                "key": "id",
+                                "valueStr": "rogue_2_feature_pill_1"
+                            },
+                            {
+                                "key": "count",
+                                "value": 1
+                            },
+                            {
+                                "key": "zone",
+                                "valueStr": "zone_1"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "zone_into_reward",
+                        "blackboard": [
+                            {
+                                "key": "id",
+                                "valueStr": "rogue_2_feature_pill_2"
+                            },
+                            {
+                                "key": "count",
+                                "value": 1
+                            },
+                            {
+                                "key": "zone",
+                                "valueStr": "zone_2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "zone_into_reward",
+                        "blackboard": [
+                            {
+                                "key": "id",
+                                "valueStr": "rogue_2_feature_pill_3"
+                            },
+                            {
+                                "key": "count",
+                                "value": 1
+                            },
+                            {
+                                "key": "zone",
+                                "valueStr": "zone_3"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "zone_into_reward",
+                        "blackboard": [
+                            {
+                                "key": "id",
+                                "valueStr": "rogue_2_feature_pill_4"
+                            },
+                            {
+                                "key": "count",
+                                "value": 1
+                            },
+                            {
+                                "key": "zone",
+                                "valueStr": "zone_4"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "zone_into_reward",
+                        "blackboard": [
+                            {
+                                "key": "id",
+                                "valueStr": "rogue_2_feature_pill_5"
+                            },
+                            {
+                                "key": "count",
+                                "value": 1
+                            },
+                            {
+                                "key": "zone",
+                                "valueStr": "zone_5"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "zone_into_reward",
+                        "blackboard": [
+                            {
+                                "key": "id",
+                                "valueStr": "rogue_2_feature_pill_6"
+                            },
+                            {
+                                "key": "count",
+                                "value": 1
+                            },
+                            {
+                                "key": "zone",
+                                "valueStr": "zone_6"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "zone_into_reward",
+                        "blackboard": [
+                            {
+                                "key": "id",
+                                "valueStr": "rogue_2_feature_pill_7"
+                            },
+                            {
+                                "key": "count",
+                                "value": 1
+                            },
+                            {
+                                "key": "zone",
+                                "valueStr": "zone_7"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "misc_add_env_system",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "env_027_rogue2enroll3"
+                            },
+                            {
+                                "key": "buff_key",
+                                "valueStr": "rogue_2_enroll_3_ascension[core]"
+                            },
+                            {
+                                "key": "damage_resistance",
+                                "value": 0.35
+                            },
+                            {
+                                "key": "def_penetrate",
+                                "value": 0.35
+                            },
+                            {
+                                "key": "magic_resist_penetrate",
+                                "value": 0.35
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    2,
+                    4,
+                    5,
+                    7,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15
+                ]
+            },
+            "17": {
+                "buff_lst": [],
+                "child_mode_grade_lst": [
+                    2,
+                    4,
+                    5,
+                    7,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                ]
+            },
+            "18": {
+                "buff_lst": [
+                    {
+                        "key": "global_buff_normal",
+                        "blackboard": [
+                            {
+                                "key": "key",
+                                "valueStr": "rogue_2_enroll_3_difficulty_18"
+                            },
+                            {
+                                "key": "duration",
+                                "value": 20
+                            },
+                            {
+                                "key": "atk",
+                                "value": 0.3
+                            },
+                            {
+                                "key": "damage_resistance",
+                                "value": 0.5
+                            }
+                        ]
+                    }
+                ],
+                "child_mode_grade_lst": [
+                    2,
+                    4,
+                    5,
+                    7,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16
+                ]
             }
         },
         "rogue_3": {
