@@ -297,6 +297,23 @@ def relic_layer(
     player_data.save()
 
 
+@rlv2.command()
+@click.option("-n", required=True, type=int)
+@click.pass_context
+def difficulty(
+    ctx,
+    n,
+):
+    player_id = ctx.obj["player_id"]
+
+    player_data = PlayerData(player_id)
+
+    player_data["rlv2"]["current"]["game"]["modeGrade"] = n
+    player_data["rlv2"]["current"]["game"]["equivalentGrade"] = n
+
+    player_data.save()
+
+
 @cli.command()
 @click.option("-p", "--player-id", required=True)
 @click.option("-k", "--key", required=True)
