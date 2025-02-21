@@ -3160,6 +3160,10 @@
                             0,
                             1
                         ]
+                    },
+                    "rogue_2_relic_fight_159": {
+                        "state": 2,
+                        "progress": null
                     }
                 },
                 "capsule": {},
@@ -3508,6 +3512,30 @@
                     "rogue_2_mutation_8": {
                         "state": 2,
                         "progress": null
+                    },
+                    "rogue_2_mutation_13": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_2_mutation_14": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_2_mutation_15": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_2_mutation_16": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_2_mutation_17": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_2_mutation_18": {
+                        "state": 2,
+                        "progress": null
                     }
                 },
                 "endBook": {
@@ -3756,6 +3784,27 @@
                             ]
                         },
                         "15": {
+                            "state": 2,
+                            "progress": [
+                                0,
+                                1
+                            ]
+                        },
+                        "16": {
+                            "state": 2,
+                            "progress": [
+                                0,
+                                1
+                            ]
+                        },
+                        "17": {
+                            "state": 2,
+                            "progress": [
+                                0,
+                                1
+                            ]
+                        },
+                        "18": {
                             "state": 2,
                             "progress": [
                                 0,
