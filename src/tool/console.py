@@ -314,6 +314,26 @@ def difficulty(
     player_data.save()
 
 
+@rlv2.command()
+@click.option("-c", "--char-id", required=True)
+@click.option("--char-buff-id", required=True)
+@click.pass_context
+def char_buff(
+    ctx,
+    char_id,
+    char_buff_id,
+):
+    player_id = ctx.obj["player_id"]
+
+    player_data = PlayerData(player_id)
+
+    for char_inst_id, char_obj in player_data["rlv2"]["current"]["troop"]["chars"]:
+        if char_obj["charId"] == char_id:
+            char_obj["charBuff"] = [char_buff_id]
+
+    player_data.save()
+
+
 @cli.command()
 @click.option("-p", "--player-id", required=True)
 @click.option("-k", "--key", required=True)
