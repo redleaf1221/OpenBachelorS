@@ -26,6 +26,9 @@ def asset_download_worker_func(worker_param):
 
     if isinstance(ret_val, tuple):
         print(f"err: failed to download {asset_filename}")
+        return asset_filename
+
+    return None
 
 
 if __name__ == "__main__":
@@ -52,7 +55,22 @@ if __name__ == "__main__":
         asset_filename_lst.append(pack_filename)
 
     with Pool(NUM_ASSET_DOWNLOAD_WORKER) as pool:
-        pool.map(
+        ret_val_lst = pool.map(
             asset_download_worker_func,
             [(res_version, asset_filename) for asset_filename in asset_filename_lst],
         )
+
+    print("--- summary ---")
+
+    err_flag = False
+
+    for ret_val in ret_val_lst:
+        if ret_val is None:
+            continue
+
+        err_flag = True
+
+        print(f"err: failed to download {ret_val}")
+
+    if not err_flag:
+        print("info: success")
