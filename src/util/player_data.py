@@ -501,9 +501,12 @@ def build_player_data_template():
 
     crisis_v2_tmpl_json_obj = const_json_loader[CRISIS_V2_TMPL_JSON].copy()
 
-    crisis_v2_tmpl_json_obj["current"] = const_json_loader[VERSION_JSON][
-        "crisis_v2_season"
-    ]
+    crisis_v2_season = const_json_loader[VERSION_JSON]["crisis_v2_season"]
+
+    if not crisis_v2_season:
+        crisis_v2_season = ""
+
+    crisis_v2_tmpl_json_obj["current"] = crisis_v2_season
 
     tmpl_json_obj["crisisV2"] = crisis_v2_tmpl_json_obj
 

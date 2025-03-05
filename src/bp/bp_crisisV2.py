@@ -16,11 +16,23 @@ bp_crisisV2 = Blueprint("bp_crisisV2", __name__)
 def get_crisis_v2_data():
     crisis_v2_season = const_json_loader[VERSION_JSON]["crisis_v2_season"]
 
-    crisis_v2_data_filepath = Path(
-        os.path.join(CRISIS_V2_DATA_DIRPATH, f"{crisis_v2_season}.json")
-    ).as_posix()
+    if not crisis_v2_season:
+        crisis_v2_season = ""
 
-    crisis_v2_data = const_json_loader[crisis_v2_data_filepath]
+    if crisis_v2_season:
+        crisis_v2_data_filepath = Path(
+            os.path.join(CRISIS_V2_DATA_DIRPATH, f"{crisis_v2_season}.json")
+        ).as_posix()
+
+        crisis_v2_data = const_json_loader[crisis_v2_data_filepath]
+    else:
+        crisis_v2_data = {
+            "seasonId": "",
+            "mapStageDataMap": {},
+            "mapDetailDataMap": {},
+            "seasonConst": {},
+            "achievementDataMap": {},
+        }
 
     return crisis_v2_data
 
