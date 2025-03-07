@@ -11,8 +11,9 @@ def get_game_link():
         req = requests.head(
             "https://ak.hypergryph.com/downloads/android_lastest",
             timeout=REQUESTS_TIMEOUT,
+            allow_redirects=True,
         )
-        game_link = req.headers.get("location")
+        game_link = req.url
 
         if game_link.endswith(".apk"):
             return game_link
