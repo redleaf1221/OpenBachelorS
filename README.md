@@ -2,7 +2,7 @@
 
 OpenBachelor Server. For PvZ Online.
 
-Discord: [https://discord.gg/VwgC2TJw](https://discord.gg/VwgC2TJw)
+Discord: [https://discord.gg/W4yPMpBv8F](https://discord.gg/W4yPMpBv8F)
 
 
 ## Supported Emulator
