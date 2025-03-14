@@ -6603,7 +6603,8 @@
                 "last": 1700000000,
                 "modeCnt": {
                     "NORMAL": 1,
-                    "MONTH_TEAM": 1
+                    "MONTH_TEAM": 1,
+                    "CHALLENGE": 1
                 },
                 "endingCnt": {
                     "NORMAL": {
@@ -6617,6 +6618,9 @@
                         "ro3_ending_2": 1,
                         "ro3_ending_3": 1,
                         "ro3_ending_4": 1
+                    },
+                    "CHALLENGE": {
+                        "ro3_ending_c": 1
                     }
                 },
                 "stageCnt": {
@@ -9019,6 +9023,10 @@
                             0,
                             1
                         ]
+                    },
+                    "CHALLENGE": {
+                        "state": 1,
+                        "progress": null
                     }
                 },
                 "recruitSet": {
@@ -9214,6 +9222,12 @@
                                 0,
                                 1
                             ]
+                        }
+                    },
+                    "CHALLENGE": {
+                        "0": {
+                            "state": 2,
+                            "progress": null
                         }
                     }
                 },
@@ -9623,10 +9637,49 @@
                 "list": []
             },
             "challenge": {
-                "reward": {},
-                "grade": {},
+                "reward": {
+                    "rogue_4_challenge_01": 1,
+                    "rogue_4_challenge_02": 1,
+                    "rogue_4_challenge_03": 1,
+                    "rogue_4_challenge_04": 1,
+                    "rogue_4_challenge_05": 1,
+                    "rogue_4_challenge_06": 1,
+                    "rogue_4_challenge_07": 1,
+                    "rogue_4_challenge_08": 1,
+                    "rogue_4_challenge_09": 1,
+                    "rogue_4_challenge_10": 1,
+                    "rogue_4_challenge_11": 1,
+                    "rogue_4_challenge_12": 1
+                },
+                "grade": {
+                    "rogue_4_challenge_01": 2,
+                    "rogue_4_challenge_02": 2,
+                    "rogue_4_challenge_03": 2,
+                    "rogue_4_challenge_04": 2,
+                    "rogue_4_challenge_05": 2,
+                    "rogue_4_challenge_06": 2,
+                    "rogue_4_challenge_07": 2,
+                    "rogue_4_challenge_08": 2,
+                    "rogue_4_challenge_09": 2,
+                    "rogue_4_challenge_10": 2,
+                    "rogue_4_challenge_11": 2,
+                    "rogue_4_challenge_12": 2
+                },
                 "collect": {},
-                "highScore": {}
+                "highScore": {
+                    "rogue_4_challenge_01": 0,
+                    "rogue_4_challenge_02": 0,
+                    "rogue_4_challenge_03": 0,
+                    "rogue_4_challenge_04": 0,
+                    "rogue_4_challenge_05": 0,
+                    "rogue_4_challenge_06": 0,
+                    "rogue_4_challenge_07": 0,
+                    "rogue_4_challenge_08": 0,
+                    "rogue_4_challenge_09": 0,
+                    "rogue_4_challenge_10": 0,
+                    "rogue_4_challenge_11": 0,
+                    "rogue_4_challenge_12": 0
+                }
             },
             "monthTeam": {
                 "valid": [
@@ -9688,7 +9741,8 @@
                 "last": 1700000000,
                 "modeCnt": {
                     "NORMAL": 1,
-                    "MONTH_TEAM": 1
+                    "MONTH_TEAM": 1,
+                    "CHALLENGE": 1
                 },
                 "endingCnt": {
                     "NORMAL": {
@@ -9699,6 +9753,13 @@
                         "ro4_ending_5": 1
                     },
                     "MONTH_TEAM": {
+                        "ro4_ending_1": 1,
+                        "ro4_ending_2": 1,
+                        "ro4_ending_3": 1,
+                        "ro4_ending_4": 1,
+                        "ro4_ending_5": 1
+                    },
+                    "CHALLENGE": {
                         "ro4_ending_1": 1,
                         "ro4_ending_2": 1,
                         "ro4_ending_3": 1,
