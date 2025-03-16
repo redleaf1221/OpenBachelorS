@@ -44,12 +44,14 @@ class SandboxBasicManager:
         ]["troop"]["squad"][squad_idx]["tools"].copy()
 
         for squad_tool in squad_tool_lst:
-            squad_tool_buff = sandbox_perm_table["detail"]["SANDBOX_V2"][self.topic_id][
+            squad_tool_obj = sandbox_perm_table["detail"]["SANDBOX_V2"][self.topic_id][
                 "itemTrapData"
-            ][squad_tool]["buffId"]
+            ][squad_tool]
+            if "buffId" in squad_tool_obj:
+                squad_tool_buff = squad_tool_obj["buffId"]
 
-            if squad_tool_buff:
-                self.response["extraRunes"].append(squad_tool_buff)
+                if squad_tool_buff:
+                    self.response["extraRunes"].append(squad_tool_buff)
 
     def sandboxPerm_sandboxV2_battleStart(self):
         self.response.update(
