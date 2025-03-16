@@ -232,16 +232,19 @@ class SandboxBasicManager:
     def check_building_buff(self, building_id, building_op):
         sandbox_perm_table = const_json_loader[SANDBOX_PERM_TABLE]
 
-        building_buff = sandbox_perm_table["detail"]["SANDBOX_V2"][self.topic_id][
+        building_obj = sandbox_perm_table["detail"]["SANDBOX_V2"][self.topic_id][
             "itemTrapData"
-        ][building_id]["buffId"]
+        ][building_id]
 
-        if building_buff:
-            if building_op is self.BuildingOp.CONSTRUCT:
-                buff_op = self.BuffOp.ADD
-            else:
-                buff_op = self.BuffOp.REMOVE
-            self.execute_buff_op(buff_op, building_buff)
+        if "buffId" in building_obj:
+            building_buff = building_obj["buffId"]
+
+            if building_buff:
+                if building_op is self.BuildingOp.CONSTRUCT:
+                    buff_op = self.BuffOp.ADD
+                else:
+                    buff_op = self.BuffOp.REMOVE
+                self.execute_buff_op(buff_op, building_buff)
 
     def sandboxPerm_sandboxV2_homeBuildSave(self):
         node_id = self.request_json["nodeId"]
