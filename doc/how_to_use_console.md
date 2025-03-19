@@ -16,7 +16,11 @@ Command help can be found by issuing `some_command --help`.
 
 ### `char` Command
 
+Customize player character data.
+
 Example:
+
+Set char_1035_wisdel to level 1:
 
 ```
 char -p some_fake_phone_number -c char_1035_wisdel --level 1
