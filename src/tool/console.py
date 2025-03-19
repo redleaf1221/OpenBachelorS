@@ -2,6 +2,7 @@ import traceback
 
 import click
 from prompt_toolkit import PromptSession
+from prompt_toolkit.history import FileHistory
 
 from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON, VERSION_JSON, SANDBOX_PERM_TABLE
@@ -17,7 +18,9 @@ def cli(ctx, interactive):
     ctx.ensure_object(dict)
 
     if interactive:
-        session = PromptSession()
+        session = PromptSession(
+            history=FileHistory("console.txt"),
+        )
 
         while True:
             try:
