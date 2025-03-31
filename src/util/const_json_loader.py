@@ -52,6 +52,49 @@ class ConstJson:
         return deepcopy(self.json_obj)
 
 
+class LazyLoadedConstJson(ConstJson):
+    def __init__(self, filepath):
+        self.filepath = filepath
+        self.loaded = False
+
+    def load_json_obj(self):
+        with open(self.filepath, encoding="utf-8") as f:
+            json_obj = json.load(f)
+
+        self.json_obj = json_obj
+        self.loaded = True
+
+    def __contains__(self, key):
+        if not self.loaded:
+            self.load_json_obj()
+
+        return super().__contains__(key)
+
+    def __getitem__(self, key):
+        if not self.loaded:
+            self.load_json_obj()
+
+        return super().__getitem__(key)
+
+    def __iter__(self):
+        if not self.loaded:
+            self.load_json_obj()
+
+        return super().__iter__()
+
+    def __len__(self):
+        if not self.loaded:
+            self.load_json_obj()
+
+        return super().__len__()
+
+    def copy(self):
+        if not self.loaded:
+            self.load_json_obj()
+
+        return super().copy()
+
+
 class ConstJsonLoader:
     TARGET_DIR_LST = ["conf", "res/excel", "data"]
 
@@ -62,9 +105,7 @@ class ConstJsonLoader:
                 for name in files:
                     if name.endswith(".json"):
                         filepath = Path(os.path.join(root, name)).as_posix()
-                        with open(filepath, encoding="utf-8") as f:
-                            json_obj = json.load(f)
-                        const_json = ConstJson(json_obj)
+                        const_json = LazyLoadedConstJson(filepath)
                         self.const_json_dict[filepath] = const_json
 
     def __getitem__(self, key):
