@@ -403,6 +403,22 @@ def build_player_data_template():
 
     # ----------
 
+    april_fool_activity_id = "act6fun"
+
+    for activity_id, activity_obj in activity_table["basicInfo"]:
+        if activity_obj["type"] == "APRIL_FOOL":
+            if (
+                activity_obj["startTime"]
+                > activity_table["basicInfo"][april_fool_activity_id]["startTime"]
+            ):
+                april_fool_activity_id = activity_id
+
+    if "APRIL_FOOL" not in tmpl_json_obj["activity"]:
+        tmpl_json_obj["activity"]["APRIL_FOOL"] = {}
+    tmpl_json_obj["activity"]["APRIL_FOOL"][april_fool_activity_id] = {"isOpen": true}
+
+    # ----------
+
     climb_tower_table = const_json_loader[CLIMB_TOWER_TABLE]
 
     tower_id_lst = []

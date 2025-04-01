@@ -3775,11 +3775,11 @@
                     "state": 3,
                     "liveTimes": 0
                 },
-                "act4fun_03": {
+                "act4fun_02": {
                     "state": 3,
                     "liveTimes": 0
                 },
-                "act4fun_02": {
+                "act4fun_03": {
                     "state": 3,
                     "liveTimes": 0
                 }
@@ -3847,6 +3847,106 @@
                 "act5fun_02": 3
             },
             "highScore": 999999999
+        },
+        "act6fun": {
+            "stages": {
+                "act6fun_01": {
+                    "stageId": "act6fun_01",
+                    "achievements": {
+                        "act6fun_achv_0101": 1,
+                        "act6fun_achv_0102": 1
+                    },
+                    "speedrunning": 0,
+                    "state": 2
+                },
+                "act6fun_02": {
+                    "stageId": "act6fun_02",
+                    "achievements": {
+                        "act6fun_achv_0201": 1,
+                        "act6fun_achv_0202": 1
+                    },
+                    "speedrunning": 0,
+                    "state": 2
+                },
+                "act6fun_03": {
+                    "stageId": "act6fun_03",
+                    "achievements": {
+                        "act6fun_achv_0301": 1,
+                        "act6fun_achv_0302": 1
+                    },
+                    "speedrunning": 0,
+                    "state": 2
+                },
+                "act6fun_04": {
+                    "stageId": "act6fun_04",
+                    "achievements": {
+                        "act6fun_achv_0401": 1,
+                        "act6fun_achv_0402": 1,
+                        "act6fun_achv_0403": 1
+                    },
+                    "speedrunning": 0,
+                    "state": 2
+                },
+                "act6fun_05": {
+                    "stageId": "act6fun_05",
+                    "achievements": {
+                        "act6fun_achv_0501": 1,
+                        "act6fun_achv_0502": 1
+                    },
+                    "speedrunning": 0,
+                    "state": 3
+                },
+                "act6fun_06": {
+                    "stageId": "act6fun_06",
+                    "achievements": {
+                        "act6fun_achv_0601": 1,
+                        "act6fun_achv_0602": 1
+                    },
+                    "speedrunning": 0,
+                    "state": 2
+                },
+                "act6fun_07": {
+                    "stageId": "act6fun_07",
+                    "achievements": {
+                        "act6fun_achv_0703": 1,
+                        "act6fun_achv_0701": 1,
+                        "act6fun_achv_0702": 1
+                    },
+                    "speedrunning": 0,
+                    "state": 3
+                },
+                "act6fun_08": {
+                    "stageId": "act6fun_08",
+                    "achievements": {
+                        "act6fun_achv_0801": 1,
+                        "act6fun_achv_0802": 1
+                    },
+                    "speedrunning": 0,
+                    "state": 2
+                },
+                "act6fun_s01": {
+                    "stageId": "act6fun_s01",
+                    "achievements": {
+                        "act6fun_achv_s0101": 1,
+                        "act6fun_achv_s0102": 1
+                    },
+                    "speedrunning": 0,
+                    "state": 2
+                },
+                "act6fun_s02": {
+                    "stageId": "act6fun_s02",
+                    "achievements": {
+                        "act6fun_achv_s0201": 1,
+                        "act6fun_achv_s0202": 1
+                    },
+                    "speedrunning": 0,
+                    "state": 2
+                }
+            },
+            "recvList": [
+                "1",
+                "2"
+            ]
         }
     },
     "collectionReward": {
