@@ -125,3 +125,43 @@ def aprilFool_act4fun_liveSettle(player_data):
         "ending": "goodending_1",
     }
     return response
+
+
+@bp_aprilFool.route("/aprilFool/act3fun/battleStart", methods=["POST"])
+@player_data_decorator
+def aprilFool_act3fun_battleStart(player_data):
+    request_json = request.get_json()
+    response = {
+        "result": 0,
+        "battleId": "00000000-0000-0000-0000-000000000000",
+        "apFailReturn": 0,
+    }
+    return response
+
+
+@bp_aprilFool.route("/aprilFool/act3fun/battleFinish", methods=["POST"])
+@player_data_decorator
+def aprilFool_act3fun_battleFinish(player_data):
+    request_json = request.get_json()
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
+
+    response = {
+        "result": 0,
+        "apFailReturn": 0,
+        "expScale": 0,
+        "goldScale": 0,
+        "rewards": [],
+        "firstRewards": [],
+        "unlockStages": [],
+        "unusualRewards": [],
+        "additionalRewards": [],
+        "furnitureRewards": [],
+        "alert": [],
+        "suggestFriend": null,
+        "score": 0,
+        "scoreItem": [0, 0, 0, 0, 0, 0],
+        "rank": [0],
+        "inRank": true,
+    }
+    return response
