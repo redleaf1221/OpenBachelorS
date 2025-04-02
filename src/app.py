@@ -3,6 +3,7 @@ from flask import Flask
 
 from .bp.bp_account import bp_account
 from .bp.bp_app import bp_app
+from .bp.bp_aprilFool import bp_aprilFool
 from .bp.bp_assetbundle import bp_assetbundle
 from .bp.bp_building import bp_building
 from .bp.bp_businessCard import bp_businessCard
@@ -35,6 +36,7 @@ app = Flask(__name__)
 
 app.register_blueprint(bp_account)
 app.register_blueprint(bp_app)
+app.register_blueprint(bp_aprilFool)
 app.register_blueprint(bp_assetbundle)
 app.register_blueprint(bp_building)
 app.register_blueprint(bp_businessCard)
