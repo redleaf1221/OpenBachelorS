@@ -1434,7 +1434,12 @@
         "linkage": {},
         "special": {}
     },
-    "backflow": {},
+    "backflow": {
+        "open": false,
+        "current": null,
+        "currentV2": null,
+        "version": 1
+    },
     "mainline": {
         "record": {
             "easy_10-01": 1,
@@ -1513,7 +1518,29 @@
         },
         "cache": [],
         "version": 1,
-        "additionalMission": {},
+        "additionalMission": {
+            "tough_12-06": {
+                "state": 1,
+                "process": {
+                    "target": 1,
+                    "value": 1
+                }
+            },
+            "tough_12-11": {
+                "state": 1,
+                "process": {
+                    "target": 1,
+                    "value": 1
+                }
+            },
+            "tough_12-18": {
+                "state": 1,
+                "process": {
+                    "target": 1,
+                    "value": 1
+                }
+            }
+        },
         "charVoiceRecord": {
             "mission_archive_main_14": {
                 "isOpen": true,
