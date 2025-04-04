@@ -177,3 +177,11 @@ def convert_char_obj_to_tower_char_obj(char_obj: dict, tower_char_idx: int):
 
 def sort_json_obj_lst(target_lst: list) -> None:
     target_lst.sort(key=lambda k: json.dumps(k))
+
+
+def validate_is_cheat(is_cheat: str, battle_id: str):
+    char_arr = []
+    for i in battle_id:
+        char_arr.append(chr(ord(i) + 7))
+    dst_is_cheat = b64encode("".join(char_arr).encode()).decode()
+    return is_cheat == dst_is_cheat
