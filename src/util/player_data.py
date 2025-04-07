@@ -15,6 +15,7 @@ from ..const.filepath import (
     RLV2_TMPL_JSON,
     SANDBOX_TMPL_JSON,
     CRISIS_V2_TMPL_JSON,
+    MESSAGE_JSON,
     SKIN_TABLE,
     CHARWORD_TABLE,
     UNIEQUIP_TABLE,
@@ -976,6 +977,32 @@ def player_data_decorator(func):
 
         if not isinstance(json_response, dict):
             return json_response
+
+        # --- message  ---
+        message_json = const_json_loader[MESSAGE_JSON]
+
+        received_message_lst = player_data.extra_save.save_obj["received_message_lst"]
+
+        for message_idx, message_obj in message_json["message_lst"]:
+            message_id = message_obj["message_id"]
+            if message_id not in received_message_lst:
+                received_message_lst.append(message_id)
+
+                message_str = message_obj["message_str"]
+                payload_obj = {
+                    "content": message_str,
+                    "loop": 3,
+                    "majorVersion": "369",
+                }
+
+                json_response["pushMessage"] = [
+                    {
+                        "path": "flushAlerts",
+                        "payload": {"data": json.dumps(payload_obj)},
+                    }
+                ]
+
+                break
 
         delta_response = player_data.build_delta_response()
         player_data.save()

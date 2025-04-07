@@ -10,6 +10,7 @@ class ExtraSave:
         return {
             "received_mail_lst": [],
             "removed_mail_lst": [],
+            "received_message_lst": [],
         }
 
     def __init__(self, filepath: str):

@@ -8,6 +8,7 @@ RLV2_TMPL_JSON = "data/rlv2_tmpl.json"
 SANDBOX_TMPL_JSON = "data/sandbox_tmpl.json"
 CRISIS_V2_TMPL_JSON = "data/crisisV2_tmpl.json"
 MAIL_JSON = "data/mail.json"
+MESSAGE_JSON = "data/message.json"
 RLV2_DATA = "data/rlv2_data.json"
 CRISIS_V2_DATA_DIRPATH = "data/crisisV2/"
 
