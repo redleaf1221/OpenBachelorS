@@ -133,7 +133,7 @@ def download_file(url: str, filename: str, dirpath: str):
 
 
 def is_valid_res_version(res_version: str) -> bool:
-    return re.fullmatch("[0-9A-Fa-f-]*", res_version) is not None
+    return re.fullmatch("[0-9A-Fa-f-_]*", res_version) is not None
 
 
 def is_valid_asset_filename(asset_filename: str) -> bool:
