@@ -186,3 +186,17 @@ def quest_finishStoryStage(player_data):
         "alert": [],
     }
     return response
+
+
+@bp_quest.route("/quest/editStageSixStarTag", methods=["POST"])
+@player_data_decorator
+def quest_editStageSixStarTag(player_data):
+    request_json = request.get_json()
+
+    stage_id = request_json["stageId"]
+    tag_lst = request_json["selected"]
+
+    player_data["dungeon"]["sixStar"]["stages"][stage_id]["tagSelected"] = tag_lst
+
+    response = {}
+    return response
