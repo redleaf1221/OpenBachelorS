@@ -14,7 +14,7 @@ def api_game_get_latest_game_info():
     client_version = const_json_loader[VERSION_JSON]["version"]["clientVersion"]
 
     response = {
-        "version": "60.0.2",
+        "version": request.args.get("version", ""),
         "action": 0,
         "update_type": 0,
         "update_info": {
