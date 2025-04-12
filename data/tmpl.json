@@ -414,7 +414,9 @@
         "hasFreeLevelGP": 0,
         "status": 1700000000
     },
-    "equipment": {},
+    "equipment": {
+        "missions": {}
+    },
     "skin": {
         "characterSkins": {},
         "skinTs": {}
@@ -1024,8 +1026,8 @@
                         "skillExtend": {}
                     },
                     "state": 1,
-                    "formulaId": "4",
-                    "remainSolutionCnt": 99,
+                    "formulaId": "",
+                    "remainSolutionCnt": 0,
                     "outputSolutionCnt": 0,
                     "lastUpdateTime": 1700000000,
                     "saveTime": 0,
@@ -1058,8 +1060,8 @@
                         "skillExtend": {}
                     },
                     "state": 1,
-                    "formulaId": "4",
-                    "remainSolutionCnt": 99,
+                    "formulaId": "",
+                    "remainSolutionCnt": 0,
                     "outputSolutionCnt": 0,
                     "lastUpdateTime": 1700000000,
                     "saveTime": 0,
@@ -1092,8 +1094,8 @@
                         "skillExtend": {}
                     },
                     "state": 1,
-                    "formulaId": "3",
-                    "remainSolutionCnt": 99,
+                    "formulaId": "",
+                    "remainSolutionCnt": 0,
                     "outputSolutionCnt": 0,
                     "lastUpdateTime": 1700000000,
                     "saveTime": 0,
@@ -1126,8 +1128,8 @@
                         "skillExtend": {}
                     },
                     "state": 1,
-                    "formulaId": "3",
-                    "remainSolutionCnt": 99,
+                    "formulaId": "",
+                    "remainSolutionCnt": 0,
                     "outputSolutionCnt": 0,
                     "lastUpdateTime": 1700000000,
                     "saveTime": 0,
@@ -1174,9 +1176,9 @@
                     "apCost": 0,
                     "stock": [],
                     "next": {
-                        "order": 0,
-                        "processPoint": 0,
-                        "maxPoint": 0,
+                        "order": -1,
+                        "processPoint": -1,
+                        "maxPoint": -1,
                         "speed": 1
                     },
                     "completeWorkTime": -1,
@@ -1216,9 +1218,9 @@
                     "apCost": 0,
                     "stock": [],
                     "next": {
-                        "order": 0,
-                        "processPoint": 0,
-                        "maxPoint": 0,
+                        "order": -1,
+                        "processPoint": -1,
+                        "maxPoint": -1,
                         "speed": 1
                     },
                     "completeWorkTime": -1,
