@@ -533,10 +533,8 @@
             "slot_25": {
                 "level": 3,
                 "state": 2,
-                "roomId": "MANUFACTURE",
+                "roomId": "POWER",
                 "charInstIds": [
-                    -1,
-                    -1,
                     -1
                 ],
                 "completeConstructTime": -1
@@ -544,10 +542,8 @@
             "slot_24": {
                 "level": 3,
                 "state": 2,
-                "roomId": "TRADING",
+                "roomId": "POWER",
                 "charInstIds": [
-                    -1,
-                    -1,
                     -1
                 ],
                 "completeConstructTime": -1
@@ -636,8 +632,10 @@
             "slot_16": {
                 "level": 3,
                 "state": 2,
-                "roomId": "POWER",
+                "roomId": "MANUFACTURE",
                 "charInstIds": [
+                    -1,
+                    -1,
                     -1
                 ],
                 "completeConstructTime": -1
@@ -676,7 +674,7 @@
             "slot_14": {
                 "level": 3,
                 "state": 2,
-                "roomId": "TRADING",
+                "roomId": "MANUFACTURE",
                 "charInstIds": [
                     -1,
                     -1,
@@ -754,8 +752,10 @@
             "slot_7": {
                 "level": 3,
                 "state": 2,
-                "roomId": "POWER",
+                "roomId": "TRADING",
                 "charInstIds": [
+                    -1,
+                    -1,
                     -1
                 ],
                 "completeConstructTime": -1
@@ -763,7 +763,7 @@
             "slot_6": {
                 "level": 3,
                 "state": 2,
-                "roomId": "MANUFACTURE",
+                "roomId": "TRADING",
                 "charInstIds": [
                     -1,
                     -1,
@@ -961,37 +961,37 @@
                 "slot_40": {}
             },
             "POWER": {
+                "slot_24": {
+                    "buff": {
+                        "global": {
+                            "roomCnt": {}
+                        },
+                        "manufacture": {
+                            "charSpeed": {}
+                        },
+                        "laborSpeed": 0,
+                        "apCost": {
+                            "self": {}
+                        }
+                    },
+                    "presetQueue": []
+                },
+                "slot_25": {
+                    "buff": {
+                        "global": {
+                            "roomCnt": {}
+                        },
+                        "manufacture": {
+                            "charSpeed": {}
+                        },
+                        "laborSpeed": 0,
+                        "apCost": {
+                            "self": {}
+                        }
+                    },
+                    "presetQueue": []
+                },
                 "slot_26": {
-                    "buff": {
-                        "global": {
-                            "roomCnt": {}
-                        },
-                        "manufacture": {
-                            "charSpeed": {}
-                        },
-                        "laborSpeed": 0,
-                        "apCost": {
-                            "self": {}
-                        }
-                    },
-                    "presetQueue": []
-                },
-                "slot_16": {
-                    "buff": {
-                        "global": {
-                            "roomCnt": {}
-                        },
-                        "manufacture": {
-                            "charSpeed": {}
-                        },
-                        "laborSpeed": 0,
-                        "apCost": {
-                            "self": {}
-                        }
-                    },
-                    "presetQueue": []
-                },
-                "slot_7": {
                     "buff": {
                         "global": {
                             "roomCnt": {}
@@ -1008,7 +1008,7 @@
                 }
             },
             "MANUFACTURE": {
-                "slot_25": {
+                "slot_16": {
                     "buff": {
                         "apCost": {
                             "self": {},
@@ -1076,7 +1076,7 @@
                     },
                     "presetQueue": []
                 },
-                "slot_5": {
+                "slot_14": {
                     "buff": {
                         "apCost": {
                             "self": {},
@@ -1110,7 +1110,7 @@
                     },
                     "presetQueue": []
                 },
-                "slot_6": {
+                "slot_5": {
                     "buff": {
                         "apCost": {
                             "self": {},
@@ -1146,7 +1146,7 @@
                 }
             },
             "TRADING": {
-                "slot_24": {
+                "slot_7": {
                     "buff": {
                         "speed": -1,
                         "limit": 0,
@@ -1188,7 +1188,7 @@
                     },
                     "presetQueue": []
                 },
-                "slot_14": {
+                "slot_6": {
                     "buff": {
                         "speed": -1,
                         "limit": 0,
@@ -1258,8 +1258,13 @@
                         },
                         "point": {}
                     },
-                    "comfort": 5000,
-                    "diySolution": {},
+                    "comfort": 0,
+                    "diySolution": {
+                        "wallPaper": null,
+                        "floor": null,
+                        "carpet": [],
+                        "other": []
+                    },
                     "lockQueue": [
                         0,
                         0,
@@ -1281,8 +1286,13 @@
                         },
                         "point": {}
                     },
-                    "comfort": 5000,
-                    "diySolution": {},
+                    "comfort": 0,
+                    "diySolution": {
+                        "wallPaper": null,
+                        "floor": null,
+                        "carpet": [],
+                        "other": []
+                    },
                     "lockQueue": [
                         0,
                         0,
@@ -1304,8 +1314,13 @@
                         },
                         "point": {}
                     },
-                    "comfort": 5000,
-                    "diySolution": {},
+                    "comfort": 0,
+                    "diySolution": {
+                        "wallPaper": null,
+                        "floor": null,
+                        "carpet": [],
+                        "other": []
+                    },
                     "lockQueue": [
                         0,
                         0,
@@ -1327,8 +1342,13 @@
                         },
                         "point": {}
                     },
-                    "comfort": 5000,
-                    "diySolution": {},
+                    "comfort": 0,
+                    "diySolution": {
+                        "wallPaper": null,
+                        "floor": null,
+                        "carpet": [],
+                        "other": []
+                    },
                     "lockQueue": [
                         0,
                         0,
@@ -1441,7 +1461,12 @@
                             "thisWeekSum": 0
                         }
                     },
-                    "diySolution": {}
+                    "diySolution": {
+                        "wallPaper": null,
+                        "floor": null,
+                        "carpet": [],
+                        "other": []
+                    }
                 }
             },
             "HIRE": {
@@ -1512,22 +1537,37 @@
                     "owners": [
                         -1
                     ],
-                    "comfort": 5000,
-                    "diySolution": {}
+                    "comfort": 0,
+                    "diySolution": {
+                        "wallPaper": null,
+                        "floor": null,
+                        "carpet": [],
+                        "other": []
+                    }
                 },
                 "slot_44": {
                     "owners": [
                         -1
                     ],
-                    "comfort": 5000,
-                    "diySolution": {}
+                    "comfort": 0,
+                    "diySolution": {
+                        "wallPaper": null,
+                        "floor": null,
+                        "carpet": [],
+                        "other": []
+                    }
                 },
                 "slot_41": {
                     "owners": [
                         -1
                     ],
-                    "comfort": 5000,
-                    "diySolution": {}
+                    "comfort": 0,
+                    "diySolution": {
+                        "wallPaper": null,
+                        "floor": null,
+                        "carpet": [],
+                        "other": []
+                    }
                 }
             }
         },
