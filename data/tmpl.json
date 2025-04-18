@@ -1258,7 +1258,7 @@
                         },
                         "point": {}
                     },
-                    "comfort": 0,
+                    "comfort": 5000,
                     "diySolution": {
                         "wallPaper": null,
                         "floor": null,
@@ -1286,7 +1286,7 @@
                         },
                         "point": {}
                     },
-                    "comfort": 0,
+                    "comfort": 5000,
                     "diySolution": {
                         "wallPaper": null,
                         "floor": null,
@@ -1314,7 +1314,7 @@
                         },
                         "point": {}
                     },
-                    "comfort": 0,
+                    "comfort": 5000,
                     "diySolution": {
                         "wallPaper": null,
                         "floor": null,
@@ -1342,7 +1342,7 @@
                         },
                         "point": {}
                     },
-                    "comfort": 0,
+                    "comfort": 5000,
                     "diySolution": {
                         "wallPaper": null,
                         "floor": null,
@@ -1537,7 +1537,7 @@
                     "owners": [
                         -1
                     ],
-                    "comfort": 0,
+                    "comfort": 5000,
                     "diySolution": {
                         "wallPaper": null,
                         "floor": null,
@@ -1549,7 +1549,7 @@
                     "owners": [
                         -1
                     ],
-                    "comfort": 0,
+                    "comfort": 5000,
                     "diySolution": {
                         "wallPaper": null,
                         "floor": null,
@@ -1561,7 +1561,7 @@
                     "owners": [
                         -1
                     ],
-                    "comfort": 0,
+                    "comfort": 5000,
                     "diySolution": {
                         "wallPaper": null,
                         "floor": null,
