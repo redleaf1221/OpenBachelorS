@@ -4,7 +4,7 @@ from flask import Blueprint
 from flask import request
 
 from ..const.json_const import true, false, null
-from ..const.filepath import CONFIG_JSON, VERSION_JSON, CHARACTER_TABLE
+from ..const.filepath import CONFIG_JSON, VERSION_JSON, CHARACTER_TABLE, GACHA_POOL_JSON
 from ..util.const_json_loader import const_json_loader
 from ..util.player_data import player_data_decorator
 from ..util.helper import (
@@ -286,6 +286,12 @@ class AdvancedGachaBasicManager:
             }
         )
 
+    # override this
+    def gacha_getPoolDetail(self):
+        gacha_pool = const_json_loader[GACHA_POOL_JSON]
+
+        self.response.update(gacha_pool.copy())
+
 
 def get_advanced_gacha_manager(player_data, request_json, response):
     pool_id = request_json["poolId"]
@@ -316,5 +322,19 @@ def gacha_tenAdvancedGacha(player_data):
         player_data, request_json, response
     )
     advanced_gacha_manager.gacha_tenAdvancedGacha()
+
+    return response
+
+
+@bp_gacha.route("/gacha/getPoolDetail", methods=["POST"])
+@player_data_decorator
+def gacha_getPoolDetail(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    advanced_gacha_manager = get_advanced_gacha_manager(
+        player_data, request_json, response
+    )
+    advanced_gacha_manager.gacha_getPoolDetail()
 
     return response
