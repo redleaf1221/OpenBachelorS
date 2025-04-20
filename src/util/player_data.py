@@ -450,9 +450,17 @@ def build_player_data_template():
             tower_id_lst.copy()
         )
 
-    tmpl_json_obj["tower"]["season"]["id"] = const_json_loader[VERSION_JSON][
-        "tower_season"
-    ]
+    tower_season = const_json_loader[VERSION_JSON]["tower_season"]
+    if not tower_season:
+        tower_season_num_id = 1
+        while True:
+            cur_tower_season = f"tower_season_{tower_season_num_id}"
+            if cur_tower_season in climb_tower_table["seasonInfos"]:
+                tower_season = cur_tower_season
+                tower_season_num_id += 1
+            else:
+                break
+    tmpl_json_obj["tower"]["season"]["id"] = tower_season
 
     for mission_id, mission_obj in climb_tower_table["missionData"]:
         tmpl_json_obj["tower"]["season"]["missions"][mission_id] = {
