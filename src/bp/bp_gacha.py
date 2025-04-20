@@ -62,21 +62,29 @@ class NormalGachaBasicManager:
 
         self.refresh_tag_lst()
 
+    def get_gacha_raw_result(self):
+        char_id = "char_1035_wisdel"
+        picked_tag_lst = [11, 2, 10, 19]
+
+        return char_id, picked_tag_lst
+
     def exec_gacha(self):
+        char_id, picked_tag_lst = self.get_gacha_raw_result()
+
         selected_tag_lst = self.player_data["recruit"]["normal"]["slots"][
             str(self.slot_id)
         ]["selectTags"].copy()
 
         for selected_tag in selected_tag_lst:
-            selected_tag["pick"] = 1
+            selected_tag_id = selected_tag["tagId"]
+            if selected_tag_id in picked_tag_lst:
+                selected_tag["pick"] = 1
 
         self.player_data["recruit"]["normal"]["slots"][str(self.slot_id)][
             "selectTags"
         ] = selected_tag_lst
 
-        self.player_data.extra_save.save_obj[f"normal_gacha_{self.slot_id}"] = (
-            "char_1035_wisdel"
-        )
+        self.player_data.extra_save.save_obj[f"normal_gacha_{self.slot_id}"] = char_id
 
     def get_gacha_result(self):
         k = f"normal_gacha_{self.slot_id}"
