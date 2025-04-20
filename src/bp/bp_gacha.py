@@ -30,10 +30,15 @@ class NormalGachaBasicManager:
 
         self.slot_id = self.request_json["slotId"]
 
+    # override this
+    def get_refreshed_tag_lst(self):
+        refreshed_tag_lst = [11, 2, 10, 19]
+        return refreshed_tag_lst
+
     def refresh_tag_lst(self):
-        tag_lst = [11, 2, 10, 19]
+        refreshed_tag_lst = self.get_refreshed_tag_lst()
         self.player_data["recruit"]["normal"]["slots"][str(self.slot_id)]["tags"] = (
-            tag_lst
+            refreshed_tag_lst
         )
 
     def gacha_normalGacha(self):
@@ -62,6 +67,7 @@ class NormalGachaBasicManager:
 
         self.refresh_tag_lst()
 
+    # override this
     def get_gacha_raw_result(self):
         char_id = "char_1035_wisdel"
         picked_tag_lst = [11, 2, 10, 19]
