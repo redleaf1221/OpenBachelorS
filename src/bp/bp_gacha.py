@@ -22,6 +22,23 @@ def gacha_syncNormalGacha(player_data):
     return response
 
 
+def get_gacha_char_obj(char_id):
+    character_table = const_json_loader[CHARACTER_TABLE]
+    item_id = character_table[char_id]["potentialItemId"]
+
+    gacha_char_obj = {
+        "charInstId": get_char_num_id(char_id),
+        "charId": char_id,
+        "isNew": 0,
+        "itemGet": [
+            {"type": "MATERIAL", "id": item_id, "count": 1},
+        ],
+        "logInfo": {},
+    }
+
+    return gacha_char_obj
+
+
 class NormalGachaBasicManager:
     def __init__(self, player_data, request_json, response):
         self.player_data = player_data
@@ -143,23 +160,14 @@ class NormalGachaBasicManager:
         char_id = self.get_gacha_result()
         self.clear_gacha_result()
 
-        character_table = const_json_loader[CHARACTER_TABLE]
-        item_id = character_table[char_id]["potentialItemId"]
+        gacha_char_obj = get_gacha_char_obj(char_id)
 
         self.reset_slot()
 
         self.response.update(
             {
                 "result": 0,
-                "charGet": {
-                    "charInstId": get_char_num_id(char_id),
-                    "charId": char_id,
-                    "isNew": 0,
-                    "itemGet": [
-                        {"type": "MATERIAL", "id": item_id, "count": 1},
-                    ],
-                    "logInfo": {},
-                },
+                "charGet": gacha_char_obj,
             }
         )
 
@@ -236,5 +244,77 @@ def gacha_refreshTags(player_data):
 
     normal_gacha_manager = get_normal_gacha_manager(player_data, request_json, response)
     normal_gacha_manager.gacha_refreshTags()
+
+    return response
+
+
+class AdvancedGachaBasicManager:
+    def __init__(self, player_data, request_json, response, pool_id):
+        self.player_data = player_data
+        self.request_json = request_json
+        self.response = response
+
+        self.pool_id = pool_id
+
+    # override this
+    def get_advanced_gacha_result(self):
+        char_id = "char_1035_wisdel"
+
+        return char_id
+
+    def gacha_advancedGacha(self):
+        char_id = self.get_advanced_gacha_result()
+
+        gacha_char_obj = get_gacha_char_obj(char_id)
+
+        self.response.update(
+            {
+                "result": 0,
+                "charGet": gacha_char_obj,
+            }
+        )
+
+    def gacha_tenAdvancedGacha(self):
+        char_id_lst = [self.get_advanced_gacha_result() for i in range(10)]
+
+        gacha_char_obj_lst = [get_gacha_char_obj(char_id) for char_id in char_id_lst]
+
+        self.response.update(
+            {
+                "result": 0,
+                "gachaResultList": gacha_char_obj_lst,
+            }
+        )
+
+
+def get_advanced_gacha_manager(player_data, request_json, response):
+    pool_id = request_json["poolId"]
+    return AdvancedGachaBasicManager(player_data, request_json, response, pool_id)
+
+
+@bp_gacha.route("/gacha/advancedGacha", methods=["POST"])
+@player_data_decorator
+def gacha_advancedGacha(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    advanced_gacha_manager = get_advanced_gacha_manager(
+        player_data, request_json, response
+    )
+    advanced_gacha_manager.gacha_advancedGacha()
+
+    return response
+
+
+@bp_gacha.route("/gacha/tenAdvancedGacha", methods=["POST"])
+@player_data_decorator
+def gacha_tenAdvancedGacha(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    advanced_gacha_manager = get_advanced_gacha_manager(
+        player_data, request_json, response
+    )
+    advanced_gacha_manager.gacha_tenAdvancedGacha()
 
     return response
