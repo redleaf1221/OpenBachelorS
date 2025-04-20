@@ -158,6 +158,9 @@ class NormalGachaBasicManager:
             }
         )
 
+    def gacha_refreshTags(self):
+        self.refresh_tag_lst()
+
 
 def get_normal_gacha_manager(player_data, request_json, response):
     return NormalGachaBasicManager(player_data, request_json, response)
@@ -207,5 +210,17 @@ def gacha_cancelNormalGacha(player_data):
 
     normal_gacha_manager = get_normal_gacha_manager(player_data, request_json, response)
     normal_gacha_manager.gacha_cancelNormalGacha()
+
+    return response
+
+
+@bp_gacha.route("/gacha/refreshTags", methods=["POST"])
+@player_data_decorator
+def gacha_refreshTags(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    normal_gacha_manager = get_normal_gacha_manager(player_data, request_json, response)
+    normal_gacha_manager.gacha_refreshTags()
 
     return response
