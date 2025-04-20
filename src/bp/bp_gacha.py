@@ -105,13 +105,7 @@ class NormalGachaBasicManager:
             }
         )
 
-    def gacha_finishNormalGacha(self):
-        char_id = self.get_gacha_result()
-        self.clear_gacha_result()
-
-        character_table = const_json_loader[CHARACTER_TABLE]
-        item_id = character_table[char_id]["potentialItemId"]
-
+    def reset_slot(self):
         self.player_data["recruit"]["normal"]["slots"][str(self.slot_id)]["state"] = 1
 
         self.player_data["recruit"]["normal"]["slots"][str(self.slot_id)][
@@ -131,6 +125,15 @@ class NormalGachaBasicManager:
             "realFinishTs"
         ] = -1
 
+    def gacha_finishNormalGacha(self):
+        char_id = self.get_gacha_result()
+        self.clear_gacha_result()
+
+        character_table = const_json_loader[CHARACTER_TABLE]
+        item_id = character_table[char_id]["potentialItemId"]
+
+        self.reset_slot()
+
         self.response.update(
             {
                 "result": 0,
@@ -143,6 +146,15 @@ class NormalGachaBasicManager:
                     ],
                     "logInfo": {},
                 },
+            }
+        )
+
+    def gacha_cancelNormalGacha(self):
+        self.reset_slot()
+
+        self.response.update(
+            {
+                "result": 0,
             }
         )
 
@@ -183,5 +195,17 @@ def gacha_finishNormalGacha(player_data):
 
     normal_gacha_manager = get_normal_gacha_manager(player_data, request_json, response)
     normal_gacha_manager.gacha_finishNormalGacha()
+
+    return response
+
+
+@bp_gacha.route("/gacha/cancelNormalGacha", methods=["POST"])
+@player_data_decorator
+def gacha_cancelNormalGacha(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    normal_gacha_manager = get_normal_gacha_manager(player_data, request_json, response)
+    normal_gacha_manager.gacha_cancelNormalGacha()
 
     return response
