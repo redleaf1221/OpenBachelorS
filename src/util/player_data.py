@@ -558,6 +558,11 @@ def build_player_data_template():
 
     # ----------
 
+    for slot_obj in tmpl_json_obj["recruit"]["normal"]["slots"].values():
+        slot_obj["tags"] = [11, 2, 10, 19]
+
+    # ----------
+
     player_data_template = ConstJson(tmpl_json_obj)
     return player_data_template, char_id_lst
 
