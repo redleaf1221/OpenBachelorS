@@ -12,6 +12,7 @@ bp_user = Blueprint("bp_user", __name__)
 
 
 @bp_user.route("/user/auth/v1/token_by_phone_password", methods=["POST"])
+@bp_user.route("/user/auth/v2/token_by_phone_code", methods=["POST"])
 def user_auth_v1_token_by_phone_password():
     request_json = request.get_json()
 
@@ -67,6 +68,14 @@ def user_online_v1_loginout():
 
 @bp_user.route("/user/info/v1/logout", methods=["POST"])
 def user_info_v1_logout():
+    request_json = request.get_json()
+
+    response = {"msg": "OK", "status": 0, "type": "A"}
+    return response
+
+
+@bp_user.route("/user/info/v1/update_agreement", methods=["POST"])
+def user_info_v1_update_agreement():
     request_json = request.get_json()
 
     response = {"msg": "OK", "status": 0, "type": "A"}
