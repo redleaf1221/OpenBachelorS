@@ -1,6 +1,6 @@
 import time
 
-FAKETIME = -1
+FAKETIME = 1747296000
 
 
 def faketime():
