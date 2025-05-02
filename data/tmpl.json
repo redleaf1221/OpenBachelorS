@@ -469,9 +469,9 @@
             "labor": {
                 "buffSpeed": 0,
                 "processPoint": 0,
-                "value": 225,
+                "value": 235,
                 "lastUpdateTime": 1700000000,
-                "maxValue": 225
+                "maxValue": 235
             },
             "workshop": {
                 "bonusActive": 0,
@@ -880,6 +880,27 @@
                 "completeConstructTime": -1
             },
             "slot_41": {
+                "level": 3,
+                "state": 2,
+                "roomId": "PRIVATE",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_51": {
+                "level": 3,
+                "state": 2,
+                "roomId": "PRIVATE",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_50": {
+                "level": 3,
+                "state": 2,
+                "roomId": "PRIVATE",
+                "charInstIds": [],
+                "completeConstructTime": -1
+            },
+            "slot_49": {
                 "level": 3,
                 "state": 2,
                 "roomId": "PRIVATE",
@@ -1558,6 +1579,42 @@
                     }
                 },
                 "slot_41": {
+                    "owners": [
+                        -1
+                    ],
+                    "comfort": 5000,
+                    "diySolution": {
+                        "wallPaper": null,
+                        "floor": null,
+                        "carpet": [],
+                        "other": []
+                    }
+                },
+                "slot_51": {
+                    "owners": [
+                        -1
+                    ],
+                    "comfort": 5000,
+                    "diySolution": {
+                        "wallPaper": null,
+                        "floor": null,
+                        "carpet": [],
+                        "other": []
+                    }
+                },
+                "slot_50": {
+                    "owners": [
+                        -1
+                    ],
+                    "comfort": 5000,
+                    "diySolution": {
+                        "wallPaper": null,
+                        "floor": null,
+                        "carpet": [],
+                        "other": []
+                    }
+                },
+                "slot_49": {
                     "owners": [
                         -1
                     ],
