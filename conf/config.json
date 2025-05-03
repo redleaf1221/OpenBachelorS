@@ -3,6 +3,7 @@
     "port": 8443,
     "adaptive": true,
     "multi_user": true,
+    "redirect_asset": false,
     "debug": true,
     "mod": false
 }
