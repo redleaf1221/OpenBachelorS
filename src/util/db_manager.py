@@ -50,6 +50,16 @@ CREATE TABLE IF NOT EXISTS player_data (
 """
         )
 
+        conn.execute(
+            """
+CREATE TABLE IF NOT EXISTS battle_replay (
+    username varchar(1024) PRIMARY KEY,
+    stage_id varchar(1024) UNIQUE,
+    battle_replay json
+)
+"""
+        )
+
         conn.commit()
 
 

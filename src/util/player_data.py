@@ -43,7 +43,7 @@ from ..const.filepath import (
     MULTI_EXTRA_SAVE_DIRPATH,
 )
 from .const_json_loader import const_json_loader, ConstJson
-from .battle_replay_manager import BattleReplayManager
+from .battle_replay_manager import BattleReplayManager, DBBattleReplayManager
 from .extra_save import ExtraSave, DBExtraSave
 from .helper import (
     is_char_id,
@@ -990,8 +990,8 @@ class PlayerData(JsonWithDelta):
                     "pending_delta",
                     self.username,
                 )
-                self.battle_replay_manager = BattleReplayManager(
-                    os.path.join(MULTI_REPLAY_DIRPATH, self.username)
+                self.battle_replay_manager = DBBattleReplayManager(
+                    self.username,
                 )
                 self.extra_save = DBExtraSave(self.username)
             else:
