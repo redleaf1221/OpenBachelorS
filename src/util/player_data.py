@@ -936,18 +936,18 @@ class PlayerData(JsonWithDelta):
         config = const_json_loader[CONFIG_JSON]
         if config["multi_user"]:
             self.sav_delta_json = FileBasedDeltaJson(
-                os.path.join(MULTI_USER_SAV_DIRPATH, f"{self.username}_delta.json")
+                os.path.join(MULTI_USER_SAV_DIRPATH, self.username, "delta.json")
             )
             self.sav_pending_delta_json = FileBasedDeltaJson(
                 os.path.join(
-                    MULTI_USER_SAV_DIRPATH, f"{self.username}_pending_delta.json"
+                    MULTI_USER_SAV_DIRPATH, self.username, "pending_delta.json"
                 )
             )
             self.battle_replay_manager = BattleReplayManager(
                 os.path.join(MULTI_REPLAY_DIRPATH, self.username)
             )
             self.extra_save = ExtraSave(
-                os.path.join(MULTI_EXTRA_SAVE_DIRPATH, f"{self.username}_extra.json")
+                os.path.join(MULTI_EXTRA_SAVE_DIRPATH, self.username, "extra.json")
             )
         else:
             self.sav_delta_json = FileBasedDeltaJson(SAV_DELTA_JSON)
