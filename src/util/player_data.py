@@ -898,18 +898,7 @@ class JsonWithDelta:
         return base_obj
 
 
-class FileBasedDeltaJson(DeltaJson):
-    def __init__(self, path: str):
-        self.path = path
-        json_obj = load_delta_json_obj(path)
-
-        super().__init__(
-            modified_dict=json_obj["modified"], deleted_dict=json_obj["deleted"]
-        )
-
-    def save(self):
-        save_delta_json_obj(self.path, self.modified_dict, self.deleted_dict)
-
+class ResettableDeltaJson(DeltaJson):
     def reset(self):
         self.modified_dict = {}
         self.deleted_dict = {}
@@ -920,6 +909,19 @@ class FileBasedDeltaJson(DeltaJson):
 
         if key in self.deleted_dict:
             del self.deleted_dict[key]
+
+
+class FileBasedDeltaJson(ResettableDeltaJson):
+    def __init__(self, path: str):
+        self.path = path
+        json_obj = load_delta_json_obj(path)
+
+        super().__init__(
+            modified_dict=json_obj["modified"], deleted_dict=json_obj["deleted"]
+        )
+
+    def save(self):
+        save_delta_json_obj(self.path, self.modified_dict, self.deleted_dict)
 
 
 class PlayerData(JsonWithDelta):
