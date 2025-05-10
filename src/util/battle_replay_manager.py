@@ -1,4 +1,5 @@
 import os
+from abc import ABC, abstractmethod
 
 from .helper import (
     encode_stage_id,
@@ -8,7 +9,21 @@ from .helper import (
 )
 
 
-class BattleReplayManager:
+class AbstractBattleReplayManager(ABC):
+    @abstractmethod
+    def load_battle_replay(self, stage_id: str) -> str:
+        pass
+
+    @abstractmethod
+    def save_battle_replay(self, stage_id: str, battle_replay: str):
+        pass
+
+    @abstractmethod
+    def get_battle_replay_lst(self) -> list[str]:
+        pass
+
+
+class BattleReplayManager(AbstractBattleReplayManager):
     def __init__(self, dirpath: str):
         os.makedirs(dirpath, exist_ok=True)
         self.dirpath = dirpath
