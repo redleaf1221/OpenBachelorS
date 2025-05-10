@@ -8,10 +8,14 @@ from .const_json_loader import const_json_loader
 
 
 DATABASE_NAME = "openbachelor"
+DATABASE_TIMEOUT = 3
 
 
-def get_db_url():
-    return const_json_loader[CONFIG_JSON]["db_url"]
+def get_db_url(with_database_name=True):
+    db_url = const_json_loader[CONFIG_JSON]["db_url"]
+    if with_database_name:
+        return f"{db_url}/{DATABASE_NAME}?connect_timeout={DATABASE_TIMEOUT}"
+    return f"{db_url}?connect_timeout={DATABASE_TIMEOUT}"
 
 
 db_conn_pool = None
@@ -21,15 +25,14 @@ def get_db_conn(use_pool=True):
     global db_conn_pool
     db_url = get_db_url()
     if not use_pool:
-        return psycopg.connect(f"{db_url}/{DATABASE_NAME}")
+        return psycopg.connect(db_url)
     if not db_conn_pool:
         db_conn_pool = ConnectionPool(db_url)
     return db_conn_pool.connection()
 
 
 def init_db():
-    db_url = get_db_url()
-    with psycopg.connect(db_url, autocommit=True) as conn:
+    with psycopg.connect(get_db_url(with_database_name=False), autocommit=True) as conn:
         try:
             conn.execute(f"CREATE DATABASE {DATABASE_NAME} ENCODING UTF8")
         except Exception:
