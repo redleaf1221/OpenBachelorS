@@ -1,5 +1,6 @@
 import psycopg
 from psycopg.types.json import Json
+from psycopg_pool import ConnectionPool
 
 from ..const.json_const import true, false, null
 from ..const.filepath import CONFIG_JSON
@@ -13,9 +14,11 @@ def get_db_url():
     return const_json_loader[CONFIG_JSON]["db_url"]
 
 
+db_conn_pool = ConnectionPool(get_db_url())
+
+
 def get_db_conn():
-    db_url = get_db_url()
-    return psycopg.connect(f"{db_url}/{DATABASE_NAME}")
+    return db_conn_pool.connection()
 
 
 def init_db():
