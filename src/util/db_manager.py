@@ -14,10 +14,16 @@ def get_db_url():
     return const_json_loader[CONFIG_JSON]["db_url"]
 
 
-db_conn_pool = ConnectionPool(get_db_url())
+db_conn_pool = None
 
 
-def get_db_conn():
+def get_db_conn(use_pool=True):
+    global db_conn_pool
+    db_url = get_db_url()
+    if not use_pool:
+        return psycopg.connect(f"{db_url}/{DATABASE_NAME}")
+    if not db_conn_pool:
+        db_conn_pool = ConnectionPool(db_url)
     return db_conn_pool.connection()
 
 
@@ -29,7 +35,7 @@ def init_db():
         except Exception:
             pass
 
-    with get_db_conn() as conn:
+    with get_db_conn(use_pool=False) as conn:
         conn.execute(
             """
 CREATE TABLE IF NOT EXISTS player_data (

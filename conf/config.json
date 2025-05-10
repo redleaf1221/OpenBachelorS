@@ -2,7 +2,7 @@
     "host": "127.0.0.1",
     "port": 8443,
     "use_db": true,
-    "db_url": "postgresql://postgres:123456@127.0.0.1:5432?connect_timeout=10",
+    "db_url": "postgresql://postgres:123456@127.0.0.1:5432?connect_timeout=3",
     "adaptive": true,
     "multi_user": true,
     "redirect_asset": false,
