@@ -42,4 +42,10 @@ CREATE TABLE IF NOT EXISTS player_data (
 
 
 if const_json_loader[CONFIG_JSON]["use_db"]:
-    init_db()
+    try:
+        init_db()
+        IS_DB_READY = True
+    except Exception:
+        IS_DB_READY = False
+else:
+    IS_DB_READY = False
