@@ -41,6 +41,24 @@ CREATE TABLE IF NOT EXISTS player_data (
         conn.commit()
 
 
+def create_user_if_necessary(username):
+    with get_db_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT 1 FROM player_data WHERE username = %s", (username,))
+            if not cur.fetchone():
+                cur.execute(
+                    "INSERT INTO player_data VALUES (%s, %s, %s, %s)",
+                    (
+                        username,
+                        None,
+                        None,
+                        None,
+                    ),
+                )
+
+                conn.commit()
+
+
 if const_json_loader[CONFIG_JSON]["use_db"]:
     try:
         init_db()
