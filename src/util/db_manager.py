@@ -46,6 +46,7 @@ if const_json_loader[CONFIG_JSON]["use_db"]:
         init_db()
         IS_DB_READY = True
     except Exception:
+        print("warn: init db failed, fallback to file save")
         IS_DB_READY = False
 else:
     IS_DB_READY = False
