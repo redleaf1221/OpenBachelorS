@@ -53,9 +53,10 @@ CREATE TABLE IF NOT EXISTS player_data (
         conn.execute(
             """
 CREATE TABLE IF NOT EXISTS battle_replay (
-    username varchar(1024) PRIMARY KEY,
-    stage_id varchar(1024) UNIQUE,
-    battle_replay json
+    username varchar(1024),
+    stage_id varchar(1024),
+    battle_replay json,
+    PRIMARY KEY(username, stage_id)
 )
 """
         )
