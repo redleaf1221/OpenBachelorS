@@ -4120,7 +4120,14 @@
             }
         }
     },
-    "consumable": {},
+    "consumable": {
+        "renamingCard": {
+            "0": {
+                "ts": -1,
+                "count": 1
+            }
+        }
+    },
     "checkIn": {
         "canCheckIn": 0,
         "newbiePackage": {
