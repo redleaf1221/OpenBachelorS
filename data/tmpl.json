@@ -373,7 +373,7 @@
         "maxAp": 180,
         "androidDiamond": 0,
         "iosDiamond": 0,
-        "diamondShard": 0,
+        "diamondShard": 60000,
         "gold": 0,
         "practiceTicket": 30,
         "lastRefreshTs": 1700000000,
@@ -1776,14 +1776,19 @@
     },
     "tshop": {},
     "gacha": {
-        "newbee": {},
+        "newbee": {
+            "openFlag": 1,
+            "cnt": 21,
+            "poolId": "BOOT_0_1_3"
+        },
         "normal": {},
         "attain": {},
         "limit": {},
         "single": {},
         "fesClassic": {},
         "linkage": {},
-        "special": {}
+        "special": {},
+        "doubleGacha": {}
     },
     "backflow": {
         "open": false,
