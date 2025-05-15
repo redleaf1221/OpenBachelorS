@@ -345,3 +345,18 @@ def activity_vecBreakV2_setDefend(player_data):
 
     response = {}
     return response
+
+
+@misc_bp.route("/activity/vecBreakV2/changeBuffList", methods=["POST"])
+@player_data_decorator
+def activity_vecBreakV2_changeBuffList(player_data):
+    request_json = request.get_json()
+
+    activity_id = request_json["activityId"]
+
+    player_data["activity"]["VEC_BREAK_V2"][activity_id]["activatedBuff"] = (
+        request_json["buffList"]
+    )
+
+    response = {}
+    return response
