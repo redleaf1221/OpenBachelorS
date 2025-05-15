@@ -263,6 +263,9 @@ GACHA_RULE_TYPE_DICT = ConstJson(
         "LINKAGE": "linkage",
         "SPECIAL": "special",
         "DOUBLE": "doubleGacha",
+        "CLASSIC": "normal",
+        "CLASSIC_ATTAIN": "attain",
+        "CLASSIC_DOUBLE": "doubleGacha",
     }
 )
 
