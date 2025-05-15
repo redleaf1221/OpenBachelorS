@@ -222,3 +222,33 @@ def activity_enemyDuel_singleBattleFinish(player_data):
         "dailyMission": {"add": 0, "reward": 0},
     }
     return response
+
+
+@misc_bp.route("/activity/vecBreakV2/battleStart", methods=["POST"])
+@player_data_decorator
+def activity_vecBreakV2_battleStart(player_data):
+    request_json = request.get_json()
+
+    response = {
+        "result": 0,
+        "battleId": "00000000-0000-0000-0000-000000000000",
+    }
+    return response
+
+
+@misc_bp.route("/activity/vecBreakV2/battleFinish", methods=["POST"])
+@player_data_decorator
+def activity_vecBreakV2_battleFinish(player_data):
+    request_json = request.get_json()
+
+    log_battle_log_if_necessary(player_data, request_json["data"])
+
+    response = {
+        "result": 0,
+        "msBefore": 0,
+        "msAfter": 0,
+        "unlockStages": [],
+        "suggestFriend": false,
+        "finTs": 1700000000,
+    }
+    return response
