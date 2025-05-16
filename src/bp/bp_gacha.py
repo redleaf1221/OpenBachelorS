@@ -293,14 +293,14 @@ pool_id_gacha_type_dict = init_pool_id_gacha_type_dict()
 
 
 class AdvancedGachaBasicManager:
-    def __init__(self, player_data, request_json, response, pool_id):
+    def __init__(self, player_data, request_json, response, pool_id, gacha_type):
         self.player_data = player_data
         self.request_json = request_json
         self.response = response
 
         self.pool_id = pool_id
 
-        self.gacha_type = pool_id_gacha_type_dict[self.pool_id]
+        self.gacha_type = gacha_type
 
     # override this
     def get_advanced_gacha_result(self):
@@ -351,7 +351,10 @@ class AdvancedGachaBasicManager:
 
 def get_advanced_gacha_manager(player_data, request_json, response):
     pool_id = request_json["poolId"]
-    return AdvancedGachaBasicManager(player_data, request_json, response, pool_id)
+    gacha_type = pool_id_gacha_type_dict[pool_id]
+    return AdvancedGachaBasicManager(
+        player_data, request_json, response, pool_id, gacha_type
+    )
 
 
 @bp_gacha.route("/gacha/advancedGacha", methods=["POST"])
