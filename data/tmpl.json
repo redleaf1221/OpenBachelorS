@@ -1942,7 +1942,8 @@
                     "unlock": true,
                     "progress": null
                 }
-            }
+            },
+            "tmpl": {}
         },
         "misc": {
             "showDetail": true,
