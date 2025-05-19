@@ -571,7 +571,8 @@
         "birthday": {
             "month": 1,
             "day": 1
-        }
+        },
+        "secretarySkinSp": false
     },
     "troop": {
         "curCharInstId": 1,
@@ -684,7 +685,8 @@
     },
     "skin": {
         "characterSkins": {},
-        "skinTs": {}
+        "skinTs": {},
+        "skinSp": {}
     },
     "shop": {},
     "mission": {
