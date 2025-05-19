@@ -448,6 +448,72 @@
                         "defendSquad": [],
                         "recvTimeLimited": true,
                         "recvNormal": true
+                    },
+                    "act1break_sp06": {
+                        "stageId": "act1break_sp06",
+                        "defendSquad": [],
+                        "recvTimeLimited": true,
+                        "recvNormal": true
+                    },
+                    "act1break_sp07": {
+                        "stageId": "act1break_sp07",
+                        "defendSquad": [],
+                        "recvTimeLimited": true,
+                        "recvNormal": true
+                    },
+                    "act1break_sp08": {
+                        "stageId": "act1break_sp08",
+                        "defendSquad": [],
+                        "recvTimeLimited": true,
+                        "recvNormal": true
+                    },
+                    "act1break_sp09": {
+                        "stageId": "act1break_sp09",
+                        "defendSquad": [],
+                        "recvTimeLimited": true,
+                        "recvNormal": true
+                    },
+                    "act1break_sp10": {
+                        "stageId": "act1break_sp10",
+                        "defendSquad": [],
+                        "recvTimeLimited": true,
+                        "recvNormal": true
+                    },
+                    "act1break_sp11": {
+                        "stageId": "act1break_sp11",
+                        "defendSquad": [],
+                        "recvTimeLimited": true,
+                        "recvNormal": true
+                    },
+                    "act1break_sp12": {
+                        "stageId": "act1break_sp12",
+                        "defendSquad": [],
+                        "recvTimeLimited": true,
+                        "recvNormal": true
+                    },
+                    "act1break_sp13": {
+                        "stageId": "act1break_sp13",
+                        "defendSquad": [],
+                        "recvTimeLimited": true,
+                        "recvNormal": true
+                    },
+                    "act1break_sp14": {
+                        "stageId": "act1break_sp14",
+                        "defendSquad": [],
+                        "recvTimeLimited": true,
+                        "recvNormal": true
+                    },
+                    "act1break_sp15": {
+                        "stageId": "act1break_sp15",
+                        "defendSquad": [],
+                        "recvTimeLimited": true,
+                        "recvNormal": true
+                    },
+                    "act1break_sp16": {
+                        "stageId": "act1break_sp16",
+                        "defendSquad": [],
+                        "recvTimeLimited": true,
+                        "recvNormal": true
                     }
                 },
                 "activatedBuff": []
