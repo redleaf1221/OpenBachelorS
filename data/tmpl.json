@@ -4313,6 +4313,12 @@
         "canCheckIn": 0,
         "newbiePackage": {
             "open": false
+        },
+        "showCount": 99999,
+        "longTermRecvRecord": {
+            "signin_1": 1,
+            "signin_2": 1,
+            "signin_3": 1
         }
     },
     "aprilFool": {
