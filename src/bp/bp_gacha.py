@@ -262,10 +262,10 @@ GACHA_RULE_TYPE_DICT = ConstJson(
         "FESCLASSIC": "fesClassic",
         "LINKAGE": "linkage",
         "SPECIAL": "special",
-        "DOUBLE": "doubleGacha",
+        "DOUBLE": "double",
         "CLASSIC": "normal",
         "CLASSIC_ATTAIN": "attain",
-        "CLASSIC_DOUBLE": "doubleGacha",
+        "CLASSIC_DOUBLE": "double",
     }
 )
 
