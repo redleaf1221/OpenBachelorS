@@ -1,4 +1,5 @@
 from enum import IntEnum
+import random
 
 from flask import Blueprint
 from flask import request
@@ -16,6 +17,7 @@ from ..util.const_json_loader import const_json_loader, ConstJson
 from ..util.player_data import player_data_decorator
 from ..util.helper import (
     get_char_num_id,
+    get_random_key,
 )
 from ..util.faketime import faketime
 
@@ -364,10 +366,117 @@ class AdvancedGachaBasicManager:
         )
 
 
+class AdvancedGachaSimpleManager(AdvancedGachaBasicManager):
+    def get_basic_tier_6_pity_key(self):
+        if self.is_classic:
+            return "advanced_gacha_classic_basic_tier_6_pity"
+        else:
+            return "advanced_gacha_normal_basic_tier_6_pity"
+
+    def get_basic_tier_6_pity(self):
+        basic_tier_6_pity_key = self.get_basic_tier_6_pity_key()
+
+        return self.player_data.extra_save.save_obj.get(basic_tier_6_pity_key, 0)
+
+    def set_basic_tier_6_pity(self, basic_tier_6_pity):
+        basic_tier_6_pity_key = self.get_basic_tier_6_pity_key()
+        self.player_data.extra_save.save_obj[basic_tier_6_pity_key] = basic_tier_6_pity
+
+    BASIC_TIER_6_PITY_THRESHOLD = 50
+    BASIC_TIER_6_PITY_PERCENT = 0.02
+
+    def get_actual_tier_6_percent(self, orig_tier_6_percent):
+        if not orig_tier_6_percent:
+            return orig_tier_6_percent
+        basic_tier_6_pity = self.get_basic_tier_6_pity()
+        if basic_tier_6_pity < self.BASIC_TIER_6_PITY_THRESHOLD:
+            return orig_tier_6_percent
+        return orig_tier_6_percent + self.BASIC_TIER_6_PITY_PERCENT * (
+            basic_tier_6_pity - self.BASIC_TIER_6_PITY_THRESHOLD + 1
+        )
+
+    def get_avail_char_info(self):
+        gacha_data = const_json_loader[GACHA_DATA]
+        if self.is_classic:
+            return gacha_data["classic_avail_char_info"]
+        else:
+            return gacha_data["normal_avail_char_info"]
+
+    def get_up_char_info(self):
+        gacha_data = const_json_loader[GACHA_DATA]
+        if self.pool_id in gacha_data["up_char_info"]:
+            return gacha_data["up_char_info"][self.pool_id]
+        return ConstJson({})
+
+    def get_char_rarity_rank(self):
+        avail_char_info = self.get_avail_char_info()
+        char_rarity_rank_percent_dict = {}
+
+        for char_rarity_rank in CharRarityRank:
+            if char_rarity_rank.name in avail_char_info:
+                char_rarity_rank_percent = avail_char_info[char_rarity_rank.name][
+                    "total_percent"
+                ]
+            else:
+                char_rarity_rank_percent = 0
+
+            char_rarity_rank_percent_dict[char_rarity_rank] = char_rarity_rank_percent
+
+        orig_tier_6_percent = char_rarity_rank_percent_dict[CharRarityRank.TIER_6]
+        actual_tier_6_percent = self.get_actual_tier_6_percent(orig_tier_6_percent)
+        char_rarity_rank_percent_dict[CharRarityRank.TIER_6] = actual_tier_6_percent
+
+        char_rarity_rank = get_random_key(char_rarity_rank_percent_dict)
+
+        if char_rarity_rank is None:
+            char_rarity_rank = CharRarityRank.TIER_3
+
+        return char_rarity_rank
+
+    def get_up_char_id_if_lucky(self, char_rarity_rank):
+        up_char_info = self.get_up_char_info()
+
+        if char_rarity_rank.name not in up_char_info:
+            return None
+
+        up_char_id_percent_dict = {}
+        for i, char_id in up_char_info[char_rarity_rank.name]["char_id_lst"]:
+            up_char_id_percent_dict[char_id] = up_char_info[char_rarity_rank.name][
+                "percent"
+            ]
+
+        return get_random_key(up_char_id_percent_dict)
+
+    def get_avail_char_id(self, char_rarity_rank):
+        avail_char_info = self.get_avail_char_info()
+
+        return random.choice(avail_char_info[char_rarity_rank.name]["char_id_lst"])
+
+    def post_gacha_operations(self, char_rarity_rank, char_id):
+        if char_rarity_rank == CharRarityRank.TIER_6:
+            basic_tier_6_pity = 0
+        else:
+            basic_tier_6_pity = self.get_basic_tier_6_pity() + 1
+
+        self.set_basic_tier_6_pity(basic_tier_6_pity)
+
+    def get_advanced_gacha_result(self):
+        char_rarity_rank = self.get_char_rarity_rank()
+
+        char_id = self.get_up_char_id_if_lucky(char_rarity_rank)
+
+        if char_id is None:
+            char_id = self.get_avail_char_id(char_rarity_rank)
+
+        self.post_gacha_operations(char_rarity_rank, char_id)
+
+        return char_id
+
+
 def get_advanced_gacha_manager(player_data, request_json, response):
     pool_id = request_json["poolId"]
     gacha_type = pool_id_gacha_type_dict[pool_id]
-    return AdvancedGachaBasicManager(
+    return AdvancedGachaSimpleManager(
         player_data, request_json, response, pool_id, gacha_type
     )
 

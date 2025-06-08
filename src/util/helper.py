@@ -8,6 +8,7 @@ import subprocess
 from uuid import uuid4
 import re
 from hashlib import md5
+import random
 
 from pathvalidate import is_valid_filename
 from Crypto.Cipher import AES
@@ -185,3 +186,13 @@ def validate_is_cheat(is_cheat: str, battle_id: str):
         char_arr.append(chr(ord(i) + 7))
     dst_is_cheat = b64encode("".join(char_arr).encode()).decode()
     return is_cheat == dst_is_cheat
+
+
+def get_random_key(key_probability_dict: dict):
+    r = random.random()
+    p = 0
+    for key, probability in key_probability_dict.items():
+        p += probability
+        if r < p:
+            return key
+    return None
