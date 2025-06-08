@@ -8,6 +8,7 @@ from ..const.filepath import (
     CHARACTER_TABLE,
     GACHA_POOL_JSON,
     GACHA_TABLE,
+    GACHA_DATA,
 )
 from ..util.const_json_loader import const_json_loader, ConstJson
 from ..util.player_data import player_data_decorator
@@ -272,6 +273,7 @@ GACHA_RULE_TYPE_DICT = ConstJson(
 
 def init_pool_id_gacha_type_dict():
     pool_id_gacha_type_dict = {}
+    pool_id_is_classic_dict = {}
     gacha_table = const_json_loader[GACHA_TABLE]
 
     for i, gacha_obj in gacha_table["gachaPoolClient"]:
@@ -281,15 +283,17 @@ def init_pool_id_gacha_type_dict():
             gacha_type = GACHA_RULE_TYPE_DICT[gacha_rule_type]
 
             pool_id_gacha_type_dict[pool_id] = gacha_type
+            pool_id_is_classic_dict[pool_id] = "CLASSIC" in gacha_rule_type
 
     for i, newbee_gacha_obj in gacha_table["newbeeGachaPoolClient"]:
         pool_id = newbee_gacha_obj["gachaPoolId"]
         pool_id_gacha_type_dict[pool_id] = "newbee"
+        pool_id_is_classic_dict[pool_id] = True
 
-    return ConstJson(pool_id_gacha_type_dict)
+    return ConstJson(pool_id_gacha_type_dict), ConstJson(pool_id_is_classic_dict)
 
 
-pool_id_gacha_type_dict = init_pool_id_gacha_type_dict()
+pool_id_gacha_type_dict, pool_id_is_classic_dict = init_pool_id_gacha_type_dict()
 
 
 class AdvancedGachaBasicManager:
