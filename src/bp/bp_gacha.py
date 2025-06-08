@@ -509,6 +509,9 @@ class AdvancedGachaSimpleManager(AdvancedGachaBasicManager):
 
         return char_rarity_rank, char_id
 
+    def post_gacha_override(self, char_rarity_rank, char_id):
+        return char_rarity_rank, char_id
+
     def get_advanced_gacha_result(self):
         char_rarity_rank, char_id = self.pre_gacha_override()
 
@@ -520,6 +523,8 @@ class AdvancedGachaSimpleManager(AdvancedGachaBasicManager):
 
         if char_id is None:
             char_id = self.get_avail_char_id(char_rarity_rank)
+
+        char_rarity_rank, char_id = self.post_gacha_override(char_rarity_rank, char_id)
 
         self.post_gacha_operations(char_rarity_rank, char_id)
 
