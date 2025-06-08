@@ -1,3 +1,5 @@
+from enum import IntEnum
+
 from flask import Blueprint
 from flask import request
 
@@ -294,6 +296,13 @@ def init_pool_id_gacha_type_dict():
 
 
 pool_id_gacha_type_dict, pool_id_is_classic_dict = init_pool_id_gacha_type_dict()
+
+
+class CharRarityRank(IntEnum):
+    TIER_6 = 5
+    TIER_5 = 4
+    TIER_4 = 3
+    TIER_3 = 2
 
 
 class AdvancedGachaBasicManager:
