@@ -462,6 +462,20 @@ class AdvancedGachaSimpleManager(AdvancedGachaBasicManager):
             gacha_num
         )
 
+    BASIC_TIER_5_PITY_THRESHOLD = 10
+
+    def get_basic_tier_5_pity_key(self):
+        return f"advanced_gacha_basic_tier_5_pity_{self.pool_id}"
+
+    def get_basic_tier_5_pity(self):
+        basic_tier_5_pity_key = self.get_basic_tier_5_pity_key()
+
+        return self.player_data.extra_save.save_obj.get(basic_tier_5_pity_key, False)
+
+    def set_basic_tier_5_pity(self):
+        basic_tier_5_pity_key = self.get_basic_tier_5_pity_key()
+        self.player_data.extra_save.save_obj[basic_tier_5_pity_key] = True
+
     def post_gacha_operations(self, char_rarity_rank, char_id):
         if char_rarity_rank == CharRarityRank.TIER_6:
             basic_tier_6_pity = 0
@@ -473,10 +487,31 @@ class AdvancedGachaSimpleManager(AdvancedGachaBasicManager):
         gacha_num = self.get_gacha_num() + 1
         self.set_gacha_num(gacha_num)
 
-    def get_advanced_gacha_result(self):
-        char_rarity_rank = self.get_char_rarity_rank()
+        if char_rarity_rank >= CharRarityRank.TIER_5:
+            self.set_basic_tier_5_pity()
 
-        char_id = self.get_up_char_id_if_lucky(char_rarity_rank)
+    def pre_gacha_override(self):
+        char_rarity_rank = None
+        char_id = None
+
+        gacha_num = self.get_gacha_num()
+
+        if gacha_num + 1 == self.BASIC_TIER_5_PITY_THRESHOLD:
+            basic_tier_5_pity = self.get_basic_tier_5_pity()
+
+            if not basic_tier_5_pity:
+                char_rarity_rank = CharRarityRank.TIER_5
+
+        return char_rarity_rank, char_id
+
+    def get_advanced_gacha_result(self):
+        char_rarity_rank, char_id = self.pre_gacha_override()
+
+        if char_rarity_rank is None:
+            char_rarity_rank = self.get_char_rarity_rank()
+
+        if char_id is None:
+            char_id = self.get_up_char_id_if_lucky(char_rarity_rank)
 
         if char_id is None:
             char_id = self.get_avail_char_id(char_rarity_rank)
