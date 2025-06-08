@@ -447,10 +447,15 @@ class AdvancedGachaSimpleManager(AdvancedGachaBasicManager):
 
         return get_random_key(up_char_id_percent_dict)
 
-    def get_avail_char_id(self, char_rarity_rank):
+    def get_avail_char_id_lst(self, char_rarity_rank):
         avail_char_info = self.get_avail_char_info()
+        avail_char_id_lst = avail_char_info[char_rarity_rank.name]["char_id_lst"].copy()
+        return avail_char_id_lst
 
-        return random.choice(avail_char_info[char_rarity_rank.name]["char_id_lst"])
+    def get_avail_char_id(self, char_rarity_rank):
+        avail_char_id_lst = self.get_avail_char_id_lst(char_rarity_rank)
+
+        return random.choice(avail_char_id_lst)
 
     def get_gacha_num(self):
         return self.player_data.extra_save.save_obj.get(
