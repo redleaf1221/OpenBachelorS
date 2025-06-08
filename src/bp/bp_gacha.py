@@ -452,6 +452,16 @@ class AdvancedGachaSimpleManager(AdvancedGachaBasicManager):
 
         return random.choice(avail_char_info[char_rarity_rank.name]["char_id_lst"])
 
+    def get_gacha_num(self):
+        return self.player_data.extra_save.save_obj.get(
+            f"advanced_gacha_num_{self.pool_id}", 0
+        )
+
+    def set_gacha_num(self, gacha_num):
+        self.player_data.extra_save.save_obj[f"advanced_gacha_num_{self.pool_id}"] = (
+            gacha_num
+        )
+
     def post_gacha_operations(self, char_rarity_rank, char_id):
         if char_rarity_rank == CharRarityRank.TIER_6:
             basic_tier_6_pity = 0
@@ -459,6 +469,9 @@ class AdvancedGachaSimpleManager(AdvancedGachaBasicManager):
             basic_tier_6_pity = self.get_basic_tier_6_pity() + 1
 
         self.set_basic_tier_6_pity(basic_tier_6_pity)
+
+        gacha_num = self.get_gacha_num() + 1
+        self.set_gacha_num(gacha_num)
 
     def get_advanced_gacha_result(self):
         char_rarity_rank = self.get_char_rarity_rank()
