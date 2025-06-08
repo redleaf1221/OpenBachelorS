@@ -306,6 +306,8 @@ class AdvancedGachaBasicManager:
 
         self.gacha_type = gacha_type
 
+        self.is_classic = pool_id_is_classic_dict[pool_id]
+
     # override this
     def get_advanced_gacha_result(self):
         char_id = "char_1035_wisdel"
