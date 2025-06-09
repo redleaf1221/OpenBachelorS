@@ -796,6 +796,73 @@ class AdvancedGachaSingleManager(AdvancedGachaSimpleManager):
         if not self.is_valid_pool:
             print(f"warn: single pool {self.pool_id} misconfigured")
 
+        if self.is_valid_pool:
+            self.single_char_id = up_char_info[CharRarityRank.TIER_6.name][
+                "char_id_lst"
+            ][0]
+
+    def get_single_pity_key(self):
+        return f"advanced_gacha_single_pity_{self.pool_id}"
+
+    def get_single_pity(self):
+        single_pity_key = self.get_single_pity_key()
+
+        return self.player_data.extra_save.save_obj.get(single_pity_key, 0)
+
+    def set_single_pity(self, single_pity):
+        single_pity_key = self.get_single_pity_key()
+
+        self.player_data.extra_save.save_obj[single_pity_key] = single_pity
+
+    def post_gacha_override(self, char_rarity_rank, char_id):
+        char_rarity_rank, char_id = super().post_gacha_override(
+            char_rarity_rank, char_id
+        )
+
+        if not self.is_valid_pool:
+            return char_rarity_rank, char_id
+
+        single_pity = self.get_single_pity()
+        if single_pity >= 150 and char_rarity_rank == CharRarityRank.TIER_6:
+            char_id = self.single_char_id
+
+        return char_rarity_rank, char_id
+
+    def post_gacha_operations(self, char_rarity_rank, char_id):
+        super().post_gacha_operations(char_rarity_rank, char_id)
+
+        if not self.is_valid_pool:
+            return
+
+        if self.pool_id not in self.player_data["gacha"]["single"]:
+            self.player_data["gacha"]["single"][self.pool_id] = {
+                "singleEnsureCnt": 0,
+                "singleEnsureUse": false,
+                "singleEnsureChar": self.single_char_id,
+            }
+
+        single_pity = self.get_single_pity()
+        if single_pity != -1:
+            if single_pity >= 150 and char_rarity_rank == CharRarityRank.TIER_6:
+                single_pity = -1
+            elif char_id == self.single_char_id:
+                single_pity = 0
+            else:
+                single_pity += 1
+            self.set_single_pity(single_pity)
+
+        if single_pity >= 150:
+            single_ensure_cnt = -1
+        else:
+            single_ensure_cnt = single_pity
+
+        self.player_data["gacha"]["single"][self.pool_id]["singleEnsureCnt"] = (
+            single_ensure_cnt
+        )
+        self.player_data["gacha"]["single"][self.pool_id]["singleEnsureUse"] = (
+            single_pity == -1
+        )
+
     def gacha_getPoolDetail(self):
         super().gacha_getPoolDetail()
 
