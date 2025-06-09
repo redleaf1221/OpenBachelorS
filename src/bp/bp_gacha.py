@@ -573,14 +573,14 @@ class AdvancedGachaDoubleManager(AdvancedGachaSimpleManager):
         return f"advanced_gacha_is_{x}_taken_{self.pool_id}"
 
     def get_is_x_taken(self, x):
-        is_x_taken = self.get_is_x_taken_key(x)
+        is_x_taken_key = self.get_is_x_taken_key(x)
 
-        return self.player_data.extra_save.save_obj.get(is_x_taken, False)
+        return self.player_data.extra_save.save_obj.get(is_x_taken_key, False)
 
     def set_is_x_taken(self, x, is_x_taken):
-        is_x_taken = self.get_is_x_taken_key(x)
+        is_x_taken_key = self.get_is_x_taken_key(x)
 
-        self.player_data.extra_save.save_obj[is_x_taken] = is_x_taken
+        self.player_data.extra_save.save_obj[is_x_taken_key] = is_x_taken
 
     def post_gacha_override(self, char_rarity_rank, char_id):
         char_rarity_rank, char_id = super().post_gacha_override(
