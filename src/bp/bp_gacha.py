@@ -544,9 +544,30 @@ class AdvancedGachaSimpleManager(AdvancedGachaBasicManager):
         return char_id
 
 
+class AdvancedGachaDoubleManager(AdvancedGachaSimpleManager):
+    def __init__(self, player_data, request_json, response, pool_id, gacha_type):
+        super().__init__(player_data, request_json, response, pool_id, gacha_type)
+
+        up_char_info = self.get_up_char_info()
+
+        self.is_valid_pool = True
+        if (
+            CharRarityRank.TIER_6.name not in up_char_info
+            or len(up_char_info[CharRarityRank.TIER_6.name]["char_id_lst"]) != 2
+        ):
+            self.is_valid_pool = False
+
+        if not self.is_valid_pool:
+            print(f"warn: double pool {self.pool_id} misconfigured")
+
+
 def get_advanced_gacha_manager(player_data, request_json, response):
     pool_id = request_json["poolId"]
     gacha_type = pool_id_gacha_type_dict[pool_id]
+    if gacha_type == "double":
+        return AdvancedGachaDoubleManager(
+            player_data, request_json, response, pool_id, gacha_type
+        )
     return AdvancedGachaSimpleManager(
         player_data, request_json, response, pool_id, gacha_type
     )
