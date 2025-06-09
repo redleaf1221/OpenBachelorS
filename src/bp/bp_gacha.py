@@ -543,6 +543,119 @@ class AdvancedGachaSimpleManager(AdvancedGachaBasicManager):
 
         return char_id
 
+    def gacha_getPoolDetail(self):
+        avail_char_info = self.get_avail_char_info()
+
+        per_avail_list = []
+
+        for char_tier_name, char_tier_obj in avail_char_info:
+            per_avail_list.append(
+                {
+                    "rarityRank": CharRarityRank[char_tier_name].value,
+                    "charIdList": char_tier_obj["char_id_lst"].copy(),
+                    "totalPercent": char_tier_obj["total_percent"],
+                }
+            )
+
+        up_char_info = self.get_up_char_info()
+
+        per_char_list = []
+        for char_tier_name, char_tier_obj in up_char_info:
+            per_char_list.append(
+                {
+                    "rarityRank": CharRarityRank[char_tier_name].value,
+                    "charIdList": char_tier_obj["char_id_lst"].copy(),
+                    "percent": char_tier_obj["percent"],
+                    "count": len(char_tier_obj["char_id_lst"]),
+                }
+            )
+
+        if self.is_classic:
+            gacha_obj_list = [
+                {
+                    "gachaObject": "TEXT",
+                    "type": 0,
+                    "imageType": 0,
+                    "param": "卡池干员列表",
+                },
+                {
+                    "gachaObject": "RATE_UP_6",
+                    "type": 0,
+                    "imageType": 0,
+                    "param": "中坚寻访",
+                },
+                {
+                    "gachaObject": "TEXT",
+                    "type": 2,
+                    "imageType": 0,
+                    "param": "出现概率上升",
+                },
+                {"gachaObject": "UP_CHAR", "type": 0, "imageType": 0, "param": null},
+                {
+                    "gachaObject": "TEXT",
+                    "type": 1,
+                    "imageType": 0,
+                    "param": "全部可能出现的干员",
+                },
+                {"gachaObject": "AVAIL_CHAR", "type": 0, "imageType": 0, "param": null},
+                {
+                    "gachaObject": "TEXT",
+                    "type": 0,
+                    "imageType": 0,
+                    "param": "该寻访为【中坚寻访】",
+                },
+            ]
+        else:
+            gacha_obj_list = [
+                {
+                    "gachaObject": "TEXT",
+                    "type": 0,
+                    "imageType": 0,
+                    "param": "卡池干员列表",
+                },
+                {
+                    "gachaObject": "RATE_UP_6",
+                    "type": 0,
+                    "imageType": 0,
+                    "param": "标准寻访",
+                },
+                {
+                    "gachaObject": "TEXT",
+                    "type": 2,
+                    "imageType": 0,
+                    "param": "出现概率上升",
+                },
+                {"gachaObject": "UP_CHAR", "type": 0, "imageType": 0, "param": null},
+                {
+                    "gachaObject": "TEXT",
+                    "type": 1,
+                    "imageType": 0,
+                    "param": "全部可能出现的干员",
+                },
+                {"gachaObject": "AVAIL_CHAR", "type": 0, "imageType": 0, "param": null},
+                {
+                    "gachaObject": "TEXT",
+                    "type": 0,
+                    "imageType": 0,
+                    "param": "该寻访为【标准寻访】",
+                },
+            ]
+
+        self.response.update(
+            {
+                "detailInfo": {
+                    "gachaObjGroups": null,
+                    "availCharInfo": {"perAvailList": per_avail_list},
+                    "upCharInfo": {"perCharList": per_char_list},
+                    "limitedChar": null,
+                    "weightUpCharInfoList": null,
+                    "gachaObjList": gacha_obj_list,
+                },
+                "gachaObjGroupType": 0,
+                "hasRateUp": false,
+            }
+        )
+
 
 class AdvancedGachaDoubleManager(AdvancedGachaSimpleManager):
     def __init__(self, player_data, request_json, response, pool_id, gacha_type):
