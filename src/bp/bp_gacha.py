@@ -495,6 +495,19 @@ class AdvancedGachaSimpleManager(AdvancedGachaBasicManager):
         if char_rarity_rank >= CharRarityRank.TIER_5:
             self.set_basic_tier_5_pity()
 
+        if self.pool_id not in self.player_data["gacha"]["normal"]:
+            self.player_data["gacha"]["normal"][self.pool_id] = {
+                "cnt": 0,
+                "maxCnt": 10,
+                "rarity": 4,
+                "avail": true,
+            }
+
+        self.player_data["gacha"]["normal"][self.pool_id]["cnt"] = gacha_num
+        self.player_data["gacha"]["normal"][self.pool_id][
+            "avail"
+        ] = not self.get_basic_tier_5_pity()
+
     def pre_gacha_override(self):
         char_rarity_rank = None
         char_id = None
