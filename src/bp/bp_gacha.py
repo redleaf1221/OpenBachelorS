@@ -560,6 +560,80 @@ class AdvancedGachaDoubleManager(AdvancedGachaSimpleManager):
         if not self.is_valid_pool:
             print(f"warn: double pool {self.pool_id} misconfigured")
 
+    def get_double_char_id_lst(self):
+        double_char_id_lst_key = f"advanced_gacha_double_char_id_lst_{self.pool_id}"
+        if double_char_id_lst_key not in self.player_data.extra_save.save_obj:
+            up_char_info = self.get_up_char_info()
+            char_id_lst = up_char_info[CharRarityRank.TIER_6.name]["char_id_lst"].copy()
+            random.shuffle(char_id_lst)
+            self.player_data.extra_save.save_obj[double_char_id_lst_key] = char_id_lst
+        return self.player_data.extra_save.save_obj[double_char_id_lst_key]
+
+    def get_is_x_taken_key(self, x):
+        return f"advanced_gacha_is_{x}_taken_{self.pool_id}"
+
+    def get_is_x_taken(self, x):
+        is_x_taken = self.get_is_x_taken_key(x)
+
+        return self.player_data.extra_save.save_obj.get(is_x_taken, False)
+
+    def set_is_x_taken(self, x, is_x_taken):
+        is_x_taken = self.get_is_x_taken_key(x)
+
+        self.player_data.extra_save.save_obj[is_x_taken] = is_x_taken
+
+    def post_gacha_override(self, char_rarity_rank, char_id):
+        char_rarity_rank, char_id = super().post_gacha_override(
+            char_rarity_rank, char_id
+        )
+
+        if not self.is_valid_pool:
+            return char_rarity_rank, char_id
+
+        gacha_num = self.get_gacha_num()
+
+        if char_rarity_rank == CharRarityRank.TIER_6:
+            double_char_id_lst = self.get_double_char_id_lst()
+            if gacha_num >= 150 and not self.get_is_x_taken(0):
+                char_id = double_char_id_lst[0]
+                self.set_is_x_taken(0, True)
+            elif gacha_num >= 300 and not self.get_is_x_taken(1):
+                char_id = double_char_id_lst[1]
+                self.set_is_x_taken(1, True)
+        return char_rarity_rank, char_id
+
+    def post_gacha_operations(self, char_rarity_rank, char_id):
+        super().post_gacha_operations(char_rarity_rank, char_id)
+
+        if not self.is_valid_pool:
+            return
+
+        if self.pool_id not in self.player_data["gacha"]["double"]:
+            self.player_data["gacha"]["double"][self.pool_id] = {
+                "showCnt": 0,
+                "hitCharState": 0,
+                "hitCharId": null,
+            }
+
+        gacha_num = self.get_gacha_num()
+
+        if gacha_num < 300:
+            self.player_data["gacha"]["double"][self.pool_id]["showCnt"] = gacha_num
+        else:
+            self.player_data["gacha"]["double"][self.pool_id]["showCnt"] = -1
+
+        if gacha_num == 150:
+            self.player_data["gacha"]["double"][self.pool_id]["hitCharState"] = 1
+        elif gacha_num == 300:
+            self.player_data["gacha"]["double"][self.pool_id]["hitCharState"] = 2
+            self.player_data["gacha"]["double"][self.pool_id]["hitCharId"] = (
+                self.get_double_char_id_lst()[1]
+            )
+
+        if char_rarity_rank == CharRarityRank.TIER_6:
+            self.player_data["gacha"]["double"][self.pool_id]["hitCharState"] = 0
+            self.player_data["gacha"]["double"][self.pool_id]["hitCharId"] = null
+
 
 def get_advanced_gacha_manager(player_data, request_json, response):
     pool_id = request_json["poolId"]
