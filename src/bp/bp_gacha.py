@@ -629,8 +629,7 @@ class AdvancedGachaDoubleManager(AdvancedGachaSimpleManager):
             self.player_data["gacha"]["double"][self.pool_id]["hitCharId"] = (
                 self.get_double_char_id_lst()[1]
             )
-
-        if char_rarity_rank == CharRarityRank.TIER_6:
+        elif char_rarity_rank == CharRarityRank.TIER_6:
             self.player_data["gacha"]["double"][self.pool_id]["hitCharState"] = 0
             self.player_data["gacha"]["double"][self.pool_id]["hitCharId"] = null
 
