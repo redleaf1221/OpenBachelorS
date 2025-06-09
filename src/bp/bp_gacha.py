@@ -593,12 +593,11 @@ class AdvancedGachaDoubleManager(AdvancedGachaSimpleManager):
         gacha_num = self.get_gacha_num()
 
         if char_rarity_rank == CharRarityRank.TIER_6:
-            double_char_id_lst = self.get_double_char_id_lst()
             if gacha_num >= 150 and not self.get_is_x_taken(0):
-                char_id = double_char_id_lst[0]
+                char_id = self.get_double_char_id_lst()[0]
                 self.set_is_x_taken(0, True)
             elif gacha_num >= 300 and not self.get_is_x_taken(1):
-                char_id = double_char_id_lst[1]
+                char_id = self.get_double_char_id_lst()[1]
                 self.set_is_x_taken(1, True)
         return char_rarity_rank, char_id
 
