@@ -379,6 +379,21 @@
                 ],
                 "percent": 0.166666672
             }
+        },
+        "SINGLE_62_0_1": {
+            "TIER_6": {
+                "char_id_lst": [
+                    "char_1042_phatm2"
+                ],
+                "percent": 0.5
+            },
+            "TIER_5": {
+                "char_id_lst": [
+                    "char_4140_lasher",
+                    "char_4191_tippi"
+                ],
+                "percent": 0.25
+            }
         }
     }
 }

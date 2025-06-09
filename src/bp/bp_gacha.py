@@ -780,11 +780,48 @@ class AdvancedGachaDoubleManager(AdvancedGachaSimpleManager):
         self.response["detailInfo"]["gachaObjList"] = gacha_obj_list
 
 
+class AdvancedGachaSingleManager(AdvancedGachaSimpleManager):
+    def __init__(self, player_data, request_json, response, pool_id, gacha_type):
+        super().__init__(player_data, request_json, response, pool_id, gacha_type)
+
+        up_char_info = self.get_up_char_info()
+
+        self.is_valid_pool = True
+        if (
+            CharRarityRank.TIER_6.name not in up_char_info
+            or len(up_char_info[CharRarityRank.TIER_6.name]["char_id_lst"]) != 1
+        ):
+            self.is_valid_pool = False
+
+        if not self.is_valid_pool:
+            print(f"warn: single pool {self.pool_id} misconfigured")
+
+    def gacha_getPoolDetail(self):
+        super().gacha_getPoolDetail()
+
+        gacha_obj_list = self.response["detailInfo"]["gachaObjList"]
+
+        gacha_obj_list.append(
+            {
+                "gachaObject": "TEXT",
+                "type": 5,
+                "imageType": 0,
+                "param": "在所有<@ga.adGacha>【标准寻访】</>中，如果连续<@ga.percent>50</>次没有获得6星干员，则下一次获得6星干员的概率将从原本的<@ga.percent>2%</>提升至<@ga.percent>4%</>。如果该次还没有寻访到6星干员，则下一次寻访获得6星的概率由<@ga.percent>4%</>提升到<@ga.percent>6%</>。依此类推，每次提高<@ga.percent>2%</>获得6星干员的概率，直至达到<@ga.percent>100%</>时必定获得6星干员。\n在任何一个<@ga.adGacha>【标准寻访】</>中，没有获得6星干员时，都会累积次数，该次数不会因为<@ga.adGacha>【标准寻访】</>的结束而清零。因为累积次数而增加的获得概率，也会应用于接下来任意一次<@ga.adGacha>【标准寻访】</>。\n<@ga.attention>【注意】</>任何时候在任意一个<@ga.adGacha>【标准寻访】</>中获得6星干员，后续在<@ga.adGacha>【标准寻访】</>中获得6星干员的概率将恢复到<@ga.percent>2%</>。\n\n<@ga.attention>【定向选调】</>在本期寻访中，如果连续<@ga.percent>150</>次没有获得本期出率上升的六星干员，则下一次招募到的六星干员<@ga.attention>必定为本期出率上升的六星干员</>。该机制在本期寻访中仅生效一次。\n本期寻访的<@ga.attention>【定向选调】</>累计次数会在寻访结束时清零，不会累计到后续的其他<@ga.adGacha>【标准寻访】</>中。",
+            }
+        )
+
+        self.response["detailInfo"]["gachaObjList"] = gacha_obj_list
+
+
 def get_advanced_gacha_manager(player_data, request_json, response):
     pool_id = request_json["poolId"]
     gacha_type = pool_id_gacha_type_dict[pool_id]
     if gacha_type == "double":
         return AdvancedGachaDoubleManager(
+            player_data, request_json, response, pool_id, gacha_type
+        )
+    if gacha_type == "single":
+        return AdvancedGachaSingleManager(
             player_data, request_json, response, pool_id, gacha_type
         )
     return AdvancedGachaSimpleManager(
