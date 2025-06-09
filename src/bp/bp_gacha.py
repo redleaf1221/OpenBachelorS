@@ -745,6 +745,40 @@ class AdvancedGachaDoubleManager(AdvancedGachaSimpleManager):
             self.player_data["gacha"]["double"][self.pool_id]["hitCharState"] = 0
             self.player_data["gacha"]["double"][self.pool_id]["hitCharId"] = null
 
+    def gacha_getPoolDetail(self):
+        super().gacha_getPoolDetail()
+
+        gacha_obj_list = self.response["detailInfo"]["gachaObjList"]
+
+        if self.is_classic:
+            gacha_obj_list += [
+                {
+                    "gachaObject": "TEXT",
+                    "type": 5,
+                    "imageType": 0,
+                    "param": "在所有<@ga.adGacha>【中坚寻访】</>中，如果连续<@ga.percent>50</>次没有获得6星干员，则下一次获得6星干员的概率将从原本的<@ga.percent>2%</>提升至<@ga.percent>4%</>。如果该次还没有寻访到6星干员，则下一次寻访获得6星的概率由<@ga.percent>4%</>提升到<@ga.percent>6%</>。依此类推，每次提高<@ga.percent>2%</>获得6星干员的概率，直至达到<@ga.percent>100%</>时必定获得6星干员。\n在任何一个<@ga.adGacha>【中坚寻访】</>中，没有获得6星干员时，都会累积次数，该次数不会因为<@ga.adGacha>【中坚寻访】</>的结束而清零。因为累积次数而增加的获得概率，也会应用于接下来任意一次<@ga.adGacha>【中坚寻访】</>。\n<@ga.attention>【注意】</>任何时候在任意一个<@ga.adGacha>【中坚寻访】</>中获得6星干员，后续在<@ga.adGacha>【中坚寻访】</>中获得6星干员的概率将恢复到<@ga.percent>2%</>。\n\n<@ga.attention>【中坚选调】</>在本期<@ga.adGacha>【中坚寻访】</>中，累计寻访<@ga.attention>150</>次后，则下次招募到的六星干员必定为本期出率上升的六星干员之一（仅限一次）。累计寻访<@ga.attention>300</>次后，则下次招募到的六星干员必定为本期出率上升的另一名六星干员（仅限一次）。\n<@ga.attention>【注意】</>该累计次数会在本期<@ga.adGacha>【中坚寻访】</>的结束时清零。",
+                },
+                {
+                    "gachaObject": "TEXT",
+                    "type": 0,
+                    "imageType": 0,
+                    "param": "【通用凭证】获取规则",
+                },
+                {"gachaObject": "IMAGE", "type": 0, "imageType": 0, "param": null},
+            ]
+
+        else:
+            gacha_obj_list.append(
+                {
+                    "gachaObject": "TEXT",
+                    "type": 5,
+                    "imageType": 0,
+                    "param": "在所有<@ga.adGacha>【标准寻访】</>中，如果连续<@ga.percent>50</>次没有获得6星干员，则下一次获得6星干员的概率将从原本的<@ga.percent>2%</>提升至<@ga.percent>4%</>。如果该次还没有寻访到6星干员，则下一次寻访获得6星的概率由<@ga.percent>4%</>提升到<@ga.percent>6%</>。依此类推，每次提高<@ga.percent>2%</>获得6星干员的概率，直至达到<@ga.percent>100%</>时必定获得6星干员。\n在任何一个<@ga.adGacha>【标准寻访】</>中，没有获得6星干员时，都会累积次数，该次数不会因为<@ga.adGacha>【标准寻访】</>的结束而清零。因为累积次数而增加的获得概率，也会应用于接下来任意一次<@ga.adGacha>【标准寻访】</>。\n<@ga.attention>【注意】</>任何时候在任意一个<@ga.adGacha>【标准寻访】</>中获得6星干员，后续在<@ga.adGacha>【标准寻访】</>中获得6星干员的概率将恢复到<@ga.percent>2%</>。\n\n<@ga.attention>【标准选调】</>在本期<@ga.adGacha>【标准寻访】</>中，累计寻访<@ga.attention>150</>次后，则下次招募到的六星干员必定为本期出率上升的六星干员之一（仅限一次）。累计寻访<@ga.attention>300</>次后，则下次招募到的六星干员必定为本期出率上升的另一名六星干员（仅限一次）。\n<@ga.attention>【注意】</>该累计次数会在本期<@ga.adGacha>【标准寻访】</>的结束时清零。",
+                }
+            )
+
+        self.response["detailInfo"]["gachaObjList"] = gacha_obj_list
+
 
 def get_advanced_gacha_manager(player_data, request_json, response):
     pool_id = request_json["poolId"]
