@@ -880,6 +880,56 @@ class AdvancedGachaSingleManager(AdvancedGachaSimpleManager):
         self.response["detailInfo"]["gachaObjList"] = gacha_obj_list
 
 
+class AdvancedGachaNewbeeManager(AdvancedGachaSimpleManager):
+    def get_basic_tier_6_pity(self):
+        return 0
+
+    def set_basic_tier_6_pity(self, basic_tier_6_pity):
+        return
+
+    def get_basic_tier_5_pity(self):
+        return True
+
+    def set_basic_tier_5_pity(self):
+        return
+
+    def get_avail_char_info(self):
+        gacha_data = const_json_loader[GACHA_DATA]
+        return gacha_data["newbee_avail_char_info"]
+
+    def gacha_getPoolDetail(self):
+        super().gacha_getPoolDetail()
+
+        self.response["detailInfo"]["gachaObjList"] = [
+            {"gachaObject": "TEXT", "type": 3, "imageType": 0, "param": "卡池干员列表"},
+            {
+                "gachaObject": "TEXT",
+                "type": 4,
+                "imageType": 0,
+                "param": "只包含为新人特别挑选的干员",
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 1,
+                "imageType": 0,
+                "param": "全部可能出现的干员",
+            },
+            {"gachaObject": "AVAIL_CHAR", "type": 0, "imageType": 0, "param": null},
+            {
+                "gachaObject": "TEXT",
+                "type": 3,
+                "imageType": 0,
+                "param": "该寻访为【新人特惠寻访】",
+            },
+            {
+                "gachaObject": "TEXT",
+                "type": 5,
+                "imageType": 0,
+                "param": "<@ga.nbGacha>【新人特惠寻访】</>中，每次寻访的价格低于<@ga.adGacha>【标准寻访】</>，能够获得的干员为特别指定，如上所列。",
+            },
+        ]
+
+
 def get_advanced_gacha_manager(player_data, request_json, response):
     pool_id = request_json["poolId"]
     gacha_type = pool_id_gacha_type_dict[pool_id]
@@ -889,6 +939,10 @@ def get_advanced_gacha_manager(player_data, request_json, response):
         )
     if gacha_type == "single":
         return AdvancedGachaSingleManager(
+            player_data, request_json, response, pool_id, gacha_type
+        )
+    if gacha_type == "newbee":
+        return AdvancedGachaNewbeeManager(
             player_data, request_json, response, pool_id, gacha_type
         )
     return AdvancedGachaSimpleManager(
