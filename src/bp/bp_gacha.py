@@ -14,7 +14,7 @@ from ..const.filepath import (
     GACHA_DATA,
 )
 from ..util.const_json_loader import const_json_loader, ConstJson
-from ..util.player_data import player_data_decorator, char_id_lst
+from ..util.player_data import player_data_decorator, char_id_lst as player_char_id_lst
 from ..util.helper import (
     get_char_num_id,
     get_random_key,
@@ -195,8 +195,44 @@ class NormalGachaBasicManager:
         self.refresh_tag_lst()
 
 
+def build_tag_id_char_id_set_dict():
+    tag_id_char_id_set_dict = {}
+
+    str_tag_tag_id_dict = {}
+
+    gacha_table = const_json_loader[GACHA_TABLE]
+
+    for i, tag_obj in gacha_table["gachaTags"]:
+        tag_id = tag_obj["tagId"]
+        str_tag = tag_obj["tagName"]
+        str_tag_tag_id_dict[str_tag] = tag_id
+
+    character_table = const_json_loader[CHARACTER_TABLE]
+    for i, char_id in player_char_id_lst:
+        char_obj = character_table[char_id]
+        str_tag_lst = get_char_str_tag_lst(char_obj)
+
+        for str_tag in str_tag_lst:
+            if str_tag in str_tag_tag_id_dict:
+                tag_id = str_tag_tag_id_dict[str_tag]
+                if tag_id not in tag_id_char_id_set_dict:
+                    tag_id_char_id_set_dict[tag_id] = set()
+                tag_id_char_id_set_dict[tag_id].add(char_id)
+
+    valid_tag_id_lst = list(tag_id_char_id_set_dict.keys())
+
+    return tag_id_char_id_set_dict, valid_tag_id_lst
+
+
+tag_id_char_id_set_dict, valid_tag_id_lst = build_tag_id_char_id_set_dict()
+
+
+class NormalGachaSimpleManager(NormalGachaBasicManager):
+    pass
+
+
 def get_normal_gacha_manager(player_data, request_json, response):
-    return NormalGachaBasicManager(player_data, request_json, response)
+    return NormalGachaSimpleManager(player_data, request_json, response)
 
 
 @bp_gacha.route("/gacha/normalGacha", methods=["POST"])
