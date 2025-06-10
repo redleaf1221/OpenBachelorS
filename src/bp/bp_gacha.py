@@ -893,6 +893,62 @@ class AdvancedGachaNewbeeManager(AdvancedGachaSimpleManager):
     def set_basic_tier_5_pity(self):
         return
 
+    def get_boot_tier_6_pity_key(self):
+        return "advanced_gacha_boot_tier_6_pity"
+
+    def get_boot_tier_6_pity(self):
+        boot_tier_6_pity_key = self.get_boot_tier_6_pity_key()
+
+        return self.player_data.extra_save.save_obj.get(boot_tier_6_pity_key, False)
+
+    def set_boot_tier_6_pity(self):
+        boot_tier_6_pity_key = self.get_boot_tier_6_pity_key()
+
+        self.player_data.extra_save.save_obj[boot_tier_6_pity_key] = True
+
+    def get_boot_tier_5_pity_key(self):
+        return "advanced_gacha_boot_tier_5_pity"
+
+    def get_boot_tier_5_pity(self):
+        boot_tier_5_pity_key = self.get_boot_tier_5_pity_key()
+
+        return self.player_data.extra_save.save_obj.get(boot_tier_5_pity_key, False)
+
+    def set_boot_tier_5_pity(self):
+        boot_tier_5_pity_key = self.get_boot_tier_5_pity_key()
+
+        self.player_data.extra_save.save_obj[boot_tier_5_pity_key] = True
+
+    def pre_gacha_override(self):
+        char_rarity_rank, char_id = super().pre_gacha_override()
+
+        gacha_num = self.get_gacha_num()
+
+        if gacha_num + 1 == 10:
+            if not self.get_boot_tier_6_pity():
+                char_rarity_rank = CharRarityRank.TIER_6
+        elif gacha_num + 1 == 20:
+            if not self.get_boot_tier_5_pity():
+                char_rarity_rank = CharRarityRank.TIER_5
+
+        return char_rarity_rank, char_id
+
+    def post_gacha_operations(self, char_rarity_rank, char_id):
+        super().post_gacha_operations(char_rarity_rank, char_id)
+
+        cnt = self.player_data["gacha"]["newbee"]["cnt"] - 1
+        self.player_data["gacha"]["newbee"]["cnt"] = cnt
+
+        self.player_data["gacha"]["newbee"]["openFlag"] = int(cnt != 0)
+
+        if char_rarity_rank == CharRarityRank.TIER_6:
+            if not self.get_boot_tier_6_pity():
+                self.set_boot_tier_6_pity()
+            else:
+                self.set_boot_tier_5_pity()
+        elif char_rarity_rank == CharRarityRank.TIER_5:
+            self.set_boot_tier_5_pity()
+
     def get_avail_char_info(self):
         gacha_data = const_json_loader[GACHA_DATA]
         return gacha_data["newbee_avail_char_info"]
