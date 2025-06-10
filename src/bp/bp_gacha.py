@@ -228,7 +228,39 @@ tag_id_char_id_set_dict, valid_tag_id_lst = build_tag_id_char_id_set_dict()
 
 
 class NormalGachaSimpleManager(NormalGachaBasicManager):
-    pass
+    def get_refreshed_tag_lst(self):
+        refreshed_tag_lst = random.sample(valid_tag_id_lst, 5)
+        return refreshed_tag_lst
+
+    def get_raw_tag_lst(self):
+        raw_tag_lst = []
+        for i, tag_obj in self.player_data["recruit"]["normal"]["slots"][
+            str(self.slot_id)
+        ]["selectTags"]:
+            raw_tag_lst.append(tag_obj["tagId"])
+
+        return raw_tag_lst
+
+    def get_gacha_raw_result(self):
+        picked_tag_lst = []
+
+        raw_tag_lst = self.get_raw_tag_lst()
+        random.shuffle(raw_tag_lst)
+
+        char_id_set = set(player_char_id_lst.copy())
+
+        for tag_id in raw_tag_lst:
+            tmp_char_id_set = char_id_set.intersection(tag_id_char_id_set_dict[tag_id])
+
+            if not tmp_char_id_set:
+                break
+
+            picked_tag_lst.append(tag_id)
+            char_id_set = tmp_char_id_set
+
+        char_id = random.choice(list(char_id_set))
+
+        return char_id, picked_tag_lst
 
 
 def get_normal_gacha_manager(player_data, request_json, response):
