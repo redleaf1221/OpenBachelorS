@@ -14,10 +14,11 @@ from ..const.filepath import (
     GACHA_DATA,
 )
 from ..util.const_json_loader import const_json_loader, ConstJson
-from ..util.player_data import player_data_decorator
+from ..util.player_data import player_data_decorator, char_id_lst
 from ..util.helper import (
     get_char_num_id,
     get_random_key,
+    get_char_str_tag_lst,
 )
 from ..util.faketime import faketime
 
