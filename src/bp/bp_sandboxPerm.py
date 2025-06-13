@@ -509,6 +509,8 @@ class SandboxBasicManager:
             "main"
         ]["game"]["day"] = self.CHALLENGE_DAY
 
+        self.execute_buff_op(self.BuffOp.ADD, "season_rainy")
+
         self.update_hard_ratio()
 
     def sandboxPerm_sandboxV2_settleChallenge(self):
@@ -532,6 +534,8 @@ class SandboxBasicManager:
         self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
             "main"
         ]["game"]["day"] = 1
+
+        self.execute_buff_op(self.BuffOp.REMOVE, "season_rainy")
 
 
 def get_sandbox_manager(player_data, topic_id, request_json, response):
