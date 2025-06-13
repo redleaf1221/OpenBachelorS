@@ -23,7 +23,7 @@ def update_player_data_based_on_preset(player_data):
     player_data["homeTheme"]["selected"] = preset["homeTheme"]
 
     if "profileSp" in preset:
-        player_data["status"]["secretarySkinSp"] = preset["profileSp"]
+        player_data["status"]["secretarySkinSp"] = bool(preset["profileSp"])
     else:
         player_data["status"]["secretarySkinSp"] = False
 
