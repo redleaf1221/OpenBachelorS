@@ -33,15 +33,37 @@ def gacha_syncNormalGacha(player_data):
     return response
 
 
+def get_gacha_bonus_item(char_id):
+    char_rarity_str = const_json_loader[CHARACTER_TABLE][char_id]["rarity"]
+
+    if char_rarity_str == "TIER_6":
+        gacha_bonus_item = {"type": "HGG_SHD", "id": "4004", "count": 15}
+    elif char_rarity_str == "TIER_5":
+        gacha_bonus_item = {"type": "HGG_SHD", "id": "4004", "count": 8}
+    elif char_rarity_str == "TIER_4":
+        gacha_bonus_item = {"type": "HGG_SHD", "id": "4004", "count": 30}
+    elif char_rarity_str == "TIER_3":
+        gacha_bonus_item = {"type": "LGG_SHD", "id": "4005", "count": 5}
+    elif char_rarity_str == "TIER_2":
+        gacha_bonus_item = {"type": "LGG_SHD", "id": "4005", "count": 1}
+    else:
+        gacha_bonus_item = {"type": "LGG_SHD", "id": "4005", "count": 1}
+
+    return gacha_bonus_item
+
+
 def get_gacha_char_obj(char_id):
     character_table = const_json_loader[CHARACTER_TABLE]
     item_id = character_table[char_id]["potentialItemId"]
+
+    gacha_bonus_item = get_gacha_bonus_item(char_id)
 
     gacha_char_obj = {
         "charInstId": get_char_num_id(char_id),
         "charId": char_id,
         "isNew": 0,
         "itemGet": [
+            gacha_bonus_item,
             {"type": "MATERIAL", "id": item_id, "count": 1},
         ],
         "logInfo": {},
