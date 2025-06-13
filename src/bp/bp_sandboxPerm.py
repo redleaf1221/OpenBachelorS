@@ -455,6 +455,64 @@ class SandboxBasicManager:
             }
         )
 
+    CHALLENGE_DAY = 99999
+
+    def update_hard_ratio(self):
+        challenge_day = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
+            self.topic_id
+        ]["main"]["game"]["day"]
+        hard_ratio = 10 + challenge_day * 1 + (challenge_day - 1) // 9 * 10
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "challenge"
+        ]["cur"]["hardRatio"] = hard_ratio
+
+    def sandboxPerm_sandboxV2_enterChallenge(self):
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "challenge"
+        ]["status"] = 1
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "challenge"
+        ]["cur"] = {
+            "instId": 1,
+            "startDay": 1,
+            "startLoadTimes": 0,
+            "enemyKill": 0,
+            "hardRatio": 11,
+        }
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "status"
+        ]["isChallenge"] = true
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "main"
+        ]["game"]["day"] = self.CHALLENGE_DAY
+
+        self.update_hard_ratio()
+
+    def sandboxPerm_sandboxV2_settleChallenge(self):
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "challenge"
+        ]["status"] = 2
+
+    def sandboxPerm_sandboxV2_exitChallenge(self):
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "challenge"
+        ]["status"] = 0
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "challenge"
+        ]["cur"] = null
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "status"
+        ]["isChallenge"] = false
+
+        self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "main"
+        ]["game"]["day"] = 1
+
 
 def get_sandbox_manager(player_data, topic_id, request_json, response):
     return SandboxBasicManager(player_data, topic_id, request_json, response)
@@ -612,5 +670,50 @@ def sandboxPerm_sandboxV2_racing_battleFinish(player_data):
     sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
 
     sandbox_manager.sandboxPerm_sandboxV2_racing_battleFinish()
+
+    return response
+
+
+@bp_sandboxPerm.route("/sandboxPerm/sandboxV2/enterChallenge", methods=["POST"])
+@player_data_decorator
+def sandboxPerm_sandboxV2_enterChallenge(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    topic_id = request_json["topicId"]
+
+    sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
+
+    sandbox_manager.sandboxPerm_sandboxV2_enterChallenge()
+
+    return response
+
+
+@bp_sandboxPerm.route("/sandboxPerm/sandboxV2/settleChallenge", methods=["POST"])
+@player_data_decorator
+def sandboxPerm_sandboxV2_settleChallenge(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    topic_id = request_json["topicId"]
+
+    sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
+
+    sandbox_manager.sandboxPerm_sandboxV2_settleChallenge()
+
+    return response
+
+
+@bp_sandboxPerm.route("/sandboxPerm/sandboxV2/exitChallenge", methods=["POST"])
+@player_data_decorator
+def sandboxPerm_sandboxV2_exitChallenge(player_data):
+    request_json = request.get_json()
+    response = {}
+
+    topic_id = request_json["topicId"]
+
+    sandbox_manager = get_sandbox_manager(player_data, topic_id, request_json, response)
+
+    sandbox_manager.sandboxPerm_sandboxV2_exitChallenge()
 
     return response
