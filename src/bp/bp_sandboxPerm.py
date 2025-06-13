@@ -38,6 +38,26 @@ class SandboxBasicManager:
     def calc_extra_rune(self):
         sandbox_perm_table = const_json_loader[SANDBOX_PERM_TABLE]
 
+        if self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+            "status"
+        ]["isChallenge"]:
+            self.response["extraRunes"].append("challenge_daily")
+            challenge_day = min(
+                self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
+                    self.topic_id
+                ]["main"]["game"]["day"],
+                100,
+            )
+            for i in range(1, challenge_day):
+                challenge_day_buff = f"challenge_day_{i}"
+                if (
+                    challenge_day_buff
+                    in sandbox_perm_table["detail"]["SANDBOX_V2"][self.topic_id][
+                        "runeDatas"
+                    ]
+                ):
+                    self.response["extraRunes"].append(challenge_day_buff)
+
         squad_idx = self.request_json["squadIdx"]
         squad_tool_lst = self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][
             self.topic_id
