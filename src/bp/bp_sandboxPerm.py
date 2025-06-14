@@ -487,6 +487,17 @@ class SandboxBasicManager:
         ]["cur"]["hardRatio"] = hard_ratio
 
     def sandboxPerm_sandboxV2_enterChallenge(self):
+        if (
+            self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
+                "status"
+            ]["mode"]
+            != 0
+        ):
+            pseudo_request_json = {"mode": 0}
+            pseudo_sandbox_manager = self.__class__(
+                self.player_data, self.topic_id, pseudo_request_json, {}
+            )
+            pseudo_sandbox_manager.sandboxPerm_sandboxV2_switchMode()
         self.player_data["sandboxPerm"]["template"]["SANDBOX_V2"][self.topic_id][
             "challenge"
         ]["status"] = 1
