@@ -41,7 +41,7 @@ def get_gacha_bonus_item(char_id):
     elif char_rarity_str == "TIER_5":
         gacha_bonus_item = {"type": "HGG_SHD", "id": "4004", "count": 8}
     elif char_rarity_str == "TIER_4":
-        gacha_bonus_item = {"type": "HGG_SHD", "id": "4004", "count": 30}
+        gacha_bonus_item = {"type": "LGG_SHD", "id": "4005", "count": 30}
     elif char_rarity_str == "TIER_3":
         gacha_bonus_item = {"type": "LGG_SHD", "id": "4005", "count": 5}
     elif char_rarity_str == "TIER_2":
