@@ -467,6 +467,21 @@
                 ],
                 "percent": 0.25
             }
+        },
+        "SINGLE_63_0_1": {
+            "TIER_6": {
+                "char_id_lst": [
+                    "char_1043_leizi2"
+                ],
+                "percent": 0.5
+            },
+            "TIER_5": {
+                "char_id_lst": [
+                    "char_1036_fang2",
+                    "char_4196_reckpr"
+                ],
+                "percent": 0.25
+            }
         }
     }
 }
