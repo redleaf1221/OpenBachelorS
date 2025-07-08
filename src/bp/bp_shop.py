@@ -23,3 +23,90 @@ def shop_getFurniGoodList(player_data):
     request_json = request.get_json()
     response = {"goods": [], "groups": []}
     return response
+
+
+@bp_shop.route("/shop/getSocialGoodList", methods=["POST"])
+@player_data_decorator
+def shop_getSocialGoodList(player_data):
+    request_json = request.get_json()
+    response = {
+        "goodList": [],
+        "charPurchase": {
+            "char_198_blackd": 6,
+            "char_187_ccheal": 6,
+            "char_260_durnar": 6,
+        },
+        "costSocialPoint": 99999999,
+        "creditGroup": "creditGroup2",
+    }
+    return response
+
+
+@bp_shop.route("/shop/getLowGoodList", methods=["POST"])
+@player_data_decorator
+def shop_getLowGoodList(player_data):
+    request_json = request.get_json()
+    response = {
+        "groups": [],
+        "goodList": [],
+        "shopEndTime": 2147483647,
+        "newFlag": [],
+    }
+    return response
+
+
+@bp_shop.route("/shop/getHighGoodList", methods=["POST"])
+@player_data_decorator
+def shop_getHighGoodList(player_data):
+    request_json = request.get_json()
+    response = {
+        "goodList": [],
+        "progressGoodList": {},
+        "newFlag": [],
+    }
+    return response
+
+
+@bp_shop.route("/shop/getClassicGoodList", methods=["POST"])
+@player_data_decorator
+def shop_getClassicGoodList(player_data):
+    request_json = request.get_json()
+    response = {
+        "goodList": [],
+        "progressGoodList": {},
+        "newFlag": [],
+    }
+    return response
+
+
+@bp_shop.route("/shop/getExtraGoodList", methods=["POST"])
+@player_data_decorator
+def shop_getExtraGoodList(player_data):
+    request_json = request.get_json()
+    response = {
+        "goodList": [],
+        "newFlag": [],
+        "lastClick": 1700000000,
+    }
+    return response
+
+
+@bp_shop.route("/shop/getEPGSGoodList", methods=["POST"])
+@player_data_decorator
+def shop_getEPGSGoodList(player_data):
+    request_json = request.get_json()
+    response = {
+        "goodList": [],
+    }
+    return response
+
+
+@bp_shop.route("/shop/getRepGoodList", methods=["POST"])
+@player_data_decorator
+def shop_getRepGoodList(player_data):
+    request_json = request.get_json()
+    response = {
+        "goodList": [],
+        "newFlag": [],
+    }
+    return response
