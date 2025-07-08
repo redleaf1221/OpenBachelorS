@@ -110,3 +110,39 @@ def shop_getRepGoodList(player_data):
         "newFlag": [],
     }
     return response
+
+
+@bp_shop.route("/shop/getCashGoodList", methods=["POST"])
+@player_data_decorator
+def shop_getCashGoodList(player_data):
+    request_json = request.get_json()
+    response = {
+        "goodList": [],
+    }
+    return response
+
+
+@bp_shop.route("/shop/getGPGoodList", methods=["POST"])
+@player_data_decorator
+def shop_getGPGoodList(player_data):
+    request_json = request.get_json()
+    response = {
+        "weeklyGroup": {},
+        "monthlyGroup": {},
+        "monthlySub": [],
+        "levelGP": [],
+        "oneTimeGP": [],
+        "chooseGroup": [],
+        "condtionTriggerGroup": [],
+    }
+    return response
+
+
+@bp_shop.route("/shop/getGoodPurchaseState", methods=["POST"])
+@player_data_decorator
+def shop_getGoodPurchaseState(player_data):
+    request_json = request.get_json()
+    response = {
+        "result": {},
+    }
+    return response
