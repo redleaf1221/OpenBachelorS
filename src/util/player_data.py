@@ -41,6 +41,7 @@ from ..const.filepath import (
     MULTI_REPLAY_DIRPATH,
     EXTRA_SAVE_FILEPATH,
     MULTI_EXTRA_SAVE_DIRPATH,
+    ROGUELIKE_TOPIC_TABLE,
 )
 from .const_json_loader import const_json_loader, ConstJson
 from .battle_replay_manager import BattleReplayManager, DBBattleReplayManager
@@ -515,6 +516,46 @@ def build_player_data_template():
     # ----------
 
     rlv2_tmpl_json_obj = const_json_loader[RLV2_TMPL_JSON].copy()
+
+    roguelike_topic_table = const_json_loader[ROGUELIKE_TOPIC_TABLE]
+
+    for theme_id, theme_obj in roguelike_topic_table["topics"]:
+        if theme_id not in rlv2_tmpl_json_obj["outer"]:
+            rlv2_tmpl_json_obj["outer"][theme_id] = {
+                "collect": {
+                    "mode": {
+                        "NORMAL": {"state": 1, "progress": null},
+                        "MONTH_TEAM": {"state": 1, "progress": null},
+                        "CHALLENGE": {"state": 1, "progress": null},
+                    },
+                    "modeGrade": {
+                        "NORMAL": {
+                            "0": {"state": 2, "progress": null},
+                            "1": {"state": 2, "progress": null},
+                            "2": {"state": 2, "progress": null},
+                            "3": {"state": 2, "progress": null},
+                            "4": {"state": 2, "progress": null},
+                            "5": {"state": 2, "progress": null},
+                            "6": {"state": 2, "progress": null},
+                            "7": {"state": 2, "progress": null},
+                            "8": {"state": 2, "progress": null},
+                            "9": {"state": 2, "progress": null},
+                            "10": {"state": 2, "progress": null},
+                            "11": {"state": 2, "progress": null},
+                            "12": {"state": 2, "progress": null},
+                            "13": {"state": 2, "progress": null},
+                            "14": {"state": 2, "progress": null},
+                            "15": {"state": 2, "progress": null},
+                            "16": {"state": 2, "progress": null},
+                            "17": {"state": 2, "progress": null},
+                            "18": {"state": 2, "progress": null},
+                        },
+                        "MONTH_TEAM": {"0": {"state": 2, "progress": null}},
+                        "CHALLENGE": {"0": {"state": 2, "progress": null}},
+                    },
+                },
+                "record": {"bandGrade": {}},
+            }
 
     tmpl_json_obj["rlv2"] = rlv2_tmpl_json_obj
 
