@@ -554,8 +554,18 @@ def build_player_data_template():
                         "CHALLENGE": {"0": {"state": 2, "progress": null}},
                     },
                 },
-                "record": {"bandGrade": {}},
+                "record": {
+                    "stageCnt": {},
+                    "bandGrade": {},
+                },
             }
+
+            for stage_id, stage_obj in roguelike_topic_table["details"][theme_id][
+                "stages"
+            ]:
+                rlv2_tmpl_json_obj["outer"][theme_id]["record"]["stageCnt"][
+                    stage_id
+                ] = 1
 
     tmpl_json_obj["rlv2"] = rlv2_tmpl_json_obj
 
