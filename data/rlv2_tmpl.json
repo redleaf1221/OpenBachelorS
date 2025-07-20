@@ -10887,6 +10887,3269 @@
                 "history": []
             },
             "activity": {}
+        },
+        "rogue_5": {
+            "bank": {
+                "show": true,
+                "current": 999,
+                "record": 999,
+                "reward": {
+                    "bank_reward_1": 1,
+                    "bank_reward_2": 1,
+                    "bank_reward_3": 1,
+                    "bank_reward_4": 1,
+                    "bank_reward_5": 1
+                },
+                "totalPut": 999
+            },
+            "bp": {
+                "point": 13000,
+                "reward": {
+                    "bp_level_1": 1,
+                    "bp_level_2": 1,
+                    "bp_level_3": 1,
+                    "bp_level_4": 1,
+                    "bp_level_5": 1,
+                    "bp_level_6": 1,
+                    "bp_level_7": 1,
+                    "bp_level_8": 1,
+                    "bp_level_9": 1,
+                    "bp_level_10": 1,
+                    "bp_level_11": 1,
+                    "bp_level_12": 1,
+                    "bp_level_13": 1,
+                    "bp_level_14": 1,
+                    "bp_level_15": 1,
+                    "bp_level_16": 1,
+                    "bp_level_17": 1,
+                    "bp_level_18": 1,
+                    "bp_level_19": 1,
+                    "bp_level_20": 1,
+                    "bp_level_21": 1,
+                    "bp_level_22": 1,
+                    "bp_level_23": 1,
+                    "bp_level_24": 1,
+                    "bp_level_25": 1,
+                    "bp_level_26": 1,
+                    "bp_level_27": 1,
+                    "bp_level_28": 1,
+                    "bp_level_29": 1,
+                    "bp_level_30": 1,
+                    "bp_level_31": 1,
+                    "bp_level_32": 1,
+                    "bp_level_33": 1,
+                    "bp_level_34": 1,
+                    "bp_level_35": 1,
+                    "bp_level_36": 1,
+                    "bp_level_37": 1,
+                    "bp_level_38": 1,
+                    "bp_level_39": 1,
+                    "bp_level_40": 1,
+                    "bp_level_41": 1,
+                    "bp_level_42": 1,
+                    "bp_level_43": 1,
+                    "bp_level_44": 1,
+                    "bp_level_45": 1,
+                    "bp_level_46": 1,
+                    "bp_level_47": 1,
+                    "bp_level_48": 1,
+                    "bp_level_49": 1,
+                    "bp_level_50": 1
+                }
+            },
+            "buff": {
+                "pointOwned": 125,
+                "pointCost": 125,
+                "unlocked": {
+                    "rogue_5_difficulty_1": 1,
+                    "rogue_5_difficulty_2": 1,
+                    "rogue_5_difficulty_3": 1,
+                    "rogue_5_outbuff_1": 1,
+                    "rogue_5_outbuff_2": 1,
+                    "rogue_5_outbuff_3": 1,
+                    "rogue_5_outbuff_4": 1,
+                    "rogue_5_outbuff_5": 1,
+                    "rogue_5_outbuff_6": 1,
+                    "rogue_5_outbuff_7": 1,
+                    "rogue_5_outbuff_8": 1,
+                    "rogue_5_outbuff_9": 1,
+                    "rogue_5_outbuff_10": 1,
+                    "rogue_5_outbuff_11": 1,
+                    "rogue_5_outbuff_12": 1,
+                    "rogue_5_outbuff_13": 1,
+                    "rogue_5_outbuff_14": 1,
+                    "rogue_5_outbuff_15": 1,
+                    "rogue_5_outbuff_16": 1,
+                    "rogue_5_outbuff_17": 1,
+                    "rogue_5_outbuff_18": 1,
+                    "rogue_5_outbuff_19": 1,
+                    "rogue_5_outbuff_20": 1,
+                    "rogue_5_outbuff_21": 1,
+                    "rogue_5_outbuff_22": 1,
+                    "rogue_5_outbuff_23": 1,
+                    "rogue_5_outbuff_24": 1,
+                    "rogue_5_outbuff_25": 1,
+                    "rogue_5_outbuff_26": 1,
+                    "rogue_5_outbuff_27": 1,
+                    "rogue_5_outbuff_28": 1,
+                    "rogue_5_outbuff_29": 1,
+                    "rogue_5_outbuff_30": 1,
+                    "rogue_5_outbuff_31": 1,
+                    "rogue_5_outbuff_32": 1,
+                    "rogue_5_outbuff_33": 1,
+                    "rogue_5_outbuff_34": 1,
+                    "rogue_5_outbuff_35": 1,
+                    "rogue_5_outbuff_36": 1,
+                    "rogue_5_outbuff_37": 1,
+                    "rogue_5_outbuff_38": 1,
+                    "rogue_5_outbuff_39": 1,
+                    "rogue_5_outbuff_40": 1,
+                    "rogue_5_outbuff_41": 1,
+                    "rogue_5_outbuff_42": 1,
+                    "rogue_5_outbuff_43": 1,
+                    "rogue_5_outbuff_44": 1,
+                    "rogue_5_outbuff_45": 1,
+                    "rogue_5_outbuff_46": 1,
+                    "rogue_5_outbuff_47": 1,
+                    "rogue_5_outbuff_48": 1
+                },
+                "score": 25000
+            },
+            "collect": {
+                "relic": {
+                    "rogue_5_relic_legacy_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_3": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_4": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_5": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_6": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_7": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_8": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_9": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_10": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_11": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_12": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_13": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_14": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_15": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_16": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_17": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_18": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_19": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_20": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_21": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_22": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_23": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_24": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_25": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_26": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_27": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_28": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_28_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_28_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_28_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_29": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_30": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_31": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_32": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_32_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_32_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_32_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_33": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_33_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_33_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_33_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_34": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_34_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_34_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_34_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_35": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_35_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_35_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_35_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_36": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_36_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_36_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_36_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_37": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_38": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_39": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_40": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_41": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_42": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_43": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_44": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_45": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_46": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_47": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_48": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_49": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_50": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_51": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_52": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_53": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_54": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_55": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_56": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_57": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_58": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_59": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_60": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_61": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_62": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_63": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_64": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_65": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_66": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_67": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_68": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_69": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_70": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_71": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_72": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_73": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_74": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_75": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_76": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_77": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_78": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_79": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_80": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_81": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_82": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_83": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_84": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_85": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_86": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_87": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_88": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_89": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_90": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_91": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_92": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_93": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_94": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_95": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_96": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_97": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_98": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_99": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_100": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_101": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_102": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_103": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_104": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_105": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_106": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_107": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_108": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_109": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_110": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_111": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_112": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_113": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_114": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_115": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_116": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_117": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_118": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_119": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_119_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_119_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_119_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_120": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_121": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_121_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_121_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_121_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_122": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_123": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_124": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_124_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_124_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_124_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_125": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_126": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_127": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_128": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_129": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_130": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_130_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_130_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_130_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_131": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_131_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_131_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_131_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_132": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_132_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_132_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_132_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_133": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_133_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_133_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_133_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_134": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_134_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_134_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_134_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_135": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_135_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_135_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_135_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_136": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_137": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_138": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_139": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_140": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_141": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_142": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_143": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_144": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_145": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_146": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_147": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_148": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_149": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_legacy_150": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_3": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_4": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_5": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_6": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_7": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_8": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_9": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_10": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_11": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_12": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_13": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_14": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_15": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_16": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_17": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_fight_18": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_bullet_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_bullet_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_bullet_3": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_bullet_4": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_farmer_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_farmer_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_farmer_3": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_farmer_4": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_farmer_5": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_farmer_6": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_explore_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_explore_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_explore_3": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_explore_4": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_explore_5": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_explore_6": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_richg_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_richg_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_richg_3": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_richg_4": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_richg_5": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_richg_6": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_richg_7": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_blockg_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_blockg_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_blockg_3": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_blockg_4": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_blockg_5": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_cardg_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_cardg_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_cardg_3": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_cardg_4": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_cardg_5": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_cardg_6": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_res_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_res_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_raidian_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_speg_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_speg_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_speg_3": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_speg_4": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_speg_5": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_speg_6": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_final_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_final_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_final_3": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_final_4": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_custog_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_custog_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_custog_3": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_custog_4": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_custog_5": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_custog_6": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_custog_7": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_custog_8": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_custog_9": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_custog_10": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_custog_11": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_relic_custog_12": {
+                        "state": 2,
+                        "progress": null
+                    }
+                },
+                "capsule": {},
+                "activeTool": {
+                    "rogue_5_active_tool_1": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_active_tool_2": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_active_tool_3": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_active_tool_4": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_active_tool_5": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_active_tool_6": {
+                        "state": 2,
+                        "progress": null
+                    }
+                },
+                "bgm": {
+                    "music_rogue_5_1": 1,
+                    "music_rogue_5_2": 1,
+                    "music_rogue_5_3": 1,
+                    "music_rogue_5_4": 1,
+                    "music_rogue_5_5": 1,
+                    "music_rogue_5_6": 1,
+                    "music_rogue_5_7": 1,
+                    "music_rogue_5_8": 1,
+                    "music_rogue_5_9": 1,
+                    "music_rogue_5_10": 1,
+                    "music_rogue_5_11": 1,
+                    "music_rogue_5_12": 1
+                },
+                "pic": {
+                    "pic_rogue_5_KV1": 1,
+                    "pic_rogue_5_1": 1,
+                    "pic_rogue_5_2": 1,
+                    "pic_rogue_5_3": 1,
+                    "pic_rogue_5_4": 1,
+                    "pic_rogue_5_5": 1,
+                    "pic_rogue_5_6": 1,
+                    "pic_rogue_5_7": 1,
+                    "pic_rogue_5_8": 1,
+                    "pic_rogue_5_9": 1,
+                    "pic_rogue_5_10": 1,
+                    "pic_rogue_5_11": 1,
+                    "pic_rogue_5_12": 1,
+                    "pic_rogue_5_13": 1,
+                    "pic_rogue_5_14": 1,
+                    "pic_rogue_5_15": 1,
+                    "pic_rogue_5_16": 1,
+                    "pic_rogue_5_17": 1,
+                    "pic_rogue_5_18": 1,
+                    "pic_rogue_5_19": 1,
+                    "pic_rogue_5_20": 1,
+                    "pic_rogue_5_21": 1,
+                    "pic_rogue_5_22": 1,
+                    "pic_rogue_5_23": 1,
+                    "pic_rogue_5_24": 1,
+                    "pic_rogue_5_25": 1,
+                    "pic_rogue_5_26": 1,
+                    "pic_rogue_5_27": 1,
+                    "pic_rogue_5_28": 1,
+                    "pic_rogue_5_29": 1,
+                    "pic_rogue_5_30": 1,
+                    "pic_rogue_5_31": 1,
+                    "pic_rogue_5_32": 1,
+                    "pic_rogue_5_33": 1,
+                    "pic_rogue_5_34": 1,
+                    "pic_rogue_5_35": 1,
+                    "pic_rogue_5_36": 1,
+                    "pic_rogue_5_37": 1,
+                    "pic_rogue_5_38": 1,
+                    "pic_rogue_5_39": 1,
+                    "pic_rogue_5_40": 1,
+                    "pic_rogue_5_41": 1,
+                    "pic_rogue_5_42": 1,
+                    "pic_rogue_5_43": 1,
+                    "pic_rogue_5_44": 1,
+                    "pic_rogue_5_45": 1,
+                    "pic_rogue_5_46": 1,
+                    "pic_rogue_5_47": 1,
+                    "pic_rogue_5_48": 1,
+                    "pic_rogue_5_49": 1,
+                    "pic_rogue_5_50": 1,
+                    "pic_rogue_5_51": 1,
+                    "pic_rogue_5_52": 1,
+                    "pic_rogue_5_53": 1,
+                    "pic_rogue_5_54": 1
+                },
+                "chat": {
+                    "month_chat_rogue_5_1": 5,
+                    "month_chat_rogue_5_2": 5,
+                    "month_chat_rogue_5_3": 5,
+                    "month_chat_rogue_5_4": 5,
+                    "month_chat_rogue_5_5": 5,
+                    "month_chat_rogue_5_6": 5,
+                    "month_chat_rogue_5_7": 5,
+                    "month_chat_rogue_5_8": 5
+                },
+                "band": {
+                    "rogue_5_band_1": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_2": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_3": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_4": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_5": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_6": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_7": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_8": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_9": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_10": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_11": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_12": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_13": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_14": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_15": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_16": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_17": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_18": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_19": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "rogue_5_band_20": {
+                        "state": 1,
+                        "progress": null
+                    }
+                },
+                "buff": {},
+                "endBook": {
+                    "endbook_rogue_5_1_1": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "endbook_rogue_5_1_2": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "endbook_rogue_5_1_3": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "endbook_rogue_5_2_1": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "endbook_rogue_5_2_2": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "endbook_rogue_5_2_3": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "endbook_rogue_5_3_1": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "endbook_rogue_5_3_2": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "endbook_rogue_5_3_3": {
+                        "state": 1,
+                        "progress": null
+                    }
+                },
+                "mode": {
+                    "NORMAL": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "MONTH_TEAM": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "CHALLENGE": {
+                        "state": 1,
+                        "progress": null
+                    }
+                },
+                "recruitSet": {
+                    "recruit_group_random": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_1": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_2": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_3": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_4": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_5": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_m1": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_m2": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_m3": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_m4": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_m5": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_m6": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_m7": {
+                        "state": 1,
+                        "progress": null
+                    },
+                    "recruit_group_m8": {
+                        "state": 1,
+                        "progress": null
+                    }
+                },
+                "modeGrade": {
+                    "NORMAL": {
+                        "0": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "1": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "2": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "3": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "4": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "5": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "6": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "7": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "8": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "9": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "10": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "11": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "12": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "13": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "14": {
+                            "state": 2,
+                            "progress": null
+                        },
+                        "15": {
+                            "state": 2,
+                            "progress": null
+                        }
+                    },
+                    "MONTH_TEAM": {
+                        "0": {
+                            "state": 2,
+                            "progress": null
+                        }
+                    },
+                    "CHALLENGE": {
+                        "0": {
+                            "state": 2,
+                            "progress": null
+                        }
+                    }
+                },
+                "chatV2": {
+                    "month_chat_rogue_5_1": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_5_2": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_5_3": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_5_4": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_5_5": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_5_6": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_5_7": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ],
+                    "month_chat_rogue_5_8": [
+                        "zone_1",
+                        "zone_3",
+                        "zone_5"
+                    ]
+                },
+                "copper": {
+                    "rogue_5_copper_B_01_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_01_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_01_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_01_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_02_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_02_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_02_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_02_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_03_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_03_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_03_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_03_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_04_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_04_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_04_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_04_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_05_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_05_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_05_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_05_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_06_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_06_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_06_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_06_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_07_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_07_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_07_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_07_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_08_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_08_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_08_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_08_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_09_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_09_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_09_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_09_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_10_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_10_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_10_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_B_10_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_01_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_01_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_01_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_01_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_02_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_02_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_02_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_02_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_03_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_03_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_03_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_03_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_04_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_04_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_04_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_04_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_05_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_05_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_05_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_05_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_06_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_06_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_06_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_06_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_07_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_07_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_07_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_07_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_08_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_08_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_08_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_08_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_09_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_09_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_09_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_09_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_10_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_10_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_10_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_10_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_11_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_11_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_11_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_11_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_12_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_12_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_12_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_12_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_13_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_13_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_13_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_13_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_14_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_14_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_14_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_14_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_15_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_15_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_15_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_15_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_16_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_16_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_16_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_16_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_17_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_17_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_17_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_17_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_18_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_18_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_18_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_18_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_19_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_19_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_19_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_19_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_20_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_20_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_20_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_20_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_21_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_21_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_21_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_21_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_22_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_22_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_22_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_22_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_23_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_23_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_23_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_23_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_24_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_24_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_24_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_24_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_25_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_25_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_25_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_25_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_26_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_26_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_26_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_26_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_27_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_27_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_27_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_F_27_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_P_01_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_P_01_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_P_01_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_P_01_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_P_02_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_P_02_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_P_02_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_P_02_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_01_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_01_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_01_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_01_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_02_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_02_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_02_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_02_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_03_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_03_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_03_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_03_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_04_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_04_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_04_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_04_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_05_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_05_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_05_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_05_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_06_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_06_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_06_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_06_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_07_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_07_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_07_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_07_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_08_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_08_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_08_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_08_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_09_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_09_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_09_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_09_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_10_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_10_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_10_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_10_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_11_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_11_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_11_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_R_11_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_1_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_1_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_1_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_1_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_2_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_2_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_2_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_2_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_3_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_3_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_3_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_3_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_4_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_4_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_4_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_4_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_5_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_5_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_5_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_5_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_6_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_6_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_6_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_6_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_7_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_7_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_7_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_7_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_8_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_8_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_8_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_8_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_9_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_9_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_9_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_U_9_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_1_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_1_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_1_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_1_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_2_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_2_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_2_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_2_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_3_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_3_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_3_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_3_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_4_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_4_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_4_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_4_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_5_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_5_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_5_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_5_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_6_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_6_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_6_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_6_d": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_7_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_7_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_7_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_copper_S_7_d": {
+                        "state": 2,
+                        "progress": null
+                    }
+                },
+                "wrath": {
+                    "rogue_5_wrath_1_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_1_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_1_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_2_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_2_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_2_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_3_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_3_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_3_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_4_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_4_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_4_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_5_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_5_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_5_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_6_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_6_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_6_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_7_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_7_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_7_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_8_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_8_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_8_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_9_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_9_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_9_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_10_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_10_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_10_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_11_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_11_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_11_c": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_12_a": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_12_b": {
+                        "state": 2,
+                        "progress": null
+                    },
+                    "rogue_5_wrath_12_c": {
+                        "state": 2,
+                        "progress": null
+                    }
+                }
+            },
+            "mission": {
+                "updateId": "",
+                "refresh": 0,
+                "list": []
+            },
+            "challenge": {
+                "reward": {},
+                "grade": {},
+                "collect": {},
+                "highScore": {}
+            },
+            "monthTeam": {
+                "valid": [
+                    "month_team_1",
+                    "month_team_2",
+                    "month_team_3",
+                    "month_team_4",
+                    "month_team_5",
+                    "month_team_6",
+                    "month_team_7",
+                    "month_team_8"
+                ],
+                "reward": {
+                    "month_team_1": 1,
+                    "month_team_2": 1,
+                    "month_team_3": 1,
+                    "month_team_4": 1,
+                    "month_team_5": 1,
+                    "month_team_6": 1,
+                    "month_team_7": 1,
+                    "month_team_8": 1
+                },
+                "mission": {
+                    "month_team_1": [
+                        10,
+                        10
+                    ],
+                    "month_team_2": [
+                        10,
+                        10
+                    ],
+                    "month_team_3": [
+                        10,
+                        10
+                    ],
+                    "month_team_4": [
+                        10,
+                        10
+                    ],
+                    "month_team_5": [
+                        10,
+                        10
+                    ],
+                    "month_team_6": [
+                        10,
+                        10
+                    ],
+                    "month_team_7": [
+                        10,
+                        10
+                    ],
+                    "month_team_8": [
+                        10,
+                        10
+                    ]
+                }
+            },
+            "record": {
+                "last": 1700000000,
+                "modeCnt": {
+                    "NORMAL": 1,
+                    "MONTH_TEAM": 1,
+                    "CHALLENGE": 1
+                },
+                "endingCnt": {
+                    "NORMAL": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    }
+                },
+                "stageCnt": {
+                    "ro5_n_1_1": 1,
+                    "ro5_n_1_2": 1,
+                    "ro5_n_1_3": 1,
+                    "ro5_n_1_4": 1,
+                    "ro5_n_2_1": 1,
+                    "ro5_n_2_2": 1,
+                    "ro5_n_2_3": 1,
+                    "ro5_n_2_4": 1,
+                    "ro5_n_3_1": 1,
+                    "ro5_n_3_2": 1,
+                    "ro5_n_3_3": 1,
+                    "ro5_n_3_4": 1,
+                    "ro5_n_3_5": 1,
+                    "ro5_n_4_1": 1,
+                    "ro5_n_4_2": 1,
+                    "ro5_n_4_3": 1,
+                    "ro5_n_4_4": 1,
+                    "ro5_n_4_5": 1,
+                    "ro5_n_4_6": 1,
+                    "ro5_n_5_1": 1,
+                    "ro5_n_5_2": 1,
+                    "ro5_n_5_3": 1,
+                    "ro5_n_5_4": 1,
+                    "ro5_n_5_5": 1,
+                    "ro5_n_5_6": 1,
+                    "ro5_n_6_1": 1,
+                    "ro5_n_6_2": 1,
+                    "ro5_b_1": 1,
+                    "ro5_b_1_b": 1,
+                    "ro5_b_2": 1,
+                    "ro5_b_2_b": 1,
+                    "ro5_b_3": 1,
+                    "ro5_b_3_b": 1,
+                    "ro5_b_4": 1,
+                    "ro5_b_5": 1,
+                    "ro5_b_6": 1,
+                    "ro5_t_1": 1,
+                    "ro5_t_2": 1,
+                    "ro5_t_3": 1,
+                    "ro5_t_4": 1,
+                    "ro5_t_5": 1,
+                    "ro5_t_6": 1,
+                    "ro5_t_7": 1,
+                    "ro5_t_8": 1,
+                    "ro5_t_9_a": 1,
+                    "ro5_t_9_b": 1,
+                    "ro5_t_9_c": 1,
+                    "ro5_t_10": 1,
+                    "ro5_ev_1": 1,
+                    "ro5_ev_2": 1,
+                    "ro5_duel_1": 1,
+                    "ro5_duel_1_b": 1,
+                    "ro5_duel_2": 1,
+                    "ro5_duel_2_b": 1,
+                    "ro5_duel_2_c": 1,
+                    "ro5_fs_1": 1,
+                    "ro5_fs_1_b": 1,
+                    "ro5_fs_2": 1,
+                    "ro5_fs_2_b": 1,
+                    "ro5_fs_3": 1,
+                    "ro5_fs_3_b": 1,
+                    "ro5_fs_4": 1,
+                    "ro5_fs_4_b": 1,
+                    "ro5_fs_5": 1,
+                    "ro5_fs_5_b": 1,
+                    "ro5_dv_5": 1,
+                    "ro5_sv_1": 1,
+                    "ro5_sv_1_b": 1,
+                    "ro5_sv_2": 1,
+                    "ro5_sv_2_b": 1,
+                    "ro5_sv_2_c": 1,
+                    "ro5_sv_3": 1,
+                    "ro5_sv_3_b": 1,
+                    "ro5_sv_4": 1,
+                    "ro5_sv_5": 1,
+                    "ro5_sv_5_b": 1,
+                    "ro5_sv_6": 1,
+                    "ro5_sv_6_b": 1,
+                    "ro5_sv_7": 1,
+                    "ro5_sv_7_b": 1,
+                    "ro5_sv_8": 1,
+                    "ro5_sv_8_b": 1,
+                    "ro5_sv_9": 1,
+                    "ro5_sv_9_b": 1,
+                    "ro5_sv_9_c": 1,
+                    "ro5_sv_10": 1,
+                    "ro5_sv_10_b": 1,
+                    "ro5_e_1_1": 1,
+                    "ro5_e_1_2": 1,
+                    "ro5_e_1_3": 1,
+                    "ro5_e_1_4": 1,
+                    "ro5_e_2_1": 1,
+                    "ro5_e_2_2": 1,
+                    "ro5_e_2_3": 1,
+                    "ro5_e_2_4": 1,
+                    "ro5_e_3_1": 1,
+                    "ro5_e_3_2": 1,
+                    "ro5_e_3_3": 1,
+                    "ro5_e_3_4": 1,
+                    "ro5_e_3_5": 1,
+                    "ro5_e_4_1": 1,
+                    "ro5_e_4_2": 1,
+                    "ro5_e_4_3": 1,
+                    "ro5_e_4_4": 1,
+                    "ro5_e_4_5": 1,
+                    "ro5_e_4_6": 1,
+                    "ro5_e_5_1": 1,
+                    "ro5_e_5_2": 1,
+                    "ro5_e_5_3": 1,
+                    "ro5_e_5_4": 1,
+                    "ro5_e_5_5": 1,
+                    "ro5_e_5_6": 1,
+                    "ro5_e_6_1": 1,
+                    "ro5_e_6_2": 1,
+                    "ro5_e_t_1": 1,
+                    "ro5_e_t_2": 1,
+                    "ro5_e_t_3": 1,
+                    "ro5_e_t_4": 1,
+                    "ro5_e_t_5": 1,
+                    "ro5_e_t_6": 1,
+                    "ro5_e_t_7": 1,
+                    "ro5_e_t_8": 1,
+                    "ro5_e_t_9_a": 1,
+                    "ro5_e_t_9_b": 1,
+                    "ro5_e_t_9_c": 1,
+                    "ro5_e_t_10": 1
+                },
+                "bandCnt": {
+                    "rogue_5_band_1": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_2": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_3": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_4": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_5": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_6": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_7": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_8": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_9": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_10": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_11": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_12": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_13": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_14": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_15": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_16": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_17": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_18": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_19": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    },
+                    "rogue_5_band_20": {
+                        "ro5_ending_1": 1,
+                        "ro5_ending_2": 1,
+                        "ro5_ending_3": 1
+                    }
+                },
+                "history": [],
+                "bandGrade": {
+                    "rogue_5_band_1": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_2": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_3": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_4": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_5": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_6": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_7": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_8": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_9": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_10": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_11": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_12": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_13": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_14": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_15": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_16": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_17": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_18": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_19": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    },
+                    "rogue_5_band_20": {
+                        "ro5_ending_1": 15,
+                        "ro5_ending_2": 15,
+                        "ro5_ending_3": 15
+                    }
+                }
+            },
+            "activity": {}
         }
     },
     "pinned": null
