@@ -736,7 +736,236 @@
         "chars": {},
         "charGroup": {},
         "charMission": {},
-        "addon": {}
+        "addon": {},
+        "spOperator": {
+            "char_4195_radian": {
+                "EVOLVE": {
+                    "n_evolve_1": {
+                        "id": "n_evolve_1",
+                        "state": 1,
+                        "type": "EVOLVE"
+                    },
+                    "n_evolve_2": {
+                        "id": "n_evolve_2",
+                        "state": 1,
+                        "type": "EVOLVE"
+                    }
+                },
+                "SKILL": {
+                    "n_skill1_1": {
+                        "id": "n_skill1_1",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill1_2": {
+                        "id": "n_skill1_2",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill1_3": {
+                        "id": "n_skill1_3",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill1_4": {
+                        "id": "n_skill1_4",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill1_5": {
+                        "id": "n_skill1_5",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill1_6": {
+                        "id": "n_skill1_6",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill2_1": {
+                        "id": "n_skill2_1",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill2_2": {
+                        "id": "n_skill2_2",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill2_3": {
+                        "id": "n_skill2_3",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill2_4": {
+                        "id": "n_skill2_4",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill2_5": {
+                        "id": "n_skill2_5",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill2_6": {
+                        "id": "n_skill2_6",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill3_1": {
+                        "id": "n_skill3_1",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill3_2": {
+                        "id": "n_skill3_2",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill3_3": {
+                        "id": "n_skill3_3",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill3_4": {
+                        "id": "n_skill3_4",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill3_5": {
+                        "id": "n_skill3_5",
+                        "state": 1,
+                        "type": "SKILL"
+                    },
+                    "n_skill3_6": {
+                        "id": "n_skill3_6",
+                        "state": 1,
+                        "type": "SKILL"
+                    }
+                },
+                "TALENT": {
+                    "n_talent1_1": {
+                        "id": "n_talent1_1",
+                        "state": 1,
+                        "type": "TALENT"
+                    },
+                    "n_talent1_2": {
+                        "id": "n_talent1_2",
+                        "state": 1,
+                        "type": "TALENT"
+                    },
+                    "n_talent1_3": {
+                        "id": "n_talent1_3",
+                        "state": 1,
+                        "type": "TALENT"
+                    },
+                    "n_talent2_1": {
+                        "id": "n_talent2_1",
+                        "state": 1,
+                        "type": "TALENT"
+                    }
+                },
+                "MASTER": {
+                    "n_master1_1": {
+                        "id": "n_master1_1",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master1_2": {
+                        "id": "n_master1_2",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master2_1": {
+                        "id": "n_master2_1",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master3_1": {
+                        "id": "n_master3_1",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master3_2": {
+                        "id": "n_master3_2",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master3_3": {
+                        "id": "n_master3_3",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master4_1": {
+                        "id": "n_master4_1",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master4_2": {
+                        "id": "n_master4_2",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master4_3": {
+                        "id": "n_master4_3",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master5_1": {
+                        "id": "n_master5_1",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master5_2": {
+                        "id": "n_master5_2",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master5_3": {
+                        "id": "n_master5_3",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master6_1": {
+                        "id": "n_master6_1",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master6_2": {
+                        "id": "n_master6_2",
+                        "state": 1,
+                        "type": "MASTER"
+                    },
+                    "n_master6_3": {
+                        "id": "n_master6_3",
+                        "state": 1,
+                        "type": "MASTER"
+                    }
+                },
+                "UNIEQUIP": {
+                    "n_uniequip0_1": {
+                        "id": "n_uniequip0_1",
+                        "state": 1,
+                        "type": "UNIEQUIP"
+                    },
+                    "n_uniequip1_1": {
+                        "id": "n_uniequip1_1",
+                        "state": 1,
+                        "type": "UNIEQUIP"
+                    },
+                    "n_uniequip1_2": {
+                        "id": "n_uniequip1_2",
+                        "state": 1,
+                        "type": "UNIEQUIP"
+                    },
+                    "n_uniequip1_3": {
+                        "id": "n_uniequip1_3",
+                        "state": 1,
+                        "type": "UNIEQUIP"
+                    }
+                }
+            }
+        }
     },
     "npcAudio": {
         "char_508_aguard": {

@@ -616,6 +616,22 @@ def build_player_data_template():
 
     # ----------
 
+    # temporary
+
+    if str(get_char_num_id("char_4195_radian")) in tmpl_json_obj["troop"]["chars"]:
+        tmpl_json_obj["troop"]["chars"][str(get_char_num_id("char_4195_radian"))][
+            "master"
+        ] = {
+            "master_radian_1": 2,
+            "master_radian_2": 1,
+            "master_radian_3": 3,
+            "master_radian_4": 3,
+            "master_radian_5": 3,
+            "master_radian_6": 3,
+        }
+
+    # ----------
+
     player_data_template = ConstJson(tmpl_json_obj)
     return player_data_template, char_id_lst
 
